@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>FpImageDevice: libfprint Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="libfprint Reference Manual">
+<link rel="up" href="pt02.html" title="Part II. Library API Documentation">
+<link rel="prev" href="FpDevice.html" title="FpDevice">
+<link rel="next" href="FpPrint.html" title="FpPrint">
+<meta name="generator" content="GTK-Doc V1.34.0 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#FpImageDevice.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#FpImageDevice.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_interfaces">  <span class="dim">|</span> 
+                  <a href="#FpImageDevice.implemented-interfaces" class="shortcut">Implemented Interfaces</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#FpImageDevice.properties" class="shortcut">Properties</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#FpImageDevice.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="pt02.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="FpDevice.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="FpPrint.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="FpImageDevice"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="FpImageDevice.top_of_page"></a>FpImageDevice</span></h2>
+<p>FpImageDevice — Image device subclass</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="FpImageDevice.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody><tr>
+<td class="property_type"><a class="link" href="libfprint-2-Internal-FpImageDevice.html#FpiImageDeviceState" title="enum FpiImageDeviceState"><span class="type">FpiImageDeviceState</span></a></td>
+<td class="property_name"><a class="link" href="FpImageDevice.html#FpImageDevice--fpi-image-device-state" title="The “fpi-image-device-state” property">fpi-image-device-state</a></td>
+<td class="property_flags">Read</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="FpImageDevice.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="signal_proto_type">
+<col width="300px" class="signal_proto_name">
+<col width="200px" class="signal_proto_flags">
+</colgroup>
+<tbody><tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="FpImageDevice.html#FpImageDevice-fpi-image-device-state-changed" title="The “fpi-image-device-state-changed” signal">fpi-image-device-state-changed</a></td>
+<td class="signal_flags">Run First</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="FpImageDevice.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="FpImageDevice.html#FP-TYPE-IMAGE-DEVICE:CAPS" title="FP_TYPE_IMAGE_DEVICE">FP_TYPE_IMAGE_DEVICE</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="FpImageDevice.html#FpImageDevice-struct" title="FpImageDevice">FpImageDevice</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="FpImageDevice.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> <a class="link" href="FpDevice.html" title="FpDevice">FpDevice</a>
+        <span class="lineart">╰──</span> FpImageDevice
+</pre>
+</div>
+<div class="refsect1">
+<a name="FpImageDevice.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+FpImageDevice implements
+ GAsyncInitable.</p>
+</div>
+<div class="refsect1">
+<a name="FpImageDevice.description"></a><h2>Description</h2>
+<p>This is a helper class for the commonly found image based devices.</p>
+</div>
+<div class="refsect1">
+<a name="FpImageDevice.functions_details"></a><h2>Functions</h2>
+<p></p>
+</div>
+<div class="refsect1">
+<a name="FpImageDevice.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="FP-TYPE-IMAGE-DEVICE:CAPS"></a><h3>FP_TYPE_IMAGE_DEVICE</h3>
+<pre class="programlisting">#define FP_TYPE_IMAGE_DEVICE (fp_image_device_get_type ())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpImageDevice-struct"></a><h3>FpImageDevice</h3>
+<pre class="programlisting">typedef struct _FpImageDevice FpImageDevice;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="FpImageDevice.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="FpImageDevice--fpi-image-device-state"></a><h3>The <code class="literal">“fpi-image-device-state”</code> property</h3>
+<pre class="programlisting">  “fpi-image-device-state”   <a class="link" href="libfprint-2-Internal-FpImageDevice.html#FpiImageDeviceState" title="enum FpiImageDeviceState"><span class="type">FpiImageDeviceState</span></a></pre>
+<p>Private: The state of the image device.</p>
+<p>Owner: FpImageDevice</p>
+<p>Flags: Read</p>
+<p>Default value: FPI_IMAGE_DEVICE_STATE_INACTIVE</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="FpImageDevice.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="FpImageDevice-fpi-image-device-state-changed"></a><h3>The <code class="literal">“fpi-image-device-state-changed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="FpImageDevice.html" title="FpImageDevice"><span class="type">FpImageDevice</span></a>      *image_device,
+               <a class="link" href="libfprint-2-Internal-FpImageDevice.html#FpiImageDeviceState" title="enum FpiImageDeviceState"><span class="type">FpiImageDeviceState</span></a> new_state,
+               <span class="type">gpointer</span>            user_data)</pre>
+<p>This signal is only for internal purposes.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="FpImageDevice-fpi-image-device-state-changed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>image_device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpImageDevice.html" title="FpImageDevice"><span class="type">FpImageDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>new_state</p></td>
+<td class="parameter_description"><p>The new state of the device</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Run First</p>
+<p class="stability">Stability Level: <a href="http://foldoc.org/Private"><span class="acronym">Private</span></a></p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.34.0</div>
+</body>
+</html>

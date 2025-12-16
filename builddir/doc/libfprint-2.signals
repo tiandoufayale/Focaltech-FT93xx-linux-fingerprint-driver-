@@ -1,0 +1,31 @@
+<SIGNAL>
+<NAME>FpContext::device-added</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+FpContext *fpcontext
+FpDevice *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>FpContext::device-removed</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+FpContext *fpcontext
+FpDevice *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>FpDevice::removed</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+FpDevice *fpdevice
+</SIGNAL>
+
+<SIGNAL>
+<NAME>FpImageDevice::fpi-image-device-state-changed</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>f</FLAGS>
+FpImageDevice *fpimagedevice
+FpiImageDeviceState  arg1
+</SIGNAL>
+

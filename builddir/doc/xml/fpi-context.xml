@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
+[
+  <!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+]>
+<refentry id="libfprint-2-fpi-context">
+<refmeta>
+<refentrytitle role="top_of_page" id="libfprint-2-fpi-context.top_of_page">fpi-context</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBFPRINT-2 Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>fpi-context</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsect1 id="libfprint-2-fpi-context.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_proto_type" colwidth="150px"/>
+<colspec colname="functions_proto_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GArray"><returnvalue>GArray</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fpi-get-driver-types">fpi_get_driver_types</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+
+<refsect1 id="libfprint-2-fpi-context.description" role="desc">
+<title role="desc.title">Description</title>
+
+</refsect1>
+<refsect1 id="libfprint-2-fpi-context.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="fpi-get-driver-types" role="function" condition="stability:Private">
+<title>fpi_get_driver_types&#160;()</title>
+<indexterm zone="fpi-get-driver-types"><primary>fpi_get_driver_types</primary></indexterm>
+<programlisting language="C"><link linkend="GArray"><returnvalue>GArray</returnvalue></link>&#160;*
+fpi_get_driver_types (<parameter><type>void</type></parameter>);</programlisting>
+<para>This function is purely for private used. It is solely part of the public
+API as it is useful during build time.</para>
+<refsect3 id="fpi-get-driver-types.returns" role="returns">
+<title>Returns</title>
+<para>a <link linkend="GArray"><type>GArray</type></link> filled with
+all driver types. </para>
+<para><emphasis role="annotation">[<acronym>element-type</acronym> GType][<acronym>transfer container</acronym>]</emphasis></para>
+</refsect3><para role="stability">Stability Level: <acronym>Private</acronym></para></refsect2>
+
+</refsect1>
+
+</refentry>

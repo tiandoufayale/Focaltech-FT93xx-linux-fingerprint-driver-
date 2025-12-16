@@ -1,0 +1,242 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
+[
+  <!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+]>
+<refentry id="libfprint-2-Internal-FpImage">
+<refmeta>
+<refentrytitle role="top_of_page" id="libfprint-2-Internal-FpImage.top_of_page">Internal FpImage</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBFPRINT-2 Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>Internal FpImage</refname>
+<refpurpose>Internal image handling routines</refpurpose>
+</refnamediv>
+
+<refsect1 id="libfprint-2-Internal-FpImage.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_proto_type" colwidth="150px"/>
+<colspec colname="functions_proto_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-std-sq-dev">fpi_std_sq_dev</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-mean-sq-diff-norm">fpi_mean_sq_diff_norm</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="FpImage"><returnvalue>FpImage</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fpi-image-resize">fpi_image_resize</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="libfprint-2-Internal-FpImage.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="FpImage--height">height</link></entry><entry role="property_flags">Read / Write / Construct&#160;Only</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="FpImage--width">width</link></entry><entry role="property_flags">Read / Write / Construct&#160;Only</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<anchor id="FpImage"/><refsect1 id="libfprint-2-Internal-FpImage.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="other_proto_type" colwidth="150px"/>
+<colspec colname="other_proto_name"/>
+<tbody>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="FpiImageFlags">FpiImageFlags</link></entry></row>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="FpImage-struct">FpImage</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="libfprint-2-Internal-FpImage.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> FpImage
+</screen>
+</refsect1>
+
+
+<refsect1 id="libfprint-2-Internal-FpImage.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Internal image handling routines. See <link linkend="FpImage"><type>FpImage</type></link> for public routines.</para>
+
+</refsect1>
+<refsect1 id="libfprint-2-Internal-FpImage.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="fpi-std-sq-dev" role="function">
+<title>fpi_std_sq_dev&#160;()</title>
+<indexterm zone="fpi-std-sq-dev"><primary>fpi_std_sq_dev</primary></indexterm>
+<programlisting language="C"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+fpi_std_sq_dev (<parameter>const <link linkend="guint8"><type>guint8</type></link> *buf</parameter>,
+                <parameter><link linkend="gint"><type>gint</type></link> size</parameter>);</programlisting>
+<para>Calculates the squared standard deviation of the individual
+pixels in the buffer, as per the following formula:</para>
+<informalexample><programlisting role="example"><![CDATA[
+   mean = sum (buf[0..size]) / size
+   sq_dev = sum ((buf[0.size] - mean) ^ 2)
+]]></programlisting></informalexample>
+<para>
+This function is usually used to determine whether image
+is empty.</para>
+<refsect3 id="fpi-std-sq-dev.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>buf</para></entry>
+<entry role="parameter_description"><para>buffer (usually bitmap, one byte per pixel)</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>size of <parameter>buffer</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fpi-std-sq-dev.returns" role="returns">
+<title>Returns</title>
+<para> the squared standard deviation for <parameter>buffer</parameter>
+</para>
+</refsect3></refsect2>
+<refsect2 id="fpi-mean-sq-diff-norm" role="function">
+<title>fpi_mean_sq_diff_norm&#160;()</title>
+<indexterm zone="fpi-mean-sq-diff-norm"><primary>fpi_mean_sq_diff_norm</primary></indexterm>
+<programlisting language="C"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+fpi_mean_sq_diff_norm (<parameter>const <link linkend="guint8"><type>guint8</type></link> *buf1</parameter>,
+                       <parameter>const <link linkend="guint8"><type>guint8</type></link> *buf2</parameter>,
+                       <parameter><link linkend="gint"><type>gint</type></link> size</parameter>);</programlisting>
+<para>This function calculates the normalized mean square difference of
+two buffers, usually two lines, as per the following formula:</para>
+<informalexample><programlisting role="example"><![CDATA[
+   sq_diff = sum ((buf1[0..size] - buf2[0..size]) ^ 2) / size
+]]></programlisting></informalexample>
+<para></para>
+<para>This functions is usually used to get numerical difference
+between two images.</para>
+<refsect3 id="fpi-mean-sq-diff-norm.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>buf1</para></entry>
+<entry role="parameter_description"><para>buffer (usually bitmap, one byte per pixel)</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>buf2</para></entry>
+<entry role="parameter_description"><para>buffer (usually bitmap, one byte per pixel)</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>buffer size of smallest buffer</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fpi-mean-sq-diff-norm.returns" role="returns">
+<title>Returns</title>
+<para> the normalized mean squared difference between <parameter>buf1</parameter>
+and <parameter>buf2</parameter>
+</para>
+</refsect3></refsect2>
+<refsect2 id="fpi-image-resize" role="function">
+<title>fpi_image_resize&#160;()</title>
+<indexterm zone="fpi-image-resize"><primary>fpi_image_resize</primary></indexterm>
+<programlisting language="C"><link linkend="FpImage"><returnvalue>FpImage</returnvalue></link>&#160;*
+fpi_image_resize (<parameter><link linkend="FpImage"><type>FpImage</type></link> *orig</parameter>,
+                  <parameter><link linkend="guint"><type>guint</type></link> w_factor</parameter>,
+                  <parameter><link linkend="guint"><type>guint</type></link> h_factor</parameter>);</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="libfprint-2-Internal-FpImage.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="FpiImageFlags" role="enum">
+<title>enum FpiImageFlags</title>
+<indexterm zone="FpiImageFlags"><primary>FpiImageFlags</primary></indexterm>
+<para>Flags used in an <link linkend="FpImage"><type>FpImage</type></link> structure to describe the contained image.
+This is useful for image drivers as they can simply set these flags and
+rely on the image to be normalized by libfprint before further processing.</para>
+<refsect3 id="FpiImageFlags.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="FPI-IMAGE-NONE:CAPS">FPI_IMAGE_NONE</para></entry>
+<entry /><entry />
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FPI-IMAGE-V-FLIPPED:CAPS">FPI_IMAGE_V_FLIPPED</para></entry>
+<entry role="enum_member_description"><para>the image is vertically flipped</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FPI-IMAGE-H-FLIPPED:CAPS">FPI_IMAGE_H_FLIPPED</para></entry>
+<entry role="enum_member_description"><para>the image is horizontally flipped</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FPI-IMAGE-COLORS-INVERTED:CAPS">FPI_IMAGE_COLORS_INVERTED</para></entry>
+<entry role="enum_member_description"><para>the colours are inverted</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FPI-IMAGE-PARTIAL:CAPS">FPI_IMAGE_PARTIAL</para></entry>
+<entry /><entry />
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="FpImage-struct" role="struct">
+<title>FpImage</title>
+<indexterm zone="FpImage-struct"><primary>FpImage</primary></indexterm>
+<programlisting language="C">typedef struct {
+  guint         width;
+  guint         height;
+
+  gdouble       ppmm;
+
+  FpiImageFlags flags;
+} FpImage;
+</programlisting>
+<para>Structure holding an image. The public fields are only public for internal
+use by the drivers.</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="libfprint-2-Internal-FpImage.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="FpImage--height" role="property"><title>The <literal>“height”</literal> property</title>
+<indexterm zone="FpImage--height"><primary>FpImage:height</primary></indexterm>
+<programlisting>  “height”                   <link linkend="guint"><type>guint</type></link></programlisting>
+<para>The height of the image.</para><para>Owner: FpImage</para>
+<para>Flags: Read / Write / Construct&#160;Only</para>
+<para>Allowed values: &lt;= 65535</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="FpImage--width" role="property"><title>The <literal>“width”</literal> property</title>
+<indexterm zone="FpImage--width"><primary>FpImage:width</primary></indexterm>
+<programlisting>  “width”                    <link linkend="guint"><type>guint</type></link></programlisting>
+<para>The width of the image.</para><para>Owner: FpImage</para>
+<para>Flags: Read / Write / Construct&#160;Only</para>
+<para>Allowed values: &lt;= 65535</para>
+<para>Default value: 0</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

@@ -1,0 +1,2243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Internal FpDevice: libfprint Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="libfprint Reference Manual">
+<link rel="up" href="driver-dev.html" title="Device methods for drivers">
+<link rel="prev" href="driver-dev.html" title="Device methods for drivers">
+<link rel="next" href="libfprint-2-Internal-FpImageDevice.html" title="Internal FpImageDevice">
+<meta name="generator" content="GTK-Doc V1.34.0 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#libfprint-2-Internal-FpDevice.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="driver-dev.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="driver-dev.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libfprint-2-Internal-FpImageDevice.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="libfprint-2-Internal-FpDevice"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libfprint-2-Internal-FpDevice.top_of_page"></a>Internal FpDevice</span></h2>
+<p>Internal FpDevice — Internal device routines</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="libfprint-2-Internal-FpDevice.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<span class="c_punctuation">(</span><a class="link" href="libfprint-2-Internal-FpDevice.html#FpTimeoutFunc" title="FpTimeoutFunc ()">*FpTimeoutFunc</a><span class="c_punctuation">)</span> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GUsbDevice</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-get-usb-device" title="fpi_device_get_usb_device ()">fpi_device_get_usb_device</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gpointer</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-get-udev-data" title="fpi_device_get_udev_data ()">fpi_device_get_udev_data</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">gchar</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-get-virtual-env" title="fpi_device_get_virtual_env ()">fpi_device_get_virtual_env</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#FpiDeviceAction" title="enum FpiDeviceAction"><span class="returnvalue">FpiDeviceAction</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-get-current-action" title="fpi_device_get_current_action ()">fpi_device_get_current_action</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GError</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-retry-new" title="fpi_device_retry_new ()">fpi_device_retry_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GError</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-error-new" title="fpi_device_error_new ()">fpi_device_error_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GError</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-retry-new-msg" title="fpi_device_retry_new_msg ()">fpi_device_retry_new_msg</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GError</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-error-new-msg" title="fpi_device_error_new_msg ()">fpi_device_error_new_msg</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint64</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-get-driver-data" title="fpi_device_get_driver_data ()">fpi_device_get_driver_data</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-get-enroll-data" title="fpi_device_get_enroll_data ()">fpi_device_get_enroll_data</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-get-capture-data" title="fpi_device_get_capture_data ()">fpi_device_get_capture_data</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-get-verify-data" title="fpi_device_get_verify_data ()">fpi_device_get_verify_data</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-get-identify-data" title="fpi_device_get_identify_data ()">fpi_device_get_identify_data</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-get-delete-data" title="fpi_device_get_delete_data ()">fpi_device_get_delete_data</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GCancellable</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-get-cancellable" title="fpi_device_get_cancellable ()">fpi_device_get_cancellable</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-action-is-cancelled" title="fpi_device_action_is_cancelled ()">fpi_device_action_is_cancelled</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GSource</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-add-timeout" title="fpi_device_add_timeout ()">fpi_device_add_timeout</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-set-nr-enroll-stages" title="fpi_device_set_nr_enroll_stages ()">fpi_device_set_nr_enroll_stages</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-set-scan-type" title="fpi_device_set_scan_type ()">fpi_device_set_scan_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-update-features" title="fpi_device_update_features ()">fpi_device_update_features</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-critical-enter" title="fpi_device_critical_enter ()">fpi_device_critical_enter</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-critical-leave" title="fpi_device_critical_leave ()">fpi_device_critical_leave</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-remove" title="fpi_device_remove ()">fpi_device_remove</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-report-finger-status" title="fpi_device_report_finger_status ()">fpi_device_report_finger_status</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-report-finger-status-changes" title="fpi_device_report_finger_status_changes ()">fpi_device_report_finger_status_changes</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-action-error" title="fpi_device_action_error ()">fpi_device_action_error</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-probe-complete" title="fpi_device_probe_complete ()">fpi_device_probe_complete</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-open-complete" title="fpi_device_open_complete ()">fpi_device_open_complete</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-close-complete" title="fpi_device_close_complete ()">fpi_device_close_complete</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-enroll-complete" title="fpi_device_enroll_complete ()">fpi_device_enroll_complete</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-verify-complete" title="fpi_device_verify_complete ()">fpi_device_verify_complete</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-identify-complete" title="fpi_device_identify_complete ()">fpi_device_identify_complete</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-capture-complete" title="fpi_device_capture_complete ()">fpi_device_capture_complete</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-clear-storage-complete" title="fpi_device_clear_storage_complete ()">fpi_device_clear_storage_complete</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-delete-complete" title="fpi_device_delete_complete ()">fpi_device_delete_complete</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-list-complete" title="fpi_device_list_complete ()">fpi_device_list_complete</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-suspend-complete" title="fpi_device_suspend_complete ()">fpi_device_suspend_complete</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-resume-complete" title="fpi_device_resume_complete ()">fpi_device_resume_complete</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-enroll-progress" title="fpi_device_enroll_progress ()">fpi_device_enroll_progress</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-verify-report" title="fpi_device_verify_report ()">fpi_device_verify_report</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-identify-report" title="fpi_device_identify_report ()">fpi_device_identify_report</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-class-auto-initialize-features" title="fpi_device_class_auto_initialize_features ()">fpi_device_class_auto_initialize_features</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libfprint-2-Internal-FpDevice.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="libfprint-2-Internal-FpDevice.html#FpDeviceClass" title="FpDeviceClass">FpDeviceClass</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libfprint-2-Internal-FpDevice.html#FpiDeviceAction" title="enum FpiDeviceAction">FpiDeviceAction</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="libfprint-2-Internal-FpDevice.html#FpIdEntry" title="struct FpIdEntry">FpIdEntry</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libfprint-2-Internal-FpDevice.html#FpiDeviceUdevSubtypeFlags" title="enum FpiDeviceUdevSubtypeFlags">FpiDeviceUdevSubtypeFlags</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libfprint-2-Internal-FpDevice.description"></a><h2>Description</h2>
+<p>The methods that are available for drivers to manipulate a device. See
+<a class="link" href="libfprint-2-Internal-FpDevice.html#FpDeviceClass" title="FpDeviceClass"><span class="type">FpDeviceClass</span></a> for more information. Also note that most of these are
+not relevant for image based devices, see <a class="link" href="libfprint-2-Internal-FpImageDevice.html#FpImageDeviceClass" title="FpImageDeviceClass"><span class="type">FpImageDeviceClass</span></a> in that
+case.</p>
+<p>Also see the public <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> routines.</p>
+</div>
+<div class="refsect1">
+<a name="libfprint-2-Internal-FpDevice.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="FpTimeoutFunc"></a><h3>FpTimeoutFunc ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+<span class="c_punctuation">(</span>*FpTimeoutFunc<span class="c_punctuation">)</span> (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                  <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>The prototype of the callback function for <a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-add-timeout" title="fpi_device_add_timeout ()"><code class="function">fpi_device_add_timeout()</code></a>.</p>
+<div class="refsect3">
+<a name="FpTimeoutFunc.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> passed to <a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-add-timeout" title="fpi_device_add_timeout ()"><code class="function">fpi_device_add_timeout()</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>the data passed to <a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-add-timeout" title="fpi_device_add_timeout ()"><code class="function">fpi_device_add_timeout()</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-get-usb-device"></a><h3>fpi_device_get_usb_device ()</h3>
+<pre class="programlisting"><span class="returnvalue">GUsbDevice</span> *
+fpi_device_get_usb_device (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>);</pre>
+<p>Get the <span class="type">GUsbDevice</span> for this <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a>. Only permissible to call if the
+<a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> is of type <a class="link" href="FpDevice.html#FP-DEVICE-TYPE-USB:CAPS"><code class="literal">FP_DEVICE_TYPE_USB</code></a>.</p>
+<div class="refsect3">
+<a name="fpi-device-get-usb-device.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fpi-device-get-usb-device.returns"></a><h4>Returns</h4>
+<p> The <span class="type">GUsbDevice</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-get-udev-data"></a><h3>fpi_device_get_udev_data ()</h3>
+<pre class="programlisting"><span class="returnvalue">gpointer</span>
+fpi_device_get_udev_data (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                          <em class="parameter"><code><a class="link" href="libfprint-2-Internal-FpDevice.html#FpiDeviceUdevSubtypeFlags" title="enum FpiDeviceUdevSubtypeFlags"><span class="type">FpiDeviceUdevSubtypeFlags</span></a> subtype</code></em>);</pre>
+<p>Get a subtype-specific hardware resource for this <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a>. Only permissible to call if the
+<a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> is of type <a class="link" href="FpDevice.html#FP-DEVICE-TYPE-UDEV:CAPS"><code class="literal">FP_DEVICE_TYPE_UDEV</code></a>.</p>
+<div class="refsect3">
+<a name="fpi-device-get-udev-data.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>subtype</p></td>
+<td class="parameter_description"><p>Which subtype to get information about</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fpi-device-get-udev-data.returns"></a><h4>Returns</h4>
+<p> Depends on <em class="parameter"><code>subtype</code></em>
+; for SPIDEV/HIDRAW returns a path to the relevant device.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-get-virtual-env"></a><h3>fpi_device_get_virtual_env ()</h3>
+<pre class="programlisting">const <span class="returnvalue">gchar</span> *
+fpi_device_get_virtual_env (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>);</pre>
+<p>Get the value of the environment variable that caused the virtual <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> to be
+generated. Only permissible to call if the <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> is of type <a class="link" href="FpDevice.html#FP-DEVICE-TYPE-VIRTUAL:CAPS"><code class="literal">FP_DEVICE_TYPE_VIRTUAL</code></a>.</p>
+<div class="refsect3">
+<a name="fpi-device-get-virtual-env.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fpi-device-get-virtual-env.returns"></a><h4>Returns</h4>
+<p> The value of the environment variable</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-get-current-action"></a><h3>fpi_device_get_current_action ()</h3>
+<pre class="programlisting"><a class="link" href="libfprint-2-Internal-FpDevice.html#FpiDeviceAction" title="enum FpiDeviceAction"><span class="returnvalue">FpiDeviceAction</span></a>
+fpi_device_get_current_action (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>);</pre>
+<p>Get the currently ongoing action or <a class="link" href="libfprint-2-Internal-FpDevice.html#FPI-DEVICE-ACTION-NONE:CAPS"><code class="literal">FPI_DEVICE_ACTION_NONE</code></a> if there
+is no operation at this time.</p>
+<p>This is useful for drivers that might share code paths between different
+actions (e.g. verify and identify) and want to find out again later which
+action was started in the beginning.</p>
+<div class="refsect3">
+<a name="fpi-device-get-current-action.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fpi-device-get-current-action.returns"></a><h4>Returns</h4>
+<p> The ongoing <a class="link" href="libfprint-2-Internal-FpDevice.html#FpiDeviceAction" title="enum FpiDeviceAction"><span class="type">FpiDeviceAction</span></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-retry-new"></a><h3>fpi_device_retry_new ()</h3>
+<pre class="programlisting"><span class="returnvalue">GError</span> *
+fpi_device_retry_new (<em class="parameter"><code><a class="link" href="FpDevice.html#FpDeviceRetry" title="enum FpDeviceRetry"><span class="type">FpDeviceRetry</span></a> error</code></em>);</pre>
+<p>Create a new retry error code for use with <a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-verify-complete" title="fpi_device_verify_complete ()"><code class="function">fpi_device_verify_complete()</code></a>
+and similar calls.</p>
+<div class="refsect3">
+<a name="fpi-device-retry-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html#FpDeviceRetry" title="enum FpDeviceRetry"><span class="type">FpDeviceRetry</span></a> error value describing the issue</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-error-new"></a><h3>fpi_device_error_new ()</h3>
+<pre class="programlisting"><span class="returnvalue">GError</span> *
+fpi_device_error_new (<em class="parameter"><code><a class="link" href="FpDevice.html#FpDeviceError" title="enum FpDeviceError"><span class="type">FpDeviceError</span></a> error</code></em>);</pre>
+<p>Create a new error code for use with <a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-verify-complete" title="fpi_device_verify_complete ()"><code class="function">fpi_device_verify_complete()</code></a> and
+similar calls.</p>
+<div class="refsect3">
+<a name="fpi-device-error-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html#FpDeviceRetry" title="enum FpDeviceRetry"><span class="type">FpDeviceRetry</span></a> error value describing the issue</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-retry-new-msg"></a><h3>fpi_device_retry_new_msg ()</h3>
+<pre class="programlisting"><span class="returnvalue">GError</span> *
+fpi_device_retry_new_msg (<em class="parameter"><code><a class="link" href="FpDevice.html#FpDeviceRetry" title="enum FpDeviceRetry"><span class="type">FpDeviceRetry</span></a> error</code></em>,
+                          <em class="parameter"><code>const <span class="type">gchar</span> *msg</code></em>,
+                          <em class="parameter"><code>...</code></em>);</pre>
+<p>Create a new retry error code for use with <a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-verify-complete" title="fpi_device_verify_complete ()"><code class="function">fpi_device_verify_complete()</code></a>
+and similar calls.</p>
+<div class="refsect3">
+<a name="fpi-device-retry-new-msg.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html#FpDeviceRetry" title="enum FpDeviceRetry"><span class="type">FpDeviceRetry</span></a> error value describing the issue</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p>Custom message to use with printf-style formatting</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>...</p></td>
+<td class="parameter_description"><p>args for <em class="parameter"><code>msg</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-error-new-msg"></a><h3>fpi_device_error_new_msg ()</h3>
+<pre class="programlisting"><span class="returnvalue">GError</span> *
+fpi_device_error_new_msg (<em class="parameter"><code><a class="link" href="FpDevice.html#FpDeviceError" title="enum FpDeviceError"><span class="type">FpDeviceError</span></a> error</code></em>,
+                          <em class="parameter"><code>const <span class="type">gchar</span> *msg</code></em>,
+                          <em class="parameter"><code>...</code></em>);</pre>
+<p>Create a new error code for use with <a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-verify-complete" title="fpi_device_verify_complete ()"><code class="function">fpi_device_verify_complete()</code></a>
+and similar calls.</p>
+<div class="refsect3">
+<a name="fpi-device-error-new-msg.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html#FpDeviceRetry" title="enum FpDeviceRetry"><span class="type">FpDeviceRetry</span></a> error value describing the issue</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p>Custom message to use with printf-style formatting</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>...</p></td>
+<td class="parameter_description"><p>args for <em class="parameter"><code>msg</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-get-driver-data"></a><h3>fpi_device_get_driver_data ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint64</span>
+fpi_device_get_driver_data (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>);</pre>
+<div class="refsect3">
+<a name="fpi-device-get-driver-data.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fpi-device-get-driver-data.returns"></a><h4>Returns</h4>
+<p> The driver data from the <a class="link" href="libfprint-2-Internal-FpDevice.html#FpIdEntry" title="struct FpIdEntry"><span class="type">FpIdEntry</span></a> table entry</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-get-enroll-data"></a><h3>fpi_device_get_enroll_data ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_device_get_enroll_data (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                            <em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> **print</code></em>);</pre>
+<p>Get data for enrollment.</p>
+<div class="refsect3">
+<a name="fpi-device-get-enroll-data.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>print</p></td>
+<td class="parameter_description"><p>The user provided template print. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>][<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-get-capture-data"></a><h3>fpi_device_get_capture_data ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_device_get_capture_data (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                             <em class="parameter"><code><span class="type">gboolean</span> *wait_for_finger</code></em>);</pre>
+<p>Get data for capture.</p>
+<div class="refsect3">
+<a name="fpi-device-get-capture-data.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>wait_for_finger</p></td>
+<td class="parameter_description"><p>Whether to wait for finger or not. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-get-verify-data"></a><h3>fpi_device_get_verify_data ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_device_get_verify_data (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                            <em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> **print</code></em>);</pre>
+<p>Get data for verify.</p>
+<div class="refsect3">
+<a name="fpi-device-get-verify-data.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>print</p></td>
+<td class="parameter_description"><p>The enrolled print. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>][<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-get-identify-data"></a><h3>fpi_device_get_identify_data ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_device_get_identify_data (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                              <em class="parameter"><code><span class="type">GPtrArray</span> **prints</code></em>);</pre>
+<p>Get prints gallery for identification.</p>
+<p>The <em class="parameter"><code>prints</code></em>
+ array is always non-<code class="literal">NULL</code> and may contain a list of <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a>'s
+that the device should match against.</p>
+<p>Note that <em class="parameter"><code>prints</code></em>
+ can be an empty array, in such case the device is expected
+to report the scanned print matching the one in its internal storage, if any.</p>
+<div class="refsect3">
+<a name="fpi-device-get-identify-data.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>prints</p></td>
+<td class="parameter_description"><p>The gallery of prints. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>][<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>][<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> FpPrint]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-get-delete-data"></a><h3>fpi_device_get_delete_data ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_device_get_delete_data (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                            <em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> **print</code></em>);</pre>
+<p>Get data for delete.</p>
+<div class="refsect3">
+<a name="fpi-device-get-delete-data.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>print</p></td>
+<td class="parameter_description"><p>The print to delete. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>][<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-get-cancellable"></a><h3>fpi_device_get_cancellable ()</h3>
+<pre class="programlisting"><span class="returnvalue">GCancellable</span> *
+fpi_device_get_cancellable (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>);</pre>
+<p>Retrieve the <span class="type">GCancellable</span> that may cancel the currently ongoing operation. This
+is primarily useful to pass directly to e.g. <a class="link" href="libfprint-2-USB-transfer-helpers.html#fpi-usb-transfer-submit" title="fpi_usb_transfer_submit ()"><code class="function">fpi_usb_transfer_submit()</code></a> for cancellable
+transfers.
+In many cases the cancel vfunc may be more convenient to react to cancellation in some
+way.</p>
+<div class="refsect3">
+<a name="fpi-device-get-cancellable.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fpi-device-get-cancellable.returns"></a><h4>Returns</h4>
+<p>The <span class="type">GCancellable</span> for the current action. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-action-is-cancelled"></a><h3>fpi_device_action_is_cancelled ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fpi_device_action_is_cancelled (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>);</pre>
+<p>Checks whether the current action has been cancelled by the user.
+This is equivalent to first getting the cancellable using
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-get-cancellable" title="fpi_device_get_cancellable ()"><code class="function">fpi_device_get_cancellable()</code></a> and then checking whether it has been
+cancelled (if it is non-NULL).</p>
+<div class="refsect3">
+<a name="fpi-device-action-is-cancelled.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fpi-device-action-is-cancelled.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if action should be cancelled</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-add-timeout"></a><h3>fpi_device_add_timeout ()</h3>
+<pre class="programlisting"><span class="returnvalue">GSource</span> *
+fpi_device_add_timeout (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                        <em class="parameter"><code><span class="type">gint</span> interval</code></em>,
+                        <em class="parameter"><code><a class="link" href="libfprint-2-Internal-FpDevice.html#FpTimeoutFunc" title="FpTimeoutFunc ()"><span class="type">FpTimeoutFunc</span></a> func</code></em>,
+                        <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>,
+                        <em class="parameter"><code><span class="type">GDestroyNotify</span> destroy_notify</code></em>);</pre>
+<p>Register a timeout to run. Drivers should always make sure that timers are
+cancelled when appropriate.</p>
+<div class="refsect3">
+<a name="fpi-device-add-timeout.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>interval</p></td>
+<td class="parameter_description"><p>The interval in milliseconds</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>func</p></td>
+<td class="parameter_description"><p>The <a class="link" href="libfprint-2-Internal-FpDevice.html#FpTimeoutFunc" title="FpTimeoutFunc ()"><span class="type">FpTimeoutFunc</span></a> to call on timeout</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>User data to pass to the callback. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>destroy_notify</p></td>
+<td class="parameter_description"><p><span class="type">GDestroyNotify</span> for <em class="parameter"><code>user_data</code></em>
+. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fpi-device-add-timeout.returns"></a><h4>Returns</h4>
+<p>A newly created and attached <span class="type">GSource</span>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-set-nr-enroll-stages"></a><h3>fpi_device_set_nr_enroll_stages ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_device_set_nr_enroll_stages (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                                 <em class="parameter"><code><span class="type">gint</span> enroll_stages</code></em>);</pre>
+<p>Updates the reported number of enroll stages that the device needs.
+If all supported devices have the same number of stages, then the
+value can simply be set in the class.</p>
+<div class="refsect3">
+<a name="fpi-device-set-nr-enroll-stages.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>enroll_stages</p></td>
+<td class="parameter_description"><p>The number of enroll stages</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-set-scan-type"></a><h3>fpi_device_set_scan_type ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_device_set_scan_type (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                          <em class="parameter"><code><a class="link" href="FpDevice.html#FpScanType" title="enum FpScanType"><span class="type">FpScanType</span></a> scan_type</code></em>);</pre>
+<p>Updates the the scan type of the device from the default.
+If all supported devices have the same scan type, then the
+value can simply be set in the class.</p>
+<div class="refsect3">
+<a name="fpi-device-set-scan-type.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>scan_type</p></td>
+<td class="parameter_description"><p>The scan type of the device</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-update-features"></a><h3>fpi_device_update_features ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_device_update_features (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                            <em class="parameter"><code><a class="link" href="FpDevice.html#FpDeviceFeature" title="enum FpDeviceFeature"><span class="type">FpDeviceFeature</span></a> update</code></em>,
+                            <em class="parameter"><code><a class="link" href="FpDevice.html#FpDeviceFeature" title="enum FpDeviceFeature"><span class="type">FpDeviceFeature</span></a> value</code></em>);</pre>
+<p>Updates the feature flags for the device. This can be used
+to runtime detect features that are supported by the device.</p>
+<div class="refsect3">
+<a name="fpi-device-update-features.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>update</p></td>
+<td class="parameter_description"><p>The feature flags to update</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>The value to set the flags to</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-critical-enter"></a><h3>fpi_device_critical_enter ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_device_critical_enter (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>);</pre>
+<p>Enter a critical section in the driver code where no outside calls from
+libfprint should happen. Drivers can already assume that everything
+happens from the same thread, however, that still allows e.g. the cancel
+vfunc to be called at any point in time.</p>
+<p>Using this kind of critical section, the driver can assume that libfprint
+will not forward any external requests to the driver for the time being.
+This is for example useful to prevent cancellation while the device is being
+set up. Or, said differently, using this feature means that the cancel
+handler is able to make more assumptions about the current state.</p>
+<p>Please note that the driver is not shielded from all external changes. For
+example the cancellable as returned by <a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-get-cancellable" title="fpi_device_get_cancellable ()"><code class="function">fpi_device_get_cancellable()</code></a> will
+still change immediately.</p>
+<p>The driver may call this function multiple times, but must also ensure that
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-critical-leave" title="fpi_device_critical_leave ()"><code class="function">fpi_device_critical_leave()</code></a> is called an equal amount of times and that all
+critical sections are left before command completion.</p>
+<div class="refsect3">
+<a name="fpi-device-critical-enter.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-critical-leave"></a><h3>fpi_device_critical_leave ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_device_critical_leave (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>);</pre>
+<p>Leave a critical section started by <a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-critical-enter" title="fpi_device_critical_enter ()"><code class="function">fpi_device_critical_enter()</code></a>.</p>
+<p>Once all critical sections have been left, libfprint will start flushing
+out the queued up requests. This is done from the mainloop and the driver
+is protected from reentrency issues.</p>
+<div class="refsect3">
+<a name="fpi-device-critical-leave.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-remove"></a><h3>fpi_device_remove ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_device_remove (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>);</pre>
+<p>Called to signal to the <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> that it has been unplugged (physically
+removed from the system).</p>
+<p>For USB devices, this API is called automatically by <a class="link" href="FpContext.html" title="FpContext"><span class="type">FpContext</span></a>.</p>
+<div class="refsect3">
+<a name="fpi-device-remove.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-report-finger-status"></a><h3>fpi_device_report_finger_status ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fpi_device_report_finger_status (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                                 <em class="parameter"><code><a class="link" href="FpDevice.html#FpFingerStatusFlags" title="enum FpFingerStatusFlags"><span class="type">FpFingerStatusFlags</span></a> finger_status</code></em>);</pre>
+<p>Report the finger status for the <em class="parameter"><code>device</code></em>
+.
+This can be used by UI to give a feedback</p>
+<div class="refsect3">
+<a name="fpi-device-report-finger-status.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>finger_status</p></td>
+<td class="parameter_description"><p>The current <a class="link" href="FpDevice.html#FpFingerStatusFlags" title="enum FpFingerStatusFlags"><span class="type">FpFingerStatusFlags</span></a> to report</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fpi-device-report-finger-status.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if changed</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-report-finger-status-changes"></a><h3>fpi_device_report_finger_status_changes ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fpi_device_report_finger_status_changes
+                               (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                                <em class="parameter"><code><a class="link" href="FpDevice.html#FpFingerStatusFlags" title="enum FpFingerStatusFlags"><span class="type">FpFingerStatusFlags</span></a> added_status</code></em>,
+                                <em class="parameter"><code><a class="link" href="FpDevice.html#FpFingerStatusFlags" title="enum FpFingerStatusFlags"><span class="type">FpFingerStatusFlags</span></a> removed_status</code></em>);</pre>
+<p>Report the finger status for the <em class="parameter"><code>device</code></em>
+ adding the <em class="parameter"><code>added_status</code></em>
+ flags
+and removing the <em class="parameter"><code>removed_status</code></em>
+ flags.</p>
+<p>This can be used by UI to give a feedback</p>
+<div class="refsect3">
+<a name="fpi-device-report-finger-status-changes.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>added_status</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html#FpFingerStatusFlags" title="enum FpFingerStatusFlags"><span class="type">FpFingerStatusFlags</span></a> to add</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>removed_status</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html#FpFingerStatusFlags" title="enum FpFingerStatusFlags"><span class="type">FpFingerStatusFlags</span></a> to remove</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fpi-device-report-finger-status-changes.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if changed</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-action-error"></a><h3>fpi_device_action_error ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_device_action_error (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                         <em class="parameter"><code><span class="type">GError</span> *error</code></em>);</pre>
+<p>Finish an ongoing action with an error. This is the same as calling
+the corresponding complete function such as <a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-open-complete" title="fpi_device_open_complete ()"><code class="function">fpi_device_open_complete()</code></a>
+with an error set. If possible, use the correct complete function as
+that results in improved error detection.</p>
+<div class="refsect3">
+<a name="fpi-device-action-error.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>The <span class="type">GError</span> to return</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-probe-complete"></a><h3>fpi_device_probe_complete ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_device_probe_complete (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                           <em class="parameter"><code>const <span class="type">gchar</span> *device_id</code></em>,
+                           <em class="parameter"><code>const <span class="type">gchar</span> *device_name</code></em>,
+                           <em class="parameter"><code><span class="type">GError</span> *error</code></em>);</pre>
+<p>Finish an ongoing probe operation. If error is <code class="literal">NULL</code> success is assumed.</p>
+<div class="refsect3">
+<a name="fpi-device-probe-complete.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>device_id</p></td>
+<td class="parameter_description"><p>Unique ID for the device or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>device_name</p></td>
+<td class="parameter_description"><p>Human readable name or <code class="literal">NULL</code> for driver name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>The <span class="type">GError</span> or <code class="literal">NULL</code> on success. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-open-complete"></a><h3>fpi_device_open_complete ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_device_open_complete (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                          <em class="parameter"><code><span class="type">GError</span> *error</code></em>);</pre>
+<p>Finish an ongoing open operation. If error is <code class="literal">NULL</code> success is assumed.</p>
+<div class="refsect3">
+<a name="fpi-device-open-complete.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>The <span class="type">GError</span> or <code class="literal">NULL</code> on success. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-close-complete"></a><h3>fpi_device_close_complete ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_device_close_complete (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                           <em class="parameter"><code><span class="type">GError</span> *error</code></em>);</pre>
+<p>Finish an ongoing close operation. If error is <code class="literal">NULL</code> success is assumed.</p>
+<div class="refsect3">
+<a name="fpi-device-close-complete.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>The <span class="type">GError</span> or <code class="literal">NULL</code> on success. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-enroll-complete"></a><h3>fpi_device_enroll_complete ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_device_enroll_complete (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                            <em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> *print</code></em>,
+                            <em class="parameter"><code><span class="type">GError</span> *error</code></em>);</pre>
+<p>Finish an ongoing enroll operation. The <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> can be stored by the
+caller for later verification.</p>
+<div class="refsect3">
+<a name="fpi-device-enroll-complete.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>print</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> or <code class="literal">NULL</code> on failure. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>The <span class="type">GError</span> or <code class="literal">NULL</code> on success. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-verify-complete"></a><h3>fpi_device_verify_complete ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_device_verify_complete (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                            <em class="parameter"><code><span class="type">GError</span> *error</code></em>);</pre>
+<p>Finish an ongoing verify operation.</p>
+<p>Note that <em class="parameter"><code>error</code></em>
+ should only be set for actual errors. In the case
+of retry errors, report these using <a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-verify-report" title="fpi_device_verify_report ()"><code class="function">fpi_device_verify_report()</code></a>
+and then call this function without any error argument.</p>
+<p>If <em class="parameter"><code>error</code></em>
+ is not set, we expect that a result (and print, in case)
+have been already reported via <a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-verify-report" title="fpi_device_verify_report ()"><code class="function">fpi_device_verify_report()</code></a>.</p>
+<div class="refsect3">
+<a name="fpi-device-verify-complete.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <span class="type">GError</span> if result is <a class="link" href="libfprint-2-Internal-FpPrint.html#FPI-MATCH-ERROR:CAPS"><code class="literal">FPI_MATCH_ERROR</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-identify-complete"></a><h3>fpi_device_identify_complete ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_device_identify_complete (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                              <em class="parameter"><code><span class="type">GError</span> *error</code></em>);</pre>
+<p>Finish an ongoing identify operation.</p>
+<p>Note that <em class="parameter"><code>error</code></em>
+ should only be set for actual errors. In the case
+of retry errors, report these using <a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-identify-report" title="fpi_device_identify_report ()"><code class="function">fpi_device_identify_report()</code></a>
+and then call this function without any error argument.</p>
+<p>If <em class="parameter"><code>error</code></em>
+ is not set, we expect that a match and / or a print have been
+already reported via <a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-identify-report" title="fpi_device_identify_report ()"><code class="function">fpi_device_identify_report()</code></a></p>
+<div class="refsect3">
+<a name="fpi-device-identify-complete.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>The <span class="type">GError</span> or <code class="literal">NULL</code> on success. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-capture-complete"></a><h3>fpi_device_capture_complete ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_device_capture_complete (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                             <em class="parameter"><code><a class="link" href="FpImage.html" title="FpImage"><span class="type">FpImage</span></a> *image</code></em>,
+                             <em class="parameter"><code><span class="type">GError</span> *error</code></em>);</pre>
+<p>Finish an ongoing capture operation.</p>
+<div class="refsect3">
+<a name="fpi-device-capture-complete.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>image</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpImage.html" title="FpImage"><span class="type">FpImage</span></a>, or <code class="literal">NULL</code> on error</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>The <span class="type">GError</span> or <code class="literal">NULL</code> on success. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-clear-storage-complete"></a><h3>fpi_device_clear_storage_complete ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_device_clear_storage_complete (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                                   <em class="parameter"><code><span class="type">GError</span> *error</code></em>);</pre>
+<p>Finish an ongoing clear_storage operation.</p>
+<div class="refsect3">
+<a name="fpi-device-clear-storage-complete.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>The <span class="type">GError</span> or <code class="literal">NULL</code> on success. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-delete-complete"></a><h3>fpi_device_delete_complete ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_device_delete_complete (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                            <em class="parameter"><code><span class="type">GError</span> *error</code></em>);</pre>
+<p>Finish an ongoing delete operation.</p>
+<div class="refsect3">
+<a name="fpi-device-delete-complete.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>The <span class="type">GError</span> or <code class="literal">NULL</code> on success. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-list-complete"></a><h3>fpi_device_list_complete ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_device_list_complete (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                          <em class="parameter"><code><span class="type">GPtrArray</span> *prints</code></em>,
+                          <em class="parameter"><code><span class="type">GError</span> *error</code></em>);</pre>
+<p>Finish an ongoing list operation.</p>
+<p>Please note that the <em class="parameter"><code>prints</code></em>
+ array will be free'ed using
+<code class="function">g_ptr_array_unref()</code> and the elements are destroyed automatically.
+As such, you must use <code class="function">g_ptr_array_new_with_free_func()</code> with
+<code class="function">g_object_unref()</code> as free func to create the array.</p>
+<div class="refsect3">
+<a name="fpi-device-list-complete.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>prints</p></td>
+<td class="parameter_description"><p>Possibly empty array of prints or <code class="literal">NULL</code> on error. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> FpPrint][<a href="http://foldoc.org/transfer%20container"><span class="acronym">transfer container</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>The <span class="type">GError</span> or <code class="literal">NULL</code> on success. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-suspend-complete"></a><h3>fpi_device_suspend_complete ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_device_suspend_complete (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                             <em class="parameter"><code><span class="type">GError</span> *error</code></em>);</pre>
+<p>Finish a suspend request. Only return a <code class="literal">NULL</code> error if suspend has been
+correctly configured and the current action as returned by
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-get-current-action" title="fpi_device_get_current_action ()"><code class="function">fpi_device_get_current_action()</code></a> will continue to run after resume.</p>
+<p>In all other cases an error must be returned. Should this happen, the
+current action will be cancelled before the error is forwarded to the
+application.</p>
+<p>It is recommended to set <em class="parameter"><code>error</code></em>
+ to <span class="type">FP_ERROR_NOT_IMPLEMENTED</span>.</p>
+<div class="refsect3">
+<a name="fpi-device-suspend-complete.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>The <span class="type">GError</span> or <code class="literal">NULL</code> on success. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-resume-complete"></a><h3>fpi_device_resume_complete ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_device_resume_complete (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                            <em class="parameter"><code><span class="type">GError</span> *error</code></em>);</pre>
+<p>Finish a resume request.</p>
+<div class="refsect3">
+<a name="fpi-device-resume-complete.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>The <span class="type">GError</span> or <code class="literal">NULL</code> on success. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-enroll-progress"></a><h3>fpi_device_enroll_progress ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_device_enroll_progress (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                            <em class="parameter"><code><span class="type">gint</span> completed_stages</code></em>,
+                            <em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> *print</code></em>,
+                            <em class="parameter"><code><span class="type">GError</span> *error</code></em>);</pre>
+<p>Notify about the progress of the enroll operation. This is important for UI interaction.
+The passed error may be used if a scan needs to be retried, use <a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-retry-new" title="fpi_device_retry_new ()"><code class="function">fpi_device_retry_new()</code></a>.</p>
+<div class="refsect3">
+<a name="fpi-device-enroll-progress.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>completed_stages</p></td>
+<td class="parameter_description"><p>The number of stages that are completed at this point</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>print</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> for the newly completed stage or <code class="literal">NULL</code> on failure. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20floating"><span class="acronym">transfer floating</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>The <span class="type">GError</span> or <code class="literal">NULL</code> on success. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-verify-report"></a><h3>fpi_device_verify_report ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_device_verify_report (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                          <em class="parameter"><code><a class="link" href="libfprint-2-Internal-FpPrint.html#FpiMatchResult" title="enum FpiMatchResult"><span class="type">FpiMatchResult</span></a> result</code></em>,
+                          <em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> *print</code></em>,
+                          <em class="parameter"><code><span class="type">GError</span> *error</code></em>);</pre>
+<p>Report the result of a verify operation. Note that the passed <em class="parameter"><code>error</code></em>
+ must be
+a retry error with the <a class="link" href="FpDevice.html#FP-DEVICE-RETRY:CAPS" title="FP_DEVICE_RETRY"><code class="literal">FP_DEVICE_RETRY</code></a> domain. For all other error cases,
+the error should passed to <a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-verify-complete" title="fpi_device_verify_complete ()"><code class="function">fpi_device_verify_complete()</code></a>.</p>
+<div class="refsect3">
+<a name="fpi-device-verify-report.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>result</p></td>
+<td class="parameter_description"><p>The <a class="link" href="libfprint-2-Internal-FpPrint.html#FpiMatchResult" title="enum FpiMatchResult"><span class="type">FpiMatchResult</span></a> of the operation</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>print</p></td>
+<td class="parameter_description"><p>(transfer floating) The scanned <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <span class="type">GError</span> if result is <a class="link" href="libfprint-2-Internal-FpPrint.html#FPI-MATCH-ERROR:CAPS"><code class="literal">FPI_MATCH_ERROR</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-identify-report"></a><h3>fpi_device_identify_report ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_device_identify_report (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                            <em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> *match</code></em>,
+                            <em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> *print</code></em>,
+                            <em class="parameter"><code><span class="type">GError</span> *error</code></em>);</pre>
+<p>Report the results of an identify operation.</p>
+<p>In case of successful identification <em class="parameter"><code>match</code></em>
+ is expected to be set to a
+<a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> that matches one from the provided gallery, while <em class="parameter"><code>print</code></em>
+
+represents the scanned print and will be different.</p>
+<p>If there are no errors, it's expected that the device always reports the
+recognized <em class="parameter"><code>print</code></em>
+ even if there is no <em class="parameter"><code>match</code></em>
+ with the provided gallery (that
+can be potentially empty). This is required for application logic further
+up in the stack, such as for enroll-duplicate checking. <em class="parameter"><code>print</code></em>
+ needs to be
+sufficiently filled to do a comparison.</p>
+<p>In case of error, both <em class="parameter"><code>match</code></em>
+ and <em class="parameter"><code>print</code></em>
+ are expected to be <code class="literal">NULL</code>.
+Note that the passed <em class="parameter"><code>error</code></em>
+ must be a retry error from the <a class="link" href="FpDevice.html#FP-DEVICE-RETRY:CAPS" title="FP_DEVICE_RETRY"><code class="literal">FP_DEVICE_RETRY</code></a>
+domain. For all other error cases, the error should passed to
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-identify-complete" title="fpi_device_identify_complete ()"><code class="function">fpi_device_identify_complete()</code></a>.</p>
+<div class="refsect3">
+<a name="fpi-device-identify-report.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>match</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> from the gallery that matched. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>print</p></td>
+<td class="parameter_description"><p>The scanned <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a>, set in the absence
+of an error. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20floating"><span class="acronym">transfer floating</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <span class="type">GError</span> of <a class="link" href="FpDevice.html#FP-DEVICE-RETRY:CAPS" title="FP_DEVICE_RETRY"><code class="literal">FP_DEVICE_RETRY</code></a> type if <em class="parameter"><code>match</code></em>
+and <em class="parameter"><code>print</code></em>
+are unset.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-device-class-auto-initialize-features"></a><h3>fpi_device_class_auto_initialize_features ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_device_class_auto_initialize_features
+                               (<em class="parameter"><code><a class="link" href="libfprint-2-Internal-FpDevice.html#FpDeviceClass" title="FpDeviceClass"><span class="type">FpDeviceClass</span></a> *device_class</code></em>);</pre>
+<p>Initializes the <a class="link" href="libfprint-2-Internal-FpDevice.html#FpDeviceClass" title="FpDeviceClass"><span class="type">FpDeviceClass</span></a> <em class="parameter"><code>features</code></em>
+ flags checking what device vfuncs
+are implemented.
+Drivers should call this at the end of the class initialization.</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="libfprint-2-Internal-FpDevice.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="FpDeviceClass"></a><h3>FpDeviceClass</h3>
+<pre class="programlisting">typedef struct {
+  /* Static information about the driver. */
+  const gchar     *id;
+  const gchar     *full_name;
+  FpDeviceType     type;
+  const FpIdEntry *id_table;
+  FpDeviceFeature  features;
+
+  /* Defaults for device properties */
+  gint       nr_enroll_stages;
+  FpScanType scan_type;
+
+  /* Simple device temperature model constants */
+  gint32 temp_hot_seconds;
+  gint32 temp_cold_seconds;
+
+  /* Callbacks */
+  gint (*usb_discover) (GUsbDevice *usb_device);
+  void (*probe)    (FpDevice *device);
+  void (*open)     (FpDevice *device);
+  void (*close)    (FpDevice *device);
+  void (*enroll)   (FpDevice *device);
+  void (*verify)   (FpDevice *device);
+  void (*identify) (FpDevice *device);
+  void (*capture)  (FpDevice *device);
+  void (*list)     (FpDevice *device);
+  void (*delete)   (FpDevice * device);
+  void (*clear_storage)  (FpDevice * device);
+
+  void (*cancel)   (FpDevice *device);
+  void (*suspend)  (FpDevice *device);
+  void (*resume)   (FpDevice *device);
+} FpDeviceClass;
+</pre>
+<p>NOTE: If your driver is image based, then you should subclass <a class="link" href="FpImageDevice.html" title="FpImageDevice"><span class="type">FpImageDevice</span></a>
+instead. <a class="link" href="FpImageDevice.html" title="FpImageDevice"><span class="type">FpImageDevice</span></a> based drivers use a different way of interacting
+with libfprint.</p>
+<p>These are the main entry points for drivers to implement. Drivers may not
+implement all of these entry points if they do not support the operation
+(or a default implementation is sufficient).</p>
+<p>Drivers must eventually call the corresponding function to finish the
+operation. It is also acceptable to call the generic
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-action-error" title="fpi_device_action_error ()"><code class="function">fpi_device_action_error()</code></a> function but doing so is not recommended in most
+usecases.</p>
+<p>Drivers must also handle cancellation properly for any long running
+operation (i.e. any operation that requires capturing). It is entirely fine
+to ignore cancellation requests for short operations (e.g. open/close).</p>
+<p>Note that <em class="parameter"><code>cancel</code></em>
+, <em class="parameter"><code>suspend</code></em>
+ and <em class="parameter"><code>resume</code></em>
+ will not be called while the device
+is within a <a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-critical-enter" title="fpi_device_critical_enter ()"><code class="function">fpi_device_critical_enter()</code></a>/<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-critical-leave" title="fpi_device_critical_leave ()"><code class="function">fpi_device_critical_leave()</code></a> block.</p>
+<p>This API is solely intended for drivers. It is purely internal and neither
+API nor ABI stable.</p>
+<div class="refsect3">
+<a name="FpDeviceClass.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p>const <span class="type">gchar</span> *<em class="structfield"><code><a name="FpDeviceClass.id"></a>id</code></em>;</p></td>
+<td class="struct_member_description"><p>ID string for the driver. Should be a valid C identifier and should
+match the drivers file name.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p>const <span class="type">gchar</span> *<em class="structfield"><code><a name="FpDeviceClass.full-name"></a>full_name</code></em>;</p></td>
+<td class="struct_member_description"><p>Human readable description of the driver</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="FpDevice.html#FpDeviceType" title="enum FpDeviceType"><span class="type">FpDeviceType</span></a> <em class="structfield"><code><a name="FpDeviceClass.type"></a>type</code></em>;</p></td>
+<td class="struct_member_description"><p>The type of driver</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p>const <a class="link" href="libfprint-2-Internal-FpDevice.html#FpIdEntry" title="struct FpIdEntry"><span class="type">FpIdEntry</span></a> *<em class="structfield"><code><a name="FpDeviceClass.id-table"></a>id_table</code></em>;</p></td>
+<td class="struct_member_description"><p>The table of IDs to bind the driver to</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="FpDevice.html#FpDeviceFeature" title="enum FpDeviceFeature"><span class="type">FpDeviceFeature</span></a> <em class="structfield"><code><a name="FpDeviceClass.features"></a>features</code></em>;</p></td>
+<td class="struct_member_description"><p>The features the device supports, it can be initialized using
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-class-auto-initialize-features" title="fpi_device_class_auto_initialize_features ()"><code class="function">fpi_device_class_auto_initialize_features()</code></a> on <em class="parameter"><code>class_init</code></em>
+.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">gint</span> <em class="structfield"><code><a name="FpDeviceClass.nr-enroll-stages"></a>nr_enroll_stages</code></em>;</p></td>
+<td class="struct_member_description"><p>The number of enroll stages supported devices need; use
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-set-nr-enroll-stages" title="fpi_device_set_nr_enroll_stages ()"><code class="function">fpi_device_set_nr_enroll_stages()</code></a> from <em class="parameter"><code>probe</code></em>
+if this is dynamic.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="FpDevice.html#FpScanType" title="enum FpScanType"><span class="type">FpScanType</span></a> <em class="structfield"><code><a name="FpDeviceClass.scan-type"></a>scan_type</code></em>;</p></td>
+<td class="struct_member_description"><p>The scan type of supported devices; use
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-set-scan-type" title="fpi_device_set_scan_type ()"><code class="function">fpi_device_set_scan_type()</code></a> from <em class="parameter"><code>probe</code></em>
+if this is dynamic.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">gint32</span> <em class="structfield"><code><a name="FpDeviceClass.temp-hot-seconds"></a>temp_hot_seconds</code></em>;</p></td>
+<td class="struct_member_description"><p>Assumed time in seconds for the device to become too hot
+after being mostly cold. Set to -1 if the device can be always-on.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">gint32</span> <em class="structfield"><code><a name="FpDeviceClass.temp-cold-seconds"></a>temp_cold_seconds</code></em>;</p></td>
+<td class="struct_member_description"><p>Assumed time in seconds for the device to be mostly cold
+after having been too hot to operate.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="FpDeviceClass.usb-discover"></a>usb_discover</code></em> ()</p></td>
+<td class="struct_member_description"><p>Class method to check whether a USB device is supported by
+the driver. Should return 0 if the device is unsupported and a positive
+score otherwise. The default score is 50 and the driver with the highest
+score will be loaded.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="FpDeviceClass.probe"></a>probe</code></em> ()</p></td>
+<td class="struct_member_description"><p>Called immediately for all devices. Most drivers will not need to
+implement this. Drivers should setup the device identifier from the probe
+callback which will be used to verify the compatibility of stored
+<a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a>'s. It is permissible to temporarily open the USB device if this
+is required for the operation. If an error is returned, then the device
+will be destroyed again immediately and never reported to the API user.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="FpDeviceClass.open"></a>open</code></em> ()</p></td>
+<td class="struct_member_description"><p>Open the device for further operations. Any of the normal actions are
+guaranteed to only happen when the device is open (this includes delete).</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="FpDeviceClass.close"></a>close</code></em> ()</p></td>
+<td class="struct_member_description"><p>Close the device again</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="FpDeviceClass.enroll"></a>enroll</code></em> ()</p></td>
+<td class="struct_member_description"><p>Start an enroll operation</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="FpDeviceClass.verify"></a>verify</code></em> ()</p></td>
+<td class="struct_member_description"><p>Start a verify operation</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="FpDeviceClass.identify"></a>identify</code></em> ()</p></td>
+<td class="struct_member_description"><p>Start an identify operation</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="FpDeviceClass.capture"></a>capture</code></em> ()</p></td>
+<td class="struct_member_description"><p>Start a capture operation</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="FpDeviceClass.list"></a>list</code></em> ()</p></td>
+<td class="struct_member_description"><p>List prints stored on the device</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="FpDeviceClass.delete"></a>delete</code></em> ()</p></td>
+<td class="struct_member_description"><p>Delete a print from the device</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="FpDeviceClass.clear-storage"></a>clear_storage</code></em> ()</p></td>
+<td class="struct_member_description"><p>Delete all prints from the device</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="FpDeviceClass.cancel"></a>cancel</code></em> ()</p></td>
+<td class="struct_member_description"><p>Called on cancellation, this is a convenience to not need to handle
+the <span class="type">GCancellable</span> directly by using <a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-get-cancellable" title="fpi_device_get_cancellable ()"><code class="function">fpi_device_get_cancellable()</code></a>.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="FpDeviceClass.suspend"></a>suspend</code></em> ()</p></td>
+<td class="struct_member_description"><p>Called when an interactive action is running (ENROLL, VERIFY,
+IDENTIFY or CAPTURE) and the system is about to go into suspend.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="FpDeviceClass.resume"></a>resume</code></em> ()</p></td>
+<td class="struct_member_description"><p>Called to resume an ongoing interactive action after the system has
+resumed from suspend.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpiDeviceAction"></a><h3>enum FpiDeviceAction</h3>
+<p>Current active action of the device. A driver can retrieve the action.</p>
+<div class="refsect3">
+<a name="FpiDeviceAction.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="FPI-DEVICE-ACTION-NONE:CAPS"></a>FPI_DEVICE_ACTION_NONE</p></td>
+<td class="enum_member_description">
+<p>No action is active.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FPI-DEVICE-ACTION-PROBE:CAPS"></a>FPI_DEVICE_ACTION_PROBE</p></td>
+<td class="enum_member_description">
+<p>Probe device for support and information.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FPI-DEVICE-ACTION-OPEN:CAPS"></a>FPI_DEVICE_ACTION_OPEN</p></td>
+<td class="enum_member_description">
+<p>Device is currently being opened.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FPI-DEVICE-ACTION-CLOSE:CAPS"></a>FPI_DEVICE_ACTION_CLOSE</p></td>
+<td class="enum_member_description">
+<p>Device is currently being closed.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FPI-DEVICE-ACTION-ENROLL:CAPS"></a>FPI_DEVICE_ACTION_ENROLL</p></td>
+<td class="enum_member_description">
+<p>Device is currently enrolling.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FPI-DEVICE-ACTION-VERIFY:CAPS"></a>FPI_DEVICE_ACTION_VERIFY</p></td>
+<td class="enum_member_description">
+<p>Device is currently verifying.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FPI-DEVICE-ACTION-IDENTIFY:CAPS"></a>FPI_DEVICE_ACTION_IDENTIFY</p></td>
+<td class="enum_member_description">
+<p>Device is currently identifying.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FPI-DEVICE-ACTION-CAPTURE:CAPS"></a>FPI_DEVICE_ACTION_CAPTURE</p></td>
+<td class="enum_member_description">
+<p>Device is currently capturing an image.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FPI-DEVICE-ACTION-LIST:CAPS"></a>FPI_DEVICE_ACTION_LIST</p></td>
+<td class="enum_member_description">
+<p>Device stored prints are being queried.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FPI-DEVICE-ACTION-DELETE:CAPS"></a>FPI_DEVICE_ACTION_DELETE</p></td>
+<td class="enum_member_description">
+<p>Device stored print is being deleted.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FPI-DEVICE-ACTION-CLEAR-STORAGE:CAPS"></a>FPI_DEVICE_ACTION_CLEAR_STORAGE</p></td>
+<td class="enum_member_description">
+<p>Device stored prints are being deleted.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpIdEntry"></a><h3>struct FpIdEntry</h3>
+<pre class="programlisting">struct FpIdEntry {
+  union
+  {
+    struct
+    {
+      guint pid;
+      guint vid;
+    };
+    const gchar *virtual_envvar;
+    struct
+    {
+      FpiDeviceUdevSubtypeFlags udev_types;
+      const gchar              *spi_acpi_id;
+      struct
+      {
+        guint pid;
+        guint vid;
+      } hid_id;
+    };
+  };
+  guint64 driver_data;
+};
+</pre>
+<p>An entry in the table of supported hardware. For USB devices, the product ID
+and vendor ID should be provided. The optional <em class="parameter"><code>driver_data</code></em>
+ field defaults
+to 0 and can be used as a simple flag for device quirks.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpiDeviceUdevSubtypeFlags"></a><h3>enum FpiDeviceUdevSubtypeFlags</h3>
+<p>Bitfield of required hardware resources for a udev-backed device.</p>
+<div class="refsect3">
+<a name="FpiDeviceUdevSubtypeFlags.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="FPI-DEVICE-UDEV-SUBTYPE-SPIDEV:CAPS"></a>FPI_DEVICE_UDEV_SUBTYPE_SPIDEV</p></td>
+<td class="enum_member_description">
+<p>The device requires an spidev node</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FPI-DEVICE-UDEV-SUBTYPE-HIDRAW:CAPS"></a>FPI_DEVICE_UDEV_SUBTYPE_HIDRAW</p></td>
+<td class="enum_member_description">
+<p>The device requires a hidraw node</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.34.0</div>
+</body>
+</html>

@@ -1,0 +1,716 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
+[
+  <!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+]>
+<refentry id="FpPrint">
+<refmeta>
+<refentrytitle role="top_of_page" id="FpPrint.top_of_page">FpPrint</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBFPRINT-2 Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>FpPrint</refname>
+<refpurpose>Fingerprint handling</refpurpose>
+</refnamediv>
+
+<refsect1 id="FpPrint.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_proto_type" colwidth="150px"/>
+<colspec colname="functions_proto_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="FpPrint"><returnvalue>FpPrint</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fp-print-new">fp_print_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fp-print-get-driver">fp_print_get_driver</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fp-print-get-device-id">fp_print_get_device_id</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-print-get-device-stored">fp_print_get_device_stored</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="FpImage"><returnvalue>FpImage</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fp-print-get-image">fp_print_get_image</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="FpFinger"><returnvalue>FpFinger</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-print-get-finger">fp_print_get_finger</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fp-print-get-username">fp_print_get_username</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fp-print-get-description">fp_print_get_description</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="GDate"><returnvalue>GDate</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fp-print-get-enroll-date">fp_print_get_enroll_date</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-print-set-finger">fp_print_set_finger</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-print-set-username">fp_print_set_username</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-print-set-description">fp_print_set_description</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-print-set-enroll-date">fp_print_set_enroll_date</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-print-compatible">fp_print_compatible</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-print-equal">fp_print_equal</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-print-serialize">fp_print_serialize</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="FpPrint"><returnvalue>FpPrint</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fp-print-deserialize">fp_print_deserialize</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="FpPrint.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="char"><type>char</type></link>&#160;*</entry><entry role="property_name"><link linkend="FpPrint--description">description</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="char"><type>char</type></link>&#160;*</entry><entry role="property_name"><link linkend="FpPrint--device-id">device-id</link></entry><entry role="property_flags">Read / Write / Construct&#160;Only</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="FpPrint--device-stored">device-stored</link></entry><entry role="property_flags">Read / Write / Construct&#160;Only</entry></row>
+<row><entry role="property_type"><link linkend="char"><type>char</type></link>&#160;*</entry><entry role="property_name"><link linkend="FpPrint--driver">driver</link></entry><entry role="property_flags">Read / Write / Construct&#160;Only</entry></row>
+<row><entry role="property_type"><link linkend="GDate"><type>GDate</type></link>&#160;*</entry><entry role="property_name"><link linkend="FpPrint--enroll-date">enroll-date</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="FpFinger"><type>FpFinger</type></link></entry><entry role="property_name"><link linkend="FpPrint--finger">finger</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GVariant"><type>GVariant</type></link>&#160;*</entry><entry role="property_name"><link linkend="FpPrint--fpi-data">fpi-data</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gpointer"><type>gpointer</type></link></entry><entry role="property_name"><link linkend="FpPrint--fpi-prints">fpi-prints</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="FpiPrintType"><type>FpiPrintType</type></link></entry><entry role="property_name"><link linkend="FpPrint--fpi-type">fpi-type</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="FpImage"><type>FpImage</type></link>&#160;*</entry><entry role="property_name"><link linkend="FpPrint--image">image</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="char"><type>char</type></link>&#160;*</entry><entry role="property_name"><link linkend="FpPrint--username">username</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="FpPrint.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="other_proto_type" colwidth="150px"/>
+<colspec colname="other_proto_name"/>
+<tbody>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="FP-TYPE-PRINT:CAPS">FP_TYPE_PRINT</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="FpFinger">FpFinger</link></entry></row>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="FpPrint-struct">FpPrint</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="FpPrint.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> FpPrint
+</screen>
+</refsect1>
+
+
+<refsect1 id="FpPrint.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Interaction with prints and their storage.</para>
+
+</refsect1>
+<refsect1 id="FpPrint.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="fp-print-new" role="function">
+<title>fp_print_new&#160;()</title>
+<indexterm zone="fp-print-new"><primary>fp_print_new</primary></indexterm>
+<programlisting language="C"><link linkend="FpPrint"><returnvalue>FpPrint</returnvalue></link>&#160;*
+fp_print_new (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>);</programlisting>
+<para>Create a new <link linkend="FpPrint"><type>FpPrint</type></link>. This is only useful to prepare an enrollment
+of a new print using <link linkend="fp-device-enroll"><function>fp_device_enroll()</function></link>. For this you should first
+create a new print, fill in the relevant metadata, and then start
+enrollment.</para>
+<refsect3 id="fp-print-new.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-print-new.returns" role="returns">
+<title>Returns</title>
+<para>A newly created <link linkend="FpPrint"><type>FpPrint</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer floating</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fp-print-get-driver" role="function">
+<title>fp_print_get_driver&#160;()</title>
+<indexterm zone="fp-print-get-driver"><primary>fp_print_get_driver</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+fp_print_get_driver (<parameter><link linkend="FpPrint"><type>FpPrint</type></link> *print</parameter>);</programlisting>
+<para>Returns the driver that the print was created for.</para>
+<refsect3 id="fp-print-get-driver.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>print</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpPrint"><type>FpPrint</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-print-get-driver.returns" role="returns">
+<title>Returns</title>
+<para>The driver. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fp-print-get-device-id" role="function">
+<title>fp_print_get_device_id&#160;()</title>
+<indexterm zone="fp-print-get-device-id"><primary>fp_print_get_device_id</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+fp_print_get_device_id (<parameter><link linkend="FpPrint"><type>FpPrint</type></link> *print</parameter>);</programlisting>
+<para>Returns the device ID that the print was created for.</para>
+<refsect3 id="fp-print-get-device-id.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>print</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpPrint"><type>FpPrint</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-print-get-device-id.returns" role="returns">
+<title>Returns</title>
+<para>The device ID. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fp-print-get-device-stored" role="function">
+<title>fp_print_get_device_stored&#160;()</title>
+<indexterm zone="fp-print-get-device-stored"><primary>fp_print_get_device_stored</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+fp_print_get_device_stored (<parameter><link linkend="FpPrint"><type>FpPrint</type></link> *print</parameter>);</programlisting>
+<para>Whether the print is actually stored on the device and this is
+just a handle to use that references the device stored data.</para>
+<refsect3 id="fp-print-get-device-stored.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>print</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpPrint"><type>FpPrint</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-print-get-device-stored.returns" role="returns">
+<title>Returns</title>
+<para> Whether the print is stored on the device</para>
+</refsect3></refsect2>
+<refsect2 id="fp-print-get-image" role="function">
+<title>fp_print_get_image&#160;()</title>
+<indexterm zone="fp-print-get-image"><primary>fp_print_get_image</primary></indexterm>
+<programlisting language="C"><link linkend="FpImage"><returnvalue>FpImage</returnvalue></link>&#160;*
+fp_print_get_image (<parameter><link linkend="FpPrint"><type>FpPrint</type></link> *print</parameter>);</programlisting>
+<para>Returns the image that the print was created from, or <link linkend="NULL:CAPS"><literal>NULL</literal></link></para>
+<refsect3 id="fp-print-get-image.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>print</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpPrint"><type>FpPrint</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-print-get-image.returns" role="returns">
+<title>Returns</title>
+<para>The <link linkend="FpImage"><type>FpImage</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fp-print-get-finger" role="function">
+<title>fp_print_get_finger&#160;()</title>
+<indexterm zone="fp-print-get-finger"><primary>fp_print_get_finger</primary></indexterm>
+<programlisting language="C"><link linkend="FpFinger"><returnvalue>FpFinger</returnvalue></link>
+fp_print_get_finger (<parameter><link linkend="FpPrint"><type>FpPrint</type></link> *print</parameter>);</programlisting>
+<para>Returns the finger that the print was created for.</para>
+<refsect3 id="fp-print-get-finger.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>print</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpPrint"><type>FpPrint</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-print-get-finger.returns" role="returns">
+<title>Returns</title>
+<para> The <link linkend="FpFinger"><type>FpFinger</type></link></para>
+</refsect3></refsect2>
+<refsect2 id="fp-print-get-username" role="function">
+<title>fp_print_get_username&#160;()</title>
+<indexterm zone="fp-print-get-username"><primary>fp_print_get_username</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+fp_print_get_username (<parameter><link linkend="FpPrint"><type>FpPrint</type></link> *print</parameter>);</programlisting>
+<para>Returns the user defined username for the print.</para>
+<refsect3 id="fp-print-get-username.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>print</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpPrint"><type>FpPrint</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-print-get-username.returns" role="returns">
+<title>Returns</title>
+<para>The username. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fp-print-get-description" role="function">
+<title>fp_print_get_description&#160;()</title>
+<indexterm zone="fp-print-get-description"><primary>fp_print_get_description</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+fp_print_get_description (<parameter><link linkend="FpPrint"><type>FpPrint</type></link> *print</parameter>);</programlisting>
+<para>Returns the user defined description for the print.</para>
+<refsect3 id="fp-print-get-description.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>print</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpPrint"><type>FpPrint</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-print-get-description.returns" role="returns">
+<title>Returns</title>
+<para>The description. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fp-print-get-enroll-date" role="function">
+<title>fp_print_get_enroll_date&#160;()</title>
+<indexterm zone="fp-print-get-enroll-date"><primary>fp_print_get_enroll_date</primary></indexterm>
+<programlisting language="C">const <link linkend="GDate"><returnvalue>GDate</returnvalue></link>&#160;*
+fp_print_get_enroll_date (<parameter><link linkend="FpPrint"><type>FpPrint</type></link> *print</parameter>);</programlisting>
+<para>Returns the user defined enroll date for the print.</para>
+<refsect3 id="fp-print-get-enroll-date.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>print</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpPrint"><type>FpPrint</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-print-get-enroll-date.returns" role="returns">
+<title>Returns</title>
+<para>The <link linkend="GDate"><type>GDate</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fp-print-set-finger" role="function">
+<title>fp_print_set_finger&#160;()</title>
+<indexterm zone="fp-print-set-finger"><primary>fp_print_set_finger</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fp_print_set_finger (<parameter><link linkend="FpPrint"><type>FpPrint</type></link> *print</parameter>,
+                     <parameter><link linkend="FpFinger"><type>FpFinger</type></link> finger</parameter>);</programlisting>
+<para>Set the finger that the print is for.</para>
+<refsect3 id="fp-print-set-finger.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>print</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpPrint"><type>FpPrint</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>finger</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpFinger"><type>FpFinger</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fp-print-set-username" role="function">
+<title>fp_print_set_username&#160;()</title>
+<indexterm zone="fp-print-set-username"><primary>fp_print_set_username</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fp_print_set_username (<parameter><link linkend="FpPrint"><type>FpPrint</type></link> *print</parameter>,
+                       <parameter>const <link linkend="gchar"><type>gchar</type></link> *username</parameter>);</programlisting>
+<para>Set the username for the print.</para>
+<refsect3 id="fp-print-set-username.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>print</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpPrint"><type>FpPrint</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>username</para></entry>
+<entry role="parameter_description"><para>The new username. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fp-print-set-description" role="function">
+<title>fp_print_set_description&#160;()</title>
+<indexterm zone="fp-print-set-description"><primary>fp_print_set_description</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fp_print_set_description (<parameter><link linkend="FpPrint"><type>FpPrint</type></link> *print</parameter>,
+                          <parameter>const <link linkend="gchar"><type>gchar</type></link> *description</parameter>);</programlisting>
+<para>Set the description for the print.</para>
+<refsect3 id="fp-print-set-description.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>print</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpPrint"><type>FpPrint</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>description</para></entry>
+<entry role="parameter_description"><para>The new description. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fp-print-set-enroll-date" role="function">
+<title>fp_print_set_enroll_date&#160;()</title>
+<indexterm zone="fp-print-set-enroll-date"><primary>fp_print_set_enroll_date</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fp_print_set_enroll_date (<parameter><link linkend="FpPrint"><type>FpPrint</type></link> *print</parameter>,
+                          <parameter>const <link linkend="GDate"><type>GDate</type></link> *enroll_date</parameter>);</programlisting>
+<para>Set the enroll date for the print.</para>
+<refsect3 id="fp-print-set-enroll-date.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>print</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpPrint"><type>FpPrint</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>enroll_date</para></entry>
+<entry role="parameter_description"><para>The new enroll date. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fp-print-compatible" role="function">
+<title>fp_print_compatible&#160;()</title>
+<indexterm zone="fp-print-compatible"><primary>fp_print_compatible</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+fp_print_compatible (<parameter><link linkend="FpPrint"><type>FpPrint</type></link> *self</parameter>,
+                     <parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>);</programlisting>
+<para>Tests whether the prints is compatible with the given device.</para>
+<refsect3 id="fp-print-compatible.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>self</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpPrint"><type>FpPrint</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-print-compatible.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the print is compatible with the device</para>
+</refsect3></refsect2>
+<refsect2 id="fp-print-equal" role="function">
+<title>fp_print_equal&#160;()</title>
+<indexterm zone="fp-print-equal"><primary>fp_print_equal</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+fp_print_equal (<parameter><link linkend="FpPrint"><type>FpPrint</type></link> *self</parameter>,
+                <parameter><link linkend="FpPrint"><type>FpPrint</type></link> *other</parameter>);</programlisting>
+<para>Tests whether the prints can be considered equal. This only compares the
+actual information about the print, not the metadata.</para>
+<refsect3 id="fp-print-equal.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>self</para></entry>
+<entry role="parameter_description"><para>First <link linkend="FpPrint"><type>FpPrint</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>other</para></entry>
+<entry role="parameter_description"><para>Second <link linkend="FpPrint"><type>FpPrint</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-print-equal.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the prints are equal</para>
+</refsect3></refsect2>
+<refsect2 id="fp-print-serialize" role="function">
+<title>fp_print_serialize&#160;()</title>
+<indexterm zone="fp-print-serialize"><primary>fp_print_serialize</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+fp_print_serialize (<parameter><link linkend="FpPrint"><type>FpPrint</type></link> *print</parameter>,
+                    <parameter><link linkend="guchar"><type>guchar</type></link> **data</parameter>,
+                    <parameter><link linkend="gsize"><type>gsize</type></link> *length</parameter>,
+                    <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Serialize a print definition for permanent storage. Note that this is
+lossy in the sense that e.g. the image data is discarded.</para>
+<refsect3 id="fp-print-serialize.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>print</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpPrint"><type>FpPrint</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>Return location for data pointer. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>array</acronym> length=length][<acronym>transfer full</acronym>][<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>length</para></entry>
+<entry role="parameter_description"><para>Length of <parameter>data</parameter>
+. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>Return location for error</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-print-serialize.returns" role="returns">
+<title>Returns</title>
+<para><link linkend="TRUE:CAPS"><literal>TRUE</literal></link> on success. </para>
+<para><emphasis role="annotation">[<acronym>type</acronym> void]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fp-print-deserialize" role="function">
+<title>fp_print_deserialize&#160;()</title>
+<indexterm zone="fp-print-deserialize"><primary>fp_print_deserialize</primary></indexterm>
+<programlisting language="C"><link linkend="FpPrint"><returnvalue>FpPrint</returnvalue></link>&#160;*
+fp_print_deserialize (<parameter>const <link linkend="guchar"><type>guchar</type></link> *data</parameter>,
+                      <parameter><link linkend="gsize"><type>gsize</type></link> length</parameter>,
+                      <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Deserialize a print definition from permanent storage.</para>
+<refsect3 id="fp-print-deserialize.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>data</para></entry>
+<entry role="parameter_description"><para>The binary data. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>array</acronym> length=length]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>length</para></entry>
+<entry role="parameter_description"><para>Length of the data</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>Return location for error</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-print-deserialize.returns" role="returns">
+<title>Returns</title>
+<para>A newly created <link linkend="FpPrint"><type>FpPrint</type></link> on success. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="FpPrint.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="FP-TYPE-PRINT:CAPS" role="macro">
+<title>FP_TYPE_PRINT</title>
+<indexterm zone="FP-TYPE-PRINT:CAPS"><primary>FP_TYPE_PRINT</primary></indexterm>
+<programlisting language="C">#define FP_TYPE_PRINT (fp_print_get_type ())
+</programlisting>
+</refsect2>
+<refsect2 id="FpFinger" role="enum">
+<title>enum FpFinger</title>
+<indexterm zone="FpFinger"><primary>FpFinger</primary></indexterm>
+<refsect3 id="FpFinger.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="FP-FINGER-UNKNOWN:CAPS">FP_FINGER_UNKNOWN</para></entry>
+<entry role="enum_member_description"><para>The finger is unknown</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-FINGER-LEFT-THUMB:CAPS">FP_FINGER_LEFT_THUMB</para></entry>
+<entry role="enum_member_description"><para>Left thumb</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-FINGER-LEFT-INDEX:CAPS">FP_FINGER_LEFT_INDEX</para></entry>
+<entry role="enum_member_description"><para>Left index finger</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-FINGER-LEFT-MIDDLE:CAPS">FP_FINGER_LEFT_MIDDLE</para></entry>
+<entry role="enum_member_description"><para>Left middle finger</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-FINGER-LEFT-RING:CAPS">FP_FINGER_LEFT_RING</para></entry>
+<entry role="enum_member_description"><para>Left ring finger</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-FINGER-LEFT-LITTLE:CAPS">FP_FINGER_LEFT_LITTLE</para></entry>
+<entry role="enum_member_description"><para>Left little finger</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-FINGER-RIGHT-THUMB:CAPS">FP_FINGER_RIGHT_THUMB</para></entry>
+<entry role="enum_member_description"><para>Right thumb</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-FINGER-RIGHT-INDEX:CAPS">FP_FINGER_RIGHT_INDEX</para></entry>
+<entry role="enum_member_description"><para>Right index finger</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-FINGER-RIGHT-MIDDLE:CAPS">FP_FINGER_RIGHT_MIDDLE</para></entry>
+<entry role="enum_member_description"><para>Right middle finger</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-FINGER-RIGHT-RING:CAPS">FP_FINGER_RIGHT_RING</para></entry>
+<entry role="enum_member_description"><para>Right ring finger</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-FINGER-RIGHT-LITTLE:CAPS">FP_FINGER_RIGHT_LITTLE</para></entry>
+<entry role="enum_member_description"><para>Right little finger</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-FINGER-FIRST:CAPS">FP_FINGER_FIRST</para></entry>
+<entry role="enum_member_description"><para>The first finger in the fp-print order</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-FINGER-LAST:CAPS">FP_FINGER_LAST</para></entry>
+<entry role="enum_member_description"><para>The last finger in the fp-print order</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="FpPrint-struct" role="struct">
+<title>FpPrint</title>
+<indexterm zone="FpPrint-struct"><primary>FpPrint</primary></indexterm>
+<programlisting language="C">typedef struct _FpPrint FpPrint;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="FpPrint.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="FpPrint--description" role="property"><title>The <literal>“description”</literal> property</title>
+<indexterm zone="FpPrint--description"><primary>FpPrint:description</primary></indexterm>
+<programlisting>  “description”              <link linkend="char"><type>char</type></link>&#160;*</programlisting>
+<para>A user defined description for the print.</para><para>Owner: FpPrint</para>
+<para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="FpPrint--device-id" role="property"><title>The <literal>“device-id”</literal> property</title>
+<indexterm zone="FpPrint--device-id"><primary>FpPrint:device-id</primary></indexterm>
+<programlisting>  “device-id”                <link linkend="char"><type>char</type></link>&#160;*</programlisting>
+<para>Unique ID allowing to check if a device is compatible with the print.</para><para>Owner: FpPrint</para>
+<para>Flags: Read / Write / Construct&#160;Only</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="FpPrint--device-stored" role="property"><title>The <literal>“device-stored”</literal> property</title>
+<indexterm zone="FpPrint--device-stored"><primary>FpPrint:device-stored</primary></indexterm>
+<programlisting>  “device-stored”            <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Whether the print is a handle for data that is stored on the device.</para><para>Owner: FpPrint</para>
+<para>Flags: Read / Write / Construct&#160;Only</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="FpPrint--driver" role="property"><title>The <literal>“driver”</literal> property</title>
+<indexterm zone="FpPrint--driver"><primary>FpPrint:driver</primary></indexterm>
+<programlisting>  “driver”                   <link linkend="char"><type>char</type></link>&#160;*</programlisting>
+<para>The name of the driver that created the print.</para><para>Owner: FpPrint</para>
+<para>Flags: Read / Write / Construct&#160;Only</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="FpPrint--enroll-date" role="property"><title>The <literal>“enroll-date”</literal> property</title>
+<indexterm zone="FpPrint--enroll-date"><primary>FpPrint:enroll-date</primary></indexterm>
+<programlisting>  “enroll-date”              <link linkend="GDate"><type>GDate</type></link>&#160;*</programlisting>
+<para>The date of enrollment.</para><para>Owner: FpPrint</para>
+<para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="FpPrint--finger" role="property"><title>The <literal>“finger”</literal> property</title>
+<indexterm zone="FpPrint--finger"><primary>FpPrint:finger</primary></indexterm>
+<programlisting>  “finger”                   <link linkend="FpFinger"><type>FpFinger</type></link></programlisting>
+<para>The enrolled finger.</para><para>Owner: FpPrint</para>
+<para>Flags: Read / Write</para>
+<para>Default value: FP_FINGER_UNKNOWN</para>
+</refsect2>
+<refsect2 id="FpPrint--fpi-data" role="property"><title>The <literal>“fpi-data”</literal> property</title>
+<indexterm zone="FpPrint--fpi-data"><primary>FpPrint:fpi-data</primary></indexterm>
+<programlisting>  “fpi-data”                 <link linkend="GVariant"><type>GVariant</type></link>&#160;*</programlisting>
+<para>The raw data for internal use only.</para><para>Owner: FpPrint</para>
+<para>Flags: Read / Write</para>
+<para>Allowed values: GVariant&lt;*&gt;</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="FpPrint--fpi-prints" role="property"><title>The <literal>“fpi-prints”</literal> property</title>
+<indexterm zone="FpPrint--fpi-prints"><primary>FpPrint:fpi-prints</primary></indexterm>
+<programlisting>  “fpi-prints”               <link linkend="gpointer"><type>gpointer</type></link></programlisting>
+<para>Prints for internal use only.</para><para>Owner: FpPrint</para>
+<para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="FpPrint--fpi-type" role="property"><title>The <literal>“fpi-type”</literal> property</title>
+<indexterm zone="FpPrint--fpi-type"><primary>FpPrint:fpi-type</primary></indexterm>
+<programlisting>  “fpi-type”                 <link linkend="FpiPrintType"><type>FpiPrintType</type></link></programlisting>
+<para>Private: The type of the print data.</para><para>Owner: FpPrint</para>
+<para>Flags: Read / Write</para>
+<para>Default value: FPI_PRINT_UNDEFINED</para>
+</refsect2>
+<refsect2 id="FpPrint--image" role="property"><title>The <literal>“image”</literal> property</title>
+<indexterm zone="FpPrint--image"><primary>FpPrint:image</primary></indexterm>
+<programlisting>  “image”                    <link linkend="FpImage"><type>FpImage</type></link>&#160;*</programlisting>
+<para>The image that was used for the print, only valid for newly enrolled prints on image based devices.</para><para>Owner: FpPrint</para>
+<para>Flags: Read</para>
+</refsect2>
+<refsect2 id="FpPrint--username" role="property"><title>The <literal>“username”</literal> property</title>
+<indexterm zone="FpPrint--username"><primary>FpPrint:username</primary></indexterm>
+<programlisting>  “username”                 <link linkend="char"><type>char</type></link>&#160;*</programlisting>
+<para>The username that the enrolled print belongs to.</para><para>Owner: FpPrint</para>
+<para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

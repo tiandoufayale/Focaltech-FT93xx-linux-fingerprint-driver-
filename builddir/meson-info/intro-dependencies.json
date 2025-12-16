@@ -1,0 +1,325 @@
+[
+  {
+    "name": "glib-2.0",
+    "type": "pkgconfig",
+    "version": "2.86.0",
+    "compile_args": [
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/x86_64-linux-gnu/glib-2.0/include",
+      "-I/usr/include/sysprof-6",
+      "-pthread"
+    ],
+    "link_args": [
+      "/usr/lib/x86_64-linux-gnu/libglib-2.0.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": [
+      "glib_dep"
+    ]
+  },
+  {
+    "name": "gio-unix-2.0",
+    "type": "pkgconfig",
+    "version": "2.86.0",
+    "compile_args": [
+      "-I/usr/include/gio-unix-2.0",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/x86_64-linux-gnu/glib-2.0/include",
+      "-I/usr/include/sysprof-6",
+      "-I/usr/include/libmount",
+      "-I/usr/include/blkid",
+      "-pthread"
+    ],
+    "link_args": [
+      "/usr/lib/x86_64-linux-gnu/libgio-2.0.so",
+      "/usr/lib/x86_64-linux-gnu/libgobject-2.0.so",
+      "/usr/lib/x86_64-linux-gnu/libglib-2.0.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": [
+      "gio_dep"
+    ]
+  },
+  {
+    "name": "gobject-2.0",
+    "type": "pkgconfig",
+    "version": "2.86.0",
+    "compile_args": [
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/x86_64-linux-gnu/glib-2.0/include",
+      "-I/usr/include/sysprof-6",
+      "-pthread"
+    ],
+    "link_args": [
+      "/usr/lib/x86_64-linux-gnu/libgobject-2.0.so",
+      "/usr/lib/x86_64-linux-gnu/libglib-2.0.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": [
+      "gobject_dep"
+    ]
+  },
+  {
+    "name": "gusb",
+    "type": "pkgconfig",
+    "version": "0.4.9",
+    "compile_args": [
+      "-I/usr/include/gusb-1",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/x86_64-linux-gnu/glib-2.0/include",
+      "-I/usr/include/sysprof-6",
+      "-I/usr/include/libmount",
+      "-I/usr/include/blkid",
+      "-I/usr/include/libusb-1.0",
+      "-I/usr/include/json-glib-1.0",
+      "-pthread"
+    ],
+    "link_args": [
+      "/usr/lib/x86_64-linux-gnu/libgusb.so",
+      "/usr/lib/x86_64-linux-gnu/libusb-1.0.so",
+      "/usr/lib/x86_64-linux-gnu/libjson-glib-1.0.so",
+      "/usr/lib/x86_64-linux-gnu/libgio-2.0.so",
+      "/usr/lib/x86_64-linux-gnu/libgobject-2.0.so",
+      "/usr/lib/x86_64-linux-gnu/libglib-2.0.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": [
+      "gusb_dep"
+    ]
+  },
+  {
+    "name": "cairo",
+    "type": "pkgconfig",
+    "version": "1.18.4",
+    "compile_args": [
+      "-I/usr/include/cairo",
+      "-I/usr/include/libpng16",
+      "-I/usr/include/freetype2",
+      "-I/usr/include/pixman-1"
+    ],
+    "link_args": [
+      "/usr/lib/x86_64-linux-gnu/libcairo.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": [
+      "cairo_dep",
+      "dep"
+    ]
+  },
+  {
+    "name": "gobject-introspection-1.0",
+    "type": "pkgconfig",
+    "version": "1.84.0",
+    "compile_args": [
+      "-I/usr/include/gobject-introspection-1.0",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/x86_64-linux-gnu/glib-2.0/include",
+      "-I/usr/include/sysprof-6",
+      "-pthread"
+    ],
+    "link_args": [
+      "/usr/lib/x86_64-linux-gnu/libgirepository-1.0.so",
+      "/usr/lib/x86_64-linux-gnu/libgobject-2.0.so",
+      "/usr/lib/x86_64-linux-gnu/libglib-2.0.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": [
+      "gobject_introspection"
+    ]
+  },
+  {
+    "name": "pixman-1",
+    "type": "pkgconfig",
+    "version": "0.44.0",
+    "compile_args": [
+      "-I/usr/include/pixman-1"
+    ],
+    "link_args": [
+      "/usr/lib/x86_64-linux-gnu/libpixman-1.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": [
+      "imaging_dep"
+    ]
+  },
+  {
+    "name": "openssl",
+    "type": "pkgconfig",
+    "version": "3.5.3",
+    "compile_args": [],
+    "link_args": [
+      "/usr/lib/x86_64-linux-gnu/libssl.so",
+      "/usr/lib/x86_64-linux-gnu/libcrypto.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": [
+      "openssl_dep"
+    ]
+  },
+  {
+    "name": "gudev-1.0",
+    "type": "pkgconfig",
+    "version": "238",
+    "compile_args": [
+      "-I/usr/include/gudev-1.0",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/x86_64-linux-gnu/glib-2.0/include",
+      "-I/usr/include/sysprof-6",
+      "-pthread"
+    ],
+    "link_args": [
+      "/usr/lib/x86_64-linux-gnu/libgudev-1.0.so",
+      "/usr/lib/x86_64-linux-gnu/libgobject-2.0.so",
+      "/usr/lib/x86_64-linux-gnu/libglib-2.0.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": [
+      "gudev_dep"
+    ]
+  },
+  {
+    "name": "udev",
+    "type": "pkgconfig",
+    "version": "257",
+    "compile_args": [],
+    "link_args": [],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": [
+      "udev_dep",
+      "udev_versioned_dep"
+    ]
+  },
+  {
+    "name": "m",
+    "type": "library",
+    "version": "unknown",
+    "compile_args": [],
+    "link_args": [
+      "-lm"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": [
+      "mathlib_dep"
+    ]
+  },
+  {
+    "name": "dep68993493361494530642623393663349586757",
+    "type": "internal",
+    "version": "1.94.9",
+    "compile_args": [],
+    "link_args": [],
+    "include_directories": [],
+    "sources": [
+      "fp-enums.h",
+      "fpi-enums.h"
+    ],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": [
+      "enums_dep"
+    ]
+  },
+  {
+    "name": "dep303925995579942119289994943813658058764",
+    "type": "internal",
+    "version": "1.94.9",
+    "compile_args": [],
+    "link_args": [],
+    "include_directories": [
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/.",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/."
+    ],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [
+      "dep68993493361494530642623393663349586757",
+      "gio-unix-2.0",
+      "glib-2.0",
+      "gobject-2.0",
+      "gusb"
+    ],
+    "depends": [
+      "642ed89@@fprint-2@sha"
+    ],
+    "meson_variables": [
+      "libfprint_dep"
+    ]
+  },
+  {
+    "name": "dep49893705420132242735741300327738348615",
+    "type": "internal",
+    "version": "1.94.9",
+    "compile_args": [],
+    "link_args": [],
+    "include_directories": [
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/libfprint/.",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint/."
+    ],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [
+      "dep68993493361494530642623393663349586757",
+      "gio-unix-2.0",
+      "glib-2.0",
+      "gobject-2.0",
+      "gusb",
+      "m",
+      "pixman-1",
+      "openssl",
+      "gudev-1.0",
+      "dep209298268672873054566536329964544768372",
+      "dep303925995579942119289994943813658058764"
+    ],
+    "depends": [
+      "642ed89@@fprint-private@sta"
+    ],
+    "meson_variables": [
+      "libfprint_private_dep"
+    ]
+  }
+]

@@ -1,0 +1,1611 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
+[
+  <!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+]>
+<refentry id="libfprint-2-Internal-FpDevice">
+<refmeta>
+<refentrytitle role="top_of_page" id="libfprint-2-Internal-FpDevice.top_of_page">Internal FpDevice</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBFPRINT-2 Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>Internal FpDevice</refname>
+<refpurpose>Internal device routines</refpurpose>
+</refnamediv>
+
+<refsect1 id="libfprint-2-Internal-FpDevice.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_proto_type" colwidth="150px"/>
+<colspec colname="functions_proto_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="FpTimeoutFunc">*FpTimeoutFunc</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GUsbDevice"><returnvalue>GUsbDevice</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fpi-device-get-usb-device">fpi_device_get_usb_device</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gpointer"><returnvalue>gpointer</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-device-get-udev-data">fpi_device_get_udev_data</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fpi-device-get-virtual-env">fpi_device_get_virtual_env</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="FpiDeviceAction"><returnvalue>FpiDeviceAction</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-device-get-current-action">fpi_device_get_current_action</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GError"><returnvalue>GError</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fpi-device-retry-new">fpi_device_retry_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GError"><returnvalue>GError</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fpi-device-error-new">fpi_device_error_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GError"><returnvalue>GError</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fpi-device-retry-new-msg">fpi_device_retry_new_msg</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GError"><returnvalue>GError</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fpi-device-error-new-msg">fpi_device_error_new_msg</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint64"><returnvalue>guint64</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-device-get-driver-data">fpi_device_get_driver_data</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-device-get-enroll-data">fpi_device_get_enroll_data</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-device-get-capture-data">fpi_device_get_capture_data</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-device-get-verify-data">fpi_device_get_verify_data</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-device-get-identify-data">fpi_device_get_identify_data</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-device-get-delete-data">fpi_device_get_delete_data</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GCancellable"><returnvalue>GCancellable</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fpi-device-get-cancellable">fpi_device_get_cancellable</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-device-action-is-cancelled">fpi_device_action_is_cancelled</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GSource"><returnvalue>GSource</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fpi-device-add-timeout">fpi_device_add_timeout</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-device-set-nr-enroll-stages">fpi_device_set_nr_enroll_stages</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-device-set-scan-type">fpi_device_set_scan_type</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-device-update-features">fpi_device_update_features</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-device-critical-enter">fpi_device_critical_enter</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-device-critical-leave">fpi_device_critical_leave</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-device-remove">fpi_device_remove</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-device-report-finger-status">fpi_device_report_finger_status</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-device-report-finger-status-changes">fpi_device_report_finger_status_changes</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-device-action-error">fpi_device_action_error</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-device-probe-complete">fpi_device_probe_complete</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-device-open-complete">fpi_device_open_complete</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-device-close-complete">fpi_device_close_complete</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-device-enroll-complete">fpi_device_enroll_complete</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-device-verify-complete">fpi_device_verify_complete</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-device-identify-complete">fpi_device_identify_complete</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-device-capture-complete">fpi_device_capture_complete</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-device-clear-storage-complete">fpi_device_clear_storage_complete</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-device-delete-complete">fpi_device_delete_complete</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-device-list-complete">fpi_device_list_complete</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-device-suspend-complete">fpi_device_suspend_complete</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-device-resume-complete">fpi_device_resume_complete</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-device-enroll-progress">fpi_device_enroll_progress</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-device-verify-report">fpi_device_verify_report</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-device-identify-report">fpi_device_identify_report</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-device-class-auto-initialize-features">fpi_device_class_auto_initialize_features</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="libfprint-2-Internal-FpDevice.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="other_proto_type" colwidth="150px"/>
+<colspec colname="other_proto_name"/>
+<tbody>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="FpDeviceClass">FpDeviceClass</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="FpiDeviceAction">FpiDeviceAction</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="FpIdEntry">FpIdEntry</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="FpiDeviceUdevSubtypeFlags">FpiDeviceUdevSubtypeFlags</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+
+<refsect1 id="libfprint-2-Internal-FpDevice.description" role="desc">
+<title role="desc.title">Description</title>
+<para>The methods that are available for drivers to manipulate a device. See
+<link linkend="FpDeviceClass"><type>FpDeviceClass</type></link> for more information. Also note that most of these are
+not relevant for image based devices, see <link linkend="FpImageDeviceClass"><type>FpImageDeviceClass</type></link> in that
+case.</para>
+<para>Also see the public <link linkend="FpDevice"><type>FpDevice</type></link> routines.</para>
+
+</refsect1>
+<refsect1 id="libfprint-2-Internal-FpDevice.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="FpTimeoutFunc" role="function">
+<title>FpTimeoutFunc&#160;()</title>
+<indexterm zone="FpTimeoutFunc"><primary>FpTimeoutFunc</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*FpTimeoutFunc<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                  <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>The prototype of the callback function for <link linkend="fpi-device-add-timeout"><function>fpi_device_add_timeout()</function></link>.</para>
+<refsect3 id="FpTimeoutFunc.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link> passed to <link linkend="fpi-device-add-timeout"><function>fpi_device_add_timeout()</function></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>the data passed to <link linkend="fpi-device-add-timeout"><function>fpi_device_add_timeout()</function></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-get-usb-device" role="function">
+<title>fpi_device_get_usb_device&#160;()</title>
+<indexterm zone="fpi-device-get-usb-device"><primary>fpi_device_get_usb_device</primary></indexterm>
+<programlisting language="C"><link linkend="GUsbDevice"><returnvalue>GUsbDevice</returnvalue></link>&#160;*
+fpi_device_get_usb_device (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>);</programlisting>
+<para>Get the <link linkend="GUsbDevice"><type>GUsbDevice</type></link> for this <link linkend="FpDevice"><type>FpDevice</type></link>. Only permissible to call if the
+<link linkend="FpDevice"><type>FpDevice</type></link> is of type <link linkend="FP-DEVICE-TYPE-USB:CAPS"><literal>FP_DEVICE_TYPE_USB</literal></link>.</para>
+<refsect3 id="fpi-device-get-usb-device.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fpi-device-get-usb-device.returns" role="returns">
+<title>Returns</title>
+<para> The <link linkend="GUsbDevice"><type>GUsbDevice</type></link></para>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-get-udev-data" role="function">
+<title>fpi_device_get_udev_data&#160;()</title>
+<indexterm zone="fpi-device-get-udev-data"><primary>fpi_device_get_udev_data</primary></indexterm>
+<programlisting language="C"><link linkend="gpointer"><returnvalue>gpointer</returnvalue></link>
+fpi_device_get_udev_data (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                          <parameter><link linkend="FpiDeviceUdevSubtypeFlags"><type>FpiDeviceUdevSubtypeFlags</type></link> subtype</parameter>);</programlisting>
+<para>Get a subtype-specific hardware resource for this <link linkend="FpDevice"><type>FpDevice</type></link>. Only permissible to call if the
+<link linkend="FpDevice"><type>FpDevice</type></link> is of type <link linkend="FP-DEVICE-TYPE-UDEV:CAPS"><literal>FP_DEVICE_TYPE_UDEV</literal></link>.</para>
+<refsect3 id="fpi-device-get-udev-data.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>subtype</para></entry>
+<entry role="parameter_description"><para>Which subtype to get information about</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fpi-device-get-udev-data.returns" role="returns">
+<title>Returns</title>
+<para> Depends on <parameter>subtype</parameter>
+; for SPIDEV/HIDRAW returns a path to the relevant device.</para>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-get-virtual-env" role="function">
+<title>fpi_device_get_virtual_env&#160;()</title>
+<indexterm zone="fpi-device-get-virtual-env"><primary>fpi_device_get_virtual_env</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+fpi_device_get_virtual_env (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>);</programlisting>
+<para>Get the value of the environment variable that caused the virtual <link linkend="FpDevice"><type>FpDevice</type></link> to be
+generated. Only permissible to call if the <link linkend="FpDevice"><type>FpDevice</type></link> is of type <link linkend="FP-DEVICE-TYPE-VIRTUAL:CAPS"><literal>FP_DEVICE_TYPE_VIRTUAL</literal></link>.</para>
+<refsect3 id="fpi-device-get-virtual-env.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fpi-device-get-virtual-env.returns" role="returns">
+<title>Returns</title>
+<para> The value of the environment variable</para>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-get-current-action" role="function">
+<title>fpi_device_get_current_action&#160;()</title>
+<indexterm zone="fpi-device-get-current-action"><primary>fpi_device_get_current_action</primary></indexterm>
+<programlisting language="C"><link linkend="FpiDeviceAction"><returnvalue>FpiDeviceAction</returnvalue></link>
+fpi_device_get_current_action (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>);</programlisting>
+<para>Get the currently ongoing action or <link linkend="FPI-DEVICE-ACTION-NONE:CAPS"><literal>FPI_DEVICE_ACTION_NONE</literal></link> if there
+is no operation at this time.</para>
+<para>This is useful for drivers that might share code paths between different
+actions (e.g. verify and identify) and want to find out again later which
+action was started in the beginning.</para>
+<refsect3 id="fpi-device-get-current-action.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fpi-device-get-current-action.returns" role="returns">
+<title>Returns</title>
+<para> The ongoing <link linkend="FpiDeviceAction"><type>FpiDeviceAction</type></link></para>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-retry-new" role="function">
+<title>fpi_device_retry_new&#160;()</title>
+<indexterm zone="fpi-device-retry-new"><primary>fpi_device_retry_new</primary></indexterm>
+<programlisting language="C"><link linkend="GError"><returnvalue>GError</returnvalue></link>&#160;*
+fpi_device_retry_new (<parameter><link linkend="FpDeviceRetry"><type>FpDeviceRetry</type></link> error</parameter>);</programlisting>
+<para>Create a new retry error code for use with <link linkend="fpi-device-verify-complete"><function>fpi_device_verify_complete()</function></link>
+and similar calls.</para>
+<refsect3 id="fpi-device-retry-new.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDeviceRetry"><type>FpDeviceRetry</type></link> error value describing the issue</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-error-new" role="function">
+<title>fpi_device_error_new&#160;()</title>
+<indexterm zone="fpi-device-error-new"><primary>fpi_device_error_new</primary></indexterm>
+<programlisting language="C"><link linkend="GError"><returnvalue>GError</returnvalue></link>&#160;*
+fpi_device_error_new (<parameter><link linkend="FpDeviceError"><type>FpDeviceError</type></link> error</parameter>);</programlisting>
+<para>Create a new error code for use with <link linkend="fpi-device-verify-complete"><function>fpi_device_verify_complete()</function></link> and
+similar calls.</para>
+<refsect3 id="fpi-device-error-new.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDeviceRetry"><type>FpDeviceRetry</type></link> error value describing the issue</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-retry-new-msg" role="function">
+<title>fpi_device_retry_new_msg&#160;()</title>
+<indexterm zone="fpi-device-retry-new-msg"><primary>fpi_device_retry_new_msg</primary></indexterm>
+<programlisting language="C"><link linkend="GError"><returnvalue>GError</returnvalue></link>&#160;*
+fpi_device_retry_new_msg (<parameter><link linkend="FpDeviceRetry"><type>FpDeviceRetry</type></link> error</parameter>,
+                          <parameter>const <link linkend="gchar"><type>gchar</type></link> *msg</parameter>,
+                          <parameter>...</parameter>);</programlisting>
+<para>Create a new retry error code for use with <link linkend="fpi-device-verify-complete"><function>fpi_device_verify_complete()</function></link>
+and similar calls.</para>
+<refsect3 id="fpi-device-retry-new-msg.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDeviceRetry"><type>FpDeviceRetry</type></link> error value describing the issue</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>msg</para></entry>
+<entry role="parameter_description"><para>Custom message to use with printf-style formatting</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>args for <parameter>msg</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-error-new-msg" role="function">
+<title>fpi_device_error_new_msg&#160;()</title>
+<indexterm zone="fpi-device-error-new-msg"><primary>fpi_device_error_new_msg</primary></indexterm>
+<programlisting language="C"><link linkend="GError"><returnvalue>GError</returnvalue></link>&#160;*
+fpi_device_error_new_msg (<parameter><link linkend="FpDeviceError"><type>FpDeviceError</type></link> error</parameter>,
+                          <parameter>const <link linkend="gchar"><type>gchar</type></link> *msg</parameter>,
+                          <parameter>...</parameter>);</programlisting>
+<para>Create a new error code for use with <link linkend="fpi-device-verify-complete"><function>fpi_device_verify_complete()</function></link>
+and similar calls.</para>
+<refsect3 id="fpi-device-error-new-msg.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDeviceRetry"><type>FpDeviceRetry</type></link> error value describing the issue</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>msg</para></entry>
+<entry role="parameter_description"><para>Custom message to use with printf-style formatting</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>args for <parameter>msg</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-get-driver-data" role="function">
+<title>fpi_device_get_driver_data&#160;()</title>
+<indexterm zone="fpi-device-get-driver-data"><primary>fpi_device_get_driver_data</primary></indexterm>
+<programlisting language="C"><link linkend="guint64"><returnvalue>guint64</returnvalue></link>
+fpi_device_get_driver_data (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>);</programlisting>
+<refsect3 id="fpi-device-get-driver-data.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fpi-device-get-driver-data.returns" role="returns">
+<title>Returns</title>
+<para> The driver data from the <link linkend="FpIdEntry"><type>FpIdEntry</type></link> table entry</para>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-get-enroll-data" role="function">
+<title>fpi_device_get_enroll_data&#160;()</title>
+<indexterm zone="fpi-device-get-enroll-data"><primary>fpi_device_get_enroll_data</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_device_get_enroll_data (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                            <parameter><link linkend="FpPrint"><type>FpPrint</type></link> **print</parameter>);</programlisting>
+<para>Get data for enrollment.</para>
+<refsect3 id="fpi-device-get-enroll-data.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>print</para></entry>
+<entry role="parameter_description"><para>The user provided template print. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-get-capture-data" role="function">
+<title>fpi_device_get_capture_data&#160;()</title>
+<indexterm zone="fpi-device-get-capture-data"><primary>fpi_device_get_capture_data</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_device_get_capture_data (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                             <parameter><link linkend="gboolean"><type>gboolean</type></link> *wait_for_finger</parameter>);</programlisting>
+<para>Get data for capture.</para>
+<refsect3 id="fpi-device-get-capture-data.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>wait_for_finger</para></entry>
+<entry role="parameter_description"><para>Whether to wait for finger or not. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-get-verify-data" role="function">
+<title>fpi_device_get_verify_data&#160;()</title>
+<indexterm zone="fpi-device-get-verify-data"><primary>fpi_device_get_verify_data</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_device_get_verify_data (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                            <parameter><link linkend="FpPrint"><type>FpPrint</type></link> **print</parameter>);</programlisting>
+<para>Get data for verify.</para>
+<refsect3 id="fpi-device-get-verify-data.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>print</para></entry>
+<entry role="parameter_description"><para>The enrolled print. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-get-identify-data" role="function">
+<title>fpi_device_get_identify_data&#160;()</title>
+<indexterm zone="fpi-device-get-identify-data"><primary>fpi_device_get_identify_data</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_device_get_identify_data (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                              <parameter><link linkend="GPtrArray"><type>GPtrArray</type></link> **prints</parameter>);</programlisting>
+<para>Get prints gallery for identification.</para>
+<para>The <parameter>prints</parameter>
+ array is always non-<link linkend="NULL:CAPS"><literal>NULL</literal></link> and may contain a list of <link linkend="FpPrint"><type>FpPrint</type></link>'s
+that the device should match against.</para>
+<para>Note that <parameter>prints</parameter>
+ can be an empty array, in such case the device is expected
+to report the scanned print matching the one in its internal storage, if any.</para>
+<refsect3 id="fpi-device-get-identify-data.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>prints</para></entry>
+<entry role="parameter_description"><para>The gallery of prints. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>transfer none</acronym>][<acronym>element-type</acronym> FpPrint]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-get-delete-data" role="function">
+<title>fpi_device_get_delete_data&#160;()</title>
+<indexterm zone="fpi-device-get-delete-data"><primary>fpi_device_get_delete_data</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_device_get_delete_data (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                            <parameter><link linkend="FpPrint"><type>FpPrint</type></link> **print</parameter>);</programlisting>
+<para>Get data for delete.</para>
+<refsect3 id="fpi-device-get-delete-data.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>print</para></entry>
+<entry role="parameter_description"><para>The print to delete. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-get-cancellable" role="function">
+<title>fpi_device_get_cancellable&#160;()</title>
+<indexterm zone="fpi-device-get-cancellable"><primary>fpi_device_get_cancellable</primary></indexterm>
+<programlisting language="C"><link linkend="GCancellable"><returnvalue>GCancellable</returnvalue></link>&#160;*
+fpi_device_get_cancellable (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>);</programlisting>
+<para>Retrieve the <link linkend="GCancellable"><type>GCancellable</type></link> that may cancel the currently ongoing operation. This
+is primarily useful to pass directly to e.g. <link linkend="fpi-usb-transfer-submit"><function>fpi_usb_transfer_submit()</function></link> for cancellable
+transfers.
+In many cases the cancel vfunc may be more convenient to react to cancellation in some
+way.</para>
+<refsect3 id="fpi-device-get-cancellable.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fpi-device-get-cancellable.returns" role="returns">
+<title>Returns</title>
+<para>The <link linkend="GCancellable"><type>GCancellable</type></link> for the current action. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-action-is-cancelled" role="function">
+<title>fpi_device_action_is_cancelled&#160;()</title>
+<indexterm zone="fpi-device-action-is-cancelled"><primary>fpi_device_action_is_cancelled</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+fpi_device_action_is_cancelled (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>);</programlisting>
+<para>Checks whether the current action has been cancelled by the user.
+This is equivalent to first getting the cancellable using
+<link linkend="fpi-device-get-cancellable"><function>fpi_device_get_cancellable()</function></link> and then checking whether it has been
+cancelled (if it is non-NULL).</para>
+<refsect3 id="fpi-device-action-is-cancelled.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fpi-device-action-is-cancelled.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if action should be cancelled</para>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-add-timeout" role="function">
+<title>fpi_device_add_timeout&#160;()</title>
+<indexterm zone="fpi-device-add-timeout"><primary>fpi_device_add_timeout</primary></indexterm>
+<programlisting language="C"><link linkend="GSource"><returnvalue>GSource</returnvalue></link>&#160;*
+fpi_device_add_timeout (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                        <parameter><link linkend="gint"><type>gint</type></link> interval</parameter>,
+                        <parameter><link linkend="FpTimeoutFunc"><type>FpTimeoutFunc</type></link> func</parameter>,
+                        <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>,
+                        <parameter><link linkend="GDestroyNotify"><type>GDestroyNotify</type></link> destroy_notify</parameter>);</programlisting>
+<para>Register a timeout to run. Drivers should always make sure that timers are
+cancelled when appropriate.</para>
+<refsect3 id="fpi-device-add-timeout.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>interval</para></entry>
+<entry role="parameter_description"><para>The interval in milliseconds</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>func</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpTimeoutFunc"><type>FpTimeoutFunc</type></link> to call on timeout</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>User data to pass to the callback. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>destroy_notify</para></entry>
+<entry role="parameter_description"><para><link linkend="GDestroyNotify"><type>GDestroyNotify</type></link> for <parameter>user_data</parameter>
+. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fpi-device-add-timeout.returns" role="returns">
+<title>Returns</title>
+<para>A newly created and attached <link linkend="GSource"><type>GSource</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-set-nr-enroll-stages" role="function">
+<title>fpi_device_set_nr_enroll_stages&#160;()</title>
+<indexterm zone="fpi-device-set-nr-enroll-stages"><primary>fpi_device_set_nr_enroll_stages</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_device_set_nr_enroll_stages (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                                 <parameter><link linkend="gint"><type>gint</type></link> enroll_stages</parameter>);</programlisting>
+<para>Updates the reported number of enroll stages that the device needs.
+If all supported devices have the same number of stages, then the
+value can simply be set in the class.</para>
+<refsect3 id="fpi-device-set-nr-enroll-stages.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>enroll_stages</para></entry>
+<entry role="parameter_description"><para>The number of enroll stages</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-set-scan-type" role="function">
+<title>fpi_device_set_scan_type&#160;()</title>
+<indexterm zone="fpi-device-set-scan-type"><primary>fpi_device_set_scan_type</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_device_set_scan_type (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                          <parameter><link linkend="FpScanType"><type>FpScanType</type></link> scan_type</parameter>);</programlisting>
+<para>Updates the the scan type of the device from the default.
+If all supported devices have the same scan type, then the
+value can simply be set in the class.</para>
+<refsect3 id="fpi-device-set-scan-type.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>scan_type</para></entry>
+<entry role="parameter_description"><para>The scan type of the device</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-update-features" role="function">
+<title>fpi_device_update_features&#160;()</title>
+<indexterm zone="fpi-device-update-features"><primary>fpi_device_update_features</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_device_update_features (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                            <parameter><link linkend="FpDeviceFeature"><type>FpDeviceFeature</type></link> update</parameter>,
+                            <parameter><link linkend="FpDeviceFeature"><type>FpDeviceFeature</type></link> value</parameter>);</programlisting>
+<para>Updates the feature flags for the device. This can be used
+to runtime detect features that are supported by the device.</para>
+<refsect3 id="fpi-device-update-features.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>update</para></entry>
+<entry role="parameter_description"><para>The feature flags to update</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>The value to set the flags to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-critical-enter" role="function">
+<title>fpi_device_critical_enter&#160;()</title>
+<indexterm zone="fpi-device-critical-enter"><primary>fpi_device_critical_enter</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_device_critical_enter (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>);</programlisting>
+<para>Enter a critical section in the driver code where no outside calls from
+libfprint should happen. Drivers can already assume that everything
+happens from the same thread, however, that still allows e.g. the cancel
+vfunc to be called at any point in time.</para>
+<para>Using this kind of critical section, the driver can assume that libfprint
+will not forward any external requests to the driver for the time being.
+This is for example useful to prevent cancellation while the device is being
+set up. Or, said differently, using this feature means that the cancel
+handler is able to make more assumptions about the current state.</para>
+<para>Please note that the driver is not shielded from all external changes. For
+example the cancellable as returned by <link linkend="fpi-device-get-cancellable"><function>fpi_device_get_cancellable()</function></link> will
+still change immediately.</para>
+<para>The driver may call this function multiple times, but must also ensure that
+<link linkend="fpi-device-critical-leave"><function>fpi_device_critical_leave()</function></link> is called an equal amount of times and that all
+critical sections are left before command completion.</para>
+<refsect3 id="fpi-device-critical-enter.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-critical-leave" role="function">
+<title>fpi_device_critical_leave&#160;()</title>
+<indexterm zone="fpi-device-critical-leave"><primary>fpi_device_critical_leave</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_device_critical_leave (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>);</programlisting>
+<para>Leave a critical section started by <link linkend="fpi-device-critical-enter"><function>fpi_device_critical_enter()</function></link>.</para>
+<para>Once all critical sections have been left, libfprint will start flushing
+out the queued up requests. This is done from the mainloop and the driver
+is protected from reentrency issues.</para>
+<refsect3 id="fpi-device-critical-leave.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-remove" role="function">
+<title>fpi_device_remove&#160;()</title>
+<indexterm zone="fpi-device-remove"><primary>fpi_device_remove</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_device_remove (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>);</programlisting>
+<para>Called to signal to the <link linkend="FpDevice"><type>FpDevice</type></link> that it has been unplugged (physically
+removed from the system).</para>
+<para>For USB devices, this API is called automatically by <link linkend="FpContext"><type>FpContext</type></link>.</para>
+<refsect3 id="fpi-device-remove.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-report-finger-status" role="function">
+<title>fpi_device_report_finger_status&#160;()</title>
+<indexterm zone="fpi-device-report-finger-status"><primary>fpi_device_report_finger_status</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+fpi_device_report_finger_status (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                                 <parameter><link linkend="FpFingerStatusFlags"><type>FpFingerStatusFlags</type></link> finger_status</parameter>);</programlisting>
+<para>Report the finger status for the <parameter>device</parameter>
+.
+This can be used by UI to give a feedback</para>
+<refsect3 id="fpi-device-report-finger-status.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>finger_status</para></entry>
+<entry role="parameter_description"><para>The current <link linkend="FpFingerStatusFlags"><type>FpFingerStatusFlags</type></link> to report</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fpi-device-report-finger-status.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if changed</para>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-report-finger-status-changes" role="function">
+<title>fpi_device_report_finger_status_changes&#160;()</title>
+<indexterm zone="fpi-device-report-finger-status-changes"><primary>fpi_device_report_finger_status_changes</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+fpi_device_report_finger_status_changes
+                               (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                                <parameter><link linkend="FpFingerStatusFlags"><type>FpFingerStatusFlags</type></link> added_status</parameter>,
+                                <parameter><link linkend="FpFingerStatusFlags"><type>FpFingerStatusFlags</type></link> removed_status</parameter>);</programlisting>
+<para>Report the finger status for the <parameter>device</parameter>
+ adding the <parameter>added_status</parameter>
+ flags
+and removing the <parameter>removed_status</parameter>
+ flags.</para>
+<para>This can be used by UI to give a feedback</para>
+<refsect3 id="fpi-device-report-finger-status-changes.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>added_status</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpFingerStatusFlags"><type>FpFingerStatusFlags</type></link> to add</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>removed_status</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpFingerStatusFlags"><type>FpFingerStatusFlags</type></link> to remove</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fpi-device-report-finger-status-changes.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if changed</para>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-action-error" role="function">
+<title>fpi_device_action_error&#160;()</title>
+<indexterm zone="fpi-device-action-error"><primary>fpi_device_action_error</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_device_action_error (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                         <parameter><link linkend="GError"><type>GError</type></link> *error</parameter>);</programlisting>
+<para>Finish an ongoing action with an error. This is the same as calling
+the corresponding complete function such as <link linkend="fpi-device-open-complete"><function>fpi_device_open_complete()</function></link>
+with an error set. If possible, use the correct complete function as
+that results in improved error detection.</para>
+<refsect3 id="fpi-device-action-error.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GError"><type>GError</type></link> to return</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-probe-complete" role="function">
+<title>fpi_device_probe_complete&#160;()</title>
+<indexterm zone="fpi-device-probe-complete"><primary>fpi_device_probe_complete</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_device_probe_complete (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                           <parameter>const <link linkend="gchar"><type>gchar</type></link> *device_id</parameter>,
+                           <parameter>const <link linkend="gchar"><type>gchar</type></link> *device_name</parameter>,
+                           <parameter><link linkend="GError"><type>GError</type></link> *error</parameter>);</programlisting>
+<para>Finish an ongoing probe operation. If error is <link linkend="NULL:CAPS"><literal>NULL</literal></link> success is assumed.</para>
+<refsect3 id="fpi-device-probe-complete.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>device_id</para></entry>
+<entry role="parameter_description"><para>Unique ID for the device or <link linkend="NULL:CAPS"><literal>NULL</literal></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>device_name</para></entry>
+<entry role="parameter_description"><para>Human readable name or <link linkend="NULL:CAPS"><literal>NULL</literal></link> for driver name</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GError"><type>GError</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link> on success. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-open-complete" role="function">
+<title>fpi_device_open_complete&#160;()</title>
+<indexterm zone="fpi-device-open-complete"><primary>fpi_device_open_complete</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_device_open_complete (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                          <parameter><link linkend="GError"><type>GError</type></link> *error</parameter>);</programlisting>
+<para>Finish an ongoing open operation. If error is <link linkend="NULL:CAPS"><literal>NULL</literal></link> success is assumed.</para>
+<refsect3 id="fpi-device-open-complete.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GError"><type>GError</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link> on success. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-close-complete" role="function">
+<title>fpi_device_close_complete&#160;()</title>
+<indexterm zone="fpi-device-close-complete"><primary>fpi_device_close_complete</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_device_close_complete (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                           <parameter><link linkend="GError"><type>GError</type></link> *error</parameter>);</programlisting>
+<para>Finish an ongoing close operation. If error is <link linkend="NULL:CAPS"><literal>NULL</literal></link> success is assumed.</para>
+<refsect3 id="fpi-device-close-complete.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GError"><type>GError</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link> on success. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-enroll-complete" role="function">
+<title>fpi_device_enroll_complete&#160;()</title>
+<indexterm zone="fpi-device-enroll-complete"><primary>fpi_device_enroll_complete</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_device_enroll_complete (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                            <parameter><link linkend="FpPrint"><type>FpPrint</type></link> *print</parameter>,
+                            <parameter><link linkend="GError"><type>GError</type></link> *error</parameter>);</programlisting>
+<para>Finish an ongoing enroll operation. The <link linkend="FpPrint"><type>FpPrint</type></link> can be stored by the
+caller for later verification.</para>
+<refsect3 id="fpi-device-enroll-complete.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>print</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpPrint"><type>FpPrint</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link> on failure. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GError"><type>GError</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link> on success. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-verify-complete" role="function">
+<title>fpi_device_verify_complete&#160;()</title>
+<indexterm zone="fpi-device-verify-complete"><primary>fpi_device_verify_complete</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_device_verify_complete (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                            <parameter><link linkend="GError"><type>GError</type></link> *error</parameter>);</programlisting>
+<para>Finish an ongoing verify operation.</para>
+<para>Note that <parameter>error</parameter>
+ should only be set for actual errors. In the case
+of retry errors, report these using <link linkend="fpi-device-verify-report"><function>fpi_device_verify_report()</function></link>
+and then call this function without any error argument.</para>
+<para>If <parameter>error</parameter>
+ is not set, we expect that a result (and print, in case)
+have been already reported via <link linkend="fpi-device-verify-report"><function>fpi_device_verify_report()</function></link>.</para>
+<refsect3 id="fpi-device-verify-complete.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GError"><type>GError</type></link> if result is <link linkend="FPI-MATCH-ERROR:CAPS"><literal>FPI_MATCH_ERROR</literal></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-identify-complete" role="function">
+<title>fpi_device_identify_complete&#160;()</title>
+<indexterm zone="fpi-device-identify-complete"><primary>fpi_device_identify_complete</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_device_identify_complete (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                              <parameter><link linkend="GError"><type>GError</type></link> *error</parameter>);</programlisting>
+<para>Finish an ongoing identify operation.</para>
+<para>Note that <parameter>error</parameter>
+ should only be set for actual errors. In the case
+of retry errors, report these using <link linkend="fpi-device-identify-report"><function>fpi_device_identify_report()</function></link>
+and then call this function without any error argument.</para>
+<para>If <parameter>error</parameter>
+ is not set, we expect that a match and / or a print have been
+already reported via <link linkend="fpi-device-identify-report"><function>fpi_device_identify_report()</function></link></para>
+<refsect3 id="fpi-device-identify-complete.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GError"><type>GError</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link> on success. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-capture-complete" role="function">
+<title>fpi_device_capture_complete&#160;()</title>
+<indexterm zone="fpi-device-capture-complete"><primary>fpi_device_capture_complete</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_device_capture_complete (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                             <parameter><link linkend="FpImage"><type>FpImage</type></link> *image</parameter>,
+                             <parameter><link linkend="GError"><type>GError</type></link> *error</parameter>);</programlisting>
+<para>Finish an ongoing capture operation.</para>
+<refsect3 id="fpi-device-capture-complete.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>image</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpImage"><type>FpImage</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> on error</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GError"><type>GError</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link> on success. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-clear-storage-complete" role="function">
+<title>fpi_device_clear_storage_complete&#160;()</title>
+<indexterm zone="fpi-device-clear-storage-complete"><primary>fpi_device_clear_storage_complete</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_device_clear_storage_complete (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                                   <parameter><link linkend="GError"><type>GError</type></link> *error</parameter>);</programlisting>
+<para>Finish an ongoing clear_storage operation.</para>
+<refsect3 id="fpi-device-clear-storage-complete.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GError"><type>GError</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link> on success. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-delete-complete" role="function">
+<title>fpi_device_delete_complete&#160;()</title>
+<indexterm zone="fpi-device-delete-complete"><primary>fpi_device_delete_complete</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_device_delete_complete (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                            <parameter><link linkend="GError"><type>GError</type></link> *error</parameter>);</programlisting>
+<para>Finish an ongoing delete operation.</para>
+<refsect3 id="fpi-device-delete-complete.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GError"><type>GError</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link> on success. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-list-complete" role="function">
+<title>fpi_device_list_complete&#160;()</title>
+<indexterm zone="fpi-device-list-complete"><primary>fpi_device_list_complete</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_device_list_complete (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                          <parameter><link linkend="GPtrArray"><type>GPtrArray</type></link> *prints</parameter>,
+                          <parameter><link linkend="GError"><type>GError</type></link> *error</parameter>);</programlisting>
+<para>Finish an ongoing list operation.</para>
+<para>Please note that the <parameter>prints</parameter>
+ array will be free'ed using
+<link linkend="g-ptr-array-unref"><function>g_ptr_array_unref()</function></link> and the elements are destroyed automatically.
+As such, you must use <link linkend="g-ptr-array-new-with-free-func"><function>g_ptr_array_new_with_free_func()</function></link> with
+<link linkend="g-object-unref"><function>g_object_unref()</function></link> as free func to create the array.</para>
+<refsect3 id="fpi-device-list-complete.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>prints</para></entry>
+<entry role="parameter_description"><para>Possibly empty array of prints or <link linkend="NULL:CAPS"><literal>NULL</literal></link> on error. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>element-type</acronym> FpPrint][<acronym>transfer container</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GError"><type>GError</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link> on success. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-suspend-complete" role="function">
+<title>fpi_device_suspend_complete&#160;()</title>
+<indexterm zone="fpi-device-suspend-complete"><primary>fpi_device_suspend_complete</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_device_suspend_complete (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                             <parameter><link linkend="GError"><type>GError</type></link> *error</parameter>);</programlisting>
+<para>Finish a suspend request. Only return a <link linkend="NULL:CAPS"><literal>NULL</literal></link> error if suspend has been
+correctly configured and the current action as returned by
+<link linkend="fpi-device-get-current-action"><function>fpi_device_get_current_action()</function></link> will continue to run after resume.</para>
+<para>In all other cases an error must be returned. Should this happen, the
+current action will be cancelled before the error is forwarded to the
+application.</para>
+<para>It is recommended to set <parameter>error</parameter>
+ to <link linkend="FP-ERROR-NOT-IMPLEMENTED:CAPS"><type>FP_ERROR_NOT_IMPLEMENTED</type></link>.</para>
+<refsect3 id="fpi-device-suspend-complete.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GError"><type>GError</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link> on success. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-resume-complete" role="function">
+<title>fpi_device_resume_complete&#160;()</title>
+<indexterm zone="fpi-device-resume-complete"><primary>fpi_device_resume_complete</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_device_resume_complete (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                            <parameter><link linkend="GError"><type>GError</type></link> *error</parameter>);</programlisting>
+<para>Finish a resume request.</para>
+<refsect3 id="fpi-device-resume-complete.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GError"><type>GError</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link> on success. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-enroll-progress" role="function">
+<title>fpi_device_enroll_progress&#160;()</title>
+<indexterm zone="fpi-device-enroll-progress"><primary>fpi_device_enroll_progress</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_device_enroll_progress (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                            <parameter><link linkend="gint"><type>gint</type></link> completed_stages</parameter>,
+                            <parameter><link linkend="FpPrint"><type>FpPrint</type></link> *print</parameter>,
+                            <parameter><link linkend="GError"><type>GError</type></link> *error</parameter>);</programlisting>
+<para>Notify about the progress of the enroll operation. This is important for UI interaction.
+The passed error may be used if a scan needs to be retried, use <link linkend="fpi-device-retry-new"><function>fpi_device_retry_new()</function></link>.</para>
+<refsect3 id="fpi-device-enroll-progress.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>completed_stages</para></entry>
+<entry role="parameter_description"><para>The number of stages that are completed at this point</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>print</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpPrint"><type>FpPrint</type></link> for the newly completed stage or <link linkend="NULL:CAPS"><literal>NULL</literal></link> on failure. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer floating</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GError"><type>GError</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link> on success. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-verify-report" role="function">
+<title>fpi_device_verify_report&#160;()</title>
+<indexterm zone="fpi-device-verify-report"><primary>fpi_device_verify_report</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_device_verify_report (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                          <parameter><link linkend="FpiMatchResult"><type>FpiMatchResult</type></link> result</parameter>,
+                          <parameter><link linkend="FpPrint"><type>FpPrint</type></link> *print</parameter>,
+                          <parameter><link linkend="GError"><type>GError</type></link> *error</parameter>);</programlisting>
+<para>Report the result of a verify operation. Note that the passed <parameter>error</parameter>
+ must be
+a retry error with the <link linkend="FP-DEVICE-RETRY:CAPS"><literal>FP_DEVICE_RETRY</literal></link> domain. For all other error cases,
+the error should passed to <link linkend="fpi-device-verify-complete"><function>fpi_device_verify_complete()</function></link>.</para>
+<refsect3 id="fpi-device-verify-report.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>result</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpiMatchResult"><type>FpiMatchResult</type></link> of the operation</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>print</para></entry>
+<entry role="parameter_description"><para>(transfer floating) The scanned <link linkend="FpPrint"><type>FpPrint</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GError"><type>GError</type></link> if result is <link linkend="FPI-MATCH-ERROR:CAPS"><literal>FPI_MATCH_ERROR</literal></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-identify-report" role="function">
+<title>fpi_device_identify_report&#160;()</title>
+<indexterm zone="fpi-device-identify-report"><primary>fpi_device_identify_report</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_device_identify_report (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                            <parameter><link linkend="FpPrint"><type>FpPrint</type></link> *match</parameter>,
+                            <parameter><link linkend="FpPrint"><type>FpPrint</type></link> *print</parameter>,
+                            <parameter><link linkend="GError"><type>GError</type></link> *error</parameter>);</programlisting>
+<para>Report the results of an identify operation.</para>
+<para>In case of successful identification <parameter>match</parameter>
+ is expected to be set to a
+<link linkend="FpPrint"><type>FpPrint</type></link> that matches one from the provided gallery, while <parameter>print</parameter>
+
+represents the scanned print and will be different.</para>
+<para>If there are no errors, it's expected that the device always reports the
+recognized <parameter>print</parameter>
+ even if there is no <parameter>match</parameter>
+ with the provided gallery (that
+can be potentially empty). This is required for application logic further
+up in the stack, such as for enroll-duplicate checking. <parameter>print</parameter>
+ needs to be
+sufficiently filled to do a comparison.</para>
+<para>In case of error, both <parameter>match</parameter>
+ and <parameter>print</parameter>
+ are expected to be <link linkend="NULL:CAPS"><literal>NULL</literal></link>.
+Note that the passed <parameter>error</parameter>
+ must be a retry error from the <link linkend="FP-DEVICE-RETRY:CAPS"><literal>FP_DEVICE_RETRY</literal></link>
+domain. For all other error cases, the error should passed to
+<link linkend="fpi-device-identify-complete"><function>fpi_device_identify_complete()</function></link>.</para>
+<refsect3 id="fpi-device-identify-report.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>match</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpPrint"><type>FpPrint</type></link> from the gallery that matched. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>print</para></entry>
+<entry role="parameter_description"><para>The scanned <link linkend="FpPrint"><type>FpPrint</type></link>, set in the absence
+of an error. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer floating</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GError"><type>GError</type></link> of <link linkend="FP-DEVICE-RETRY:CAPS"><literal>FP_DEVICE_RETRY</literal></link> type if <parameter>match</parameter>
+and <parameter>print</parameter>
+are unset.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-device-class-auto-initialize-features" role="function">
+<title>fpi_device_class_auto_initialize_features&#160;()</title>
+<indexterm zone="fpi-device-class-auto-initialize-features"><primary>fpi_device_class_auto_initialize_features</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_device_class_auto_initialize_features
+                               (<parameter><link linkend="FpDeviceClass"><type>FpDeviceClass</type></link> *device_class</parameter>);</programlisting>
+<para>Initializes the <link linkend="FpDeviceClass"><type>FpDeviceClass</type></link> <parameter>features</parameter>
+ flags checking what device vfuncs
+are implemented.
+Drivers should call this at the end of the class initialization.</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="libfprint-2-Internal-FpDevice.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="FpDeviceClass" role="struct">
+<title>FpDeviceClass</title>
+<indexterm zone="FpDeviceClass"><primary>FpDeviceClass</primary></indexterm>
+<programlisting language="C">typedef struct {
+  /* Static information about the driver. */
+  const gchar     *id;
+  const gchar     *full_name;
+  FpDeviceType     type;
+  const FpIdEntry *id_table;
+  FpDeviceFeature  features;
+
+  /* Defaults for device properties */
+  gint       nr_enroll_stages;
+  FpScanType scan_type;
+
+  /* Simple device temperature model constants */
+  gint32 temp_hot_seconds;
+  gint32 temp_cold_seconds;
+
+  /* Callbacks */
+  gint (*usb_discover) (GUsbDevice *usb_device);
+  void (*probe)    (FpDevice *device);
+  void (*open)     (FpDevice *device);
+  void (*close)    (FpDevice *device);
+  void (*enroll)   (FpDevice *device);
+  void (*verify)   (FpDevice *device);
+  void (*identify) (FpDevice *device);
+  void (*capture)  (FpDevice *device);
+  void (*list)     (FpDevice *device);
+  void (*delete)   (FpDevice * device);
+  void (*clear_storage)  (FpDevice * device);
+
+  void (*cancel)   (FpDevice *device);
+  void (*suspend)  (FpDevice *device);
+  void (*resume)   (FpDevice *device);
+} FpDeviceClass;
+</programlisting>
+<para>NOTE: If your driver is image based, then you should subclass <link linkend="FpImageDevice"><type>FpImageDevice</type></link>
+instead. <link linkend="FpImageDevice"><type>FpImageDevice</type></link> based drivers use a different way of interacting
+with libfprint.</para>
+<para>These are the main entry points for drivers to implement. Drivers may not
+implement all of these entry points if they do not support the operation
+(or a default implementation is sufficient).</para>
+<para>Drivers must eventually call the corresponding function to finish the
+operation. It is also acceptable to call the generic
+<link linkend="fpi-device-action-error"><function>fpi_device_action_error()</function></link> function but doing so is not recommended in most
+usecases.</para>
+<para>Drivers must also handle cancellation properly for any long running
+operation (i.e. any operation that requires capturing). It is entirely fine
+to ignore cancellation requests for short operations (e.g. open/close).</para>
+<para>Note that <parameter>cancel</parameter>
+, <parameter>suspend</parameter>
+ and <parameter>resume</parameter>
+ will not be called while the device
+is within a <link linkend="fpi-device-critical-enter"><function>fpi_device_critical_enter()</function></link>/<link linkend="fpi-device-critical-leave"><function>fpi_device_critical_leave()</function></link> block.</para>
+<para>This API is solely intended for drivers. It is purely internal and neither
+API nor ABI stable.</para>
+<refsect3 id="FpDeviceClass.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para>const&#160;<link linkend="gchar"><type>gchar</type></link>&#160;*<structfield id="FpDeviceClass.id">id</structfield>;</para></entry>
+<entry role="struct_member_description"><para>ID string for the driver. Should be a valid C identifier and should
+match the drivers file name.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para>const&#160;<link linkend="gchar"><type>gchar</type></link>&#160;*<structfield id="FpDeviceClass.full-name">full_name</structfield>;</para></entry>
+<entry role="struct_member_description"><para>Human readable description of the driver</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="FpDeviceType"><type>FpDeviceType</type></link>&#160;<structfield id="FpDeviceClass.type">type</structfield>;</para></entry>
+<entry role="struct_member_description"><para>The type of driver</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para>const&#160;<link linkend="FpIdEntry"><type>FpIdEntry</type></link>&#160;*<structfield id="FpDeviceClass.id-table">id_table</structfield>;</para></entry>
+<entry role="struct_member_description"><para>The table of IDs to bind the driver to</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="FpDeviceFeature"><type>FpDeviceFeature</type></link>&#160;<structfield id="FpDeviceClass.features">features</structfield>;</para></entry>
+<entry role="struct_member_description"><para>The features the device supports, it can be initialized using
+<link linkend="fpi-device-class-auto-initialize-features"><function>fpi_device_class_auto_initialize_features()</function></link> on <parameter>class_init</parameter>
+.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gint"><type>gint</type></link>&#160;<structfield id="FpDeviceClass.nr-enroll-stages">nr_enroll_stages</structfield>;</para></entry>
+<entry role="struct_member_description"><para>The number of enroll stages supported devices need; use
+<link linkend="fpi-device-set-nr-enroll-stages"><function>fpi_device_set_nr_enroll_stages()</function></link> from <parameter>probe</parameter>
+if this is dynamic.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="FpScanType"><type>FpScanType</type></link>&#160;<structfield id="FpDeviceClass.scan-type">scan_type</structfield>;</para></entry>
+<entry role="struct_member_description"><para>The scan type of supported devices; use
+<link linkend="fpi-device-set-scan-type"><function>fpi_device_set_scan_type()</function></link> from <parameter>probe</parameter>
+if this is dynamic.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gint32"><type>gint32</type></link>&#160;<structfield id="FpDeviceClass.temp-hot-seconds">temp_hot_seconds</structfield>;</para></entry>
+<entry role="struct_member_description"><para>Assumed time in seconds for the device to become too hot
+after being mostly cold. Set to -1 if the device can be always-on.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gint32"><type>gint32</type></link>&#160;<structfield id="FpDeviceClass.temp-cold-seconds">temp_cold_seconds</structfield>;</para></entry>
+<entry role="struct_member_description"><para>Assumed time in seconds for the device to be mostly cold
+after having been too hot to operate.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="FpDeviceClass.usb-discover">usb_discover</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Class method to check whether a USB device is supported by
+the driver. Should return 0 if the device is unsupported and a positive
+score otherwise. The default score is 50 and the driver with the highest
+score will be loaded.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="FpDeviceClass.probe">probe</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Called immediately for all devices. Most drivers will not need to
+implement this. Drivers should setup the device identifier from the probe
+callback which will be used to verify the compatibility of stored
+<link linkend="FpPrint"><type>FpPrint</type></link>'s. It is permissible to temporarily open the USB device if this
+is required for the operation. If an error is returned, then the device
+will be destroyed again immediately and never reported to the API user.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="FpDeviceClass.open">open</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Open the device for further operations. Any of the normal actions are
+guaranteed to only happen when the device is open (this includes delete).</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="FpDeviceClass.close">close</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Close the device again</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="FpDeviceClass.enroll">enroll</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Start an enroll operation</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="FpDeviceClass.verify">verify</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Start a verify operation</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="FpDeviceClass.identify">identify</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Start an identify operation</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="FpDeviceClass.capture">capture</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Start a capture operation</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="FpDeviceClass.list">list</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>List prints stored on the device</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="FpDeviceClass.delete">delete</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Delete a print from the device</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="FpDeviceClass.clear-storage">clear_storage</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Delete all prints from the device</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="FpDeviceClass.cancel">cancel</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Called on cancellation, this is a convenience to not need to handle
+the <link linkend="GCancellable"><type>GCancellable</type></link> directly by using <link linkend="fpi-device-get-cancellable"><function>fpi_device_get_cancellable()</function></link>.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="FpDeviceClass.suspend">suspend</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Called when an interactive action is running (ENROLL, VERIFY,
+IDENTIFY or CAPTURE) and the system is about to go into suspend.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="FpDeviceClass.resume">resume</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Called to resume an ongoing interactive action after the system has
+resumed from suspend.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="FpiDeviceAction" role="enum">
+<title>enum FpiDeviceAction</title>
+<indexterm zone="FpiDeviceAction"><primary>FpiDeviceAction</primary></indexterm>
+<para>Current active action of the device. A driver can retrieve the action.</para>
+<refsect3 id="FpiDeviceAction.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="FPI-DEVICE-ACTION-NONE:CAPS">FPI_DEVICE_ACTION_NONE</para></entry>
+<entry role="enum_member_description"><para>No action is active.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FPI-DEVICE-ACTION-PROBE:CAPS">FPI_DEVICE_ACTION_PROBE</para></entry>
+<entry role="enum_member_description"><para>Probe device for support and information.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FPI-DEVICE-ACTION-OPEN:CAPS">FPI_DEVICE_ACTION_OPEN</para></entry>
+<entry role="enum_member_description"><para>Device is currently being opened.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FPI-DEVICE-ACTION-CLOSE:CAPS">FPI_DEVICE_ACTION_CLOSE</para></entry>
+<entry role="enum_member_description"><para>Device is currently being closed.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FPI-DEVICE-ACTION-ENROLL:CAPS">FPI_DEVICE_ACTION_ENROLL</para></entry>
+<entry role="enum_member_description"><para>Device is currently enrolling.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FPI-DEVICE-ACTION-VERIFY:CAPS">FPI_DEVICE_ACTION_VERIFY</para></entry>
+<entry role="enum_member_description"><para>Device is currently verifying.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FPI-DEVICE-ACTION-IDENTIFY:CAPS">FPI_DEVICE_ACTION_IDENTIFY</para></entry>
+<entry role="enum_member_description"><para>Device is currently identifying.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FPI-DEVICE-ACTION-CAPTURE:CAPS">FPI_DEVICE_ACTION_CAPTURE</para></entry>
+<entry role="enum_member_description"><para>Device is currently capturing an image.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FPI-DEVICE-ACTION-LIST:CAPS">FPI_DEVICE_ACTION_LIST</para></entry>
+<entry role="enum_member_description"><para>Device stored prints are being queried.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FPI-DEVICE-ACTION-DELETE:CAPS">FPI_DEVICE_ACTION_DELETE</para></entry>
+<entry role="enum_member_description"><para>Device stored print is being deleted.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FPI-DEVICE-ACTION-CLEAR-STORAGE:CAPS">FPI_DEVICE_ACTION_CLEAR_STORAGE</para></entry>
+<entry role="enum_member_description"><para>Device stored prints are being deleted.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="FpIdEntry" role="struct">
+<title>struct FpIdEntry</title>
+<indexterm zone="FpIdEntry"><primary>FpIdEntry</primary></indexterm>
+<programlisting language="C">struct FpIdEntry {
+  union
+  {
+    struct
+    {
+      guint pid;
+      guint vid;
+    };
+    const gchar *virtual_envvar;
+    struct
+    {
+      FpiDeviceUdevSubtypeFlags udev_types;
+      const gchar              *spi_acpi_id;
+      struct
+      {
+        guint pid;
+        guint vid;
+      } hid_id;
+    };
+  };
+  guint64 driver_data;
+};
+</programlisting>
+<para>An entry in the table of supported hardware. For USB devices, the product ID
+and vendor ID should be provided. The optional <parameter>driver_data</parameter>
+ field defaults
+to 0 and can be used as a simple flag for device quirks.</para>
+</refsect2>
+<refsect2 id="FpiDeviceUdevSubtypeFlags" role="enum">
+<title>enum FpiDeviceUdevSubtypeFlags</title>
+<indexterm zone="FpiDeviceUdevSubtypeFlags"><primary>FpiDeviceUdevSubtypeFlags</primary></indexterm>
+<para>Bitfield of required hardware resources for a udev-backed device.</para>
+<refsect3 id="FpiDeviceUdevSubtypeFlags.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="FPI-DEVICE-UDEV-SUBTYPE-SPIDEV:CAPS">FPI_DEVICE_UDEV_SUBTYPE_SPIDEV</para></entry>
+<entry role="enum_member_description"><para>The device requires an spidev node</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FPI-DEVICE-UDEV-SUBTYPE-HIDRAW:CAPS">FPI_DEVICE_UDEV_SUBTYPE_HIDRAW</para></entry>
+<entry role="enum_member_description"><para>The device requires a hidraw node</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+
+</refentry>

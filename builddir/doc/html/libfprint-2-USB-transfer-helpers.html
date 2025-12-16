@@ -1,0 +1,730 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>USB transfer helpers: libfprint Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="libfprint Reference Manual">
+<link rel="up" href="driver-helpers.html" title="USB, SPI and State Machine helpers">
+<link rel="prev" href="libfprint-2-SPI-transfer-helpers.html" title="SPI transfer helpers">
+<link rel="next" href="libfprint-2-Sequential-state-machine.html" title="Sequential state machine">
+<meta name="generator" content="GTK-Doc V1.34.0 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#libfprint-2-USB-transfer-helpers.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="driver-helpers.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="libfprint-2-SPI-transfer-helpers.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libfprint-2-Sequential-state-machine.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="libfprint-2-USB-transfer-helpers"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libfprint-2-USB-transfer-helpers.top_of_page"></a>USB transfer helpers</span></h2>
+<p>USB transfer helpers — Helpers for libgusb to ease transfer handling</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="libfprint-2-USB-transfer-helpers.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<span class="c_punctuation">(</span><a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransferCallback" title="FpiUsbTransferCallback ()">*FpiUsbTransferCallback</a><span class="c_punctuation">)</span> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer" title="FpiUsbTransfer"><span class="returnvalue">FpiUsbTransfer</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-USB-transfer-helpers.html#fpi-usb-transfer-new" title="fpi_usb_transfer_new ()">fpi_usb_transfer_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer" title="FpiUsbTransfer"><span class="returnvalue">FpiUsbTransfer</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-USB-transfer-helpers.html#fpi-usb-transfer-ref" title="fpi_usb_transfer_ref ()">fpi_usb_transfer_ref</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-USB-transfer-helpers.html#fpi-usb-transfer-unref" title="fpi_usb_transfer_unref ()">fpi_usb_transfer_unref</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-USB-transfer-helpers.html#fpi-usb-transfer-set-short-error" title="fpi_usb_transfer_set_short_error ()">fpi_usb_transfer_set_short_error</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-USB-transfer-helpers.html#fpi-usb-transfer-fill-bulk" title="fpi_usb_transfer_fill_bulk ()">fpi_usb_transfer_fill_bulk</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-USB-transfer-helpers.html#fpi-usb-transfer-fill-bulk-full" title="fpi_usb_transfer_fill_bulk_full ()">fpi_usb_transfer_fill_bulk_full</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-USB-transfer-helpers.html#fpi-usb-transfer-fill-control" title="fpi_usb_transfer_fill_control ()">fpi_usb_transfer_fill_control</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-USB-transfer-helpers.html#fpi-usb-transfer-fill-interrupt" title="fpi_usb_transfer_fill_interrupt ()">fpi_usb_transfer_fill_interrupt</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-USB-transfer-helpers.html#fpi-usb-transfer-fill-interrupt-full" title="fpi_usb_transfer_fill_interrupt_full ()">fpi_usb_transfer_fill_interrupt_full</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-USB-transfer-helpers.html#fpi-usb-transfer-submit" title="fpi_usb_transfer_submit ()">fpi_usb_transfer_submit</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-USB-transfer-helpers.html#fpi-usb-transfer-submit-sync" title="fpi_usb_transfer_submit_sync ()">fpi_usb_transfer_submit_sync</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libfprint-2-USB-transfer-helpers.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libfprint-2-USB-transfer-helpers.html#FPI-USB-ENDPOINT-IN:CAPS" title="FPI_USB_ENDPOINT_IN">FPI_USB_ENDPOINT_IN</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libfprint-2-USB-transfer-helpers.html#FPI-USB-ENDPOINT-OUT:CAPS" title="FPI_USB_ENDPOINT_OUT">FPI_USB_ENDPOINT_OUT</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiTransferType" title="enum FpiTransferType">FpiTransferType</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer" title="FpiUsbTransfer">FpiUsbTransfer</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libfprint-2-USB-transfer-helpers.description"></a><h2>Description</h2>
+<p><a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer" title="FpiUsbTransfer"><span class="type">FpiUsbTransfer</span></a> is a structure to simplify the USB transfer handling.
+The main goal is to ease memory management and provide more parameters
+to callbacks that are useful for libfprint drivers.</p>
+<p>Drivers should use this API only rather than accessing the GUsbDevice
+directly in most cases.</p>
+</div>
+<div class="refsect1">
+<a name="libfprint-2-USB-transfer-helpers.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="FpiUsbTransferCallback"></a><h3>FpiUsbTransferCallback ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+<span class="c_punctuation">(</span>*FpiUsbTransferCallback<span class="c_punctuation">)</span> (<em class="parameter"><code><a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer" title="FpiUsbTransfer"><span class="type">FpiUsbTransfer</span></a> *transfer</code></em>,
+                           <em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *dev</code></em>,
+                           <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>,
+                           <em class="parameter"><code><span class="type">GError</span> *error</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-usb-transfer-new"></a><h3>fpi_usb_transfer_new ()</h3>
+<pre class="programlisting"><a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer" title="FpiUsbTransfer"><span class="returnvalue">FpiUsbTransfer</span></a> *
+fpi_usb_transfer_new (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>);</pre>
+<p>Creates a new <a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer" title="FpiUsbTransfer"><span class="type">FpiUsbTransfer</span></a>.</p>
+<div class="refsect3">
+<a name="fpi-usb-transfer-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> the transfer is for</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fpi-usb-transfer-new.returns"></a><h4>Returns</h4>
+<p>A newly created <a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer" title="FpiUsbTransfer"><span class="type">FpiUsbTransfer</span></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-usb-transfer-ref"></a><h3>fpi_usb_transfer_ref ()</h3>
+<pre class="programlisting"><a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer" title="FpiUsbTransfer"><span class="returnvalue">FpiUsbTransfer</span></a> *
+fpi_usb_transfer_ref (<em class="parameter"><code><a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer" title="FpiUsbTransfer"><span class="type">FpiUsbTransfer</span></a> *self</code></em>);</pre>
+<p>Increments the reference count of <em class="parameter"><code>self</code></em>
+ by one.</p>
+<div class="refsect3">
+<a name="fpi-usb-transfer-ref.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer" title="FpiUsbTransfer"><span class="type">FpiUsbTransfer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fpi-usb-transfer-ref.returns"></a><h4>Returns</h4>
+<p><em class="parameter"><code>self</code></em>
+. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-usb-transfer-unref"></a><h3>fpi_usb_transfer_unref ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_usb_transfer_unref (<em class="parameter"><code><a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer" title="FpiUsbTransfer"><span class="type">FpiUsbTransfer</span></a> *self</code></em>);</pre>
+<p>Decrements the reference count of <em class="parameter"><code>self</code></em>
+ by one, freeing the structure when
+the reference count reaches zero.</p>
+<div class="refsect3">
+<a name="fpi-usb-transfer-unref.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer" title="FpiUsbTransfer"><span class="type">FpiUsbTransfer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-usb-transfer-set-short-error"></a><h3>fpi_usb_transfer_set_short_error ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_usb_transfer_set_short_error (<em class="parameter"><code><a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer" title="FpiUsbTransfer"><span class="type">FpiUsbTransfer</span></a> *transfer</code></em>,
+                                  <em class="parameter"><code><span class="type">gboolean</span> short_is_error</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-usb-transfer-fill-bulk"></a><h3>fpi_usb_transfer_fill_bulk ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_usb_transfer_fill_bulk (<em class="parameter"><code><a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer" title="FpiUsbTransfer"><span class="type">FpiUsbTransfer</span></a> *transfer</code></em>,
+                            <em class="parameter"><code><span class="type">guint8</span> endpoint</code></em>,
+                            <em class="parameter"><code><span class="type">gsize</span> length</code></em>);</pre>
+<p>Prepare a bulk transfer. A buffer will be created for you, use
+<a class="link" href="libfprint-2-USB-transfer-helpers.html#fpi-usb-transfer-fill-bulk-full" title="fpi_usb_transfer_fill_bulk_full ()"><code class="function">fpi_usb_transfer_fill_bulk_full()</code></a> if you want to send a static buffer
+or receive a pre-defined buffer.</p>
+<div class="refsect3">
+<a name="fpi-usb-transfer-fill-bulk.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>transfer</p></td>
+<td class="parameter_description"><p>The <a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer" title="FpiUsbTransfer"><span class="type">FpiUsbTransfer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>endpoint</p></td>
+<td class="parameter_description"><p>The endpoint to send the transfer to</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>length</p></td>
+<td class="parameter_description"><p>The buffer size to allocate</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-usb-transfer-fill-bulk-full"></a><h3>fpi_usb_transfer_fill_bulk_full ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_usb_transfer_fill_bulk_full (<em class="parameter"><code><a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer" title="FpiUsbTransfer"><span class="type">FpiUsbTransfer</span></a> *transfer</code></em>,
+                                 <em class="parameter"><code><span class="type">guint8</span> endpoint</code></em>,
+                                 <em class="parameter"><code><span class="type">guint8</span> *buffer</code></em>,
+                                 <em class="parameter"><code><span class="type">gsize</span> length</code></em>,
+                                 <em class="parameter"><code><span class="type">GDestroyNotify</span> free_func</code></em>);</pre>
+<p>Prepare a bulk transfer.</p>
+<div class="refsect3">
+<a name="fpi-usb-transfer-fill-bulk-full.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>transfer</p></td>
+<td class="parameter_description"><p>The <a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer" title="FpiUsbTransfer"><span class="type">FpiUsbTransfer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>endpoint</p></td>
+<td class="parameter_description"><p>The endpoint to send the transfer to</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>buffer</p></td>
+<td class="parameter_description"><p>The data to send.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>length</p></td>
+<td class="parameter_description"><p>The size of <em class="parameter"><code>buffer</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>free_func</p></td>
+<td class="parameter_description"><p>Destroy notify for <em class="parameter"><code>buffer</code></em>
+. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/destroy"><span class="acronym">destroy</span></a> buffer]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-usb-transfer-fill-control"></a><h3>fpi_usb_transfer_fill_control ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_usb_transfer_fill_control (<em class="parameter"><code><a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer" title="FpiUsbTransfer"><span class="type">FpiUsbTransfer</span></a> *transfer</code></em>,
+                               <em class="parameter"><code><span class="type">GUsbDeviceDirection</span> direction</code></em>,
+                               <em class="parameter"><code><span class="type">GUsbDeviceRequestType</span> request_type</code></em>,
+                               <em class="parameter"><code><span class="type">GUsbDeviceRecipient</span> recipient</code></em>,
+                               <em class="parameter"><code><span class="type">guint8</span> request</code></em>,
+                               <em class="parameter"><code><span class="type">guint16</span> value</code></em>,
+                               <em class="parameter"><code><span class="type">guint16</span> idx</code></em>,
+                               <em class="parameter"><code><span class="type">gsize</span> length</code></em>);</pre>
+<p>Prepare a control transfer. The function will create a new buffer,
+you can initialize the buffer after calling this function.</p>
+<div class="refsect3">
+<a name="fpi-usb-transfer-fill-control.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>transfer</p></td>
+<td class="parameter_description"><p>The <a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer" title="FpiUsbTransfer"><span class="type">FpiUsbTransfer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>direction</p></td>
+<td class="parameter_description"><p>The direction of the control transfer</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>request_type</p></td>
+<td class="parameter_description"><p>The request type</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>recipient</p></td>
+<td class="parameter_description"><p>The recipient</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>request</p></td>
+<td class="parameter_description"><p>The control transfer request</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>The control transfer value</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>idx</p></td>
+<td class="parameter_description"><p>The control transfer index</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>length</p></td>
+<td class="parameter_description"><p>The size of the transfer</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-usb-transfer-fill-interrupt"></a><h3>fpi_usb_transfer_fill_interrupt ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_usb_transfer_fill_interrupt (<em class="parameter"><code><a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer" title="FpiUsbTransfer"><span class="type">FpiUsbTransfer</span></a> *transfer</code></em>,
+                                 <em class="parameter"><code><span class="type">guint8</span> endpoint</code></em>,
+                                 <em class="parameter"><code><span class="type">gsize</span> length</code></em>);</pre>
+<p>Prepare an interrupt transfer. The function will create a new buffer,
+you can initialize the buffer after calling this function.</p>
+<div class="refsect3">
+<a name="fpi-usb-transfer-fill-interrupt.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>transfer</p></td>
+<td class="parameter_description"><p>The <a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer" title="FpiUsbTransfer"><span class="type">FpiUsbTransfer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>endpoint</p></td>
+<td class="parameter_description"><p>The endpoint to send the transfer to</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>length</p></td>
+<td class="parameter_description"><p>The size of the transfer</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-usb-transfer-fill-interrupt-full"></a><h3>fpi_usb_transfer_fill_interrupt_full ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_usb_transfer_fill_interrupt_full (<em class="parameter"><code><a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer" title="FpiUsbTransfer"><span class="type">FpiUsbTransfer</span></a> *transfer</code></em>,
+                                      <em class="parameter"><code><span class="type">guint8</span> endpoint</code></em>,
+                                      <em class="parameter"><code><span class="type">guint8</span> *buffer</code></em>,
+                                      <em class="parameter"><code><span class="type">gsize</span> length</code></em>,
+                                      <em class="parameter"><code><span class="type">GDestroyNotify</span> free_func</code></em>);</pre>
+<p>Prepare an interrupt transfer.</p>
+<div class="refsect3">
+<a name="fpi-usb-transfer-fill-interrupt-full.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>transfer</p></td>
+<td class="parameter_description"><p>The <a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer" title="FpiUsbTransfer"><span class="type">FpiUsbTransfer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>endpoint</p></td>
+<td class="parameter_description"><p>The endpoint to send the transfer to</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>buffer</p></td>
+<td class="parameter_description"><p>The data to send.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>length</p></td>
+<td class="parameter_description"><p>The size of <em class="parameter"><code>buffer</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>free_func</p></td>
+<td class="parameter_description"><p>Destroy notify for <em class="parameter"><code>buffer</code></em>
+. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/destroy"><span class="acronym">destroy</span></a> buffer]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-usb-transfer-submit"></a><h3>fpi_usb_transfer_submit ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_usb_transfer_submit (<em class="parameter"><code><a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer" title="FpiUsbTransfer"><span class="type">FpiUsbTransfer</span></a> *transfer</code></em>,
+                         <em class="parameter"><code><span class="type">guint</span> timeout_ms</code></em>,
+                         <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                         <em class="parameter"><code><a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransferCallback" title="FpiUsbTransferCallback ()"><span class="type">FpiUsbTransferCallback</span></a> callback</code></em>,
+                         <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Submit a USB transfer with a specific timeout and callback functions.</p>
+<p>Note that <a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer" title="FpiUsbTransfer"><span class="type">FpiUsbTransfer</span></a> will be stolen when this function is called.
+So that all associated data will be free'ed automatically, after the
+callback ran unless <a class="link" href="libfprint-2-USB-transfer-helpers.html#fpi-usb-transfer-ref" title="fpi_usb_transfer_ref ()"><code class="function">fpi_usb_transfer_ref()</code></a> is explicitly called.</p>
+<div class="refsect3">
+<a name="fpi-usb-transfer-submit.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>transfer</p></td>
+<td class="parameter_description"><p>The transfer to submit, must have been filled. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>timeout_ms</p></td>
+<td class="parameter_description"><p>Timeout for the transfer in ms</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>Cancellable to use, e.g. <a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-get-cancellable" title="fpi_device_get_cancellable ()"><code class="function">fpi_device_get_cancellable()</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>Callback on completion or error</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>Data to pass to callback</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-usb-transfer-submit-sync"></a><h3>fpi_usb_transfer_submit_sync ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fpi_usb_transfer_submit_sync (<em class="parameter"><code><a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer" title="FpiUsbTransfer"><span class="type">FpiUsbTransfer</span></a> *transfer</code></em>,
+                              <em class="parameter"><code><span class="type">guint</span> timeout_ms</code></em>,
+                              <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Synchronously submit a USB transfer with a specific timeout.
+Only use this function with short timeouts as the application will
+be blocked otherwise.</p>
+<p>Note that you still need to <a class="link" href="libfprint-2-USB-transfer-helpers.html#fpi-usb-transfer-unref" title="fpi_usb_transfer_unref ()"><code class="function">fpi_usb_transfer_unref()</code></a> the
+<a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer" title="FpiUsbTransfer"><span class="type">FpiUsbTransfer</span></a> afterwards.</p>
+<div class="refsect3">
+<a name="fpi-usb-transfer-submit-sync.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>transfer</p></td>
+<td class="parameter_description"><p>The transfer to submit, must have been filled.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>timeout_ms</p></td>
+<td class="parameter_description"><p>Timeout for the transfer in millisecnods</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Location to store <span class="type">GError</span> to</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fpi-usb-transfer-submit-sync.returns"></a><h4>Returns</h4>
+<p> <span class="type">TRUE</span> on success, otherwise <span class="type">FALSE</span> and <em class="parameter"><code>error</code></em>
+will be set</p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="libfprint-2-USB-transfer-helpers.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="FPI-USB-ENDPOINT-IN:CAPS"></a><h3>FPI_USB_ENDPOINT_IN</h3>
+<pre class="programlisting">#define FPI_USB_ENDPOINT_IN 0x80
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FPI-USB-ENDPOINT-OUT:CAPS"></a><h3>FPI_USB_ENDPOINT_OUT</h3>
+<pre class="programlisting">#define FPI_USB_ENDPOINT_OUT 0x00
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpiTransferType"></a><h3>enum FpiTransferType</h3>
+<p>Type of the transfer.</p>
+<div class="refsect3">
+<a name="FpiTransferType.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="FP-TRANSFER-NONE:CAPS"></a>FP_TRANSFER_NONE</p></td>
+<td class="enum_member_description">
+<p>Type not set</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-TRANSFER-CONTROL:CAPS"></a>FP_TRANSFER_CONTROL</p></td>
+<td class="enum_member_description">
+<p>Control transfer</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-TRANSFER-BULK:CAPS"></a>FP_TRANSFER_BULK</p></td>
+<td class="enum_member_description">
+<p>Bulk transfer</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-TRANSFER-INTERRUPT:CAPS"></a>FP_TRANSFER_INTERRUPT</p></td>
+<td class="enum_member_description">
+<p>Interrupt transfer</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpiUsbTransfer"></a><h3>FpiUsbTransfer</h3>
+<pre class="programlisting">typedef struct {
+  FpDevice *device;
+
+  FpiSsm   *ssm;
+
+  gssize    length;
+  gssize    actual_length;
+
+  guchar   *buffer;
+} FpiUsbTransfer;
+</pre>
+<p>Helper for handling USB transfers.</p>
+<div class="refsect3">
+<a name="FpiUsbTransfer.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *<em class="structfield"><code><a name="FpiUsbTransfer.device"></a>device</code></em>;</p></td>
+<td class="struct_member_description"><p>The <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> that the transfer belongs to.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> *<em class="structfield"><code><a name="FpiUsbTransfer.ssm"></a>ssm</code></em>;</p></td>
+<td class="struct_member_description"><p>Storage slot to associate the transfer with a state machine.
+Used by <a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-usb-transfer-cb" title="fpi_ssm_usb_transfer_cb ()"><code class="function">fpi_ssm_usb_transfer_cb()</code></a> to modify the given state machine.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">gssize</span> <em class="structfield"><code><a name="FpiUsbTransfer.length"></a>length</code></em>;</p></td>
+<td class="struct_member_description"><p>The requested length of the transfer in bytes.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">gssize</span> <em class="structfield"><code><a name="FpiUsbTransfer.actual-length"></a>actual_length</code></em>;</p></td>
+<td class="struct_member_description"><p>The actual length of the transfer
+(see also <a class="link" href="libfprint-2-USB-transfer-helpers.html#fpi-usb-transfer-set-short-error" title="fpi_usb_transfer_set_short_error ()"><code class="function">fpi_usb_transfer_set_short_error()</code></a>)</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">guchar</span> *<em class="structfield"><code><a name="FpiUsbTransfer.buffer"></a>buffer</code></em>;</p></td>
+<td class="struct_member_description"><p>The transferred data.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.34.0</div>
+</body>
+</html>

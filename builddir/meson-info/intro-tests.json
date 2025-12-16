@@ -1,0 +1,1083 @@
+[
+  {
+    "cmd": [
+      "/usr/bin/sh",
+      "-c",
+      "exit 77"
+    ],
+    "env": {},
+    "name": "virtual-image",
+    "workdir": null,
+    "timeout": 30,
+    "suite": [
+      "libfprint"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/usr/bin/sh",
+      "-c",
+      "exit 77"
+    ],
+    "env": {},
+    "name": "virtual-device",
+    "workdir": null,
+    "timeout": 30,
+    "suite": [
+      "libfprint"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/usr/bin/python3",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/umockdev-test.py",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/aes2501"
+    ],
+    "env": {
+      "G_DEBUG": "fatal-warnings",
+      "G_MESSAGES_DEBUG": "all",
+      "MESON_SOURCE_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint",
+      "MESON_BUILD_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir",
+      "G_TEST_SRCDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/tests",
+      "G_TEST_BUILDDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests",
+      "LD_LIBRARY_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint",
+      "FP_DEVICE_EMULATION": "1",
+      "FP_DRIVERS_ALLOWLIST": "aes2501",
+      "FP_PRINTS_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/examples/prints",
+      "NO_AT_BRIDGE": "1",
+      "GI_TYPELIB_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint"
+    },
+    "name": "aes2501",
+    "workdir": null,
+    "timeout": 15,
+    "suite": [
+      "libfprint:drivers"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "642ed89@@FPrint-2.0.typelib@cus"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/usr/bin/python3",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/umockdev-test.py",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/aes3500"
+    ],
+    "env": {
+      "G_DEBUG": "fatal-warnings",
+      "G_MESSAGES_DEBUG": "all",
+      "MESON_SOURCE_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint",
+      "MESON_BUILD_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir",
+      "G_TEST_SRCDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/tests",
+      "G_TEST_BUILDDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests",
+      "LD_LIBRARY_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint",
+      "FP_DEVICE_EMULATION": "1",
+      "FP_DRIVERS_ALLOWLIST": "aes3500",
+      "FP_PRINTS_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/examples/prints",
+      "NO_AT_BRIDGE": "1",
+      "GI_TYPELIB_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint"
+    },
+    "name": "aes3500",
+    "workdir": null,
+    "timeout": 15,
+    "suite": [
+      "libfprint:drivers"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "642ed89@@FPrint-2.0.typelib@cus"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/usr/bin/python3",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/umockdev-test.py",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/elan"
+    ],
+    "env": {
+      "G_DEBUG": "fatal-warnings",
+      "G_MESSAGES_DEBUG": "all",
+      "MESON_SOURCE_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint",
+      "MESON_BUILD_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir",
+      "G_TEST_SRCDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/tests",
+      "G_TEST_BUILDDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests",
+      "LD_LIBRARY_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint",
+      "FP_DEVICE_EMULATION": "1",
+      "FP_DRIVERS_ALLOWLIST": "elan",
+      "FP_PRINTS_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/examples/prints",
+      "NO_AT_BRIDGE": "1",
+      "GI_TYPELIB_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint"
+    },
+    "name": "elan",
+    "workdir": null,
+    "timeout": 15,
+    "suite": [
+      "libfprint:drivers"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "642ed89@@FPrint-2.0.typelib@cus"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/usr/bin/python3",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/umockdev-test.py",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/elan-cobo"
+    ],
+    "env": {
+      "G_DEBUG": "fatal-warnings",
+      "G_MESSAGES_DEBUG": "all",
+      "MESON_SOURCE_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint",
+      "MESON_BUILD_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir",
+      "G_TEST_SRCDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/tests",
+      "G_TEST_BUILDDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests",
+      "LD_LIBRARY_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint",
+      "FP_DEVICE_EMULATION": "1",
+      "FP_DRIVERS_ALLOWLIST": "elan",
+      "FP_PRINTS_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/examples/prints",
+      "NO_AT_BRIDGE": "1",
+      "GI_TYPELIB_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint"
+    },
+    "name": "elan-cobo",
+    "workdir": null,
+    "timeout": 15,
+    "suite": [
+      "libfprint:drivers"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "642ed89@@FPrint-2.0.typelib@cus"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/usr/bin/python3",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/umockdev-test.py",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/elanmoc"
+    ],
+    "env": {
+      "G_DEBUG": "fatal-warnings",
+      "G_MESSAGES_DEBUG": "all",
+      "MESON_SOURCE_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint",
+      "MESON_BUILD_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir",
+      "G_TEST_SRCDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/tests",
+      "G_TEST_BUILDDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests",
+      "LD_LIBRARY_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint",
+      "FP_DEVICE_EMULATION": "1",
+      "FP_DRIVERS_ALLOWLIST": "elanmoc",
+      "FP_PRINTS_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/examples/prints",
+      "NO_AT_BRIDGE": "1",
+      "GI_TYPELIB_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint"
+    },
+    "name": "elanmoc",
+    "workdir": null,
+    "timeout": 15,
+    "suite": [
+      "libfprint:drivers"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "642ed89@@FPrint-2.0.typelib@cus"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/usr/bin/python3",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/umockdev-test.py",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/elanspi"
+    ],
+    "env": {
+      "G_DEBUG": "fatal-warnings",
+      "G_MESSAGES_DEBUG": "all",
+      "MESON_SOURCE_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint",
+      "MESON_BUILD_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir",
+      "G_TEST_SRCDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/tests",
+      "G_TEST_BUILDDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests",
+      "LD_LIBRARY_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint",
+      "FP_DEVICE_EMULATION": "1",
+      "FP_DRIVERS_ALLOWLIST": "elanspi",
+      "FP_PRINTS_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/examples/prints",
+      "NO_AT_BRIDGE": "1",
+      "GI_TYPELIB_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint"
+    },
+    "name": "elanspi",
+    "workdir": null,
+    "timeout": 15,
+    "suite": [
+      "libfprint:drivers"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "642ed89@@FPrint-2.0.typelib@cus"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/usr/bin/python3",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/umockdev-test.py",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/synaptics"
+    ],
+    "env": {
+      "G_DEBUG": "fatal-warnings",
+      "G_MESSAGES_DEBUG": "all",
+      "MESON_SOURCE_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint",
+      "MESON_BUILD_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir",
+      "G_TEST_SRCDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/tests",
+      "G_TEST_BUILDDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests",
+      "LD_LIBRARY_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint",
+      "FP_DEVICE_EMULATION": "1",
+      "FP_DRIVERS_ALLOWLIST": "synaptics",
+      "FP_PRINTS_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/examples/prints",
+      "NO_AT_BRIDGE": "1",
+      "GI_TYPELIB_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint"
+    },
+    "name": "synaptics",
+    "workdir": null,
+    "timeout": 15,
+    "suite": [
+      "libfprint:drivers"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "642ed89@@FPrint-2.0.typelib@cus"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/usr/bin/python3",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/umockdev-test.py",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/upektc_img"
+    ],
+    "env": {
+      "G_DEBUG": "fatal-warnings",
+      "G_MESSAGES_DEBUG": "all",
+      "MESON_SOURCE_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint",
+      "MESON_BUILD_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir",
+      "G_TEST_SRCDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/tests",
+      "G_TEST_BUILDDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests",
+      "LD_LIBRARY_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint",
+      "FP_DEVICE_EMULATION": "1",
+      "FP_DRIVERS_ALLOWLIST": "upektc_img",
+      "FP_PRINTS_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/examples/prints",
+      "NO_AT_BRIDGE": "1",
+      "GI_TYPELIB_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint"
+    },
+    "name": "upektc_img",
+    "workdir": null,
+    "timeout": 15,
+    "suite": [
+      "libfprint:drivers"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "642ed89@@FPrint-2.0.typelib@cus"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/usr/bin/python3",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/umockdev-test.py",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/upektc_img-tcs1s"
+    ],
+    "env": {
+      "G_DEBUG": "fatal-warnings",
+      "G_MESSAGES_DEBUG": "all",
+      "MESON_SOURCE_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint",
+      "MESON_BUILD_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir",
+      "G_TEST_SRCDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/tests",
+      "G_TEST_BUILDDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests",
+      "LD_LIBRARY_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint",
+      "FP_DEVICE_EMULATION": "1",
+      "FP_DRIVERS_ALLOWLIST": "upektc_img",
+      "FP_PRINTS_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/examples/prints",
+      "NO_AT_BRIDGE": "1",
+      "GI_TYPELIB_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint"
+    },
+    "name": "upektc_img-tcs1s",
+    "workdir": null,
+    "timeout": 15,
+    "suite": [
+      "libfprint:drivers"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "642ed89@@FPrint-2.0.typelib@cus"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/usr/bin/python3",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/umockdev-test.py",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/uru4000-msv2"
+    ],
+    "env": {
+      "G_DEBUG": "fatal-warnings",
+      "G_MESSAGES_DEBUG": "all",
+      "MESON_SOURCE_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint",
+      "MESON_BUILD_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir",
+      "G_TEST_SRCDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/tests",
+      "G_TEST_BUILDDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests",
+      "LD_LIBRARY_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint",
+      "FP_DEVICE_EMULATION": "1",
+      "FP_DRIVERS_ALLOWLIST": "uru4000",
+      "FP_PRINTS_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/examples/prints",
+      "NO_AT_BRIDGE": "1",
+      "GI_TYPELIB_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint"
+    },
+    "name": "uru4000-msv2",
+    "workdir": null,
+    "timeout": 15,
+    "suite": [
+      "libfprint:drivers"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "642ed89@@FPrint-2.0.typelib@cus"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/usr/bin/python3",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/umockdev-test.py",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/uru4000-4500"
+    ],
+    "env": {
+      "G_DEBUG": "fatal-warnings",
+      "G_MESSAGES_DEBUG": "all",
+      "MESON_SOURCE_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint",
+      "MESON_BUILD_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir",
+      "G_TEST_SRCDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/tests",
+      "G_TEST_BUILDDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests",
+      "LD_LIBRARY_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint",
+      "FP_DEVICE_EMULATION": "1",
+      "FP_DRIVERS_ALLOWLIST": "uru4000",
+      "FP_PRINTS_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/examples/prints",
+      "NO_AT_BRIDGE": "1",
+      "GI_TYPELIB_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint"
+    },
+    "name": "uru4000-4500",
+    "workdir": null,
+    "timeout": 15,
+    "suite": [
+      "libfprint:drivers"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "642ed89@@FPrint-2.0.typelib@cus"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/usr/bin/python3",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/umockdev-test.py",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/vfs0050"
+    ],
+    "env": {
+      "G_DEBUG": "fatal-warnings",
+      "G_MESSAGES_DEBUG": "all",
+      "MESON_SOURCE_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint",
+      "MESON_BUILD_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir",
+      "G_TEST_SRCDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/tests",
+      "G_TEST_BUILDDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests",
+      "LD_LIBRARY_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint",
+      "FP_DEVICE_EMULATION": "1",
+      "FP_DRIVERS_ALLOWLIST": "vfs0050",
+      "FP_PRINTS_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/examples/prints",
+      "NO_AT_BRIDGE": "1",
+      "GI_TYPELIB_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint"
+    },
+    "name": "vfs0050",
+    "workdir": null,
+    "timeout": 15,
+    "suite": [
+      "libfprint:drivers"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "642ed89@@FPrint-2.0.typelib@cus"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/usr/bin/python3",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/umockdev-test.py",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/vfs301"
+    ],
+    "env": {
+      "G_DEBUG": "fatal-warnings",
+      "G_MESSAGES_DEBUG": "all",
+      "MESON_SOURCE_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint",
+      "MESON_BUILD_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir",
+      "G_TEST_SRCDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/tests",
+      "G_TEST_BUILDDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests",
+      "LD_LIBRARY_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint",
+      "FP_DEVICE_EMULATION": "1",
+      "FP_DRIVERS_ALLOWLIST": "vfs301",
+      "FP_PRINTS_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/examples/prints",
+      "NO_AT_BRIDGE": "1",
+      "GI_TYPELIB_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint"
+    },
+    "name": "vfs301",
+    "workdir": null,
+    "timeout": 15,
+    "suite": [
+      "libfprint:drivers"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "642ed89@@FPrint-2.0.typelib@cus"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/usr/bin/python3",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/umockdev-test.py",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/vfs5011"
+    ],
+    "env": {
+      "G_DEBUG": "fatal-warnings",
+      "G_MESSAGES_DEBUG": "all",
+      "MESON_SOURCE_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint",
+      "MESON_BUILD_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir",
+      "G_TEST_SRCDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/tests",
+      "G_TEST_BUILDDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests",
+      "LD_LIBRARY_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint",
+      "FP_DEVICE_EMULATION": "1",
+      "FP_DRIVERS_ALLOWLIST": "vfs5011",
+      "FP_PRINTS_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/examples/prints",
+      "NO_AT_BRIDGE": "1",
+      "GI_TYPELIB_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint"
+    },
+    "name": "vfs5011",
+    "workdir": null,
+    "timeout": 15,
+    "suite": [
+      "libfprint:drivers"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "642ed89@@FPrint-2.0.typelib@cus"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/usr/bin/python3",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/umockdev-test.py",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/vfs7552"
+    ],
+    "env": {
+      "G_DEBUG": "fatal-warnings",
+      "G_MESSAGES_DEBUG": "all",
+      "MESON_SOURCE_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint",
+      "MESON_BUILD_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir",
+      "G_TEST_SRCDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/tests",
+      "G_TEST_BUILDDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests",
+      "LD_LIBRARY_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint",
+      "FP_DEVICE_EMULATION": "1",
+      "FP_DRIVERS_ALLOWLIST": "vfs7552",
+      "FP_PRINTS_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/examples/prints",
+      "NO_AT_BRIDGE": "1",
+      "GI_TYPELIB_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint"
+    },
+    "name": "vfs7552",
+    "workdir": null,
+    "timeout": 15,
+    "suite": [
+      "libfprint:drivers"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "642ed89@@FPrint-2.0.typelib@cus"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/usr/bin/python3",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/umockdev-test.py",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/goodixmoc"
+    ],
+    "env": {
+      "G_DEBUG": "fatal-warnings",
+      "G_MESSAGES_DEBUG": "all",
+      "MESON_SOURCE_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint",
+      "MESON_BUILD_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir",
+      "G_TEST_SRCDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/tests",
+      "G_TEST_BUILDDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests",
+      "LD_LIBRARY_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint",
+      "FP_DEVICE_EMULATION": "1",
+      "FP_DRIVERS_ALLOWLIST": "goodixmoc",
+      "FP_PRINTS_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/examples/prints",
+      "NO_AT_BRIDGE": "1",
+      "GI_TYPELIB_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint"
+    },
+    "name": "goodixmoc",
+    "workdir": null,
+    "timeout": 15,
+    "suite": [
+      "libfprint:drivers"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "642ed89@@FPrint-2.0.typelib@cus"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/usr/bin/python3",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/umockdev-test.py",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/nb1010"
+    ],
+    "env": {
+      "G_DEBUG": "fatal-warnings",
+      "G_MESSAGES_DEBUG": "all",
+      "MESON_SOURCE_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint",
+      "MESON_BUILD_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir",
+      "G_TEST_SRCDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/tests",
+      "G_TEST_BUILDDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests",
+      "LD_LIBRARY_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint",
+      "FP_DEVICE_EMULATION": "1",
+      "FP_DRIVERS_ALLOWLIST": "nb1010",
+      "FP_PRINTS_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/examples/prints",
+      "NO_AT_BRIDGE": "1",
+      "GI_TYPELIB_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint"
+    },
+    "name": "nb1010",
+    "workdir": null,
+    "timeout": 15,
+    "suite": [
+      "libfprint:drivers"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "642ed89@@FPrint-2.0.typelib@cus"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/usr/bin/python3",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/umockdev-test.py",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/egis0570"
+    ],
+    "env": {
+      "G_DEBUG": "fatal-warnings",
+      "G_MESSAGES_DEBUG": "all",
+      "MESON_SOURCE_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint",
+      "MESON_BUILD_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir",
+      "G_TEST_SRCDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/tests",
+      "G_TEST_BUILDDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests",
+      "LD_LIBRARY_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint",
+      "FP_DEVICE_EMULATION": "1",
+      "FP_DRIVERS_ALLOWLIST": "egis0570",
+      "FP_PRINTS_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/examples/prints",
+      "NO_AT_BRIDGE": "1",
+      "GI_TYPELIB_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint"
+    },
+    "name": "egis0570",
+    "workdir": null,
+    "timeout": 15,
+    "suite": [
+      "libfprint:drivers"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "642ed89@@FPrint-2.0.typelib@cus"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/usr/bin/python3",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/umockdev-test.py",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/egismoc"
+    ],
+    "env": {
+      "G_DEBUG": "fatal-warnings",
+      "G_MESSAGES_DEBUG": "all",
+      "MESON_SOURCE_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint",
+      "MESON_BUILD_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir",
+      "G_TEST_SRCDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/tests",
+      "G_TEST_BUILDDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests",
+      "LD_LIBRARY_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint",
+      "FP_DEVICE_EMULATION": "1",
+      "FP_DRIVERS_ALLOWLIST": "egismoc",
+      "FP_PRINTS_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/examples/prints",
+      "NO_AT_BRIDGE": "1",
+      "GI_TYPELIB_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint"
+    },
+    "name": "egismoc",
+    "workdir": null,
+    "timeout": 15,
+    "suite": [
+      "libfprint:drivers"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "642ed89@@FPrint-2.0.typelib@cus"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/usr/bin/python3",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/umockdev-test.py",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/egismoc-05a1"
+    ],
+    "env": {
+      "G_DEBUG": "fatal-warnings",
+      "G_MESSAGES_DEBUG": "all",
+      "MESON_SOURCE_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint",
+      "MESON_BUILD_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir",
+      "G_TEST_SRCDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/tests",
+      "G_TEST_BUILDDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests",
+      "LD_LIBRARY_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint",
+      "FP_DEVICE_EMULATION": "1",
+      "FP_DRIVERS_ALLOWLIST": "egismoc",
+      "FP_PRINTS_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/examples/prints",
+      "NO_AT_BRIDGE": "1",
+      "GI_TYPELIB_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint"
+    },
+    "name": "egismoc-05a1",
+    "workdir": null,
+    "timeout": 15,
+    "suite": [
+      "libfprint:drivers"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "642ed89@@FPrint-2.0.typelib@cus"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/usr/bin/python3",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/umockdev-test.py",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/egismoc-0586"
+    ],
+    "env": {
+      "G_DEBUG": "fatal-warnings",
+      "G_MESSAGES_DEBUG": "all",
+      "MESON_SOURCE_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint",
+      "MESON_BUILD_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir",
+      "G_TEST_SRCDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/tests",
+      "G_TEST_BUILDDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests",
+      "LD_LIBRARY_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint",
+      "FP_DEVICE_EMULATION": "1",
+      "FP_DRIVERS_ALLOWLIST": "egismoc",
+      "FP_PRINTS_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/examples/prints",
+      "NO_AT_BRIDGE": "1",
+      "GI_TYPELIB_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint"
+    },
+    "name": "egismoc-0586",
+    "workdir": null,
+    "timeout": 15,
+    "suite": [
+      "libfprint:drivers"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "642ed89@@FPrint-2.0.typelib@cus"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/usr/bin/python3",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/umockdev-test.py",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/egismoc-0587"
+    ],
+    "env": {
+      "G_DEBUG": "fatal-warnings",
+      "G_MESSAGES_DEBUG": "all",
+      "MESON_SOURCE_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint",
+      "MESON_BUILD_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir",
+      "G_TEST_SRCDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/tests",
+      "G_TEST_BUILDDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests",
+      "LD_LIBRARY_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint",
+      "FP_DEVICE_EMULATION": "1",
+      "FP_DRIVERS_ALLOWLIST": "egismoc",
+      "FP_PRINTS_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/examples/prints",
+      "NO_AT_BRIDGE": "1",
+      "GI_TYPELIB_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint"
+    },
+    "name": "egismoc-0587",
+    "workdir": null,
+    "timeout": 15,
+    "suite": [
+      "libfprint:drivers"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "642ed89@@FPrint-2.0.typelib@cus"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/usr/bin/python3",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/umockdev-test.py",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/fpcmoc"
+    ],
+    "env": {
+      "G_DEBUG": "fatal-warnings",
+      "G_MESSAGES_DEBUG": "all",
+      "MESON_SOURCE_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint",
+      "MESON_BUILD_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir",
+      "G_TEST_SRCDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/tests",
+      "G_TEST_BUILDDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests",
+      "LD_LIBRARY_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint",
+      "FP_DEVICE_EMULATION": "1",
+      "FP_DRIVERS_ALLOWLIST": "fpcmoc",
+      "FP_PRINTS_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/examples/prints",
+      "NO_AT_BRIDGE": "1",
+      "GI_TYPELIB_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint"
+    },
+    "name": "fpcmoc",
+    "workdir": null,
+    "timeout": 15,
+    "suite": [
+      "libfprint:drivers"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "642ed89@@FPrint-2.0.typelib@cus"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/usr/bin/python3",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/umockdev-test.py",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/realtek"
+    ],
+    "env": {
+      "G_DEBUG": "fatal-warnings",
+      "G_MESSAGES_DEBUG": "all",
+      "MESON_SOURCE_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint",
+      "MESON_BUILD_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir",
+      "G_TEST_SRCDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/tests",
+      "G_TEST_BUILDDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests",
+      "LD_LIBRARY_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint",
+      "FP_DEVICE_EMULATION": "1",
+      "FP_DRIVERS_ALLOWLIST": "realtek",
+      "FP_PRINTS_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/examples/prints",
+      "NO_AT_BRIDGE": "1",
+      "GI_TYPELIB_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint"
+    },
+    "name": "realtek",
+    "workdir": null,
+    "timeout": 15,
+    "suite": [
+      "libfprint:drivers"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "642ed89@@FPrint-2.0.typelib@cus"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/usr/bin/python3",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/umockdev-test.py",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/realtek-5816"
+    ],
+    "env": {
+      "G_DEBUG": "fatal-warnings",
+      "G_MESSAGES_DEBUG": "all",
+      "MESON_SOURCE_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint",
+      "MESON_BUILD_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir",
+      "G_TEST_SRCDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/tests",
+      "G_TEST_BUILDDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests",
+      "LD_LIBRARY_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint",
+      "FP_DEVICE_EMULATION": "1",
+      "FP_DRIVERS_ALLOWLIST": "realtek",
+      "FP_PRINTS_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/examples/prints",
+      "NO_AT_BRIDGE": "1",
+      "GI_TYPELIB_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint"
+    },
+    "name": "realtek-5816",
+    "workdir": null,
+    "timeout": 15,
+    "suite": [
+      "libfprint:drivers"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "642ed89@@FPrint-2.0.typelib@cus"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/usr/bin/python3",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/umockdev-test.py",
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/focaltech_moc"
+    ],
+    "env": {
+      "G_DEBUG": "fatal-warnings",
+      "G_MESSAGES_DEBUG": "all",
+      "MESON_SOURCE_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint",
+      "MESON_BUILD_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir",
+      "G_TEST_SRCDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/tests",
+      "G_TEST_BUILDDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests",
+      "LD_LIBRARY_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint",
+      "FP_DEVICE_EMULATION": "1",
+      "FP_DRIVERS_ALLOWLIST": "focaltech_moc",
+      "FP_PRINTS_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/examples/prints",
+      "NO_AT_BRIDGE": "1",
+      "GI_TYPELIB_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint"
+    },
+    "name": "focaltech_moc",
+    "workdir": null,
+    "timeout": 15,
+    "suite": [
+      "libfprint:drivers"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "642ed89@@FPrint-2.0.typelib@cus"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests/test-fpi-device"
+    ],
+    "env": {
+      "G_DEBUG": "fatal-warnings",
+      "G_MESSAGES_DEBUG": "",
+      "MESON_SOURCE_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint",
+      "MESON_BUILD_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir",
+      "G_TEST_SRCDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/tests",
+      "G_TEST_BUILDDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests",
+      "LD_LIBRARY_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint:/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint",
+      "FP_DEVICE_EMULATION": "1",
+      "FP_DRIVERS_ALLOWLIST": "virtual_image:virtual_device:virtual_device_storage",
+      "FP_PRINTS_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/examples/prints",
+      "NO_AT_BRIDGE": "1",
+      "GI_TYPELIB_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint",
+      "UDEV_HWDB": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint/fprint-list-udev-hwdb",
+      "UDEV_HWDB_CHECK_CONTENTS": "1"
+    },
+    "name": "fpi-device",
+    "workdir": null,
+    "timeout": 30,
+    "suite": [
+      "libfprint:unit-tests"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "59830eb@@test-fpi-device@exe"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests/test-fpi-ssm"
+    ],
+    "env": {
+      "G_DEBUG": "fatal-warnings",
+      "G_MESSAGES_DEBUG": "",
+      "MESON_SOURCE_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint",
+      "MESON_BUILD_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir",
+      "G_TEST_SRCDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/tests",
+      "G_TEST_BUILDDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests",
+      "LD_LIBRARY_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint:/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint",
+      "FP_DEVICE_EMULATION": "1",
+      "FP_DRIVERS_ALLOWLIST": "virtual_image:virtual_device:virtual_device_storage",
+      "FP_PRINTS_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/examples/prints",
+      "NO_AT_BRIDGE": "1",
+      "GI_TYPELIB_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint",
+      "UDEV_HWDB": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint/fprint-list-udev-hwdb",
+      "UDEV_HWDB_CHECK_CONTENTS": "1"
+    },
+    "name": "fpi-ssm",
+    "workdir": null,
+    "timeout": 30,
+    "suite": [
+      "libfprint:unit-tests"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "59830eb@@test-fpi-ssm@exe"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests/test-fpi-assembling"
+    ],
+    "env": {
+      "G_DEBUG": "fatal-warnings",
+      "G_MESSAGES_DEBUG": "",
+      "MESON_SOURCE_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint",
+      "MESON_BUILD_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir",
+      "G_TEST_SRCDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/tests",
+      "G_TEST_BUILDDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests",
+      "LD_LIBRARY_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint:/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint",
+      "FP_DEVICE_EMULATION": "1",
+      "FP_DRIVERS_ALLOWLIST": "virtual_image:virtual_device:virtual_device_storage",
+      "FP_PRINTS_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/examples/prints",
+      "NO_AT_BRIDGE": "1",
+      "GI_TYPELIB_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint",
+      "UDEV_HWDB": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint/fprint-list-udev-hwdb",
+      "UDEV_HWDB_CHECK_CONTENTS": "1"
+    },
+    "name": "fpi-assembling",
+    "workdir": null,
+    "timeout": 30,
+    "suite": [
+      "libfprint:unit-tests"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "59830eb@@test-fpi-assembling@exe"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/test-generated-hwdb.sh"
+    ],
+    "env": {
+      "G_DEBUG": "fatal-warnings",
+      "G_MESSAGES_DEBUG": "",
+      "MESON_SOURCE_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint",
+      "MESON_BUILD_ROOT": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir",
+      "G_TEST_SRCDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/tests",
+      "G_TEST_BUILDDIR": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests",
+      "LD_LIBRARY_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint:/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint",
+      "FP_DEVICE_EMULATION": "1",
+      "FP_DRIVERS_ALLOWLIST": "virtual_image:virtual_device:virtual_device_storage",
+      "FP_PRINTS_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/examples/prints",
+      "NO_AT_BRIDGE": "1",
+      "GI_TYPELIB_PATH": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint",
+      "UDEV_HWDB": "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint/fprint-list-udev-hwdb",
+      "UDEV_HWDB_CHECK_CONTENTS": "1"
+    },
+    "name": "udev-hwdb",
+    "workdir": null,
+    "timeout": 30,
+    "suite": [
+      "libfprint:data",
+      "libfprint:no-valgrind"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "642ed89@@fprint-list-udev-hwdb@exe"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/usr/bin/appstreamcli",
+      "validate",
+      "libfprint/org.freedesktop.libfprint.metainfo.xml"
+    ],
+    "env": {},
+    "name": "metainfo-validate",
+    "workdir": null,
+    "timeout": 30,
+    "suite": [
+      "libfprint:data",
+      "libfprint:no-valgrind"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "642ed89@@metainfo@cus"
+    ],
+    "extra_paths": []
+  }
+]

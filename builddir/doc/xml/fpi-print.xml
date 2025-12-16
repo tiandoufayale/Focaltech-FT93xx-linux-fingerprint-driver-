@@ -1,0 +1,344 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
+[
+  <!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+]>
+<refentry id="libfprint-2-Internal-FpPrint">
+<refmeta>
+<refentrytitle role="top_of_page" id="libfprint-2-Internal-FpPrint.top_of_page">Internal FpPrint</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBFPRINT-2 Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>Internal FpPrint</refname>
+<refpurpose>Internal fingerprint handling routines</refpurpose>
+</refnamediv>
+
+<refsect1 id="libfprint-2-Internal-FpPrint.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_proto_type" colwidth="150px"/>
+<colspec colname="functions_proto_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-print-add-print">fpi_print_add_print</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-print-set-type">fpi_print_set_type</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-print-set-device-stored">fpi_print_set_device_stored</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-print-add-from-image">fpi_print_add_from_image</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="FpiMatchResult"><returnvalue>FpiMatchResult</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-print-bz3-match">fpi_print_bz3_match</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fpi-print-generate-user-id">fpi_print_generate_user_id</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-print-fill-from-user-id">fpi_print_fill_from_user_id</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="libfprint-2-Internal-FpPrint.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="other_proto_type" colwidth="150px"/>
+<colspec colname="other_proto_name"/>
+<tbody>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="FpiPrintType">FpiPrintType</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="FpiMatchResult">FpiMatchResult</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+
+<refsect1 id="libfprint-2-Internal-FpPrint.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Interaction with prints and their storage. See also the public
+<link linkend="FpPrint"><type>FpPrint</type></link> routines.</para>
+
+</refsect1>
+<refsect1 id="libfprint-2-Internal-FpPrint.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="fpi-print-add-print" role="function">
+<title>fpi_print_add_print&#160;()</title>
+<indexterm zone="fpi-print-add-print"><primary>fpi_print_add_print</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_print_add_print (<parameter><link linkend="FpPrint"><type>FpPrint</type></link> *print</parameter>,
+                     <parameter><link linkend="FpPrint"><type>FpPrint</type></link> *add</parameter>);</programlisting>
+<para>Appends the single <link linkend="FPI-PRINT-NBIS:CAPS"><type>FPI_PRINT_NBIS</type></link> print from <parameter>add</parameter>
+ to the collection of
+prints in <parameter>print</parameter>
+. Both print objects need to be of type <link linkend="FPI-PRINT-NBIS:CAPS"><type>FPI_PRINT_NBIS</type></link>
+for this to work.</para>
+<refsect3 id="fpi-print-add-print.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>print</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpPrint"><type>FpPrint</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>add</para></entry>
+<entry role="parameter_description"><para>Print to append to <parameter>print</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-print-set-type" role="function">
+<title>fpi_print_set_type&#160;()</title>
+<indexterm zone="fpi-print-set-type"><primary>fpi_print_set_type</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_print_set_type (<parameter><link linkend="FpPrint"><type>FpPrint</type></link> *print</parameter>,
+                    <parameter><link linkend="FpiPrintType"><type>FpiPrintType</type></link> type</parameter>);</programlisting>
+<para>This function can only be called exactly once. Drivers should
+call it after creating a new print, or to initialize the template
+print passed during enrollment.</para>
+<refsect3 id="fpi-print-set-type.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>print</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpPrint"><type>FpPrint</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>type</para></entry>
+<entry role="parameter_description"><para>The newly type of the print data</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-print-set-device-stored" role="function">
+<title>fpi_print_set_device_stored&#160;()</title>
+<indexterm zone="fpi-print-set-device-stored"><primary>fpi_print_set_device_stored</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_print_set_device_stored (<parameter><link linkend="FpPrint"><type>FpPrint</type></link> *print</parameter>,
+                             <parameter><link linkend="gboolean"><type>gboolean</type></link> device_stored</parameter>);</programlisting>
+<para>Drivers must set this to <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> for any print that is really a handle
+for data that is stored on the device itself.</para>
+<refsect3 id="fpi-print-set-device-stored.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>print</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpPrint"><type>FpPrint</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>device_stored</para></entry>
+<entry role="parameter_description"><para>Whether the print is stored on the device or not</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-print-add-from-image" role="function">
+<title>fpi_print_add_from_image&#160;()</title>
+<indexterm zone="fpi-print-add-from-image"><primary>fpi_print_add_from_image</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+fpi_print_add_from_image (<parameter><link linkend="FpPrint"><type>FpPrint</type></link> *print</parameter>,
+                          <parameter><link linkend="FpImage"><type>FpImage</type></link> *image</parameter>,
+                          <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Extracts the minutiae from the given image and adds it to <parameter>print</parameter>
+ of
+type <link linkend="FPI-PRINT-NBIS:CAPS"><type>FPI_PRINT_NBIS</type></link>.</para>
+<para>The <parameter>image</parameter>
+ will be kept so that API users can get retrieve it e.g.
+for debugging purposes.</para>
+<refsect3 id="fpi-print-add-from-image.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>print</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpPrint"><type>FpPrint</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>image</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpImage"><type>FpImage</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>Return location for error</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fpi-print-add-from-image.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> on success</para>
+</refsect3></refsect2>
+<refsect2 id="fpi-print-bz3-match" role="function">
+<title>fpi_print_bz3_match&#160;()</title>
+<indexterm zone="fpi-print-bz3-match"><primary>fpi_print_bz3_match</primary></indexterm>
+<programlisting language="C"><link linkend="FpiMatchResult"><returnvalue>FpiMatchResult</returnvalue></link>
+fpi_print_bz3_match (<parameter><link linkend="FpPrint"><type>FpPrint</type></link> *temp</parameter>,
+                     <parameter><link linkend="FpPrint"><type>FpPrint</type></link> *print</parameter>,
+                     <parameter><link linkend="gint"><type>gint</type></link> bz3_threshold</parameter>,
+                     <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Match the newly scanned <parameter>print</parameter>
+ (containing exactly one print) against the
+prints contained in <parameter>template</parameter>
+ which will have been stored during enrollment.</para>
+<para>Both <parameter>template</parameter>
+ and <parameter>print</parameter>
+ need to be of type <link linkend="FPI-PRINT-NBIS:CAPS"><type>FPI_PRINT_NBIS</type></link> for this to
+work.</para>
+<refsect3 id="fpi-print-bz3-match.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>template</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpPrint"><type>FpPrint</type></link> containing one or more prints</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>print</para></entry>
+<entry role="parameter_description"><para>A newly scanned <link linkend="FpPrint"><type>FpPrint</type></link> to test</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>bz3_threshold</para></entry>
+<entry role="parameter_description"><para>The BZ3 match threshold</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>Return location for error</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fpi-print-bz3-match.returns" role="returns">
+<title>Returns</title>
+<para> Whether the prints match, <parameter>error</parameter>
+will be set if <link linkend="FPI-MATCH-ERROR:CAPS"><type>FPI_MATCH_ERROR</type></link> is returned</para>
+</refsect3></refsect2>
+<refsect2 id="fpi-print-generate-user-id" role="function">
+<title>fpi_print_generate_user_id&#160;()</title>
+<indexterm zone="fpi-print-generate-user-id"><primary>fpi_print_generate_user_id</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+fpi_print_generate_user_id (<parameter><link linkend="FpPrint"><type>FpPrint</type></link> *print</parameter>);</programlisting>
+<para>Generates a string identifier for the represented print. This identifier
+encodes some metadata about the print. It also includes a random string
+and may be assumed to be unique.</para>
+<para>This is useful if devices are able to store a string identifier, but more
+storing more metadata may be desirable. In effect, this means the driver
+can provide somewhat more meaningful data to <link linkend="fp-device-list-prints"><function>fp_device_list_prints()</function></link>.</para>
+<para>The generated ID may be truncated after 23 characters. However, more space
+is required to include the username, and it is recommended to store at
+at least 31 bytes.</para>
+<para>The generated format may change in the future. It is versioned though and
+decoding should remain functional.</para>
+<refsect3 id="fpi-print-generate-user-id.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>print</para></entry>
+<entry role="parameter_description"><para><link linkend="FpPrint"><type>FpPrint</type></link> to generate the ID for</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fpi-print-generate-user-id.returns" role="returns">
+<title>Returns</title>
+<para> A unique string of 23 + strlen(username) characters</para>
+</refsect3></refsect2>
+<refsect2 id="fpi-print-fill-from-user-id" role="function">
+<title>fpi_print_fill_from_user_id&#160;()</title>
+<indexterm zone="fpi-print-fill-from-user-id"><primary>fpi_print_fill_from_user_id</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+fpi_print_fill_from_user_id (<parameter><link linkend="FpPrint"><type>FpPrint</type></link> *print</parameter>,
+                             <parameter>const <link linkend="char"><type>char</type></link> *user_id</parameter>);</programlisting>
+<para>This is the reverse operation of <link linkend="fpi-print-generate-user-id"><function>fpi_print_generate_user_id()</function></link>, allowing
+the driver to encode some print metadata in a string.</para>
+<refsect3 id="fpi-print-fill-from-user-id.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>print</para></entry>
+<entry role="parameter_description"><para><link linkend="FpPrint"><type>FpPrint</type></link> to fill metadata into</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_id</para></entry>
+<entry role="parameter_description"><para>An ID that was likely encoded using <link linkend="fpi-print-generate-user-id"><function>fpi_print_generate_user_id()</function></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fpi-print-fill-from-user-id.returns" role="returns">
+<title>Returns</title>
+<para> Whether a valid ID was found</para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="libfprint-2-Internal-FpPrint.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="FpiPrintType" role="enum">
+<title>enum FpiPrintType</title>
+<indexterm zone="FpiPrintType"><primary>FpiPrintType</primary></indexterm>
+<refsect3 id="FpiPrintType.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="FPI-PRINT-UNDEFINED:CAPS">FPI_PRINT_UNDEFINED</para></entry>
+<entry role="enum_member_description"><para>Undefined type, this happens prior to enrollment</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FPI-PRINT-RAW:CAPS">FPI_PRINT_RAW</para></entry>
+<entry role="enum_member_description"><para>A raw print where the data is directly compared</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FPI-PRINT-NBIS:CAPS">FPI_PRINT_NBIS</para></entry>
+<entry role="enum_member_description"><para>NBIS minutiae comparison</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="FpiMatchResult" role="enum">
+<title>enum FpiMatchResult</title>
+<indexterm zone="FpiMatchResult"><primary>FpiMatchResult</primary></indexterm>
+<refsect3 id="FpiMatchResult.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="FPI-MATCH-ERROR:CAPS">FPI_MATCH_ERROR</para></entry>
+<entry role="enum_member_description"><para>An error occurred during matching</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FPI-MATCH-FAIL:CAPS">FPI_MATCH_FAIL</para></entry>
+<entry role="enum_member_description"><para>The prints did not match</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FPI-MATCH-SUCCESS:CAPS">FPI_MATCH_SUCCESS</para></entry>
+<entry role="enum_member_description"><para>The prints matched</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+
+</refentry>

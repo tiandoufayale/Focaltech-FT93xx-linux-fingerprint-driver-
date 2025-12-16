@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
+[
+  <!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+]>
+<refentry id="FpImageDevice">
+<refmeta>
+<refentrytitle role="top_of_page" id="FpImageDevice.top_of_page">FpImageDevice</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBFPRINT-2 Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>FpImageDevice</refname>
+<refpurpose>Image device subclass</refpurpose>
+</refnamediv>
+
+<refsect1 id="FpImageDevice.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="FpiImageDeviceState"><type>FpiImageDeviceState</type></link></entry><entry role="property_name"><link linkend="FpImageDevice--fpi-image-device-state">fpi-image-device-state</link></entry><entry role="property_flags">Read</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="FpImageDevice.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="signal_proto_type" colwidth="150px"/>
+<colspec colname="signal_proto_name" colwidth="300px"/>
+<colspec colname="signal_proto_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="FpImageDevice-fpi-image-device-state-changed">fpi-image-device-state-changed</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-FIRST:CAPS">Run First</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="FpImageDevice.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="other_proto_type" colwidth="150px"/>
+<colspec colname="other_proto_name"/>
+<tbody>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="FP-TYPE-IMAGE-DEVICE:CAPS">FP_TYPE_IMAGE_DEVICE</link></entry></row>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="FpImageDevice-struct">FpImageDevice</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="FpImageDevice.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="FpDevice">FpDevice</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> FpImageDevice
+</screen>
+</refsect1>
+<refsect1 id="FpImageDevice.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+FpImageDevice implements
+ <link linkend="GAsyncInitable">GAsyncInitable</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="FpImageDevice.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This is a helper class for the commonly found image based devices.</para>
+
+</refsect1>
+<refsect1 id="FpImageDevice.functions_details" role="details">
+<title role="details.title">Functions</title>
+<para />
+</refsect1>
+<refsect1 id="FpImageDevice.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="FP-TYPE-IMAGE-DEVICE:CAPS" role="macro">
+<title>FP_TYPE_IMAGE_DEVICE</title>
+<indexterm zone="FP-TYPE-IMAGE-DEVICE:CAPS"><primary>FP_TYPE_IMAGE_DEVICE</primary></indexterm>
+<programlisting language="C">#define FP_TYPE_IMAGE_DEVICE (fp_image_device_get_type ())
+</programlisting>
+</refsect2>
+<refsect2 id="FpImageDevice-struct" role="struct">
+<title>FpImageDevice</title>
+<indexterm zone="FpImageDevice-struct"><primary>FpImageDevice</primary></indexterm>
+<programlisting language="C">typedef struct _FpImageDevice FpImageDevice;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="FpImageDevice.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="FpImageDevice--fpi-image-device-state" role="property"><title>The <literal>“fpi-image-device-state”</literal> property</title>
+<indexterm zone="FpImageDevice--fpi-image-device-state"><primary>FpImageDevice:fpi-image-device-state</primary></indexterm>
+<programlisting>  “fpi-image-device-state”   <link linkend="FpiImageDeviceState"><type>FpiImageDeviceState</type></link></programlisting>
+<para>Private: The state of the image device.</para><para>Owner: FpImageDevice</para>
+<para>Flags: Read</para>
+<para>Default value: FPI_IMAGE_DEVICE_STATE_INACTIVE</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="FpImageDevice.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="FpImageDevice-fpi-image-device-state-changed" role="signal"><title>The <literal>“fpi-image-device-state-changed”</literal> signal</title>
+<indexterm zone="FpImageDevice-fpi-image-device-state-changed"><primary>FpImageDevice::fpi-image-device-state-changed</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="FpImageDevice"><type>FpImageDevice</type></link>      *image_device,
+               <link linkend="FpiImageDeviceState"><type>FpiImageDeviceState</type></link> new_state,
+               <link linkend="gpointer"><type>gpointer</type></link>            user_data)</programlisting>
+<para>This signal is only for internal purposes.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="FpImageDevice-fpi-image-device-state-changed.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>image_device</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpImageDevice"><type>FpImageDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>new_state</para></entry>
+<entry role="parameter_description"><para>The new state of the device</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-FIRST:CAPS">Run First</link></para>
+<para role="stability">Stability Level: <acronym>Private</acronym></para></refsect2>
+</refsect1>
+
+</refentry>

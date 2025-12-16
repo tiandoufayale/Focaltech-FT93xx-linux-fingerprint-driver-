@@ -1,0 +1,1840 @@
+Build started at 2025-12-16T19:49:57.179516
+Main binary: /usr/bin/python3
+Build Options: 
+Python system: Linux
+The Meson build system
+Version: 1.7.0
+Source dir: /home/tiandou/下载/libfprint
+Build dir: /home/tiandou/下载/libfprint/builddir
+Build type: native build
+Project name: libfprint
+Project version: 1.94.9
+-----------
+Detecting compiler via: `cc --version` -> 0
+stdout:
+cc (Ubuntu 15.2.0-4ubuntu4) 15.2.0
+Copyright (C) 2025 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+-----------
+Running command: -cpp -x c -E -dM -
+-----
+-----------
+Detecting linker via: `cc -Wl,--version` -> 0
+stdout:
+GNU ld (GNU Binutils for Ubuntu) 2.45
+Copyright (C) 2025 Free Software Foundation, Inc.
+这个程序是自由软件；您可以遵循GNU 通用公共授权版本 3 或
+(您自行选择的) 稍后版本以再次散布它。
+这个程序完全没有任何担保。
+-----------
+stderr:
+collect2 version 15.2.0
+/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/15/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/15/lto-wrapper -plugin-opt=-fresolution=/tmp/cc2gVm6g.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/15 -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/15/../../.. -L/lib -L/usr/lib --version -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crtn.o
+-----------
+Sanity testing C compiler: cc
+Is cross compiler: False.
+Sanity check compiler command line: cc sanitycheckc.c -o sanitycheckc.exe -D_FILE_OFFSET_BITS=64
+Sanity check compile stdout:
+
+-----
+Sanity check compile stderr:
+
+-----
+Running test binary command:  '/home/tiandou/下载/libfprint/builddir/meson-private/sanitycheckc.exe'
+C compiler for the host machine: cc (gcc 15.2.0 "cc (Ubuntu 15.2.0-4ubuntu4) 15.2.0")
+C linker for the host machine: cc ld.bfd 2.45
+-----------
+Detecting archiver via: `gcc-ar --version` -> 0
+stdout:
+GNU ar (GNU Binutils for Ubuntu) 2.45
+Copyright (C) 2025 Free Software Foundation, Inc.
+这个程序是自由软件；您可以遵循 GNU 通用公共授权版本 3 或
+(您自行选择的) 稍后版本再发布它。
+这个程序不含任何担保。
+-----------
+-----------
+Detecting compiler via: `c++ --version` -> 0
+stdout:
+c++ (Ubuntu 15.2.0-4ubuntu4) 15.2.0
+Copyright (C) 2025 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+-----------
+Running command: -cpp -x c++ -E -dM -
+-----
+-----------
+Detecting linker via: `c++ -Wl,--version` -> 0
+stdout:
+GNU ld (GNU Binutils for Ubuntu) 2.45
+Copyright (C) 2025 Free Software Foundation, Inc.
+这个程序是自由软件；您可以遵循GNU 通用公共授权版本 3 或
+(您自行选择的) 稍后版本以再次散布它。
+这个程序完全没有任何担保。
+-----------
+stderr:
+collect2 version 15.2.0
+/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/15/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/15/lto-wrapper -plugin-opt=-fresolution=/tmp/ccqyXyRf.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/15 -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/15/../../.. -L/lib -L/usr/lib --version -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crtn.o
+-----------
+Sanity testing C++ compiler: c++
+Is cross compiler: False.
+Sanity check compiler command line: c++ sanitycheckcpp.cc -o sanitycheckcpp.exe -D_FILE_OFFSET_BITS=64
+Sanity check compile stdout:
+
+-----
+Sanity check compile stderr:
+
+-----
+Running test binary command:  '/home/tiandou/下载/libfprint/builddir/meson-private/sanitycheckcpp.exe'
+C++ compiler for the host machine: c++ (gcc 15.2.0 "c++ (Ubuntu 15.2.0-4ubuntu4) 15.2.0")
+C++ linker for the host machine: c++ ld.bfd 2.45
+-----------
+Detecting compiler via: `cc --version` -> 0
+stdout:
+cc (Ubuntu 15.2.0-4ubuntu4) 15.2.0
+Copyright (C) 2025 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+-----------
+Running command: -cpp -x c -E -dM -
+-----
+-----------
+Detecting linker via: `cc -Wl,--version` -> 0
+stdout:
+GNU ld (GNU Binutils for Ubuntu) 2.45
+Copyright (C) 2025 Free Software Foundation, Inc.
+这个程序是自由软件；您可以遵循GNU 通用公共授权版本 3 或
+(您自行选择的) 稍后版本以再次散布它。
+这个程序完全没有任何担保。
+-----------
+stderr:
+collect2 version 15.2.0
+/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/15/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/15/lto-wrapper -plugin-opt=-fresolution=/tmp/ccLsJx2I.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/15 -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/15/../../.. -L/lib -L/usr/lib --version -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crtn.o
+-----------
+Sanity testing C compiler: cc
+Is cross compiler: False.
+Sanity check compiler command line: cc sanitycheckc.c -o sanitycheckc.exe -D_FILE_OFFSET_BITS=64
+Sanity check compile stdout:
+
+-----
+Sanity check compile stderr:
+
+-----
+Running test binary command:  '/home/tiandou/下载/libfprint/builddir/meson-private/sanitycheckc.exe'
+C compiler for the build machine: cc (gcc 15.2.0 "cc (Ubuntu 15.2.0-4ubuntu4) 15.2.0")
+C linker for the build machine: cc ld.bfd 2.45
+-----------
+Detecting archiver via: `gcc-ar --version` -> 0
+stdout:
+GNU ar (GNU Binutils for Ubuntu) 2.45
+Copyright (C) 2025 Free Software Foundation, Inc.
+这个程序是自由软件；您可以遵循 GNU 通用公共授权版本 3 或
+(您自行选择的) 稍后版本再发布它。
+这个程序不含任何担保。
+-----------
+-----------
+Detecting compiler via: `c++ --version` -> 0
+stdout:
+c++ (Ubuntu 15.2.0-4ubuntu4) 15.2.0
+Copyright (C) 2025 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+-----------
+Running command: -cpp -x c++ -E -dM -
+-----
+-----------
+Detecting linker via: `c++ -Wl,--version` -> 0
+stdout:
+GNU ld (GNU Binutils for Ubuntu) 2.45
+Copyright (C) 2025 Free Software Foundation, Inc.
+这个程序是自由软件；您可以遵循GNU 通用公共授权版本 3 或
+(您自行选择的) 稍后版本以再次散布它。
+这个程序完全没有任何担保。
+-----------
+stderr:
+collect2 version 15.2.0
+/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/15/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/15/lto-wrapper -plugin-opt=-fresolution=/tmp/ccpE7VgU.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/15 -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/15/../../.. -L/lib -L/usr/lib --version -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crtn.o
+-----------
+Sanity testing C++ compiler: c++
+Is cross compiler: False.
+Sanity check compiler command line: c++ sanitycheckcpp.cc -o sanitycheckcpp.exe -D_FILE_OFFSET_BITS=64
+Sanity check compile stdout:
+
+-----
+Sanity check compile stderr:
+
+-----
+Running test binary command:  '/home/tiandou/下载/libfprint/builddir/meson-private/sanitycheckcpp.exe'
+C++ compiler for the build machine: c++ (gcc 15.2.0 "c++ (Ubuntu 15.2.0-4ubuntu4) 15.2.0")
+C++ linker for the build machine: c++ ld.bfd 2.45
+Build machine cpu family: x86_64
+Build machine cpu: x86_64
+Host machine cpu family: x86_64
+Host machine cpu: x86_64
+Target machine cpu family: x86_64
+Target machine cpu: x86_64
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmpev3rnwq4
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmpev3rnwq4/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmpev3rnwq4/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Wcast-align` -> 0
+Compiler for C supports arguments -Wcast-align: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmp5xg_jsyq
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmp5xg_jsyq/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmp5xg_jsyq/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Wformat-nonliteral` -> 0
+Compiler for C supports arguments -Wformat-nonliteral: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmpmld6e5m8
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmpmld6e5m8/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmpmld6e5m8/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Wformat-security` -> 0
+Compiler for C supports arguments -Wformat-security: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmpexz8vyzk
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmpexz8vyzk/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmpexz8vyzk/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Wformat=2` -> 0
+Compiler for C supports arguments -Wformat=2: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmp2vvjy6kk
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmp2vvjy6kk/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmp2vvjy6kk/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Wignored-qualifiers` -> 0
+Compiler for C supports arguments -Wignored-qualifiers: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmpko_sa6p9
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmpko_sa6p9/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmpko_sa6p9/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Wlogical-op` -> 0
+Compiler for C supports arguments -Wlogical-op: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmp5qtxu6ip
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmp5qtxu6ip/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmp5qtxu6ip/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Wmissing-declarations` -> 0
+Compiler for C supports arguments -Wmissing-declarations: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmpq7qz5h37
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmpq7qz5h37/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmpq7qz5h37/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Wmissing-format-attribute` -> 0
+Compiler for C supports arguments -Wmissing-format-attribute: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmpdm4qc_7l
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmpdm4qc_7l/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmpdm4qc_7l/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Wmissing-include-dirs` -> 0
+Compiler for C supports arguments -Wmissing-include-dirs: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmp0z9ui4qp
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmp0z9ui4qp/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmp0z9ui4qp/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Wmissing-noreturn` -> 0
+Compiler for C supports arguments -Wmissing-noreturn: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmpunixwv9z
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmpunixwv9z/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmpunixwv9z/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Wpointer-arith` -> 0
+Compiler for C supports arguments -Wpointer-arith: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmpqaljl5iu
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmpqaljl5iu/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmpqaljl5iu/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Wshadow` -> 0
+Compiler for C supports arguments -Wshadow: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmp3l4n7yeb
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmp3l4n7yeb/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmp3l4n7yeb/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Wswitch-enum` -> 0
+Compiler for C supports arguments -Wswitch-enum: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmp05maqv5e
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmp05maqv5e/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmp05maqv5e/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Wtype-limits` -> 0
+Compiler for C supports arguments -Wtype-limits: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmp7y4y04r3
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmp7y4y04r3/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmp7y4y04r3/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Wundef` -> 0
+Compiler for C supports arguments -Wundef: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmptom7p0cr
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmptom7p0cr/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmptom7p0cr/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Wunused` -> 0
+Compiler for C supports arguments -Wunused: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmp2ij3r0je
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmp2ij3r0je/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmp2ij3r0je/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Werror=address` -> 0
+Compiler for C supports arguments -Werror=address: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmppr0oyfd3
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmppr0oyfd3/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmppr0oyfd3/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Werror=array-bounds` -> 0
+Compiler for C supports arguments -Werror=array-bounds: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmpsvwtbehj
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmpsvwtbehj/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmpsvwtbehj/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Werror=empty-body` -> 0
+Compiler for C supports arguments -Werror=empty-body: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmpgqmjjhi1
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmpgqmjjhi1/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmpgqmjjhi1/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Werror=init-self` -> 0
+Compiler for C supports arguments -Werror=init-self: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmpm8wiws8v
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmpm8wiws8v/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmpm8wiws8v/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Werror=int-to-pointer-cast` -> 0
+Compiler for C supports arguments -Werror=int-to-pointer-cast: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmpajj3yg4_
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmpajj3yg4_/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmpajj3yg4_/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Werror=main` -> 0
+Compiler for C supports arguments -Werror=main: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmpn6iv71as
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmpn6iv71as/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmpn6iv71as/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Werror=missing-braces` -> 0
+Compiler for C supports arguments -Werror=missing-braces: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmpivd8fb41
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmpivd8fb41/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmpivd8fb41/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Werror=nonnull` -> 0
+Compiler for C supports arguments -Werror=nonnull: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmprgh11jwy
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmprgh11jwy/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmprgh11jwy/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Werror=redundant-decls` -> 0
+Compiler for C supports arguments -Werror=redundant-decls: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmpxa1ewrir
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmpxa1ewrir/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmpxa1ewrir/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Werror=return-type` -> 0
+Compiler for C supports arguments -Werror=return-type: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmpdqhp28gn
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmpdqhp28gn/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmpdqhp28gn/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Werror=sequence-point` -> 0
+Compiler for C supports arguments -Werror=sequence-point: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmpd_u815f3
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmpd_u815f3/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmpd_u815f3/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Werror=trigraphs` -> 0
+Compiler for C supports arguments -Werror=trigraphs: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmpcpukkhez
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmpcpukkhez/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmpcpukkhez/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Werror=write-strings` -> 0
+Compiler for C supports arguments -Werror=write-strings: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmpawaqjyif
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmpawaqjyif/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmpawaqjyif/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -fno-strict-aliasing` -> 0
+Compiler for C supports arguments -fno-strict-aliasing: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmp3vl367n0
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmp3vl367n0/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmp3vl367n0/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_68` -> 0
+Compiler for C supports arguments -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_68: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmpd8pk8zib
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmpd8pk8zib/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmpd8pk8zib/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_68` -> 0
+Compiler for C supports arguments -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_68: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmp4j0lvf4y
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmp4j0lvf4y/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmp4j0lvf4y/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -D_GNU_SOURCE` -> 0
+Compiler for C supports arguments -D_GNU_SOURCE: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmpjzcek6fe
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmpjzcek6fe/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmpjzcek6fe/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 '-DG_LOG_DOMAIN="libfprint"'` -> 0
+Compiler for C supports arguments -DG_LOG_DOMAIN="libfprint": YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmpm8rnlm1f
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmpm8rnlm1f/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmpm8rnlm1f/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Wimplicit-function-declaration` -> 0
+Compiler for C supports arguments -Wimplicit-function-declaration: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmppwnlgj4d
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmppwnlgj4d/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmppwnlgj4d/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Wmissing-prototypes` -> 0
+Compiler for C supports arguments -Wmissing-prototypes: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmpoiltl8k1
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmpoiltl8k1/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmpoiltl8k1/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Wnested-externs` -> 0
+Compiler for C supports arguments -Wnested-externs: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmpj6sfy6jc
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmpj6sfy6jc/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmpj6sfy6jc/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Wold-style-definition` -> 0
+Compiler for C supports arguments -Wold-style-definition: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmp2np803ii
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmp2np803ii/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmp2np803ii/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Wstrict-prototypes` -> 0
+Compiler for C supports arguments -Wstrict-prototypes: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmphabw7dpn
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmphabw7dpn/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmphabw7dpn/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Werror=implicit` -> 0
+Compiler for C supports arguments -Werror=implicit: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmppavuhxyy
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmppavuhxyy/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmppavuhxyy/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Werror=pointer-to-int-cast` -> 0
+Compiler for C supports arguments -Werror=pointer-to-int-cast: YES 
+Pkg-config binary missing from cross or native file, or env var undefined.
+Trying a default Pkg-config fallback at pkg-config
+Found pkg-config: YES (/usr/bin/pkg-config) 1.8.1
+Determining dependency 'glib-2.0' with pkg-config executable '/usr/bin/pkg-config'
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --modversion glib-2.0` -> 0
+stdout:
+2.86.0
+-----------
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --cflags glib-2.0` -> 0
+stdout:
+-I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/sysprof-6 -pthread
+-----------
+env[PKG_CONFIG_ALLOW_SYSTEM_LIBS]: 1
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --libs glib-2.0` -> 0
+stdout:
+-L/usr/lib/x86_64-linux-gnu -lglib-2.0
+-----------
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --libs glib-2.0` -> 0
+stdout:
+-lglib-2.0
+-----------
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmpdz78ka22
+Code:
+
+        #include<stddef.h>
+        #include<stdio.h>
+        int main(void) {
+            printf("%ld\n", (long)(sizeof(void *)));
+            return 0;
+        }
+-----------
+Command line: `c++ '/home/tiandou/下载/libfprint/builddir/meson-private/tmpdz78ka22/testfile.cpp' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmpdz78ka22/output.exe' -D_FILE_OFFSET_BITS=64 -O0 -fpermissive` -> 0
+Program stdout:
+
+8
+
+Program stderr:
+
+
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmpsdi2k5_6
+Code:
+
+-----------
+Command line: `c++ '/home/tiandou/下载/libfprint/builddir/meson-private/tmpsdi2k5_6/testfile.cpp' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmpsdi2k5_6/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -fpermissive --print-search-dirs` -> 0
+stdout:
+install: /usr/lib/gcc/x86_64-linux-gnu/15/
+programs: =/usr/libexec/gcc/x86_64-linux-gnu/15/:/usr/libexec/gcc/x86_64-linux-gnu/15/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/15/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../../x86_64-linux-gnu/bin/x86_64-linux-gnu/15/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../../x86_64-linux-gnu/bin/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../../x86_64-linux-gnu/bin/
+libraries: =/usr/lib/gcc/x86_64-linux-gnu/15/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/15/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../../x86_64-linux-gnu/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/15/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib/:/lib/x86_64-linux-gnu/15/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/15/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../../x86_64-linux-gnu/lib/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../:/lib/:/usr/lib/
+-----------
+Run-time dependency glib-2.0 found: YES 2.86.0
+Determining dependency 'gio-unix-2.0' with pkg-config executable '/usr/bin/pkg-config'
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --modversion gio-unix-2.0` -> 0
+stdout:
+2.86.0
+-----------
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --cflags gio-unix-2.0` -> 0
+stdout:
+-I/usr/include/gio-unix-2.0 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/sysprof-6 -I/usr/include/libmount -I/usr/include/blkid -pthread
+-----------
+env[PKG_CONFIG_ALLOW_SYSTEM_LIBS]: 1
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --libs gio-unix-2.0` -> 0
+stdout:
+-L/usr/lib/x86_64-linux-gnu -lgio-2.0 -lgobject-2.0 -lglib-2.0
+-----------
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --libs gio-unix-2.0` -> 0
+stdout:
+-lgio-2.0 -lgobject-2.0 -lglib-2.0
+-----------
+Run-time dependency gio-unix-2.0 found: YES 2.86.0
+Determining dependency 'gobject-2.0' with pkg-config executable '/usr/bin/pkg-config'
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --modversion gobject-2.0` -> 0
+stdout:
+2.86.0
+-----------
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --cflags gobject-2.0` -> 0
+stdout:
+-I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/sysprof-6 -pthread
+-----------
+env[PKG_CONFIG_ALLOW_SYSTEM_LIBS]: 1
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --libs gobject-2.0` -> 0
+stdout:
+-L/usr/lib/x86_64-linux-gnu -lgobject-2.0 -lglib-2.0
+-----------
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --libs gobject-2.0` -> 0
+stdout:
+-lgobject-2.0 -lglib-2.0
+-----------
+Run-time dependency gobject-2.0 found: YES 2.86.0
+Determining dependency 'gusb' with pkg-config executable '/usr/bin/pkg-config'
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --modversion gusb` -> 0
+stdout:
+0.4.9
+-----------
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --cflags gusb` -> 0
+stdout:
+-I/usr/include/gusb-1 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/sysprof-6 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/libusb-1.0 -I/usr/include/json-glib-1.0 -pthread
+-----------
+env[PKG_CONFIG_ALLOW_SYSTEM_LIBS]: 1
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --libs gusb` -> 0
+stdout:
+-L/usr/lib/x86_64-linux-gnu -lgusb -lusb-1.0 -ljson-glib-1.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0
+-----------
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --libs gusb` -> 0
+stdout:
+-lgusb -lusb-1.0 -ljson-glib-1.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0
+-----------
+Run-time dependency gusb found: YES 0.4.9
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmpjo1khm7n
+Code:
+int main(void) { return 0; }
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmpjo1khm7n/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmpjo1khm7n/output.exe' -D_FILE_OFFSET_BITS=64 -O0 -lm -Wl,--allow-shlib-undefined` -> 0
+Library m found: YES
+Program sh found: YES (/usr/bin/sh)
+Determining dependency 'cairo' with pkg-config executable '/usr/bin/pkg-config'
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --modversion cairo` -> 0
+stdout:
+1.18.4
+-----------
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --cflags cairo` -> 0
+stdout:
+-I/usr/include/cairo -I/usr/include/libpng16 -I/usr/include/freetype2 -I/usr/include/pixman-1
+-----------
+env[PKG_CONFIG_ALLOW_SYSTEM_LIBS]: 1
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --libs cairo` -> 0
+stdout:
+-L/usr/lib/x86_64-linux-gnu -lcairo
+-----------
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --libs cairo` -> 0
+stdout:
+-lcairo
+-----------
+Run-time dependency cairo found: YES 1.18.4
+Determining dependency 'gobject-introspection-1.0' with pkg-config executable '/usr/bin/pkg-config'
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --modversion gobject-introspection-1.0` -> 0
+stdout:
+1.84.0
+-----------
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --cflags gobject-introspection-1.0` -> 0
+stdout:
+-I/usr/include/gobject-introspection-1.0 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/sysprof-6 -pthread
+-----------
+env[PKG_CONFIG_ALLOW_SYSTEM_LIBS]: 1
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --libs gobject-introspection-1.0` -> 0
+stdout:
+-L/usr/lib/x86_64-linux-gnu -lgirepository-1.0 -lgobject-2.0 -lglib-2.0
+-----------
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --libs gobject-introspection-1.0` -> 0
+stdout:
+-lgirepository-1.0 -lgobject-2.0 -lglib-2.0
+-----------
+Run-time dependency gobject-introspection-1.0 found: YES 1.84.0
+Determining dependency 'pixman-1' with pkg-config executable '/usr/bin/pkg-config'
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --modversion pixman-1` -> 0
+stdout:
+0.44.0
+-----------
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --cflags pixman-1` -> 0
+stdout:
+-I/usr/include/pixman-1
+-----------
+env[PKG_CONFIG_ALLOW_SYSTEM_LIBS]: 1
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --libs pixman-1` -> 0
+stdout:
+-L/usr/lib/x86_64-linux-gnu -lpixman-1
+-----------
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --libs pixman-1` -> 0
+stdout:
+-lpixman-1
+-----------
+Run-time dependency pixman-1 found: YES 0.44.0
+Determining dependency 'openssl' with pkg-config executable '/usr/bin/pkg-config'
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --modversion openssl` -> 0
+stdout:
+3.5.3
+-----------
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --cflags openssl` -> 0
+env[PKG_CONFIG_ALLOW_SYSTEM_LIBS]: 1
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --libs openssl` -> 0
+stdout:
+-L/usr/lib/x86_64-linux-gnu -lssl -lcrypto
+-----------
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --libs openssl` -> 0
+stdout:
+-lssl -lcrypto
+-----------
+Run-time dependency openssl found: YES 3.5.3
+Determining dependency 'gudev-1.0' with pkg-config executable '/usr/bin/pkg-config'
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --modversion gudev-1.0` -> 0
+stdout:
+238
+-----------
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --cflags gudev-1.0` -> 0
+stdout:
+-I/usr/include/gudev-1.0 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/sysprof-6 -pthread
+-----------
+env[PKG_CONFIG_ALLOW_SYSTEM_LIBS]: 1
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --libs gudev-1.0` -> 0
+stdout:
+-L/usr/lib/x86_64-linux-gnu -lgudev-1.0 -lgobject-2.0 -lglib-2.0
+-----------
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --libs gudev-1.0` -> 0
+stdout:
+-lgudev-1.0 -lgobject-2.0 -lglib-2.0
+-----------
+Run-time dependency gudev-1.0 found: YES 238
+Determining dependency 'udev' with pkg-config executable '/usr/bin/pkg-config'
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --modversion udev` -> 0
+stdout:
+257
+-----------
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --cflags udev` -> 0
+env[PKG_CONFIG_ALLOW_SYSTEM_LIBS]: 1
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --libs udev` -> 0
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --libs udev` -> 0
+Run-time dependency udev found: YES 257
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --variable=udevdir udev` -> 0
+stdout:
+/usr/lib/udev
+-----------
+Got pkg-config variable udevdir : /usr/lib/udev
+Dependency udev found: YES 257 (cached)
+Dependency glib-2.0 found: YES 2.86.0 (cached)
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --variable=glib_mkenums glib-2.0` -> 0
+stdout:
+/usr/bin/glib-mkenums
+-----------
+Got pkg-config variable glib_mkenums : /usr/bin/glib-mkenums
+Program /usr/bin/glib-mkenums found: YES (/usr/bin/glib-mkenums)
+Dependency glib-2.0 found: YES 2.86.0 (cached)
+Program /usr/bin/glib-mkenums found: YES (/usr/bin/glib-mkenums)
+Dependency glib-2.0 found: YES 2.86.0 (cached)
+Program /usr/bin/glib-mkenums found: YES (/usr/bin/glib-mkenums)
+Dependency glib-2.0 found: YES 2.86.0 (cached)
+Program /usr/bin/glib-mkenums found: YES (/usr/bin/glib-mkenums)
+Configuring fpi-drivers.c with command
+Running command: /usr/bin/echo '#include <glib-object.h>
+#include "fpi-context.h"
+
+extern GType (fpi_device_upektc_img_get_type) (void);
+extern GType (fpi_device_vfs5011_get_type) (void);
+extern GType (fpi_device_vfs7552_get_type) (void);
+extern GType (fpi_device_aes3500_get_type) (void);
+extern GType (fpi_device_aes4000_get_type) (void);
+extern GType (fpi_device_aes1610_get_type) (void);
+extern GType (fpi_device_aes1660_get_type) (void);
+extern GType (fpi_device_aes2660_get_type) (void);
+extern GType (fpi_device_aes2501_get_type) (void);
+extern GType (fpi_device_aes2550_get_type) (void);
+extern GType (fpi_device_vfs101_get_type) (void);
+extern GType (fpi_device_vfs301_get_type) (void);
+extern GType (fpi_device_vfs0050_get_type) (void);
+extern GType (fpi_device_etes603_get_type) (void);
+extern GType (fpi_device_egis0570_get_type) (void);
+extern GType (fpi_device_egismoc_get_type) (void);
+extern GType (fpi_device_vcom5s_get_type) (void);
+extern GType (fpi_device_synaptics_get_type) (void);
+extern GType (fpi_device_elan_get_type) (void);
+extern GType (fpi_device_elanmoc_get_type) (void);
+extern GType (fpi_device_uru4000_get_type) (void);
+extern GType (fpi_device_upektc_get_type) (void);
+extern GType (fpi_device_upeksonly_get_type) (void);
+extern GType (fpi_device_upekts_get_type) (void);
+extern GType (fpi_device_goodixmoc_get_type) (void);
+extern GType (fpi_device_nb1010_get_type) (void);
+extern GType (fpi_device_fpcmoc_get_type) (void);
+extern GType (fpi_device_realtek_get_type) (void);
+extern GType (fpi_device_focaltech_moc_get_type) (void);
+extern GType (fpi_device_elanspi_get_type) (void);
+
+GArray *
+fpi_get_driver_types (void)
+{
+  GArray *drivers = g_array_new (TRUE, FALSE, sizeof (GType));
+  GType t;
+
+  t = fpi_device_upektc_img_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_vfs5011_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_vfs7552_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_aes3500_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_aes4000_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_aes1610_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_aes1660_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_aes2660_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_aes2501_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_aes2550_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_vfs101_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_vfs301_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_vfs0050_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_etes603_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_egis0570_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_egismoc_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_vcom5s_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_synaptics_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_elan_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_elanmoc_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_uru4000_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_upektc_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_upeksonly_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_upekts_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_goodixmoc_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_nb1010_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_fpcmoc_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_realtek_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_focaltech_moc_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_elanspi_get_type ();
+  g_array_append_val (drivers, t);
+
+  return drivers;
+}'
+--- stdout ---
+#include <glib-object.h>
+#include "fpi-context.h"
+
+extern GType (fpi_device_upektc_img_get_type) (void);
+extern GType (fpi_device_vfs5011_get_type) (void);
+extern GType (fpi_device_vfs7552_get_type) (void);
+extern GType (fpi_device_aes3500_get_type) (void);
+extern GType (fpi_device_aes4000_get_type) (void);
+extern GType (fpi_device_aes1610_get_type) (void);
+extern GType (fpi_device_aes1660_get_type) (void);
+extern GType (fpi_device_aes2660_get_type) (void);
+extern GType (fpi_device_aes2501_get_type) (void);
+extern GType (fpi_device_aes2550_get_type) (void);
+extern GType (fpi_device_vfs101_get_type) (void);
+extern GType (fpi_device_vfs301_get_type) (void);
+extern GType (fpi_device_vfs0050_get_type) (void);
+extern GType (fpi_device_etes603_get_type) (void);
+extern GType (fpi_device_egis0570_get_type) (void);
+extern GType (fpi_device_egismoc_get_type) (void);
+extern GType (fpi_device_vcom5s_get_type) (void);
+extern GType (fpi_device_synaptics_get_type) (void);
+extern GType (fpi_device_elan_get_type) (void);
+extern GType (fpi_device_elanmoc_get_type) (void);
+extern GType (fpi_device_uru4000_get_type) (void);
+extern GType (fpi_device_upektc_get_type) (void);
+extern GType (fpi_device_upeksonly_get_type) (void);
+extern GType (fpi_device_upekts_get_type) (void);
+extern GType (fpi_device_goodixmoc_get_type) (void);
+extern GType (fpi_device_nb1010_get_type) (void);
+extern GType (fpi_device_fpcmoc_get_type) (void);
+extern GType (fpi_device_realtek_get_type) (void);
+extern GType (fpi_device_focaltech_moc_get_type) (void);
+extern GType (fpi_device_elanspi_get_type) (void);
+
+GArray *
+fpi_get_driver_types (void)
+{
+  GArray *drivers = g_array_new (TRUE, FALSE, sizeof (GType));
+  GType t;
+
+  t = fpi_device_upektc_img_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_vfs5011_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_vfs7552_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_aes3500_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_aes4000_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_aes1610_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_aes1660_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_aes2660_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_aes2501_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_aes2550_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_vfs101_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_vfs301_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_vfs0050_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_etes603_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_egis0570_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_egismoc_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_vcom5s_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_synaptics_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_elan_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_elanmoc_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_uru4000_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_upektc_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_upeksonly_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_upekts_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_goodixmoc_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_nb1010_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_fpcmoc_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_realtek_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_focaltech_moc_get_type ();
+  g_array_append_val (drivers, t);
+
+  t = fpi_device_elanspi_get_type ();
+  g_array_append_val (drivers, t);
+
+  return drivers;
+}
+
+--- stderr ---
+
+
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmpj1xsm29v
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmpj1xsm29v/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmpj1xsm29v/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Werror=redundant-decls -Wno-error=redundant-decls` -> 0
+Compiler for C supports arguments -Wno-error=redundant-decls: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmph_wcuihp
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmph_wcuihp/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmph_wcuihp/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Wredundant-decls -Wno-redundant-decls` -> 0
+Compiler for C supports arguments -Wno-redundant-decls: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmpwf92imw9
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmpwf92imw9/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmpwf92imw9/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Wdiscarded-qualifiers -Wno-discarded-qualifiers` -> 0
+Compiler for C supports arguments -Wno-discarded-qualifiers: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmpv53xecc5
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmpv53xecc5/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmpv53xecc5/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Warray-bounds -Wno-array-bounds` -> 0
+Compiler for C supports arguments -Wno-array-bounds: YES 
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmpsadjjg9c
+Code:
+extern int i;
+int i;
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmpsadjjg9c/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmpsadjjg9c/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -Warray-parameter -Wno-array-parameter` -> 0
+Compiler for C supports arguments -Wno-array-parameter: YES 
+Dependency gobject-introspection-1.0 found: YES 1.84.0 (cached)
+Dependency gobject-introspection-1.0 found: YES 1.84.0 (cached)
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --variable=g_ir_scanner gobject-introspection-1.0` -> 0
+stdout:
+/usr/bin/x86_64-linux-gnu-g-ir-scanner
+-----------
+Got pkg-config variable g_ir_scanner : /usr/bin/x86_64-linux-gnu-g-ir-scanner
+Program /usr/bin/x86_64-linux-gnu-g-ir-scanner found: YES (/usr/bin/x86_64-linux-gnu-g-ir-scanner)
+Dependency gobject-introspection-1.0 found: YES 1.84.0 (cached)
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --variable=g_ir_compiler gobject-introspection-1.0` -> 0
+stdout:
+/usr/bin/x86_64-linux-gnu-g-ir-compiler
+-----------
+Got pkg-config variable g_ir_compiler : /usr/bin/x86_64-linux-gnu-g-ir-compiler
+Program /usr/bin/x86_64-linux-gnu-g-ir-compiler found: YES (/usr/bin/x86_64-linux-gnu-g-ir-compiler)
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --variable=girdir gio-unix-2.0` -> 0
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --print-variables gio-unix-2.0` -> 0
+stdout:
+includedir
+prefix
+pcfiledir
+-----------
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --variable=girdir glib-2.0` -> 0
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --print-variables glib-2.0` -> 0
+stdout:
+glib_valgrind_suppressions
+glib_mkenums
+gobject_query
+glib_genmarshal
+libdir
+includedir
+datadir
+bindir
+prefix
+pcfiledir
+-----------
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --variable=girdir gobject-2.0` -> 0
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --print-variables gobject-2.0` -> 0
+stdout:
+libdir
+includedir
+prefix
+pcfiledir
+-----------
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --variable=girdir gusb` -> 0
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --print-variables gusb` -> 0
+stdout:
+libdir
+includedir
+prefix
+pcfiledir
+-----------
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --variable=girdir pixman-1` -> 0
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --print-variables pixman-1` -> 0
+stdout:
+libdir
+includedir
+prefix
+pcfiledir
+-----------
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --variable=girdir openssl` -> 0
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --print-variables openssl` -> 0
+stdout:
+includedir
+libdir
+exec_prefix
+prefix
+pcfiledir
+-----------
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --variable=girdir gudev-1.0` -> 0
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --print-variables gudev-1.0` -> 0
+stdout:
+exec_prefix
+libdir
+includedir
+prefix
+pcfiledir
+-----------
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --variable=girdir gobject-introspection-1.0` -> 0
+stdout:
+/usr/share/gir-1.0
+-----------
+Got pkg-config variable girdir : /usr/share/gir-1.0
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmpxyqy2oh4
+Code:
+
+-----------
+Command line: `cc '/home/tiandou/下载/libfprint/builddir/meson-private/tmpxyqy2oh4/testfile.c' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmpxyqy2oh4/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs` -> 0
+stdout:
+install: /usr/lib/gcc/x86_64-linux-gnu/15/
+programs: =/usr/libexec/gcc/x86_64-linux-gnu/15/:/usr/libexec/gcc/x86_64-linux-gnu/15/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/15/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../../x86_64-linux-gnu/bin/x86_64-linux-gnu/15/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../../x86_64-linux-gnu/bin/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../../x86_64-linux-gnu/bin/
+libraries: =/usr/lib/gcc/x86_64-linux-gnu/15/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/15/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../../x86_64-linux-gnu/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/15/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib/:/lib/x86_64-linux-gnu/15/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/15/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../../x86_64-linux-gnu/lib/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../:/lib/:/usr/lib/
+-----------
+Configuring config.h using configuration
+Configuring gtkdocentities.ent using configuration
+Dependency glib-2.0 found: YES 2.86.0 (cached)
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --variable=prefix glib-2.0` -> 0
+stdout:
+/usr
+-----------
+Got pkg-config variable prefix : /usr
+Program gtkdoc-scan found: YES (/usr/bin/gtkdoc-scan)
+Program gtkdoc-scangobj found: YES (/usr/bin/gtkdoc-scangobj)
+Program gtkdoc-mkdb found: YES (/usr/bin/gtkdoc-mkdb)
+Program gtkdoc-mkhtml found: YES (/usr/bin/gtkdoc-mkhtml)
+Program gtkdoc-fixxref found: YES (/usr/bin/gtkdoc-fixxref)
+Program python3 found: YES (/usr/bin/python3)
+Configuring create-driver-test.py using configuration
+Running command: /usr/bin/python3 -c '
+import os;
+print(" ".join([f"{k}={v}" for k, v in os.environ.items()
+    if k.startswith("FP_") or k.startswith("G_")]))
+'
+--- stdout ---
+G_DEBUG=fatal-warnings G_MESSAGES_DEBUG=all G_TEST_SRCDIR=/home/tiandou/下载/libfprint/tests G_TEST_BUILDDIR=/home/tiandou/下载/libfprint/builddir/tests FP_DEVICE_EMULATION=1 FP_DRIVERS_ALLOWLIST=virtual_image:virtual_device:virtual_device_storage FP_PRINTS_PATH=/home/tiandou/下载/libfprint/examples/prints
+
+--- stderr ---
+
+
+Program unittest_inspector.py found: YES (/home/tiandou/下载/libfprint/tests/unittest_inspector.py)
+Program umockdev-test.py found: YES (/home/tiandou/下载/libfprint/tests/umockdev-test.py)
+Adding test "virtual-image"
+Adding test "virtual-device"
+Adding test "aes2501"
+Running command: /usr/bin/python3 -c '
+import os;
+print(" ".join([f"{k}={v}" for k, v in os.environ.items()
+    if k.startswith("FP_") or k.startswith("G_")]))
+'
+--- stdout ---
+G_DEBUG=fatal-warnings G_MESSAGES_DEBUG=all G_TEST_SRCDIR=/home/tiandou/下载/libfprint/tests G_TEST_BUILDDIR=/home/tiandou/下载/libfprint/builddir/tests FP_DEVICE_EMULATION=1 FP_DRIVERS_ALLOWLIST=aes2501 FP_PRINTS_PATH=/home/tiandou/下载/libfprint/examples/prints
+
+--- stderr ---
+
+
+Configuring driver-aes2501.test using configuration
+Adding test "aes3500"
+Running command: /usr/bin/python3 -c '
+import os;
+print(" ".join([f"{k}={v}" for k, v in os.environ.items()
+    if k.startswith("FP_") or k.startswith("G_")]))
+'
+--- stdout ---
+G_DEBUG=fatal-warnings G_MESSAGES_DEBUG=all G_TEST_SRCDIR=/home/tiandou/下载/libfprint/tests G_TEST_BUILDDIR=/home/tiandou/下载/libfprint/builddir/tests FP_DEVICE_EMULATION=1 FP_DRIVERS_ALLOWLIST=aes3500 FP_PRINTS_PATH=/home/tiandou/下载/libfprint/examples/prints
+
+--- stderr ---
+
+
+Configuring driver-aes3500.test using configuration
+Adding test "elan"
+Running command: /usr/bin/python3 -c '
+import os;
+print(" ".join([f"{k}={v}" for k, v in os.environ.items()
+    if k.startswith("FP_") or k.startswith("G_")]))
+'
+--- stdout ---
+G_DEBUG=fatal-warnings G_MESSAGES_DEBUG=all G_TEST_SRCDIR=/home/tiandou/下载/libfprint/tests G_TEST_BUILDDIR=/home/tiandou/下载/libfprint/builddir/tests FP_DEVICE_EMULATION=1 FP_DRIVERS_ALLOWLIST=elan FP_PRINTS_PATH=/home/tiandou/下载/libfprint/examples/prints
+
+--- stderr ---
+
+
+Configuring driver-elan.test using configuration
+Adding test "elan-cobo"
+Running command: /usr/bin/python3 -c '
+import os;
+print(" ".join([f"{k}={v}" for k, v in os.environ.items()
+    if k.startswith("FP_") or k.startswith("G_")]))
+'
+--- stdout ---
+G_DEBUG=fatal-warnings G_MESSAGES_DEBUG=all G_TEST_SRCDIR=/home/tiandou/下载/libfprint/tests G_TEST_BUILDDIR=/home/tiandou/下载/libfprint/builddir/tests FP_DEVICE_EMULATION=1 FP_DRIVERS_ALLOWLIST=elan FP_PRINTS_PATH=/home/tiandou/下载/libfprint/examples/prints
+
+--- stderr ---
+
+
+Configuring driver-elan-cobo.test using configuration
+Adding test "elanmoc"
+Running command: /usr/bin/python3 -c '
+import os;
+print(" ".join([f"{k}={v}" for k, v in os.environ.items()
+    if k.startswith("FP_") or k.startswith("G_")]))
+'
+--- stdout ---
+G_DEBUG=fatal-warnings G_MESSAGES_DEBUG=all G_TEST_SRCDIR=/home/tiandou/下载/libfprint/tests G_TEST_BUILDDIR=/home/tiandou/下载/libfprint/builddir/tests FP_DEVICE_EMULATION=1 FP_DRIVERS_ALLOWLIST=elanmoc FP_PRINTS_PATH=/home/tiandou/下载/libfprint/examples/prints
+
+--- stderr ---
+
+
+Configuring driver-elanmoc.test using configuration
+Adding test "elanspi"
+Running command: /usr/bin/python3 -c '
+import os;
+print(" ".join([f"{k}={v}" for k, v in os.environ.items()
+    if k.startswith("FP_") or k.startswith("G_")]))
+'
+--- stdout ---
+G_DEBUG=fatal-warnings G_MESSAGES_DEBUG=all G_TEST_SRCDIR=/home/tiandou/下载/libfprint/tests G_TEST_BUILDDIR=/home/tiandou/下载/libfprint/builddir/tests FP_DEVICE_EMULATION=1 FP_DRIVERS_ALLOWLIST=elanspi FP_PRINTS_PATH=/home/tiandou/下载/libfprint/examples/prints
+
+--- stderr ---
+
+
+Configuring driver-elanspi.test using configuration
+Adding test "synaptics"
+Running command: /usr/bin/python3 -c '
+import os;
+print(" ".join([f"{k}={v}" for k, v in os.environ.items()
+    if k.startswith("FP_") or k.startswith("G_")]))
+'
+--- stdout ---
+G_DEBUG=fatal-warnings G_MESSAGES_DEBUG=all G_TEST_SRCDIR=/home/tiandou/下载/libfprint/tests G_TEST_BUILDDIR=/home/tiandou/下载/libfprint/builddir/tests FP_DEVICE_EMULATION=1 FP_DRIVERS_ALLOWLIST=synaptics FP_PRINTS_PATH=/home/tiandou/下载/libfprint/examples/prints
+
+--- stderr ---
+
+
+Configuring driver-synaptics.test using configuration
+Adding test "upektc_img"
+Running command: /usr/bin/python3 -c '
+import os;
+print(" ".join([f"{k}={v}" for k, v in os.environ.items()
+    if k.startswith("FP_") or k.startswith("G_")]))
+'
+--- stdout ---
+G_DEBUG=fatal-warnings G_MESSAGES_DEBUG=all G_TEST_SRCDIR=/home/tiandou/下载/libfprint/tests G_TEST_BUILDDIR=/home/tiandou/下载/libfprint/builddir/tests FP_DEVICE_EMULATION=1 FP_DRIVERS_ALLOWLIST=upektc_img FP_PRINTS_PATH=/home/tiandou/下载/libfprint/examples/prints
+
+--- stderr ---
+
+
+Configuring driver-upektc_img.test using configuration
+Adding test "upektc_img-tcs1s"
+Running command: /usr/bin/python3 -c '
+import os;
+print(" ".join([f"{k}={v}" for k, v in os.environ.items()
+    if k.startswith("FP_") or k.startswith("G_")]))
+'
+--- stdout ---
+G_DEBUG=fatal-warnings G_MESSAGES_DEBUG=all G_TEST_SRCDIR=/home/tiandou/下载/libfprint/tests G_TEST_BUILDDIR=/home/tiandou/下载/libfprint/builddir/tests FP_DEVICE_EMULATION=1 FP_DRIVERS_ALLOWLIST=upektc_img FP_PRINTS_PATH=/home/tiandou/下载/libfprint/examples/prints
+
+--- stderr ---
+
+
+Configuring driver-upektc_img-tcs1s.test using configuration
+Adding test "uru4000-msv2"
+Running command: /usr/bin/python3 -c '
+import os;
+print(" ".join([f"{k}={v}" for k, v in os.environ.items()
+    if k.startswith("FP_") or k.startswith("G_")]))
+'
+--- stdout ---
+G_DEBUG=fatal-warnings G_MESSAGES_DEBUG=all G_TEST_SRCDIR=/home/tiandou/下载/libfprint/tests G_TEST_BUILDDIR=/home/tiandou/下载/libfprint/builddir/tests FP_DEVICE_EMULATION=1 FP_DRIVERS_ALLOWLIST=uru4000 FP_PRINTS_PATH=/home/tiandou/下载/libfprint/examples/prints
+
+--- stderr ---
+
+
+Configuring driver-uru4000-msv2.test using configuration
+Adding test "uru4000-4500"
+Running command: /usr/bin/python3 -c '
+import os;
+print(" ".join([f"{k}={v}" for k, v in os.environ.items()
+    if k.startswith("FP_") or k.startswith("G_")]))
+'
+--- stdout ---
+G_DEBUG=fatal-warnings G_MESSAGES_DEBUG=all G_TEST_SRCDIR=/home/tiandou/下载/libfprint/tests G_TEST_BUILDDIR=/home/tiandou/下载/libfprint/builddir/tests FP_DEVICE_EMULATION=1 FP_DRIVERS_ALLOWLIST=uru4000 FP_PRINTS_PATH=/home/tiandou/下载/libfprint/examples/prints
+
+--- stderr ---
+
+
+Configuring driver-uru4000-4500.test using configuration
+Adding test "vfs0050"
+Running command: /usr/bin/python3 -c '
+import os;
+print(" ".join([f"{k}={v}" for k, v in os.environ.items()
+    if k.startswith("FP_") or k.startswith("G_")]))
+'
+--- stdout ---
+G_DEBUG=fatal-warnings G_MESSAGES_DEBUG=all G_TEST_SRCDIR=/home/tiandou/下载/libfprint/tests G_TEST_BUILDDIR=/home/tiandou/下载/libfprint/builddir/tests FP_DEVICE_EMULATION=1 FP_DRIVERS_ALLOWLIST=vfs0050 FP_PRINTS_PATH=/home/tiandou/下载/libfprint/examples/prints
+
+--- stderr ---
+
+
+Configuring driver-vfs0050.test using configuration
+Adding test "vfs301"
+Running command: /usr/bin/python3 -c '
+import os;
+print(" ".join([f"{k}={v}" for k, v in os.environ.items()
+    if k.startswith("FP_") or k.startswith("G_")]))
+'
+--- stdout ---
+G_DEBUG=fatal-warnings G_MESSAGES_DEBUG=all G_TEST_SRCDIR=/home/tiandou/下载/libfprint/tests G_TEST_BUILDDIR=/home/tiandou/下载/libfprint/builddir/tests FP_DEVICE_EMULATION=1 FP_DRIVERS_ALLOWLIST=vfs301 FP_PRINTS_PATH=/home/tiandou/下载/libfprint/examples/prints
+
+--- stderr ---
+
+
+Configuring driver-vfs301.test using configuration
+Adding test "vfs5011"
+Running command: /usr/bin/python3 -c '
+import os;
+print(" ".join([f"{k}={v}" for k, v in os.environ.items()
+    if k.startswith("FP_") or k.startswith("G_")]))
+'
+--- stdout ---
+G_DEBUG=fatal-warnings G_MESSAGES_DEBUG=all G_TEST_SRCDIR=/home/tiandou/下载/libfprint/tests G_TEST_BUILDDIR=/home/tiandou/下载/libfprint/builddir/tests FP_DEVICE_EMULATION=1 FP_DRIVERS_ALLOWLIST=vfs5011 FP_PRINTS_PATH=/home/tiandou/下载/libfprint/examples/prints
+
+--- stderr ---
+
+
+Configuring driver-vfs5011.test using configuration
+Adding test "vfs7552"
+Running command: /usr/bin/python3 -c '
+import os;
+print(" ".join([f"{k}={v}" for k, v in os.environ.items()
+    if k.startswith("FP_") or k.startswith("G_")]))
+'
+--- stdout ---
+G_DEBUG=fatal-warnings G_MESSAGES_DEBUG=all G_TEST_SRCDIR=/home/tiandou/下载/libfprint/tests G_TEST_BUILDDIR=/home/tiandou/下载/libfprint/builddir/tests FP_DEVICE_EMULATION=1 FP_DRIVERS_ALLOWLIST=vfs7552 FP_PRINTS_PATH=/home/tiandou/下载/libfprint/examples/prints
+
+--- stderr ---
+
+
+Configuring driver-vfs7552.test using configuration
+Adding test "goodixmoc"
+Running command: /usr/bin/python3 -c '
+import os;
+print(" ".join([f"{k}={v}" for k, v in os.environ.items()
+    if k.startswith("FP_") or k.startswith("G_")]))
+'
+--- stdout ---
+G_DEBUG=fatal-warnings G_MESSAGES_DEBUG=all G_TEST_SRCDIR=/home/tiandou/下载/libfprint/tests G_TEST_BUILDDIR=/home/tiandou/下载/libfprint/builddir/tests FP_DEVICE_EMULATION=1 FP_DRIVERS_ALLOWLIST=goodixmoc FP_PRINTS_PATH=/home/tiandou/下载/libfprint/examples/prints
+
+--- stderr ---
+
+
+Configuring driver-goodixmoc.test using configuration
+Adding test "nb1010"
+Running command: /usr/bin/python3 -c '
+import os;
+print(" ".join([f"{k}={v}" for k, v in os.environ.items()
+    if k.startswith("FP_") or k.startswith("G_")]))
+'
+--- stdout ---
+G_DEBUG=fatal-warnings G_MESSAGES_DEBUG=all G_TEST_SRCDIR=/home/tiandou/下载/libfprint/tests G_TEST_BUILDDIR=/home/tiandou/下载/libfprint/builddir/tests FP_DEVICE_EMULATION=1 FP_DRIVERS_ALLOWLIST=nb1010 FP_PRINTS_PATH=/home/tiandou/下载/libfprint/examples/prints
+
+--- stderr ---
+
+
+Configuring driver-nb1010.test using configuration
+Adding test "egis0570"
+Running command: /usr/bin/python3 -c '
+import os;
+print(" ".join([f"{k}={v}" for k, v in os.environ.items()
+    if k.startswith("FP_") or k.startswith("G_")]))
+'
+--- stdout ---
+G_DEBUG=fatal-warnings G_MESSAGES_DEBUG=all G_TEST_SRCDIR=/home/tiandou/下载/libfprint/tests G_TEST_BUILDDIR=/home/tiandou/下载/libfprint/builddir/tests FP_DEVICE_EMULATION=1 FP_DRIVERS_ALLOWLIST=egis0570 FP_PRINTS_PATH=/home/tiandou/下载/libfprint/examples/prints
+
+--- stderr ---
+
+
+Configuring driver-egis0570.test using configuration
+Adding test "egismoc"
+Running command: /usr/bin/python3 -c '
+import os;
+print(" ".join([f"{k}={v}" for k, v in os.environ.items()
+    if k.startswith("FP_") or k.startswith("G_")]))
+'
+--- stdout ---
+G_DEBUG=fatal-warnings G_MESSAGES_DEBUG=all G_TEST_SRCDIR=/home/tiandou/下载/libfprint/tests G_TEST_BUILDDIR=/home/tiandou/下载/libfprint/builddir/tests FP_DEVICE_EMULATION=1 FP_DRIVERS_ALLOWLIST=egismoc FP_PRINTS_PATH=/home/tiandou/下载/libfprint/examples/prints
+
+--- stderr ---
+
+
+Configuring driver-egismoc.test using configuration
+Adding test "egismoc-05a1"
+Running command: /usr/bin/python3 -c '
+import os;
+print(" ".join([f"{k}={v}" for k, v in os.environ.items()
+    if k.startswith("FP_") or k.startswith("G_")]))
+'
+--- stdout ---
+G_DEBUG=fatal-warnings G_MESSAGES_DEBUG=all G_TEST_SRCDIR=/home/tiandou/下载/libfprint/tests G_TEST_BUILDDIR=/home/tiandou/下载/libfprint/builddir/tests FP_DEVICE_EMULATION=1 FP_DRIVERS_ALLOWLIST=egismoc FP_PRINTS_PATH=/home/tiandou/下载/libfprint/examples/prints
+
+--- stderr ---
+
+
+Configuring driver-egismoc-05a1.test using configuration
+Adding test "egismoc-0586"
+Running command: /usr/bin/python3 -c '
+import os;
+print(" ".join([f"{k}={v}" for k, v in os.environ.items()
+    if k.startswith("FP_") or k.startswith("G_")]))
+'
+--- stdout ---
+G_DEBUG=fatal-warnings G_MESSAGES_DEBUG=all G_TEST_SRCDIR=/home/tiandou/下载/libfprint/tests G_TEST_BUILDDIR=/home/tiandou/下载/libfprint/builddir/tests FP_DEVICE_EMULATION=1 FP_DRIVERS_ALLOWLIST=egismoc FP_PRINTS_PATH=/home/tiandou/下载/libfprint/examples/prints
+
+--- stderr ---
+
+
+Configuring driver-egismoc-0586.test using configuration
+Adding test "egismoc-0587"
+Running command: /usr/bin/python3 -c '
+import os;
+print(" ".join([f"{k}={v}" for k, v in os.environ.items()
+    if k.startswith("FP_") or k.startswith("G_")]))
+'
+--- stdout ---
+G_DEBUG=fatal-warnings G_MESSAGES_DEBUG=all G_TEST_SRCDIR=/home/tiandou/下载/libfprint/tests G_TEST_BUILDDIR=/home/tiandou/下载/libfprint/builddir/tests FP_DEVICE_EMULATION=1 FP_DRIVERS_ALLOWLIST=egismoc FP_PRINTS_PATH=/home/tiandou/下载/libfprint/examples/prints
+
+--- stderr ---
+
+
+Configuring driver-egismoc-0587.test using configuration
+Adding test "fpcmoc"
+Running command: /usr/bin/python3 -c '
+import os;
+print(" ".join([f"{k}={v}" for k, v in os.environ.items()
+    if k.startswith("FP_") or k.startswith("G_")]))
+'
+--- stdout ---
+G_DEBUG=fatal-warnings G_MESSAGES_DEBUG=all G_TEST_SRCDIR=/home/tiandou/下载/libfprint/tests G_TEST_BUILDDIR=/home/tiandou/下载/libfprint/builddir/tests FP_DEVICE_EMULATION=1 FP_DRIVERS_ALLOWLIST=fpcmoc FP_PRINTS_PATH=/home/tiandou/下载/libfprint/examples/prints
+
+--- stderr ---
+
+
+Configuring driver-fpcmoc.test using configuration
+Adding test "realtek"
+Running command: /usr/bin/python3 -c '
+import os;
+print(" ".join([f"{k}={v}" for k, v in os.environ.items()
+    if k.startswith("FP_") or k.startswith("G_")]))
+'
+--- stdout ---
+G_DEBUG=fatal-warnings G_MESSAGES_DEBUG=all G_TEST_SRCDIR=/home/tiandou/下载/libfprint/tests G_TEST_BUILDDIR=/home/tiandou/下载/libfprint/builddir/tests FP_DEVICE_EMULATION=1 FP_DRIVERS_ALLOWLIST=realtek FP_PRINTS_PATH=/home/tiandou/下载/libfprint/examples/prints
+
+--- stderr ---
+
+
+Configuring driver-realtek.test using configuration
+Adding test "realtek-5816"
+Running command: /usr/bin/python3 -c '
+import os;
+print(" ".join([f"{k}={v}" for k, v in os.environ.items()
+    if k.startswith("FP_") or k.startswith("G_")]))
+'
+--- stdout ---
+G_DEBUG=fatal-warnings G_MESSAGES_DEBUG=all G_TEST_SRCDIR=/home/tiandou/下载/libfprint/tests G_TEST_BUILDDIR=/home/tiandou/下载/libfprint/builddir/tests FP_DEVICE_EMULATION=1 FP_DRIVERS_ALLOWLIST=realtek FP_PRINTS_PATH=/home/tiandou/下载/libfprint/examples/prints
+
+--- stderr ---
+
+
+Configuring driver-realtek-5816.test using configuration
+Adding test "focaltech_moc"
+Running command: /usr/bin/python3 -c '
+import os;
+print(" ".join([f"{k}={v}" for k, v in os.environ.items()
+    if k.startswith("FP_") or k.startswith("G_")]))
+'
+--- stdout ---
+G_DEBUG=fatal-warnings G_MESSAGES_DEBUG=all G_TEST_SRCDIR=/home/tiandou/下载/libfprint/tests G_TEST_BUILDDIR=/home/tiandou/下载/libfprint/builddir/tests FP_DEVICE_EMULATION=1 FP_DRIVERS_ALLOWLIST=focaltech_moc FP_PRINTS_PATH=/home/tiandou/下载/libfprint/examples/prints
+
+--- stderr ---
+
+
+Configuring driver-focaltech_moc.test using configuration
+Adding test "fpi-device"
+Configuring fpi-device.test using configuration
+Adding test "fpi-ssm"
+Configuring fpi-ssm.test using configuration
+Adding test "fpi-assembling"
+Configuring fpi-assembling.test using configuration
+Program test-generated-hwdb.sh found: YES (/home/tiandou/下载/libfprint/tests/test-generated-hwdb.sh)
+Adding test "udev-hwdb"
+Program appstreamcli found: YES (/usr/bin/appstreamcli)
+Adding test "metainfo-validate"
+Program gdb found: YES (/usr/bin/gdb)
+Program valgrind found: YES (/usr/bin/valgrind)
+Build targets in project: 32
+
+libfprint 1.94.9
+
+  Drivers
+    Drivers: upektc_img
+             vfs5011
+             vfs7552
+             aes3500
+             aes4000
+             aes1610
+             aes1660
+             aes2660
+             aes2501
+             aes2550
+             vfs101
+             vfs301
+             vfs0050
+             etes603
+             egis0570
+             egismoc
+             vcom5s
+             synaptics
+             elan
+             elanmoc
+             uru4000
+             upektc
+             upeksonly
+             upekts
+             goodixmoc
+             nb1010
+             fpcmoc
+             realtek
+             focaltech_moc
+             elanspi
+
+Found ninja-1.12.1 at /usr/bin/ninja
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmp7dhv7byn
+Code:
+
+        #ifdef __has_include
+         #if !__has_include("version")
+          #error "Header 'version' could not be found"
+         #endif
+        #else
+         #include <version>
+        #endif
+-----------
+Command line: `c++ '/home/tiandou/下载/libfprint/builddir/meson-private/tmp7dhv7byn/testfile.cpp' -E -P -D_FILE_OFFSET_BITS=64 -P -O0 -fpermissive` -> 0
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmp79pam2q_
+Code:
+
+        #include <version>
+        int main(void) {
+            /* If it's not defined as a macro, try to use as a symbol */
+            #ifndef _LIBCPP_VERSION
+                _LIBCPP_VERSION;
+            #endif
+            return 0;
+        }
+-----------
+Command line: `c++ '/home/tiandou/下载/libfprint/builddir/meson-private/tmp79pam2q_/testfile.cpp' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmp79pam2q_/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -fpermissive` -> 1
+stderr:
+/home/tiandou/下载/libfprint/builddir/meson-private/tmp79pam2q_/testfile.cpp: In function 'int main()':
+/home/tiandou/下载/libfprint/builddir/meson-private/tmp79pam2q_/testfile.cpp:6:17: error: '_LIBCPP_VERSION' was not declared in this scope
+    6 |                 _LIBCPP_VERSION;
+      |                 ^~~~~~~~~~~~~~~
+-----------
+Running compile:
+Working directory:  /home/tiandou/下载/libfprint/builddir/meson-private/tmpi2n26jvi
+Code:
+
+        #include <version>
+        using _LIBCPP_VERSION;
+        int main(void) { return 0; }
+-----------
+Command line: `c++ '/home/tiandou/下载/libfprint/builddir/meson-private/tmpi2n26jvi/testfile.cpp' -o '/home/tiandou/下载/libfprint/builddir/meson-private/tmpi2n26jvi/output.obj' -c -D_FILE_OFFSET_BITS=64 -O0 -fpermissive` -> 1
+stderr:
+/home/tiandou/下载/libfprint/builddir/meson-private/tmpi2n26jvi/testfile.cpp:3:15: error: expected nested-name-specifier before '_LIBCPP_VERSION'
+    3 |         using _LIBCPP_VERSION;
+      |               ^~~~~~~~~~~~~~~
+-----------
+Failed to guess install tag for /usr/local/share/metainfo/org.freedesktop.libfprint.metainfo.xml
+Failed to guess install tag for /usr/lib/udev/rules.d/70-libfprint-2.rules
+Failed to guess install tag for /usr/local/share/metainfo/org.freedesktop.libfprint.metainfo.xml
+Failed to guess install tag for /usr/lib/udev/rules.d/70-libfprint-2.rules

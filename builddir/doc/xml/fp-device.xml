@@ -1,0 +1,2287 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
+[
+  <!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+]>
+<refentry id="FpDevice">
+<refmeta>
+<refentrytitle role="top_of_page" id="FpDevice.top_of_page">FpDevice</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBFPRINT-2 Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>FpDevice</refname>
+<refpurpose>Fingerpint device routines</refpurpose>
+</refnamediv>
+
+<refsect1 id="FpDevice.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_proto_type" colwidth="150px"/>
+<colspec colname="functions_proto_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GQuark"><returnvalue>GQuark</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-retry-quark">fp_device_retry_quark</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GQuark"><returnvalue>GQuark</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-error-quark">fp_device_error_quark</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="FpEnrollProgress">*FpEnrollProgress</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="FpMatchCb">*FpMatchCb</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fp-device-get-driver">fp_device_get_driver</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fp-device-get-device-id">fp_device_get_device_id</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fp-device-get-name">fp_device_get_name</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="FpScanType"><returnvalue>FpScanType</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-get-scan-type">fp_device_get_scan_type</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-get-nr-enroll-stages">fp_device_get_nr_enroll_stages</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="FpFingerStatusFlags"><returnvalue>FpFingerStatusFlags</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-get-finger-status">fp_device_get_finger_status</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="FpDeviceFeature"><returnvalue>FpDeviceFeature</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-get-features">fp_device_get_features</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-has-feature">fp_device_has_feature</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-has-storage">fp_device_has_storage</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-supports-identify">fp_device_supports_identify</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-supports-capture">fp_device_supports_capture</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-is-open">fp_device_is_open</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-open">fp_device_open</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-close">fp_device_close</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-enroll">fp_device_enroll</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-verify">fp_device_verify</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-identify">fp_device_identify</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-capture">fp_device_capture</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-delete-print">fp_device_delete_print</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-list-prints">fp_device_list_prints</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-clear-storage">fp_device_clear_storage</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-suspend">fp_device_suspend</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-resume">fp_device_resume</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-open-finish">fp_device_open_finish</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-close-finish">fp_device_close_finish</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="FpPrint"><returnvalue>FpPrint</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fp-device-enroll-finish">fp_device_enroll_finish</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-verify-finish">fp_device_verify_finish</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-identify-finish">fp_device_identify_finish</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="FpImage"><returnvalue>FpImage</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fp-device-capture-finish">fp_device_capture_finish</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-delete-print-finish">fp_device_delete_print_finish</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GPtrArray"><returnvalue>GPtrArray</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fp-device-list-prints-finish">fp_device_list_prints_finish</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-clear-storage-finish">fp_device_clear_storage_finish</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-suspend-finish">fp_device_suspend_finish</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-resume-finish">fp_device_resume_finish</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-open-sync">fp_device_open_sync</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-close-sync">fp_device_close_sync</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="FpPrint"><returnvalue>FpPrint</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fp-device-enroll-sync">fp_device_enroll_sync</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-verify-sync">fp_device_verify_sync</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-identify-sync">fp_device_identify_sync</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="FpImage"><returnvalue>FpImage</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fp-device-capture-sync">fp_device_capture_sync</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-delete-print-sync">fp_device_delete_print_sync</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GPtrArray"><returnvalue>GPtrArray</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fp-device-list-prints-sync">fp_device_list_prints_sync</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-clear-storage-sync">fp_device_clear_storage_sync</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-suspend-sync">fp_device_suspend_sync</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fp-device-resume-sync">fp_device_resume_sync</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="FpDevice.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="char"><type>char</type></link>&#160;*</entry><entry role="property_name"><link linkend="FpDevice--device-id">device-id</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="char"><type>char</type></link>&#160;*</entry><entry role="property_name"><link linkend="FpDevice--driver">driver</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="FpFingerStatusFlags"><type>FpFingerStatusFlags</type></link></entry><entry role="property_name"><link linkend="FpDevice--finger-status">finger-status</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="guint64"><type>guint64</type></link></entry><entry role="property_name"><link linkend="FpDevice--fpi-driver-data">fpi-driver-data</link></entry><entry role="property_flags">Write / Construct&#160;Only</entry></row>
+<row><entry role="property_type"><link linkend="char"><type>char</type></link>&#160;*</entry><entry role="property_name"><link linkend="FpDevice--fpi-environ">fpi-environ</link></entry><entry role="property_flags">Write / Construct&#160;Only</entry></row>
+<row><entry role="property_type"><link linkend="char"><type>char</type></link>&#160;*</entry><entry role="property_name"><link linkend="FpDevice--fpi-udev-data-hidraw">fpi-udev-data-hidraw</link></entry><entry role="property_flags">Read / Write / Construct&#160;Only</entry></row>
+<row><entry role="property_type"><link linkend="char"><type>char</type></link>&#160;*</entry><entry role="property_name"><link linkend="FpDevice--fpi-udev-data-spidev">fpi-udev-data-spidev</link></entry><entry role="property_flags">Read / Write / Construct&#160;Only</entry></row>
+<row><entry role="property_type"><link linkend="GUsbDevice"><type>GUsbDevice</type></link>&#160;*</entry><entry role="property_name"><link linkend="FpDevice--fpi-usb-device">fpi-usb-device</link></entry><entry role="property_flags">Read / Write / Construct&#160;Only</entry></row>
+<row><entry role="property_type"><link linkend="char"><type>char</type></link>&#160;*</entry><entry role="property_name"><link linkend="FpDevice--name">name</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="FpDevice--nr-enroll-stages">nr-enroll-stages</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="FpDevice--open">open</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="FpDevice--removed">removed</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="FpScanType"><type>FpScanType</type></link></entry><entry role="property_name"><link linkend="FpDevice--scan-type">scan-type</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="FpTemperature"><type>FpTemperature</type></link></entry><entry role="property_name"><link linkend="FpDevice--temperature">temperature</link></entry><entry role="property_flags">Read</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="FpDevice.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="signal_proto_type" colwidth="150px"/>
+<colspec colname="signal_proto_name" colwidth="300px"/>
+<colspec colname="signal_proto_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="FpDevice-removed">removed</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="FpDevice.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="other_proto_type" colwidth="150px"/>
+<colspec colname="other_proto_name"/>
+<tbody>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="FP-TYPE-DEVICE:CAPS">FP_TYPE_DEVICE</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="FP-DEVICE-RETRY:CAPS">FP_DEVICE_RETRY</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="FP-DEVICE-ERROR:CAPS">FP_DEVICE_ERROR</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="FpDeviceType">FpDeviceType</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="FpDeviceFeature">FpDeviceFeature</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="FpScanType">FpScanType</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="FpDeviceRetry">FpDeviceRetry</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="FpDeviceError">FpDeviceError</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="FpFingerStatusFlags">FpFingerStatusFlags</link></entry></row>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="FpDevice-struct">FpDevice</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="FpDevice.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> FpDevice
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="FpImageDevice">FpImageDevice</link>
+</screen>
+</refsect1>
+<refsect1 id="FpDevice.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+FpDevice implements
+ <link linkend="GAsyncInitable">GAsyncInitable</link>.</para>
+
+</refsect1>
+
+
+<refsect1 id="FpDevice.description" role="desc">
+<title role="desc.title">Description</title>
+<para>These are the public <link linkend="FpDevice"><type>FpDevice</type></link> routines.</para>
+
+</refsect1>
+<refsect1 id="FpDevice.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="fp-device-retry-quark" role="function">
+<title>fp_device_retry_quark&#160;()</title>
+<indexterm zone="fp-device-retry-quark"><primary>fp_device_retry_quark</primary></indexterm>
+<programlisting language="C"><link linkend="GQuark"><returnvalue>GQuark</returnvalue></link>
+fp_device_retry_quark (<parameter><type>void</type></parameter>);</programlisting>
+<refsect3 id="fp-device-retry-quark.returns" role="returns">
+<title>Returns</title>
+<para> Quark representing a retryable error.</para>
+</refsect3></refsect2>
+<refsect2 id="fp-device-error-quark" role="function">
+<title>fp_device_error_quark&#160;()</title>
+<indexterm zone="fp-device-error-quark"><primary>fp_device_error_quark</primary></indexterm>
+<programlisting language="C"><link linkend="GQuark"><returnvalue>GQuark</returnvalue></link>
+fp_device_error_quark (<parameter><type>void</type></parameter>);</programlisting>
+<refsect3 id="fp-device-error-quark.returns" role="returns">
+<title>Returns</title>
+<para> Quark representing a device error.</para>
+</refsect3></refsect2>
+<refsect2 id="FpEnrollProgress" role="function">
+<title>FpEnrollProgress&#160;()</title>
+<indexterm zone="FpEnrollProgress"><primary>FpEnrollProgress</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*FpEnrollProgress<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                     <parameter><link linkend="gint"><type>gint</type></link> completed_stages</parameter>,
+                     <parameter><link linkend="FpPrint"><type>FpPrint</type></link> *print</parameter>,
+                     <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>,
+                     <parameter><link linkend="GError"><type>GError</type></link> *error</parameter>);</programlisting>
+<para>The passed error is guaranteed to be of type <link linkend="FP-DEVICE-RETRY:CAPS"><literal>FP_DEVICE_RETRY</literal></link> if set.</para>
+<refsect3 id="FpEnrollProgress.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>completed_stages</para></entry>
+<entry role="parameter_description"><para>Number of completed stages</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>print</para></entry>
+<entry role="parameter_description"><para>The last scanned print. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>][<acronym>transfer none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>User provided data. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>][<acronym>transfer none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para><link linkend="GError"><type>GError</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>][<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="FpMatchCb" role="function">
+<title>FpMatchCb&#160;()</title>
+<indexterm zone="FpMatchCb"><primary>FpMatchCb</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*FpMatchCb<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+              <parameter><link linkend="FpPrint"><type>FpPrint</type></link> *match</parameter>,
+              <parameter><link linkend="FpPrint"><type>FpPrint</type></link> *print</parameter>,
+              <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>,
+              <parameter><link linkend="GError"><type>GError</type></link> *error</parameter>);</programlisting>
+<para>Report the result of a match (identify or verify) operation.</para>
+<para>If <parameter>match</parameter>
+ is non-<link linkend="NULL:CAPS"><literal>NULL</literal></link>, then it is set to the matching <link linkend="FpPrint"><type>FpPrint</type></link> as passed
+to the match operation. In this case <parameter>error</parameter>
+ will always be <link linkend="NULL:CAPS"><literal>NULL</literal></link>.</para>
+<para>If <parameter>error</parameter>
+ is not <link linkend="NULL:CAPS"><literal>NULL</literal></link> then its domain is guaranteed to be
+<link linkend="FP-DEVICE-RETRY:CAPS"><literal>FP_DEVICE_RETRY</literal></link>. All other error conditions will not be reported using
+this callback. If such an error occurs before a match/no-match decision
+can be made, then this callback will not be called. Should an error
+happen afterwards, then you will get a match report through this callback
+and an error when the operation finishes.</para>
+<para>If <parameter>match</parameter>
+ and <parameter>error</parameter>
+ are <link linkend="NULL:CAPS"><literal>NULL</literal></link>, then a finger was presented but it did not
+match any known print.</para>
+<para><parameter>print</parameter>
+ represents the newly scanned print. The driver may or may not
+provide this information. Image based devices will provide it and it
+allows access to the raw data.</para>
+<para>This callback exists because it makes sense for drivers to wait e.g. on
+finger removal before completing the match operation. However, the
+success/failure can often be reported at an earlier time, and there is
+no need to make the user wait.</para>
+<refsect3 id="FpMatchCb.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>match</para></entry>
+<entry role="parameter_description"><para>The matching print if any matched <parameter>print</parameter>
+. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>][<acronym>transfer none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>print</para></entry>
+<entry role="parameter_description"><para>The newly scanned print. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>][<acronym>transfer none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>User provided data. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>][<acronym>transfer none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para><link linkend="GError"><type>GError</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>][<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fp-device-get-driver" role="function">
+<title>fp_device_get_driver&#160;()</title>
+<indexterm zone="fp-device-get-driver"><primary>fp_device_get_driver</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+fp_device_get_driver (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>);</programlisting>
+<refsect3 id="fp-device-get-driver.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-device-get-driver.returns" role="returns">
+<title>Returns</title>
+<para>The ID of the driver. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fp-device-get-device-id" role="function">
+<title>fp_device_get_device_id&#160;()</title>
+<indexterm zone="fp-device-get-device-id"><primary>fp_device_get_device_id</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+fp_device_get_device_id (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>);</programlisting>
+<refsect3 id="fp-device-get-device-id.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-device-get-device-id.returns" role="returns">
+<title>Returns</title>
+<para>The ID of the device. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fp-device-get-name" role="function">
+<title>fp_device_get_name&#160;()</title>
+<indexterm zone="fp-device-get-name"><primary>fp_device_get_name</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+fp_device_get_name (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>);</programlisting>
+<refsect3 id="fp-device-get-name.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-device-get-name.returns" role="returns">
+<title>Returns</title>
+<para>The human readable name of the device. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fp-device-get-scan-type" role="function">
+<title>fp_device_get_scan_type&#160;()</title>
+<indexterm zone="fp-device-get-scan-type"><primary>fp_device_get_scan_type</primary></indexterm>
+<programlisting language="C"><link linkend="FpScanType"><returnvalue>FpScanType</returnvalue></link>
+fp_device_get_scan_type (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>);</programlisting>
+<para>Retrieves the scan type of the device.</para>
+<refsect3 id="fp-device-get-scan-type.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-device-get-scan-type.returns" role="returns">
+<title>Returns</title>
+<para> The <link linkend="FpScanType"><type>FpScanType</type></link></para>
+</refsect3></refsect2>
+<refsect2 id="fp-device-get-nr-enroll-stages" role="function">
+<title>fp_device_get_nr_enroll_stages&#160;()</title>
+<indexterm zone="fp-device-get-nr-enroll-stages"><primary>fp_device_get_nr_enroll_stages</primary></indexterm>
+<programlisting language="C"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+fp_device_get_nr_enroll_stages (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>);</programlisting>
+<para>Retrieves the number of enroll stages for this device.</para>
+<refsect3 id="fp-device-get-nr-enroll-stages.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-device-get-nr-enroll-stages.returns" role="returns">
+<title>Returns</title>
+<para> The number of enroll stages</para>
+</refsect3></refsect2>
+<refsect2 id="fp-device-get-finger-status" role="function">
+<title>fp_device_get_finger_status&#160;()</title>
+<indexterm zone="fp-device-get-finger-status"><primary>fp_device_get_finger_status</primary></indexterm>
+<programlisting language="C"><link linkend="FpFingerStatusFlags"><returnvalue>FpFingerStatusFlags</returnvalue></link>
+fp_device_get_finger_status (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>);</programlisting>
+<para>Retrieves the finger status flags for the device.
+This can be used by the UI to present the relevant feedback, although it
+is not guaranteed to be a relevant value when not performing any action.</para>
+<refsect3 id="fp-device-get-finger-status.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-device-get-finger-status.returns" role="returns">
+<title>Returns</title>
+<para> The current <link linkend="FpFingerStatusFlags"><type>FpFingerStatusFlags</type></link></para>
+</refsect3></refsect2>
+<refsect2 id="fp-device-get-features" role="function">
+<title>fp_device_get_features&#160;()</title>
+<indexterm zone="fp-device-get-features"><primary>fp_device_get_features</primary></indexterm>
+<programlisting language="C"><link linkend="FpDeviceFeature"><returnvalue>FpDeviceFeature</returnvalue></link>
+fp_device_get_features (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>);</programlisting>
+<para>Gets the <link linkend="FpDeviceFeature"><type>FpDeviceFeature</type></link>'s supported by the <parameter>device</parameter>
+.</para>
+<refsect3 id="fp-device-get-features.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-device-get-features.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="FpDeviceFeature"><type>FpDeviceFeature</type></link> flags of supported features</para>
+</refsect3></refsect2>
+<refsect2 id="fp-device-has-feature" role="function">
+<title>fp_device_has_feature&#160;()</title>
+<indexterm zone="fp-device-has-feature"><primary>fp_device_has_feature</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+fp_device_has_feature (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                       <parameter><link linkend="FpDeviceFeature"><type>FpDeviceFeature</type></link> feature</parameter>);</programlisting>
+<para>Checks if <parameter>device</parameter>
+ supports the requested <link linkend="FpDeviceFeature"><type>FpDeviceFeature</type></link>'s.
+See <link linkend="fp-device-get-features"><function>fp_device_get_features()</function></link></para>
+<refsect3 id="fp-device-has-feature.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>feature</para></entry>
+<entry role="parameter_description"><para><link linkend="FpDeviceFeature"><type>FpDeviceFeature</type></link> flags to check against device supported features</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-device-has-feature.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if supported, <link linkend="FALSE:CAPS"><literal>FALSE</literal></link> otherwise</para>
+</refsect3></refsect2>
+<refsect2 id="fp-device-has-storage" role="function" condition="deprecated:1.92.0: Use fp_device_has_feature() instead.">
+<title>fp_device_has_storage&#160;()</title>
+<indexterm zone="fp-device-has-storage" role="deprecated"><primary>fp_device_has_storage</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+fp_device_has_storage (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>);</programlisting>
+<warning><para><literal>fp_device_has_storage</literal> has been deprecated since version 1.92.0 and should not be used in newly-written code.</para> <para>Use <link linkend="fp-device-has-feature"><function>fp_device_has_feature()</function></link> instead.</para>
+</warning>
+<para>Whether the device has on-chip storage. If it has, you can list the
+prints stored on the with <link linkend="fp-device-list-prints"><function>fp_device_list_prints()</function></link> and you should
+always delete prints from the device again using
+<link linkend="fp-device-delete-print"><function>fp_device_delete_print()</function></link>.</para>
+<refsect3 id="fp-device-has-storage.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fp-device-supports-identify" role="function" condition="deprecated:1.92.0: Use fp_device_has_feature() instead.">
+<title>fp_device_supports_identify&#160;()</title>
+<indexterm zone="fp-device-supports-identify" role="deprecated"><primary>fp_device_supports_identify</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+fp_device_supports_identify (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>);</programlisting>
+<warning><para><literal>fp_device_supports_identify</literal> has been deprecated since version 1.92.0 and should not be used in newly-written code.</para> <para>Use <link linkend="fp-device-has-feature"><function>fp_device_has_feature()</function></link> instead.</para>
+</warning>
+<para>Check whether the device supports identification.</para>
+<refsect3 id="fp-device-supports-identify.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-device-supports-identify.returns" role="returns">
+<title>Returns</title>
+<para> Whether the device supports identification</para>
+</refsect3></refsect2>
+<refsect2 id="fp-device-supports-capture" role="function" condition="deprecated:1.92.0: Use fp_device_has_feature() instead.">
+<title>fp_device_supports_capture&#160;()</title>
+<indexterm zone="fp-device-supports-capture" role="deprecated"><primary>fp_device_supports_capture</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+fp_device_supports_capture (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>);</programlisting>
+<warning><para><literal>fp_device_supports_capture</literal> has been deprecated since version 1.92.0 and should not be used in newly-written code.</para> <para>Use <link linkend="fp-device-has-feature"><function>fp_device_has_feature()</function></link> instead.</para>
+</warning>
+<para>Check whether the device supports capturing images.</para>
+<refsect3 id="fp-device-supports-capture.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-device-supports-capture.returns" role="returns">
+<title>Returns</title>
+<para> Whether the device supports image capture</para>
+</refsect3></refsect2>
+<refsect2 id="fp-device-is-open" role="function">
+<title>fp_device_is_open&#160;()</title>
+<indexterm zone="fp-device-is-open"><primary>fp_device_is_open</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+fp_device_is_open (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>);</programlisting>
+<refsect3 id="fp-device-is-open.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-device-is-open.returns" role="returns">
+<title>Returns</title>
+<para> Whether the device is open or not</para>
+</refsect3></refsect2>
+<refsect2 id="fp-device-open" role="function">
+<title>fp_device_open&#160;()</title>
+<indexterm zone="fp-device-open"><primary>fp_device_open</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fp_device_open (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                <parameter><link linkend="GAsyncReadyCallback"><type>GAsyncReadyCallback</type></link> callback</parameter>,
+                <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Start an asynchronous operation to open the device. The callback will
+be called once the operation has finished. Retrieve the result with
+<link linkend="fp-device-open-finish"><function>fp_device_open_finish()</function></link>.</para>
+<refsect3 id="fp-device-open.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>cancellable</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GCancellable"><type>GCancellable</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>callback</para></entry>
+<entry role="parameter_description"><para>the function to call on completion</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>the data to pass to <parameter>callback</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fp-device-close" role="function">
+<title>fp_device_close&#160;()</title>
+<indexterm zone="fp-device-close"><primary>fp_device_close</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fp_device_close (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                 <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                 <parameter><link linkend="GAsyncReadyCallback"><type>GAsyncReadyCallback</type></link> callback</parameter>,
+                 <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Start an asynchronous operation to close the device. The callback will
+be called once the operation has finished. Retrieve the result with
+<link linkend="fp-device-close-finish"><function>fp_device_close_finish()</function></link>.</para>
+<refsect3 id="fp-device-close.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>cancellable</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GCancellable"><type>GCancellable</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>callback</para></entry>
+<entry role="parameter_description"><para>the function to call on completion</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>the data to pass to <parameter>callback</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fp-device-enroll" role="function">
+<title>fp_device_enroll&#160;()</title>
+<indexterm zone="fp-device-enroll"><primary>fp_device_enroll</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fp_device_enroll (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                  <parameter><link linkend="FpPrint"><type>FpPrint</type></link> *template_print</parameter>,
+                  <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                  <parameter><link linkend="FpEnrollProgress"><type>FpEnrollProgress</type></link> progress_cb</parameter>,
+                  <parameter><link linkend="gpointer"><type>gpointer</type></link> progress_data</parameter>,
+                  <parameter><link linkend="GDestroyNotify"><type>GDestroyNotify</type></link> progress_destroy</parameter>,
+                  <parameter><link linkend="GAsyncReadyCallback"><type>GAsyncReadyCallback</type></link> callback</parameter>,
+                  <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Start an asynchronous operation to enroll a print. The callback will
+be called once the operation has finished. Retrieve the result with
+<link linkend="fp-device-enroll-finish"><function>fp_device_enroll_finish()</function></link>.</para>
+<para>The <parameter>template_print</parameter>
+ parameter is a <link linkend="FpPrint"><type>FpPrint</type></link> with available metadata filled
+in and, optionally, with existing fingerprint data to be updated with newly
+enrolled fingerprints if a device driver supports it. The driver may make use
+of the metadata, when e.g. storing the print on device memory. It is undefined
+whether this print is filled in by the driver and returned, or whether the
+driver will return a newly created print after enrollment succeeded.</para>
+<refsect3 id="fp-device-enroll.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>template_print</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpPrint"><type>FpPrint</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer floating</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>cancellable</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GCancellable"><type>GCancellable</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>progress_cb</para></entry>
+<entry role="parameter_description"><para>progress reporting callback. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>][<acronym>closure</acronym> progress_data][<acronym>scope notified</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>progress_data</para></entry>
+<entry role="parameter_description"><para>user data for <parameter>progress_cb</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>progress_destroy</para></entry>
+<entry role="parameter_description"><para>Destroy notify for <parameter>progress_data</parameter>
+. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>destroy</acronym> progress_data]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>callback</para></entry>
+<entry role="parameter_description"><para>the function to call on completion. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>scope async</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>the data to pass to <parameter>callback</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fp-device-verify" role="function">
+<title>fp_device_verify&#160;()</title>
+<indexterm zone="fp-device-verify"><primary>fp_device_verify</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fp_device_verify (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                  <parameter><link linkend="FpPrint"><type>FpPrint</type></link> *enrolled_print</parameter>,
+                  <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                  <parameter><link linkend="FpMatchCb"><type>FpMatchCb</type></link> match_cb</parameter>,
+                  <parameter><link linkend="gpointer"><type>gpointer</type></link> match_data</parameter>,
+                  <parameter><link linkend="GDestroyNotify"><type>GDestroyNotify</type></link> match_destroy</parameter>,
+                  <parameter><link linkend="GAsyncReadyCallback"><type>GAsyncReadyCallback</type></link> callback</parameter>,
+                  <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Start an asynchronous operation to verify a print. The callback will
+be called once the operation has finished. Retrieve the result with
+<link linkend="fp-device-verify-finish"><function>fp_device_verify_finish()</function></link>.</para>
+<refsect3 id="fp-device-verify.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>enrolled_print</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpPrint"><type>FpPrint</type></link> to verify</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>cancellable</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GCancellable"><type>GCancellable</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>match_cb</para></entry>
+<entry role="parameter_description"><para>match reporting callback. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>][<acronym>scope notified</acronym>][<acronym>closure</acronym> match_data]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>match_data</para></entry>
+<entry role="parameter_description"><para>user data for <parameter>match_cb</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>match_destroy</para></entry>
+<entry role="parameter_description"><para>Destroy notify for <parameter>match_data</parameter>
+. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>destroy</acronym> match_data]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>callback</para></entry>
+<entry role="parameter_description"><para>the function to call on completion</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>the data to pass to <parameter>callback</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fp-device-identify" role="function">
+<title>fp_device_identify&#160;()</title>
+<indexterm zone="fp-device-identify"><primary>fp_device_identify</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fp_device_identify (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                    <parameter><link linkend="GPtrArray"><type>GPtrArray</type></link> *prints</parameter>,
+                    <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                    <parameter><link linkend="FpMatchCb"><type>FpMatchCb</type></link> match_cb</parameter>,
+                    <parameter><link linkend="gpointer"><type>gpointer</type></link> match_data</parameter>,
+                    <parameter><link linkend="GDestroyNotify"><type>GDestroyNotify</type></link> match_destroy</parameter>,
+                    <parameter><link linkend="GAsyncReadyCallback"><type>GAsyncReadyCallback</type></link> callback</parameter>,
+                    <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Start an asynchronous operation to identify prints. The callback will
+be called once the operation has finished. Retrieve the result with
+<link linkend="fp-device-identify-finish"><function>fp_device_identify_finish()</function></link>.</para>
+<refsect3 id="fp-device-identify.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>prints</para></entry>
+<entry role="parameter_description"><para><link linkend="GPtrArray"><type>GPtrArray</type></link> of <link linkend="FpPrint"><type>FpPrint</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>element-type</acronym> FpPrint][<acronym>transfer none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>cancellable</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GCancellable"><type>GCancellable</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>match_cb</para></entry>
+<entry role="parameter_description"><para>match reporting callback. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>][<acronym>scope notified</acronym>][<acronym>closure</acronym> match_data]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>match_data</para></entry>
+<entry role="parameter_description"><para>user data for <parameter>match_cb</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>match_destroy</para></entry>
+<entry role="parameter_description"><para>Destroy notify for <parameter>match_data</parameter>
+. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>destroy</acronym> match_data]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>callback</para></entry>
+<entry role="parameter_description"><para>the function to call on completion</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>the data to pass to <parameter>callback</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fp-device-capture" role="function">
+<title>fp_device_capture&#160;()</title>
+<indexterm zone="fp-device-capture"><primary>fp_device_capture</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fp_device_capture (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                   <parameter><link linkend="gboolean"><type>gboolean</type></link> wait_for_finger</parameter>,
+                   <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                   <parameter><link linkend="GAsyncReadyCallback"><type>GAsyncReadyCallback</type></link> callback</parameter>,
+                   <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Start an asynchronous operation to capture an image. The callback will
+be called once the operation has finished. Retrieve the result with
+<link linkend="fp-device-capture-finish"><function>fp_device_capture_finish()</function></link>.</para>
+<refsect3 id="fp-device-capture.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>wait_for_finger</para></entry>
+<entry role="parameter_description"><para>Whether to wait for a finger or not</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>cancellable</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GCancellable"><type>GCancellable</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>callback</para></entry>
+<entry role="parameter_description"><para>the function to call on completion</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>the data to pass to <parameter>callback</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fp-device-delete-print" role="function">
+<title>fp_device_delete_print&#160;()</title>
+<indexterm zone="fp-device-delete-print"><primary>fp_device_delete_print</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fp_device_delete_print (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                        <parameter><link linkend="FpPrint"><type>FpPrint</type></link> *enrolled_print</parameter>,
+                        <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                        <parameter><link linkend="GAsyncReadyCallback"><type>GAsyncReadyCallback</type></link> callback</parameter>,
+                        <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Start an asynchronous operation to delete a print from the device.
+The callback will be called once the operation has finished. Retrieve
+the result with <link linkend="fp-device-delete-print-finish"><function>fp_device_delete_print_finish()</function></link>.</para>
+<para>This only makes sense on devices that store prints on-chip, but is safe
+to always call.</para>
+<refsect3 id="fp-device-delete-print.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>enrolled_print</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpPrint"><type>FpPrint</type></link> to delete</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>cancellable</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GCancellable"><type>GCancellable</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>callback</para></entry>
+<entry role="parameter_description"><para>the function to call on completion</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>the data to pass to <parameter>callback</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fp-device-list-prints" role="function">
+<title>fp_device_list_prints&#160;()</title>
+<indexterm zone="fp-device-list-prints"><primary>fp_device_list_prints</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fp_device_list_prints (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                       <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                       <parameter><link linkend="GAsyncReadyCallback"><type>GAsyncReadyCallback</type></link> callback</parameter>,
+                       <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Start an asynchronous operation to list all prints stored on the device.
+This only makes sense on devices that store prints on-chip.</para>
+<para>Retrieve the result with <link linkend="fp-device-list-prints-finish"><function>fp_device_list_prints_finish()</function></link>.</para>
+<refsect3 id="fp-device-list-prints.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>cancellable</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GCancellable"><type>GCancellable</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>callback</para></entry>
+<entry role="parameter_description"><para>the function to call on completion</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>the data to pass to <parameter>callback</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fp-device-clear-storage" role="function">
+<title>fp_device_clear_storage&#160;()</title>
+<indexterm zone="fp-device-clear-storage"><primary>fp_device_clear_storage</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fp_device_clear_storage (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                         <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                         <parameter><link linkend="GAsyncReadyCallback"><type>GAsyncReadyCallback</type></link> callback</parameter>,
+                         <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Start an asynchronous operation to delete all prints from the device.
+The callback will be called once the operation has finished. Retrieve
+the result with <link linkend="fp-device-clear-storage-finish"><function>fp_device_clear_storage_finish()</function></link>.</para>
+<para>This only makes sense on devices that store prints on-chip, but is safe
+to always call.</para>
+<refsect3 id="fp-device-clear-storage.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>cancellable</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GCancellable"><type>GCancellable</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>callback</para></entry>
+<entry role="parameter_description"><para>the function to call on completion</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>the data to pass to <parameter>callback</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fp-device-suspend" role="function">
+<title>fp_device_suspend&#160;()</title>
+<indexterm zone="fp-device-suspend"><primary>fp_device_suspend</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fp_device_suspend (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                   <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                   <parameter><link linkend="GAsyncReadyCallback"><type>GAsyncReadyCallback</type></link> callback</parameter>,
+                   <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Prepare the device for system suspend. Retrieve the result with
+<link linkend="fp-device-suspend-finish"><function>fp_device_suspend_finish()</function></link>.</para>
+<para>The suspend method can be called at any time (even if the device is not
+opened) and must be paired with a corresponding resume call. It is undefined
+when or how any ongoing operation is finished. This call might wait for an
+ongoing operation to finish, might cancel the ongoing operation or may
+prepare the device so that the host is resumed when the operation can be
+finished.</para>
+<para>If an ongoing operation must be cancelled then it will complete with an error
+code of <link linkend="FP-DEVICE-ERROR-BUSY:CAPS"><type>FP_DEVICE_ERROR_BUSY</type></link> before the suspend async routine finishes.</para>
+<para>Any operation started while the device is suspended will fail with
+<link linkend="FP-DEVICE-ERROR-BUSY:CAPS"><type>FP_DEVICE_ERROR_BUSY</type></link>, this includes calls to open or close the device.</para>
+<refsect3 id="fp-device-suspend.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>cancellable</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GCancellable"><type>GCancellable</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>, currently not used. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>callback</para></entry>
+<entry role="parameter_description"><para>the function to call on completion</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>the data to pass to <parameter>callback</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fp-device-resume" role="function">
+<title>fp_device_resume&#160;()</title>
+<indexterm zone="fp-device-resume"><primary>fp_device_resume</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fp_device_resume (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                  <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                  <parameter><link linkend="GAsyncReadyCallback"><type>GAsyncReadyCallback</type></link> callback</parameter>,
+                  <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Resume device after system suspend. Retrieve the result with
+<link linkend="fp-device-suspend-finish"><function>fp_device_suspend_finish()</function></link>.</para>
+<para>Note that it is not defined when any ongoing operation may return (success or
+error). You must be ready to handle this before, during or after the
+resume operation.</para>
+<refsect3 id="fp-device-resume.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>cancellable</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GCancellable"><type>GCancellable</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>, currently not used. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>callback</para></entry>
+<entry role="parameter_description"><para>the function to call on completion</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>the data to pass to <parameter>callback</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fp-device-open-finish" role="function">
+<title>fp_device_open_finish&#160;()</title>
+<indexterm zone="fp-device-open-finish"><primary>fp_device_open_finish</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+fp_device_open_finish (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                       <parameter><link linkend="GAsyncResult"><type>GAsyncResult</type></link> *result</parameter>,
+                       <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Finish an asynchronous operation to open the device.
+See <link linkend="fp-device-open"><function>fp_device_open()</function></link>.</para>
+<refsect3 id="fp-device-open-finish.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>result</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GAsyncResult"><type>GAsyncResult</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>Return location for errors, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to ignore</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-device-open-finish.returns" role="returns">
+<title>Returns</title>
+<para><link linkend="FALSE:CAPS"><literal>FALSE</literal></link> on error, <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> otherwise. </para>
+<para><emphasis role="annotation">[<acronym>type</acronym> void]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fp-device-close-finish" role="function">
+<title>fp_device_close_finish&#160;()</title>
+<indexterm zone="fp-device-close-finish"><primary>fp_device_close_finish</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+fp_device_close_finish (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                        <parameter><link linkend="GAsyncResult"><type>GAsyncResult</type></link> *result</parameter>,
+                        <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Finish an asynchronous operation to close the device.
+See <link linkend="fp-device-close"><function>fp_device_close()</function></link>.</para>
+<refsect3 id="fp-device-close-finish.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>result</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GAsyncResult"><type>GAsyncResult</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>Return location for errors, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to ignore</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-device-close-finish.returns" role="returns">
+<title>Returns</title>
+<para><link linkend="FALSE:CAPS"><literal>FALSE</literal></link> on error, <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> otherwise. </para>
+<para><emphasis role="annotation">[<acronym>type</acronym> void]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fp-device-enroll-finish" role="function">
+<title>fp_device_enroll_finish&#160;()</title>
+<indexterm zone="fp-device-enroll-finish"><primary>fp_device_enroll_finish</primary></indexterm>
+<programlisting language="C"><link linkend="FpPrint"><returnvalue>FpPrint</returnvalue></link>&#160;*
+fp_device_enroll_finish (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                         <parameter><link linkend="GAsyncResult"><type>GAsyncResult</type></link> *result</parameter>,
+                         <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Finish an asynchronous operation to enroll a print. You should check
+for an error of type <link linkend="FP-DEVICE-RETRY:CAPS"><literal>FP_DEVICE_RETRY</literal></link> to prompt the user again if there
+was an interaction issue.
+See <link linkend="fp-device-enroll"><function>fp_device_enroll()</function></link>.</para>
+<refsect3 id="fp-device-enroll-finish.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>result</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GAsyncResult"><type>GAsyncResult</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>Return location for errors, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to ignore</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-device-enroll-finish.returns" role="returns">
+<title>Returns</title>
+<para>The enrolled <link linkend="FpPrint"><type>FpPrint</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> on error. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fp-device-verify-finish" role="function">
+<title>fp_device_verify_finish&#160;()</title>
+<indexterm zone="fp-device-verify-finish"><primary>fp_device_verify_finish</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+fp_device_verify_finish (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                         <parameter><link linkend="GAsyncResult"><type>GAsyncResult</type></link> *result</parameter>,
+                         <parameter><link linkend="gboolean"><type>gboolean</type></link> *match</parameter>,
+                         <parameter><link linkend="FpPrint"><type>FpPrint</type></link> **print</parameter>,
+                         <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Finish an asynchronous operation to verify an enrolled print. You should check
+for an error of type <link linkend="FP-DEVICE-RETRY:CAPS"><literal>FP_DEVICE_RETRY</literal></link> to prompt the user again if there
+was an interaction issue.</para>
+<para>With <parameter>print</parameter>
+ you can fetch the newly created print and retrieve the image data if available.</para>
+<para>See <link linkend="fp-device-verify"><function>fp_device_verify()</function></link>.</para>
+<refsect3 id="fp-device-verify-finish.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>result</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GAsyncResult"><type>GAsyncResult</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>match</para></entry>
+<entry role="parameter_description"><para>Whether the user presented the correct finger. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>print</para></entry>
+<entry role="parameter_description"><para>Location to store the scanned print, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to ignore. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>Return location for errors, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to ignore</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-device-verify-finish.returns" role="returns">
+<title>Returns</title>
+<para><link linkend="FALSE:CAPS"><literal>FALSE</literal></link> on error, <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> otherwise. </para>
+<para><emphasis role="annotation">[<acronym>type</acronym> void]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fp-device-identify-finish" role="function">
+<title>fp_device_identify_finish&#160;()</title>
+<indexterm zone="fp-device-identify-finish"><primary>fp_device_identify_finish</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+fp_device_identify_finish (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                           <parameter><link linkend="GAsyncResult"><type>GAsyncResult</type></link> *result</parameter>,
+                           <parameter><link linkend="FpPrint"><type>FpPrint</type></link> **match</parameter>,
+                           <parameter><link linkend="FpPrint"><type>FpPrint</type></link> **print</parameter>,
+                           <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Finish an asynchronous operation to identify a print. You should check
+for an error of type <link linkend="FP-DEVICE-RETRY:CAPS"><literal>FP_DEVICE_RETRY</literal></link> to prompt the user again if there
+was an interaction issue.</para>
+<para>Use <parameter>match</parameter>
+ to find the print that matched. With <parameter>print</parameter>
+ you can fetch the
+newly created print and retrieve the image data if available.</para>
+<para>See <link linkend="fp-device-identify"><function>fp_device_identify()</function></link>.</para>
+<refsect3 id="fp-device-identify-finish.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>result</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GAsyncResult"><type>GAsyncResult</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>match</para></entry>
+<entry role="parameter_description"><para>Location for the matched <link linkend="FpPrint"><type>FpPrint</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>print</para></entry>
+<entry role="parameter_description"><para>Location for the new <link linkend="FpPrint"><type>FpPrint</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>Return location for errors, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to ignore</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-device-identify-finish.returns" role="returns">
+<title>Returns</title>
+<para><link linkend="FALSE:CAPS"><literal>FALSE</literal></link> on error, <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> otherwise. </para>
+<para><emphasis role="annotation">[<acronym>type</acronym> void]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fp-device-capture-finish" role="function">
+<title>fp_device_capture_finish&#160;()</title>
+<indexterm zone="fp-device-capture-finish"><primary>fp_device_capture_finish</primary></indexterm>
+<programlisting language="C"><link linkend="FpImage"><returnvalue>FpImage</returnvalue></link>&#160;*
+fp_device_capture_finish (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                          <parameter><link linkend="GAsyncResult"><type>GAsyncResult</type></link> *result</parameter>,
+                          <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Finish an asynchronous operation to capture an image. You should check
+for an error of type <link linkend="FP-DEVICE-RETRY:CAPS"><literal>FP_DEVICE_RETRY</literal></link> to prompt the user again if there
+was an interaction issue.</para>
+<para>See <link linkend="fp-device-capture"><function>fp_device_capture()</function></link>.</para>
+<refsect3 id="fp-device-capture-finish.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>result</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GAsyncResult"><type>GAsyncResult</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>Return location for errors, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to ignore</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-device-capture-finish.returns" role="returns">
+<title>Returns</title>
+<para><link linkend="FpImage"><type>FpImage</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link> on error. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fp-device-delete-print-finish" role="function">
+<title>fp_device_delete_print_finish&#160;()</title>
+<indexterm zone="fp-device-delete-print-finish"><primary>fp_device_delete_print_finish</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+fp_device_delete_print_finish (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                               <parameter><link linkend="GAsyncResult"><type>GAsyncResult</type></link> *result</parameter>,
+                               <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Finish an asynchronous operation to delete an enrolled print.</para>
+<para>See <link linkend="fp-device-delete-print"><function>fp_device_delete_print()</function></link>.</para>
+<refsect3 id="fp-device-delete-print-finish.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>result</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GAsyncResult"><type>GAsyncResult</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>Return location for errors, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to ignore</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-device-delete-print-finish.returns" role="returns">
+<title>Returns</title>
+<para><link linkend="FALSE:CAPS"><literal>FALSE</literal></link> on error, <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> otherwise. </para>
+<para><emphasis role="annotation">[<acronym>type</acronym> void]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fp-device-list-prints-finish" role="function">
+<title>fp_device_list_prints_finish&#160;()</title>
+<indexterm zone="fp-device-list-prints-finish"><primary>fp_device_list_prints_finish</primary></indexterm>
+<programlisting language="C"><link linkend="GPtrArray"><returnvalue>GPtrArray</returnvalue></link>&#160;*
+fp_device_list_prints_finish (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                              <parameter><link linkend="GAsyncResult"><type>GAsyncResult</type></link> *result</parameter>,
+                              <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Finish an asynchronous operation to list all device stored prints.</para>
+<para>See <link linkend="fp-device-list-prints"><function>fp_device_list_prints()</function></link>.</para>
+<refsect3 id="fp-device-list-prints-finish.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>result</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GAsyncResult"><type>GAsyncResult</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>Return location for errors, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to ignore</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-device-list-prints-finish.returns" role="returns">
+<title>Returns</title>
+<para>Array of prints or <link linkend="NULL:CAPS"><literal>NULL</literal></link> on error. </para>
+<para><emphasis role="annotation">[<acronym>element-type</acronym> FpPrint][<acronym>transfer container</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fp-device-clear-storage-finish" role="function">
+<title>fp_device_clear_storage_finish&#160;()</title>
+<indexterm zone="fp-device-clear-storage-finish"><primary>fp_device_clear_storage_finish</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+fp_device_clear_storage_finish (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                                <parameter><link linkend="GAsyncResult"><type>GAsyncResult</type></link> *result</parameter>,
+                                <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Finish an asynchronous operation to delete all enrolled prints.</para>
+<para>See <link linkend="fp-device-clear-storage"><function>fp_device_clear_storage()</function></link>.</para>
+<refsect3 id="fp-device-clear-storage-finish.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>result</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GAsyncResult"><type>GAsyncResult</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>Return location for errors, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to ignore</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-device-clear-storage-finish.returns" role="returns">
+<title>Returns</title>
+<para><link linkend="FALSE:CAPS"><literal>FALSE</literal></link> on error, <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> otherwise. </para>
+<para><emphasis role="annotation">[<acronym>type</acronym> void]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fp-device-suspend-finish" role="function">
+<title>fp_device_suspend_finish&#160;()</title>
+<indexterm zone="fp-device-suspend-finish"><primary>fp_device_suspend_finish</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+fp_device_suspend_finish (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                          <parameter><link linkend="GAsyncResult"><type>GAsyncResult</type></link> *result</parameter>,
+                          <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Finish an asynchronous operation to prepare the device for suspend.
+See <link linkend="fp-device-suspend"><function>fp_device_suspend()</function></link>.</para>
+<para>The API user should accept an error of <link linkend="FP-DEVICE-ERROR-NOT-SUPPORTED:CAPS"><type>FP_DEVICE_ERROR_NOT_SUPPORTED</type></link>.</para>
+<refsect3 id="fp-device-suspend-finish.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>result</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GAsyncResult"><type>GAsyncResult</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>Return location for errors, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to ignore</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-device-suspend-finish.returns" role="returns">
+<title>Returns</title>
+<para><link linkend="FALSE:CAPS"><literal>FALSE</literal></link> on error, <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> otherwise. </para>
+<para><emphasis role="annotation">[<acronym>type</acronym> void]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fp-device-resume-finish" role="function">
+<title>fp_device_resume_finish&#160;()</title>
+<indexterm zone="fp-device-resume-finish"><primary>fp_device_resume_finish</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+fp_device_resume_finish (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                         <parameter><link linkend="GAsyncResult"><type>GAsyncResult</type></link> *result</parameter>,
+                         <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Finish an asynchronous operation to resume the device after suspend.
+See <link linkend="fp-device-resume"><function>fp_device_resume()</function></link>.</para>
+<para>The API user should accept an error of <link linkend="FP-DEVICE-ERROR-NOT-SUPPORTED:CAPS"><type>FP_DEVICE_ERROR_NOT_SUPPORTED</type></link>.</para>
+<refsect3 id="fp-device-resume-finish.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>result</para></entry>
+<entry role="parameter_description"><para>A <link linkend="GAsyncResult"><type>GAsyncResult</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>Return location for errors, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to ignore</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-device-resume-finish.returns" role="returns">
+<title>Returns</title>
+<para><link linkend="FALSE:CAPS"><literal>FALSE</literal></link> on error, <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> otherwise. </para>
+<para><emphasis role="annotation">[<acronym>type</acronym> void]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fp-device-open-sync" role="function">
+<title>fp_device_open_sync&#160;()</title>
+<indexterm zone="fp-device-open-sync"><primary>fp_device_open_sync</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+fp_device_open_sync (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                     <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                     <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Open the device synchronously.</para>
+<refsect3 id="fp-device-open-sync.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>cancellable</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GCancellable"><type>GCancellable</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>Return location for errors, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to ignore</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-device-open-sync.returns" role="returns">
+<title>Returns</title>
+<para><link linkend="FALSE:CAPS"><literal>FALSE</literal></link> on error, <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> otherwise. </para>
+<para><emphasis role="annotation">[<acronym>type</acronym> void]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fp-device-close-sync" role="function">
+<title>fp_device_close_sync&#160;()</title>
+<indexterm zone="fp-device-close-sync"><primary>fp_device_close_sync</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+fp_device_close_sync (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                      <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                      <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Close the device synchronously.</para>
+<refsect3 id="fp-device-close-sync.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>cancellable</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GCancellable"><type>GCancellable</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>Return location for errors, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to ignore</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-device-close-sync.returns" role="returns">
+<title>Returns</title>
+<para><link linkend="FALSE:CAPS"><literal>FALSE</literal></link> on error, <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> otherwise. </para>
+<para><emphasis role="annotation">[<acronym>type</acronym> void]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fp-device-enroll-sync" role="function">
+<title>fp_device_enroll_sync&#160;()</title>
+<indexterm zone="fp-device-enroll-sync"><primary>fp_device_enroll_sync</primary></indexterm>
+<programlisting language="C"><link linkend="FpPrint"><returnvalue>FpPrint</returnvalue></link>&#160;*
+fp_device_enroll_sync (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                       <parameter><link linkend="FpPrint"><type>FpPrint</type></link> *template_print</parameter>,
+                       <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                       <parameter><link linkend="FpEnrollProgress"><type>FpEnrollProgress</type></link> progress_cb</parameter>,
+                       <parameter><link linkend="gpointer"><type>gpointer</type></link> progress_data</parameter>,
+                       <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Enroll a new print. See <link linkend="fp-device-enroll"><function>fp_device_enroll()</function></link>. It is undefined whether
+<parameter>template_print</parameter>
+ is updated or a newly created <link linkend="FpPrint"><type>FpPrint</type></link> is returned.</para>
+<refsect3 id="fp-device-enroll-sync.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>template_print</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpPrint"><type>FpPrint</type></link> to fill in or use
+as a template. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer floating</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>cancellable</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GCancellable"><type>GCancellable</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>progress_cb</para></entry>
+<entry role="parameter_description"><para>progress reporting callback. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>][<acronym>scope call</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>progress_data</para></entry>
+<entry role="parameter_description"><para>user data for <parameter>progress_cb</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>Return location for errors, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to ignore</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-device-enroll-sync.returns" role="returns">
+<title>Returns</title>
+<para>A <link linkend="FpPrint"><type>FpPrint</type></link> on success, <link linkend="NULL:CAPS"><literal>NULL</literal></link> otherwise. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fp-device-verify-sync" role="function">
+<title>fp_device_verify_sync&#160;()</title>
+<indexterm zone="fp-device-verify-sync"><primary>fp_device_verify_sync</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+fp_device_verify_sync (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                       <parameter><link linkend="FpPrint"><type>FpPrint</type></link> *enrolled_print</parameter>,
+                       <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                       <parameter><link linkend="FpMatchCb"><type>FpMatchCb</type></link> match_cb</parameter>,
+                       <parameter><link linkend="gpointer"><type>gpointer</type></link> match_data</parameter>,
+                       <parameter><link linkend="gboolean"><type>gboolean</type></link> *match</parameter>,
+                       <parameter><link linkend="FpPrint"><type>FpPrint</type></link> **print</parameter>,
+                       <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Verify a given print synchronously.</para>
+<refsect3 id="fp-device-verify-sync.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>enrolled_print</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpPrint"><type>FpPrint</type></link> to verify</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>cancellable</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GCancellable"><type>GCancellable</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>match_cb</para></entry>
+<entry role="parameter_description"><para>match reporting callback. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>][<acronym>scope call</acronym>][<acronym>closure</acronym> match_data]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>match_data</para></entry>
+<entry role="parameter_description"><para>user data for <parameter>match_cb</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>match</para></entry>
+<entry role="parameter_description"><para>Whether the user presented the correct finger. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>print</para></entry>
+<entry role="parameter_description"><para>Location to store the scanned print, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to ignore. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>Return location for errors, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to ignore</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-device-verify-sync.returns" role="returns">
+<title>Returns</title>
+<para><link linkend="FALSE:CAPS"><literal>FALSE</literal></link> on error, <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> otherwise. </para>
+<para><emphasis role="annotation">[<acronym>type</acronym> void]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fp-device-identify-sync" role="function">
+<title>fp_device_identify_sync&#160;()</title>
+<indexterm zone="fp-device-identify-sync"><primary>fp_device_identify_sync</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+fp_device_identify_sync (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                         <parameter><link linkend="GPtrArray"><type>GPtrArray</type></link> *prints</parameter>,
+                         <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                         <parameter><link linkend="FpMatchCb"><type>FpMatchCb</type></link> match_cb</parameter>,
+                         <parameter><link linkend="gpointer"><type>gpointer</type></link> match_data</parameter>,
+                         <parameter><link linkend="FpPrint"><type>FpPrint</type></link> **match</parameter>,
+                         <parameter><link linkend="FpPrint"><type>FpPrint</type></link> **print</parameter>,
+                         <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Identify a print synchronously.</para>
+<refsect3 id="fp-device-identify-sync.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>prints</para></entry>
+<entry role="parameter_description"><para><link linkend="GPtrArray"><type>GPtrArray</type></link> of <link linkend="FpPrint"><type>FpPrint</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>element-type</acronym> FpPrint][<acronym>transfer none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>cancellable</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GCancellable"><type>GCancellable</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>match_cb</para></entry>
+<entry role="parameter_description"><para>match reporting callback. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>][<acronym>scope call</acronym>][<acronym>closure</acronym> match_data]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>match_data</para></entry>
+<entry role="parameter_description"><para>user data for <parameter>match_cb</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>match</para></entry>
+<entry role="parameter_description"><para>Location for the matched <link linkend="FpPrint"><type>FpPrint</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>print</para></entry>
+<entry role="parameter_description"><para>Location for the new <link linkend="FpPrint"><type>FpPrint</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>Return location for errors, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to ignore</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-device-identify-sync.returns" role="returns">
+<title>Returns</title>
+<para><link linkend="FALSE:CAPS"><literal>FALSE</literal></link> on error, <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> otherwise. </para>
+<para><emphasis role="annotation">[<acronym>type</acronym> void]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fp-device-capture-sync" role="function">
+<title>fp_device_capture_sync&#160;()</title>
+<indexterm zone="fp-device-capture-sync"><primary>fp_device_capture_sync</primary></indexterm>
+<programlisting language="C"><link linkend="FpImage"><returnvalue>FpImage</returnvalue></link>&#160;*
+fp_device_capture_sync (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                        <parameter><link linkend="gboolean"><type>gboolean</type></link> wait_for_finger</parameter>,
+                        <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                        <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Start an synchronous operation to capture an image.</para>
+<refsect3 id="fp-device-capture-sync.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>wait_for_finger</para></entry>
+<entry role="parameter_description"><para>Whether to wait for a finger or not</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>cancellable</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GCancellable"><type>GCancellable</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>Return location for errors, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to ignore</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-device-capture-sync.returns" role="returns">
+<title>Returns</title>
+<para>A new <link linkend="FpImage"><type>FpImage</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link> on error. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fp-device-delete-print-sync" role="function">
+<title>fp_device_delete_print_sync&#160;()</title>
+<indexterm zone="fp-device-delete-print-sync"><primary>fp_device_delete_print_sync</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+fp_device_delete_print_sync (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                             <parameter><link linkend="FpPrint"><type>FpPrint</type></link> *enrolled_print</parameter>,
+                             <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                             <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Delete a given print from the device.</para>
+<refsect3 id="fp-device-delete-print-sync.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>enrolled_print</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpPrint"><type>FpPrint</type></link> to verify</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>cancellable</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GCancellable"><type>GCancellable</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>Return location for errors, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to ignore</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-device-delete-print-sync.returns" role="returns">
+<title>Returns</title>
+<para><link linkend="FALSE:CAPS"><literal>FALSE</literal></link> on error, <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> otherwise. </para>
+<para><emphasis role="annotation">[<acronym>type</acronym> void]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fp-device-list-prints-sync" role="function">
+<title>fp_device_list_prints_sync&#160;()</title>
+<indexterm zone="fp-device-list-prints-sync"><primary>fp_device_list_prints_sync</primary></indexterm>
+<programlisting language="C"><link linkend="GPtrArray"><returnvalue>GPtrArray</returnvalue></link>&#160;*
+fp_device_list_prints_sync (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                            <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                            <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>List device stored prints synchronously.</para>
+<refsect3 id="fp-device-list-prints-sync.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>cancellable</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GCancellable"><type>GCancellable</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>Return location for errors, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to ignore</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-device-list-prints-sync.returns" role="returns">
+<title>Returns</title>
+<para>Array of prints, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> on error. </para>
+<para><emphasis role="annotation">[<acronym>element-type</acronym> FpPrint][<acronym>transfer container</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fp-device-clear-storage-sync" role="function">
+<title>fp_device_clear_storage_sync&#160;()</title>
+<indexterm zone="fp-device-clear-storage-sync"><primary>fp_device_clear_storage_sync</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+fp_device_clear_storage_sync (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                              <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                              <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Clear sensor storage.</para>
+<refsect3 id="fp-device-clear-storage-sync.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>cancellable</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GCancellable"><type>GCancellable</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>Return location for errors, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to ignore</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-device-clear-storage-sync.returns" role="returns">
+<title>Returns</title>
+<para><link linkend="FALSE:CAPS"><literal>FALSE</literal></link> on error, <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> otherwise. </para>
+<para><emphasis role="annotation">[<acronym>type</acronym> void]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fp-device-suspend-sync" role="function">
+<title>fp_device_suspend_sync&#160;()</title>
+<indexterm zone="fp-device-suspend-sync"><primary>fp_device_suspend_sync</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+fp_device_suspend_sync (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                        <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                        <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Prepare device for suspend.</para>
+<refsect3 id="fp-device-suspend-sync.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>cancellable</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GCancellable"><type>GCancellable</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>, currently not used. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>Return location for errors, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to ignore</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-device-suspend-sync.returns" role="returns">
+<title>Returns</title>
+<para><link linkend="FALSE:CAPS"><literal>FALSE</literal></link> on error, <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> otherwise. </para>
+<para><emphasis role="annotation">[<acronym>type</acronym> void]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fp-device-resume-sync" role="function">
+<title>fp_device_resume_sync&#160;()</title>
+<indexterm zone="fp-device-resume-sync"><primary>fp_device_resume_sync</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+fp_device_resume_sync (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                       <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                       <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Resume device after suspend.</para>
+<refsect3 id="fp-device-resume-sync.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>cancellable</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GCancellable"><type>GCancellable</type></link>, or <link linkend="NULL:CAPS"><literal>NULL</literal></link>, currently not used. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>Return location for errors, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> to ignore</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fp-device-resume-sync.returns" role="returns">
+<title>Returns</title>
+<para><link linkend="FALSE:CAPS"><literal>FALSE</literal></link> on error, <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> otherwise. </para>
+<para><emphasis role="annotation">[<acronym>type</acronym> void]</emphasis></para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="FpDevice.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="FP-TYPE-DEVICE:CAPS" role="macro">
+<title>FP_TYPE_DEVICE</title>
+<indexterm zone="FP-TYPE-DEVICE:CAPS"><primary>FP_TYPE_DEVICE</primary></indexterm>
+<programlisting language="C">#define FP_TYPE_DEVICE (fp_device_get_type ())
+</programlisting>
+</refsect2>
+<refsect2 id="FP-DEVICE-RETRY:CAPS" role="macro">
+<title>FP_DEVICE_RETRY</title>
+<indexterm zone="FP-DEVICE-RETRY:CAPS"><primary>FP_DEVICE_RETRY</primary></indexterm>
+<programlisting language="C">#define FP_DEVICE_RETRY (fp_device_retry_quark ())
+</programlisting>
+</refsect2>
+<refsect2 id="FP-DEVICE-ERROR:CAPS" role="macro">
+<title>FP_DEVICE_ERROR</title>
+<indexterm zone="FP-DEVICE-ERROR:CAPS"><primary>FP_DEVICE_ERROR</primary></indexterm>
+<programlisting language="C">#define FP_DEVICE_ERROR (fp_device_error_quark ())
+</programlisting>
+</refsect2>
+<refsect2 id="FpDeviceType" role="enum">
+<title>enum FpDeviceType</title>
+<indexterm zone="FpDeviceType"><primary>FpDeviceType</primary></indexterm>
+<refsect3 id="FpDeviceType.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="FP-DEVICE-TYPE-VIRTUAL:CAPS">FP_DEVICE_TYPE_VIRTUAL</para></entry>
+<entry role="enum_member_description"><para>The device is a virtual device</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-DEVICE-TYPE-UDEV:CAPS">FP_DEVICE_TYPE_UDEV</para></entry>
+<entry role="enum_member_description"><para>The device is a udev device</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-DEVICE-TYPE-USB:CAPS">FP_DEVICE_TYPE_USB</para></entry>
+<entry role="enum_member_description"><para>The device is a USB device</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="FpDeviceFeature" role="enum">
+<title>enum FpDeviceFeature</title>
+<indexterm zone="FpDeviceFeature"><primary>FpDeviceFeature</primary></indexterm>
+<refsect3 id="FpDeviceFeature.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="FP-DEVICE-FEATURE-NONE:CAPS">FP_DEVICE_FEATURE_NONE</para></entry>
+<entry role="enum_member_description"><para>Device does not support any feature</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-DEVICE-FEATURE-CAPTURE:CAPS">FP_DEVICE_FEATURE_CAPTURE</para></entry>
+<entry role="enum_member_description"><para>Supports image capture</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-DEVICE-FEATURE-IDENTIFY:CAPS">FP_DEVICE_FEATURE_IDENTIFY</para></entry>
+<entry role="enum_member_description"><para>Supports finger identification</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-DEVICE-FEATURE-VERIFY:CAPS">FP_DEVICE_FEATURE_VERIFY</para></entry>
+<entry role="enum_member_description"><para>Supports finger verification</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-DEVICE-FEATURE-STORAGE:CAPS">FP_DEVICE_FEATURE_STORAGE</para></entry>
+<entry role="enum_member_description"><para>Device has a persistent storage</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-DEVICE-FEATURE-STORAGE-LIST:CAPS">FP_DEVICE_FEATURE_STORAGE_LIST</para></entry>
+<entry role="enum_member_description"><para>Supports listing the storage templates</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-DEVICE-FEATURE-STORAGE-DELETE:CAPS">FP_DEVICE_FEATURE_STORAGE_DELETE</para></entry>
+<entry role="enum_member_description"><para>Supports deleting stored templates</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-DEVICE-FEATURE-STORAGE-CLEAR:CAPS">FP_DEVICE_FEATURE_STORAGE_CLEAR</para></entry>
+<entry role="enum_member_description"><para>Supports clearing the whole storage</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-DEVICE-FEATURE-DUPLICATES-CHECK:CAPS">FP_DEVICE_FEATURE_DUPLICATES_CHECK</para></entry>
+<entry role="enum_member_description"><para>Natively supports duplicates detection</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-DEVICE-FEATURE-ALWAYS-ON:CAPS">FP_DEVICE_FEATURE_ALWAYS_ON</para></entry>
+<entry role="enum_member_description"><para>Whether the device can run continuously</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-DEVICE-FEATURE-UPDATE-PRINT:CAPS">FP_DEVICE_FEATURE_UPDATE_PRINT</para></entry>
+<entry role="enum_member_description"><para>Supports updating an existing print record using new scans</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="FpScanType" role="enum">
+<title>enum FpScanType</title>
+<indexterm zone="FpScanType"><primary>FpScanType</primary></indexterm>
+<refsect3 id="FpScanType.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="FP-SCAN-TYPE-SWIPE:CAPS">FP_SCAN_TYPE_SWIPE</para></entry>
+<entry role="enum_member_description"><para>Sensor requires swiping the finger.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-SCAN-TYPE-PRESS:CAPS">FP_SCAN_TYPE_PRESS</para></entry>
+<entry role="enum_member_description"><para>Sensor requires placing/pressing down the finger.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="FpDeviceRetry" role="enum">
+<title>enum FpDeviceRetry</title>
+<indexterm zone="FpDeviceRetry"><primary>FpDeviceRetry</primary></indexterm>
+<para>Error codes representing scan failures resulting in the user needing to
+retry.</para>
+<refsect3 id="FpDeviceRetry.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="FP-DEVICE-RETRY-GENERAL:CAPS">FP_DEVICE_RETRY_GENERAL</para></entry>
+<entry role="enum_member_description"><para>The scan did not succeed due to poor scan quality
+or other general user scanning problem.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-DEVICE-RETRY-TOO-SHORT:CAPS">FP_DEVICE_RETRY_TOO_SHORT</para></entry>
+<entry role="enum_member_description"><para>The scan did not succeed because the finger
+swipe was too short.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-DEVICE-RETRY-CENTER-FINGER:CAPS">FP_DEVICE_RETRY_CENTER_FINGER</para></entry>
+<entry role="enum_member_description"><para>The scan did not succeed because the finger
+was not centered on the scanner.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-DEVICE-RETRY-REMOVE-FINGER:CAPS">FP_DEVICE_RETRY_REMOVE_FINGER</para></entry>
+<entry role="enum_member_description"><para>The scan did not succeed due to quality or
+pressure problems; the user should remove their finger from the scanner
+before retrying.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-DEVICE-RETRY-TOO-FAST:CAPS">FP_DEVICE_RETRY_TOO_FAST</para></entry>
+<entry role="enum_member_description"><para>The scan did not succeed because the finger
+swipe or touch was too fast.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="FpDeviceError" role="enum">
+<title>enum FpDeviceError</title>
+<indexterm zone="FpDeviceError"><primary>FpDeviceError</primary></indexterm>
+<para>Error codes for device operations. More specific errors from other domains
+such as <link linkend="G-IO-ERROR:CAPS"><type>G_IO_ERROR</type></link> or <link linkend="G-USB-DEVICE-ERROR:CAPS"><type>G_USB_DEVICE_ERROR</type></link> may also be reported.</para>
+<refsect3 id="FpDeviceError.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="FP-DEVICE-ERROR-GENERAL:CAPS">FP_DEVICE_ERROR_GENERAL</para></entry>
+<entry role="enum_member_description"><para>A general error occurred.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-DEVICE-ERROR-NOT-SUPPORTED:CAPS">FP_DEVICE_ERROR_NOT_SUPPORTED</para></entry>
+<entry role="enum_member_description"><para>The device does not support the requested
+operation.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-DEVICE-ERROR-NOT-OPEN:CAPS">FP_DEVICE_ERROR_NOT_OPEN</para></entry>
+<entry role="enum_member_description"><para>The device needs to be opened to start this
+operation.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-DEVICE-ERROR-ALREADY-OPEN:CAPS">FP_DEVICE_ERROR_ALREADY_OPEN</para></entry>
+<entry role="enum_member_description"><para>The device has already been opened.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-DEVICE-ERROR-BUSY:CAPS">FP_DEVICE_ERROR_BUSY</para></entry>
+<entry role="enum_member_description"><para>The device is busy with another request.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-DEVICE-ERROR-PROTO:CAPS">FP_DEVICE_ERROR_PROTO</para></entry>
+<entry role="enum_member_description"><para>Protocol error</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-DEVICE-ERROR-DATA-INVALID:CAPS">FP_DEVICE_ERROR_DATA_INVALID</para></entry>
+<entry role="enum_member_description"><para>The passed data is invalid</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-DEVICE-ERROR-DATA-NOT-FOUND:CAPS">FP_DEVICE_ERROR_DATA_NOT_FOUND</para></entry>
+<entry role="enum_member_description"><para>Requested print was not found on device</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-DEVICE-ERROR-DATA-FULL:CAPS">FP_DEVICE_ERROR_DATA_FULL</para></entry>
+<entry role="enum_member_description"><para>No space on device available for operation</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-DEVICE-ERROR-DATA-DUPLICATE:CAPS">FP_DEVICE_ERROR_DATA_DUPLICATE</para></entry>
+<entry role="enum_member_description"><para>Enrolling template duplicates storaged templates</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-DEVICE-ERROR-REMOVED:CAPS">FP_DEVICE_ERROR_REMOVED</para></entry>
+<entry role="enum_member_description"><para>The device has been removed.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-DEVICE-ERROR-TOO-HOT:CAPS">FP_DEVICE_ERROR_TOO_HOT</para></entry>
+<entry role="enum_member_description"><para>The device might be getting too hot</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="FpFingerStatusFlags" role="enum">
+<title>enum FpFingerStatusFlags</title>
+<indexterm zone="FpFingerStatusFlags"><primary>FpFingerStatusFlags</primary></indexterm>
+<refsect3 id="FpFingerStatusFlags.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="FP-FINGER-STATUS-NONE:CAPS">FP_FINGER_STATUS_NONE</para></entry>
+<entry role="enum_member_description"><para>Sensor has not the finger on it, nor requires it</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-FINGER-STATUS-NEEDED:CAPS">FP_FINGER_STATUS_NEEDED</para></entry>
+<entry role="enum_member_description"><para>Sensor waits for the finger</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-FINGER-STATUS-PRESENT:CAPS">FP_FINGER_STATUS_PRESENT</para></entry>
+<entry role="enum_member_description"><para>Sensor has the finger on it</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="FpDevice-struct" role="struct">
+<title>FpDevice</title>
+<indexterm zone="FpDevice-struct"><primary>FpDevice</primary></indexterm>
+<programlisting language="C">typedef struct _FpDevice FpDevice;</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="FpDevice.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="FpDevice--device-id" role="property"><title>The <literal>“device-id”</literal> property</title>
+<indexterm zone="FpDevice--device-id"><primary>FpDevice:device-id</primary></indexterm>
+<programlisting>  “device-id”                <link linkend="char"><type>char</type></link>&#160;*</programlisting>
+<para>String describing the device, often generic but may be a serial number.</para><para>Owner: FpDevice</para>
+<para>Flags: Read</para>
+<para>Default value: ""</para>
+</refsect2>
+<refsect2 id="FpDevice--driver" role="property"><title>The <literal>“driver”</literal> property</title>
+<indexterm zone="FpDevice--driver"><primary>FpDevice:driver</primary></indexterm>
+<programlisting>  “driver”                   <link linkend="char"><type>char</type></link>&#160;*</programlisting>
+<para>String describing the driver.</para><para>Owner: FpDevice</para>
+<para>Flags: Read</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="FpDevice--finger-status" role="property"><title>The <literal>“finger-status”</literal> property</title>
+<indexterm zone="FpDevice--finger-status"><primary>FpDevice:finger-status</primary></indexterm>
+<programlisting>  “finger-status”            <link linkend="FpFingerStatusFlags"><type>FpFingerStatusFlags</type></link></programlisting>
+<para>The status of the finger.</para><para>Owner: FpDevice</para>
+<para>Flags: Read</para>
+</refsect2>
+<refsect2 id="FpDevice--fpi-driver-data" role="property"><title>The <literal>“fpi-driver-data”</literal> property</title>
+<indexterm zone="FpDevice--fpi-driver-data"><primary>FpDevice:fpi-driver-data</primary></indexterm>
+<programlisting>  “fpi-driver-data”          <link linkend="guint64"><type>guint64</type></link></programlisting>
+<para>Private: The driver data from the ID table entry.</para><para>Owner: FpDevice</para>
+<para>Flags: Write / Construct&#160;Only</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="FpDevice--fpi-environ" role="property"><title>The <literal>“fpi-environ”</literal> property</title>
+<indexterm zone="FpDevice--fpi-environ"><primary>FpDevice:fpi-environ</primary></indexterm>
+<programlisting>  “fpi-environ”              <link linkend="char"><type>char</type></link>&#160;*</programlisting>
+<para>Private: The environment variable for the virtual device.</para><para>Owner: FpDevice</para>
+<para>Flags: Write / Construct&#160;Only</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="FpDevice--fpi-udev-data-hidraw" role="property"><title>The <literal>“fpi-udev-data-hidraw”</literal> property</title>
+<indexterm zone="FpDevice--fpi-udev-data-hidraw"><primary>FpDevice:fpi-udev-data-hidraw</primary></indexterm>
+<programlisting>  “fpi-udev-data-hidraw”     <link linkend="char"><type>char</type></link>&#160;*</programlisting>
+<para>Private: The path to /dev/hidrawN.</para><para>Owner: FpDevice</para>
+<para>Flags: Read / Write / Construct&#160;Only</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="FpDevice--fpi-udev-data-spidev" role="property"><title>The <literal>“fpi-udev-data-spidev”</literal> property</title>
+<indexterm zone="FpDevice--fpi-udev-data-spidev"><primary>FpDevice:fpi-udev-data-spidev</primary></indexterm>
+<programlisting>  “fpi-udev-data-spidev”     <link linkend="char"><type>char</type></link>&#160;*</programlisting>
+<para>Private: The path to /dev/spidevN.M.</para><para>Owner: FpDevice</para>
+<para>Flags: Read / Write / Construct&#160;Only</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="FpDevice--fpi-usb-device" role="property"><title>The <literal>“fpi-usb-device”</literal> property</title>
+<indexterm zone="FpDevice--fpi-usb-device"><primary>FpDevice:fpi-usb-device</primary></indexterm>
+<programlisting>  “fpi-usb-device”           <link linkend="GUsbDevice"><type>GUsbDevice</type></link>&#160;*</programlisting>
+<para>Private: The USB device for the device.</para><para>Owner: FpDevice</para>
+<para>Flags: Read / Write / Construct&#160;Only</para>
+</refsect2>
+<refsect2 id="FpDevice--name" role="property"><title>The <literal>“name”</literal> property</title>
+<indexterm zone="FpDevice--name"><primary>FpDevice:name</primary></indexterm>
+<programlisting>  “name”                     <link linkend="char"><type>char</type></link>&#160;*</programlisting>
+<para>Human readable name for the device.</para><para>Owner: FpDevice</para>
+<para>Flags: Read</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="FpDevice--nr-enroll-stages" role="property"><title>The <literal>“nr-enroll-stages”</literal> property</title>
+<indexterm zone="FpDevice--nr-enroll-stages"><primary>FpDevice:nr-enroll-stages</primary></indexterm>
+<programlisting>  “nr-enroll-stages”         <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Number of enroll stages needed on the device.</para><para>Owner: FpDevice</para>
+<para>Flags: Read</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="FpDevice--open" role="property"><title>The <literal>“open”</literal> property</title>
+<indexterm zone="FpDevice--open"><primary>FpDevice:open</primary></indexterm>
+<programlisting>  “open”                     <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Whether the device is open or not.</para><para>Owner: FpDevice</para>
+<para>Flags: Read</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="FpDevice--removed" role="property"><title>The <literal>“removed”</literal> property</title>
+<indexterm zone="FpDevice--removed"><primary>FpDevice:removed</primary></indexterm>
+<programlisting>  “removed”                  <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Whether the device has been removed from the system.</para><para>Owner: FpDevice</para>
+<para>Flags: Read</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="FpDevice--scan-type" role="property"><title>The <literal>“scan-type”</literal> property</title>
+<indexterm zone="FpDevice--scan-type"><primary>FpDevice:scan-type</primary></indexterm>
+<programlisting>  “scan-type”                <link linkend="FpScanType"><type>FpScanType</type></link></programlisting>
+<para>The scan type of the device.</para><para>Owner: FpDevice</para>
+<para>Flags: Read</para>
+<para>Default value: FP_SCAN_TYPE_SWIPE</para>
+</refsect2>
+<refsect2 id="FpDevice--temperature" role="property"><title>The <literal>“temperature”</literal> property</title>
+<indexterm zone="FpDevice--temperature"><primary>FpDevice:temperature</primary></indexterm>
+<programlisting>  “temperature”              <link linkend="FpTemperature"><type>FpTemperature</type></link></programlisting>
+<para>The temperature estimation for device to prevent overheating.</para><para>Owner: FpDevice</para>
+<para>Flags: Read</para>
+<para>Default value: FP_TEMPERATURE_COLD</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="FpDevice.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="FpDevice-removed" role="signal"><title>The <literal>“removed”</literal> signal</title>
+<indexterm zone="FpDevice-removed"><primary>FpDevice::removed</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="FpDevice"><type>FpDevice</type></link> *device,
+               <link linkend="gpointer"><type>gpointer</type></link>  user_data)</programlisting>
+<para>This signal is emitted after the device has been removed and no operation
+is pending anymore.</para>
+<para>The API user is still required to close a removed device. The above
+guarantee means that the call to close the device can be made immediately
+from the signal handler.</para>
+<para>The close operation will return FP_DEVICE_ERROR_REMOVED, but the device
+will still be considered closed afterwards.</para>
+<para>The device will only be removed from the <link linkend="FpContext"><type>FpContext</type></link> after it has been
+closed by the API user.</para>
+<refsect3 id="FpDevice-removed.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>the <link linkend="FpDevice"><type>FpDevice</type></link> instance that emitted the signal</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><simpara>user_data</simpara></entry>
+<entry role="parameter_description"><simpara>user data set when the signal handler was connected.</simpara></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2>
+</refsect1>
+
+</refentry>

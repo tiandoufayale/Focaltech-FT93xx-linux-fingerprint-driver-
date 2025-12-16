@@ -1,0 +1,10 @@
+{
+  "version": "1.94.9",
+  "descriptive_name": "libfprint",
+  "license": [
+    "LGPLv2.1+"
+  ],
+  "license_files": [],
+  "subproject_dir": "subprojects",
+  "subprojects": []
+}

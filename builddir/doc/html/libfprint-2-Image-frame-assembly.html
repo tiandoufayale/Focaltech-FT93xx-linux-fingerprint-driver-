@@ -1,0 +1,401 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Image frame assembly: libfprint Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="libfprint Reference Manual">
+<link rel="up" href="driver-img.html" title="Image manipulation">
+<link rel="prev" href="libfprint-2-Internal-FpImage.html" title="Internal FpImage">
+<link rel="next" href="driver-print.html" title="Print handling">
+<meta name="generator" content="GTK-Doc V1.34.0 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#libfprint-2-Image-frame-assembly.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="driver-img.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="libfprint-2-Internal-FpImage.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="driver-print.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="libfprint-2-Image-frame-assembly"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libfprint-2-Image-frame-assembly.top_of_page"></a>Image frame assembly</span></h2>
+<p>Image frame assembly — Image frame assembly helpers</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="libfprint-2-Image-frame-assembly.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Image-frame-assembly.html#fpi-do-movement-estimation" title="fpi_do_movement_estimation ()">fpi_do_movement_estimation</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="FpImage.html" title="FpImage"><span class="returnvalue">FpImage</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Image-frame-assembly.html#fpi-assemble-frames" title="fpi_assemble_frames ()">fpi_assemble_frames</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="FpImage.html" title="FpImage"><span class="returnvalue">FpImage</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Image-frame-assembly.html#fpi-assemble-lines" title="fpi_assemble_lines ()">fpi_assemble_lines</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libfprint-2-Image-frame-assembly.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="libfprint-2-Image-frame-assembly.html#fpi-frame" title="struct fpi_frame">fpi_frame</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="libfprint-2-Image-frame-assembly.html#fpi-frame-asmbl-ctx" title="struct fpi_frame_asmbl_ctx">fpi_frame_asmbl_ctx</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="libfprint-2-Image-frame-assembly.html#fpi-line-asmbl-ctx" title="struct fpi_line_asmbl_ctx">fpi_line_asmbl_ctx</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libfprint-2-Image-frame-assembly.description"></a><h2>Description</h2>
+<p>Those are the helpers to manipulate capture data from fingerprint readers
+into a uniform image that can be further processed. This is usually used
+by drivers for devices which have a small sensor and thus need to capture
+data in small stripes.</p>
+</div>
+<div class="refsect1">
+<a name="libfprint-2-Image-frame-assembly.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="fpi-do-movement-estimation"></a><h3>fpi_do_movement_estimation ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_do_movement_estimation (<em class="parameter"><code><span class="type">struct fpi_frame_asmbl_ctx</span> *ctx</code></em>,
+                            <em class="parameter"><code><span class="type">GSList</span> *stripes</code></em>);</pre>
+<p>fpi_do_movement_estimation() estimates the movement between adjacent
+frames, populating <em class="parameter"><code>delta_x</code></em>
+ and <em class="parameter"><code>delta_y</code></em>
+ values for each <a class="link" href="libfprint-2-Image-frame-assembly.html#fpi-frame" title="struct fpi_frame"><span class="type">fpi_frame</span></a>.</p>
+<p>This function is used for devices that don't do movement estimation
+in hardware. If hardware movement estimation is supported, the driver
+should populate <em class="parameter"><code>delta_x</code></em>
+ and <em class="parameter"><code>delta_y</code></em>
+ instead.</p>
+<div class="refsect3">
+<a name="fpi-do-movement-estimation.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>ctx</p></td>
+<td class="parameter_description"><p><a class="link" href="libfprint-2-Image-frame-assembly.html#fpi-frame-asmbl-ctx" title="struct fpi_frame_asmbl_ctx"><span class="type">fpi_frame_asmbl_ctx</span></a> - frame assembling context</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>stripes</p></td>
+<td class="parameter_description"><p>a singly-linked list of <a class="link" href="libfprint-2-Image-frame-assembly.html#fpi-frame" title="struct fpi_frame"><span class="type">fpi_frame</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-assemble-frames"></a><h3>fpi_assemble_frames ()</h3>
+<pre class="programlisting"><a class="link" href="FpImage.html" title="FpImage"><span class="returnvalue">FpImage</span></a> *
+fpi_assemble_frames (<em class="parameter"><code><span class="type">struct fpi_frame_asmbl_ctx</span> *ctx</code></em>,
+                     <em class="parameter"><code><span class="type">GSList</span> *stripes</code></em>);</pre>
+<p>fpi_assemble_frames() assembles individual frames into a single image.
+It expects <em class="parameter"><code>delta_x</code></em>
+ and <em class="parameter"><code>delta_y</code></em>
+ of <a class="link" href="libfprint-2-Image-frame-assembly.html#fpi-frame" title="struct fpi_frame"><span class="type">fpi_frame</span></a> to be populated.</p>
+<div class="refsect3">
+<a name="fpi-assemble-frames.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>ctx</p></td>
+<td class="parameter_description"><p><a class="link" href="libfprint-2-Image-frame-assembly.html#fpi-frame-asmbl-ctx" title="struct fpi_frame_asmbl_ctx"><span class="type">fpi_frame_asmbl_ctx</span></a> - frame assembling context</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>stripes</p></td>
+<td class="parameter_description"><p>linked list of <a class="link" href="libfprint-2-Image-frame-assembly.html#fpi-frame" title="struct fpi_frame"><span class="type">fpi_frame</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fpi-assemble-frames.returns"></a><h4>Returns</h4>
+<p> a newly allocated <span class="type">fp_img</span>.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-assemble-lines"></a><h3>fpi_assemble_lines ()</h3>
+<pre class="programlisting"><a class="link" href="FpImage.html" title="FpImage"><span class="returnvalue">FpImage</span></a> *
+fpi_assemble_lines (<em class="parameter"><code><span class="type">struct fpi_line_asmbl_ctx</span> *ctx</code></em>,
+                    <em class="parameter"><code><span class="type">GSList</span> *lines</code></em>,
+                    <em class="parameter"><code><span class="type">size_t</span> num_lines</code></em>);</pre>
+<p><a class="link" href="libfprint-2-Image-frame-assembly.html#fpi-assemble-lines" title="fpi_assemble_lines ()"><span class="type">fpi_assemble_lines</span></a> assembles individual lines into a single image.
+It also rescales image to account variable swiping speed.</p>
+<p>Note that <em class="parameter"><code>num_lines</code></em>
+ might be shorter than the length of the list,
+if some lines should be skipped.</p>
+<div class="refsect3">
+<a name="fpi-assemble-lines.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>ctx</p></td>
+<td class="parameter_description"><p><a class="link" href="libfprint-2-Image-frame-assembly.html#fpi-frame-asmbl-ctx" title="struct fpi_frame_asmbl_ctx"><span class="type">fpi_frame_asmbl_ctx</span></a> - frame assembling context</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>lines</p></td>
+<td class="parameter_description"><p>linked list of lines</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>num_lines</p></td>
+<td class="parameter_description"><p>number of items in <em class="parameter"><code>lines</code></em>
+to process</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fpi-assemble-lines.returns"></a><h4>Returns</h4>
+<p> a newly allocated <span class="type">fp_img</span>.</p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="libfprint-2-Image-frame-assembly.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="fpi-frame"></a><h3>struct fpi_frame</h3>
+<pre class="programlisting">struct fpi_frame {
+  int           delta_x;
+  int           delta_y;
+  unsigned char data[0];
+};
+</pre>
+<p><a class="link" href="libfprint-2-Image-frame-assembly.html#fpi-frame" title="struct fpi_frame"><span class="type">fpi_frame</span></a> is used to store frames for swipe sensors. Drivers should
+populate delta_x and delta_y if the device supports hardware movement
+estimation.</p>
+<div class="refsect3">
+<a name="fpi-frame.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><span class="type">int</span> <em class="structfield"><code><a name="fpi-frame.delta-x"></a>delta_x</code></em>;</p></td>
+<td class="struct_member_description"><p>X offset of the frame</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">int</span> <em class="structfield"><code><a name="fpi-frame.delta-y"></a>delta_y</code></em>;</p></td>
+<td class="struct_member_description"><p>Y offset of the frame</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p>unsigned <span class="type">char</span> <em class="structfield"><code><a name="fpi-frame.data"></a>data</code></em>[0];</p></td>
+<td class="struct_member_description"><p>bitmap</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-frame-asmbl-ctx"></a><h3>struct fpi_frame_asmbl_ctx</h3>
+<pre class="programlisting">struct fpi_frame_asmbl_ctx {
+  unsigned int  frame_width;
+  unsigned int  frame_height;
+  unsigned int  image_width;
+  unsigned char (*get_pixel)(struct fpi_frame_asmbl_ctx *ctx,
+                             struct fpi_frame           *frame,
+                             unsigned int                x,
+                             unsigned int                y);
+};
+</pre>
+<p><a class="link" href="libfprint-2-Image-frame-assembly.html#fpi-frame-asmbl-ctx" title="struct fpi_frame_asmbl_ctx"><span class="type">fpi_frame_asmbl_ctx</span></a> is a structure holding the context for frame
+assembling routines.</p>
+<p>Drivers should define their own <a class="link" href="libfprint-2-Image-frame-assembly.html#fpi-frame-asmbl-ctx" title="struct fpi_frame_asmbl_ctx"><span class="type">fpi_frame_asmbl_ctx</span></a> depending on
+hardware parameters of scanner. <em class="parameter"><code>image_width</code></em>
+ is usually 25% wider than
+<em class="parameter"><code>frame_width</code></em>
+ to take horizontal movement into account.</p>
+<div class="refsect3">
+<a name="fpi-frame-asmbl-ctx.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p>unsigned <span class="type">int</span> <em class="structfield"><code><a name="fpi-frame-asmbl-ctx.frame-width"></a>frame_width</code></em>;</p></td>
+<td class="struct_member_description"><p>width of the frame</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p>unsigned <span class="type">int</span> <em class="structfield"><code><a name="fpi-frame-asmbl-ctx.frame-height"></a>frame_height</code></em>;</p></td>
+<td class="struct_member_description"><p>height of the frame</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p>unsigned <span class="type">int</span> <em class="structfield"><code><a name="fpi-frame-asmbl-ctx.image-width"></a>image_width</code></em>;</p></td>
+<td class="struct_member_description"><p>resulting image width</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="fpi-frame-asmbl-ctx.get-pixel"></a>get_pixel</code></em> ()</p></td>
+<td class="struct_member_description"><p>pixel accessor, returns pixel brightness at x,y of frame</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-line-asmbl-ctx"></a><h3>struct fpi_line_asmbl_ctx</h3>
+<pre class="programlisting">struct fpi_line_asmbl_ctx {
+  unsigned int line_width;
+  unsigned int max_height;
+  unsigned int resolution;
+  unsigned int median_filter_size;
+  unsigned int max_search_offset;
+  int          (*get_deviation)(struct fpi_line_asmbl_ctx *ctx,
+                                GSList                    *line1,
+                                GSList                    *line2);
+  unsigned char (*get_pixel)(struct fpi_line_asmbl_ctx *ctx,
+                             GSList                    *line,
+                             unsigned int               x);
+};
+</pre>
+<p><a class="link" href="libfprint-2-Image-frame-assembly.html#fpi-line-asmbl-ctx" title="struct fpi_line_asmbl_ctx"><span class="type">fpi_line_asmbl_ctx</span></a> is a structure holding the context for line assembling
+routines.</p>
+<p>Drivers should define their own <a class="link" href="libfprint-2-Image-frame-assembly.html#fpi-line-asmbl-ctx" title="struct fpi_line_asmbl_ctx"><span class="type">fpi_line_asmbl_ctx</span></a> depending on
+the hardware parameters of the scanner. Swipe scanners of this type usually
+return two lines, the second line is often narrower than first and is used
+for movement estimation.</p>
+<p>The <em class="parameter"><code>max_search_offset</code></em>
+ value indicates how many lines forward the assembling
+routines should look while searching for next line. This value depends on
+how fast the hardware sends frames.</p>
+<p>The function pointed to by <em class="parameter"><code>get_deviation</code></em>
+ should return the numerical difference
+between two lines. Higher values means lines are more different. If the reader
+returns two lines at a time, this function should be used to estimate the
+difference between pairs of lines.</p>
+<div class="refsect3">
+<a name="fpi-line-asmbl-ctx.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p>unsigned <span class="type">int</span> <em class="structfield"><code><a name="fpi-line-asmbl-ctx.line-width"></a>line_width</code></em>;</p></td>
+<td class="struct_member_description"><p>width of line</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p>unsigned <span class="type">int</span> <em class="structfield"><code><a name="fpi-line-asmbl-ctx.max-height"></a>max_height</code></em>;</p></td>
+<td class="struct_member_description"><p>maximal height of assembled image</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p>unsigned <span class="type">int</span> <em class="structfield"><code><a name="fpi-line-asmbl-ctx.resolution"></a>resolution</code></em>;</p></td>
+<td class="struct_member_description"><p>scale factor used for line assembling routines.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p>unsigned <span class="type">int</span> <em class="structfield"><code><a name="fpi-line-asmbl-ctx.median-filter-size"></a>median_filter_size</code></em>;</p></td>
+<td class="struct_member_description"><p>size of median filter for movement estimation</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p>unsigned <span class="type">int</span> <em class="structfield"><code><a name="fpi-line-asmbl-ctx.max-search-offset"></a>max_search_offset</code></em>;</p></td>
+<td class="struct_member_description"><p>the number of lines to search for the next line</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="fpi-line-asmbl-ctx.get-deviation"></a>get_deviation</code></em> ()</p></td>
+<td class="struct_member_description"><p>pointer to a function that returns the numerical difference
+between two lines</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="fpi-line-asmbl-ctx.get-pixel"></a>get_pixel</code></em> ()</p></td>
+<td class="struct_member_description"><p>pixel accessor, returns pixel brightness at x of line</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.34.0</div>
+</body>
+</html>

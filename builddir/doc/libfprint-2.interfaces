@@ -1,0 +1,3 @@
+FpDevice GAsyncInitable
+FpImageDevice GAsyncInitable
+GUsbDevice GInitable

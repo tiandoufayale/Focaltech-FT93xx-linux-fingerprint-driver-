@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Internal FpImage: libfprint Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="libfprint Reference Manual">
+<link rel="up" href="driver-img.html" title="Image manipulation">
+<link rel="prev" href="driver-img.html" title="Image manipulation">
+<link rel="next" href="libfprint-2-Image-frame-assembly.html" title="Image frame assembly">
+<meta name="generator" content="GTK-Doc V1.34.0 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#libfprint-2-Internal-FpImage.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#libfprint-2-Internal-FpImage.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#libfprint-2-Internal-FpImage.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="driver-img.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="driver-img.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libfprint-2-Image-frame-assembly.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="libfprint-2-Internal-FpImage"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libfprint-2-Internal-FpImage.top_of_page"></a>Internal FpImage</span></h2>
+<p>Internal FpImage — Internal image handling routines</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="libfprint-2-Internal-FpImage.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gint</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpImage.html#fpi-std-sq-dev" title="fpi_std_sq_dev ()">fpi_std_sq_dev</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gint</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpImage.html#fpi-mean-sq-diff-norm" title="fpi_mean_sq_diff_norm ()">fpi_mean_sq_diff_norm</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="FpImage.html" title="FpImage"><span class="returnvalue">FpImage</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpImage.html#fpi-image-resize" title="fpi_image_resize ()">fpi_image_resize</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libfprint-2-Internal-FpImage.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="FpImage.html#FpImage--height" title="The “height” property">height</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="FpImage.html#FpImage--width" title="The “width” property">width</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<a name="FpImage"></a><div class="refsect1">
+<a name="libfprint-2-Internal-FpImage.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libfprint-2-Internal-FpImage.html#FpiImageFlags" title="enum FpiImageFlags">FpiImageFlags</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="FpImage.html#FpImage-struct" title="FpImage">FpImage</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libfprint-2-Internal-FpImage.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> FpImage
+</pre>
+</div>
+<div class="refsect1">
+<a name="libfprint-2-Internal-FpImage.description"></a><h2>Description</h2>
+<p>Internal image handling routines. See <a class="link" href="FpImage.html" title="FpImage"><span class="type">FpImage</span></a> for public routines.</p>
+</div>
+<div class="refsect1">
+<a name="libfprint-2-Internal-FpImage.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="fpi-std-sq-dev"></a><h3>fpi_std_sq_dev ()</h3>
+<pre class="programlisting"><span class="returnvalue">gint</span>
+fpi_std_sq_dev (<em class="parameter"><code>const <span class="type">guint8</span> *buf</code></em>,
+                <em class="parameter"><code><span class="type">gint</span> size</code></em>);</pre>
+<p>Calculates the squared standard deviation of the individual
+pixels in the buffer, as per the following formula:</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="n">mean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="p">(</span><span class="n">buf</span><span class="p">[</span><span class="mf">0.</span><span class="p">.</span><span class="n">size</span><span class="p">])</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">size</span>
+<span class="n">sq_dev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="p">((</span><span class="n">buf</span><span class="p">[</span><span class="mf">0.</span><span class="n">size</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">mean</span><span class="p">)</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+This function is usually used to determine whether image
+is empty.</p>
+<div class="refsect3">
+<a name="fpi-std-sq-dev.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>buf</p></td>
+<td class="parameter_description"><p>buffer (usually bitmap, one byte per pixel)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>size</p></td>
+<td class="parameter_description"><p>size of <em class="parameter"><code>buffer</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fpi-std-sq-dev.returns"></a><h4>Returns</h4>
+<p> the squared standard deviation for <em class="parameter"><code>buffer</code></em>
+</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-mean-sq-diff-norm"></a><h3>fpi_mean_sq_diff_norm ()</h3>
+<pre class="programlisting"><span class="returnvalue">gint</span>
+fpi_mean_sq_diff_norm (<em class="parameter"><code>const <span class="type">guint8</span> *buf1</code></em>,
+                       <em class="parameter"><code>const <span class="type">guint8</span> *buf2</code></em>,
+                       <em class="parameter"><code><span class="type">gint</span> size</code></em>);</pre>
+<p>This function calculates the normalized mean square difference of
+two buffers, usually two lines, as per the following formula:</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="n">sq_diff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="p">((</span><span class="n">buf1</span><span class="p">[</span><span class="mf">0.</span><span class="p">.</span><span class="n">size</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">buf2</span><span class="p">[</span><span class="mf">0.</span><span class="p">.</span><span class="n">size</span><span class="p">])</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">size</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p></p>
+<p>This functions is usually used to get numerical difference
+between two images.</p>
+<div class="refsect3">
+<a name="fpi-mean-sq-diff-norm.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>buf1</p></td>
+<td class="parameter_description"><p>buffer (usually bitmap, one byte per pixel)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>buf2</p></td>
+<td class="parameter_description"><p>buffer (usually bitmap, one byte per pixel)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>size</p></td>
+<td class="parameter_description"><p>buffer size of smallest buffer</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fpi-mean-sq-diff-norm.returns"></a><h4>Returns</h4>
+<p> the normalized mean squared difference between <em class="parameter"><code>buf1</code></em>
+and <em class="parameter"><code>buf2</code></em>
+</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-image-resize"></a><h3>fpi_image_resize ()</h3>
+<pre class="programlisting"><a class="link" href="FpImage.html" title="FpImage"><span class="returnvalue">FpImage</span></a> *
+fpi_image_resize (<em class="parameter"><code><a class="link" href="FpImage.html" title="FpImage"><span class="type">FpImage</span></a> *orig</code></em>,
+                  <em class="parameter"><code><span class="type">guint</span> w_factor</code></em>,
+                  <em class="parameter"><code><span class="type">guint</span> h_factor</code></em>);</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="libfprint-2-Internal-FpImage.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="FpiImageFlags"></a><h3>enum FpiImageFlags</h3>
+<p>Flags used in an <a class="link" href="FpImage.html" title="FpImage"><span class="type">FpImage</span></a> structure to describe the contained image.
+This is useful for image drivers as they can simply set these flags and
+rely on the image to be normalized by libfprint before further processing.</p>
+<div class="refsect3">
+<a name="FpiImageFlags.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="FPI-IMAGE-NONE:CAPS"></a>FPI_IMAGE_NONE</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FPI-IMAGE-V-FLIPPED:CAPS"></a>FPI_IMAGE_V_FLIPPED</p></td>
+<td class="enum_member_description">
+<p>the image is vertically flipped</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FPI-IMAGE-H-FLIPPED:CAPS"></a>FPI_IMAGE_H_FLIPPED</p></td>
+<td class="enum_member_description">
+<p>the image is horizontally flipped</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FPI-IMAGE-COLORS-INVERTED:CAPS"></a>FPI_IMAGE_COLORS_INVERTED</p></td>
+<td class="enum_member_description">
+<p>the colours are inverted</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FPI-IMAGE-PARTIAL:CAPS"></a>FPI_IMAGE_PARTIAL</p></td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpImage-struct"></a><h3>FpImage</h3>
+<pre class="programlisting">typedef struct {
+  guint         width;
+  guint         height;
+
+  gdouble       ppmm;
+
+  FpiImageFlags flags;
+} FpImage;
+</pre>
+<p>Structure holding an image. The public fields are only public for internal
+use by the drivers.</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="libfprint-2-Internal-FpImage.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="FpImage--height"></a><h3>The <code class="literal">“height”</code> property</h3>
+<pre class="programlisting">  “height”                   <span class="type">guint</span></pre>
+<p>The height of the image.</p>
+<p>Owner: FpImage</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Allowed values: &lt;= 65535</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpImage--width"></a><h3>The <code class="literal">“width”</code> property</h3>
+<pre class="programlisting">  “width”                    <span class="type">guint</span></pre>
+<p>The width of the image.</p>
+<p>Owner: FpImage</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Allowed values: &lt;= 65535</p>
+<p>Default value: 0</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.34.0</div>
+</body>
+</html>

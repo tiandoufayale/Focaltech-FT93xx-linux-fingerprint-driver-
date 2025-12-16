@@ -1,0 +1,521 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
+[
+  <!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+]>
+<refentry id="libfprint-2-USB-transfer-helpers">
+<refmeta>
+<refentrytitle role="top_of_page" id="libfprint-2-USB-transfer-helpers.top_of_page">USB transfer helpers</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBFPRINT-2 Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>USB transfer helpers</refname>
+<refpurpose>Helpers for libgusb to ease transfer handling</refpurpose>
+</refnamediv>
+
+<refsect1 id="libfprint-2-USB-transfer-helpers.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_proto_type" colwidth="150px"/>
+<colspec colname="functions_proto_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="FpiUsbTransferCallback">*FpiUsbTransferCallback</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="FpiUsbTransfer"><returnvalue>FpiUsbTransfer</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fpi-usb-transfer-new">fpi_usb_transfer_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="FpiUsbTransfer"><returnvalue>FpiUsbTransfer</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fpi-usb-transfer-ref">fpi_usb_transfer_ref</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-usb-transfer-unref">fpi_usb_transfer_unref</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-usb-transfer-set-short-error">fpi_usb_transfer_set_short_error</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-usb-transfer-fill-bulk">fpi_usb_transfer_fill_bulk</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-usb-transfer-fill-bulk-full">fpi_usb_transfer_fill_bulk_full</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-usb-transfer-fill-control">fpi_usb_transfer_fill_control</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-usb-transfer-fill-interrupt">fpi_usb_transfer_fill_interrupt</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-usb-transfer-fill-interrupt-full">fpi_usb_transfer_fill_interrupt_full</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-usb-transfer-submit">fpi_usb_transfer_submit</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-usb-transfer-submit-sync">fpi_usb_transfer_submit_sync</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="libfprint-2-USB-transfer-helpers.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="other_proto_type" colwidth="150px"/>
+<colspec colname="other_proto_name"/>
+<tbody>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="FPI-USB-ENDPOINT-IN:CAPS">FPI_USB_ENDPOINT_IN</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="FPI-USB-ENDPOINT-OUT:CAPS">FPI_USB_ENDPOINT_OUT</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="FpiTransferType">FpiTransferType</link></entry></row>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="FpiUsbTransfer">FpiUsbTransfer</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+
+<refsect1 id="libfprint-2-USB-transfer-helpers.description" role="desc">
+<title role="desc.title">Description</title>
+<para><link linkend="FpiUsbTransfer"><type>FpiUsbTransfer</type></link> is a structure to simplify the USB transfer handling.
+The main goal is to ease memory management and provide more parameters
+to callbacks that are useful for libfprint drivers.</para>
+<para>Drivers should use this API only rather than accessing the GUsbDevice
+directly in most cases.</para>
+
+</refsect1>
+<refsect1 id="libfprint-2-USB-transfer-helpers.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="FpiUsbTransferCallback" role="function">
+<title>FpiUsbTransferCallback&#160;()</title>
+<indexterm zone="FpiUsbTransferCallback"><primary>FpiUsbTransferCallback</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*FpiUsbTransferCallback<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="FpiUsbTransfer"><type>FpiUsbTransfer</type></link> *transfer</parameter>,
+                           <parameter><link linkend="FpDevice"><type>FpDevice</type></link> *dev</parameter>,
+                           <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>,
+                           <parameter><link linkend="GError"><type>GError</type></link> *error</parameter>);</programlisting>
+</refsect2>
+<refsect2 id="fpi-usb-transfer-new" role="function">
+<title>fpi_usb_transfer_new&#160;()</title>
+<indexterm zone="fpi-usb-transfer-new"><primary>fpi_usb_transfer_new</primary></indexterm>
+<programlisting language="C"><link linkend="FpiUsbTransfer"><returnvalue>FpiUsbTransfer</returnvalue></link>&#160;*
+fpi_usb_transfer_new (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>);</programlisting>
+<para>Creates a new <link linkend="FpiUsbTransfer"><type>FpiUsbTransfer</type></link>.</para>
+<refsect3 id="fpi-usb-transfer-new.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link> the transfer is for</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fpi-usb-transfer-new.returns" role="returns">
+<title>Returns</title>
+<para>A newly created <link linkend="FpiUsbTransfer"><type>FpiUsbTransfer</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fpi-usb-transfer-ref" role="function">
+<title>fpi_usb_transfer_ref&#160;()</title>
+<indexterm zone="fpi-usb-transfer-ref"><primary>fpi_usb_transfer_ref</primary></indexterm>
+<programlisting language="C"><link linkend="FpiUsbTransfer"><returnvalue>FpiUsbTransfer</returnvalue></link>&#160;*
+fpi_usb_transfer_ref (<parameter><link linkend="FpiUsbTransfer"><type>FpiUsbTransfer</type></link> *self</parameter>);</programlisting>
+<para>Increments the reference count of <parameter>self</parameter>
+ by one.</para>
+<refsect3 id="fpi-usb-transfer-ref.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>self</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpiUsbTransfer"><type>FpiUsbTransfer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fpi-usb-transfer-ref.returns" role="returns">
+<title>Returns</title>
+<para><parameter>self</parameter>
+. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fpi-usb-transfer-unref" role="function">
+<title>fpi_usb_transfer_unref&#160;()</title>
+<indexterm zone="fpi-usb-transfer-unref"><primary>fpi_usb_transfer_unref</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_usb_transfer_unref (<parameter><link linkend="FpiUsbTransfer"><type>FpiUsbTransfer</type></link> *self</parameter>);</programlisting>
+<para>Decrements the reference count of <parameter>self</parameter>
+ by one, freeing the structure when
+the reference count reaches zero.</para>
+<refsect3 id="fpi-usb-transfer-unref.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>self</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpiUsbTransfer"><type>FpiUsbTransfer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-usb-transfer-set-short-error" role="function">
+<title>fpi_usb_transfer_set_short_error&#160;()</title>
+<indexterm zone="fpi-usb-transfer-set-short-error"><primary>fpi_usb_transfer_set_short_error</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_usb_transfer_set_short_error (<parameter><link linkend="FpiUsbTransfer"><type>FpiUsbTransfer</type></link> *transfer</parameter>,
+                                  <parameter><link linkend="gboolean"><type>gboolean</type></link> short_is_error</parameter>);</programlisting>
+</refsect2>
+<refsect2 id="fpi-usb-transfer-fill-bulk" role="function">
+<title>fpi_usb_transfer_fill_bulk&#160;()</title>
+<indexterm zone="fpi-usb-transfer-fill-bulk"><primary>fpi_usb_transfer_fill_bulk</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_usb_transfer_fill_bulk (<parameter><link linkend="FpiUsbTransfer"><type>FpiUsbTransfer</type></link> *transfer</parameter>,
+                            <parameter><link linkend="guint8"><type>guint8</type></link> endpoint</parameter>,
+                            <parameter><link linkend="gsize"><type>gsize</type></link> length</parameter>);</programlisting>
+<para>Prepare a bulk transfer. A buffer will be created for you, use
+<link linkend="fpi-usb-transfer-fill-bulk-full"><function>fpi_usb_transfer_fill_bulk_full()</function></link> if you want to send a static buffer
+or receive a pre-defined buffer.</para>
+<refsect3 id="fpi-usb-transfer-fill-bulk.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>transfer</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpiUsbTransfer"><type>FpiUsbTransfer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>endpoint</para></entry>
+<entry role="parameter_description"><para>The endpoint to send the transfer to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>length</para></entry>
+<entry role="parameter_description"><para>The buffer size to allocate</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-usb-transfer-fill-bulk-full" role="function">
+<title>fpi_usb_transfer_fill_bulk_full&#160;()</title>
+<indexterm zone="fpi-usb-transfer-fill-bulk-full"><primary>fpi_usb_transfer_fill_bulk_full</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_usb_transfer_fill_bulk_full (<parameter><link linkend="FpiUsbTransfer"><type>FpiUsbTransfer</type></link> *transfer</parameter>,
+                                 <parameter><link linkend="guint8"><type>guint8</type></link> endpoint</parameter>,
+                                 <parameter><link linkend="guint8"><type>guint8</type></link> *buffer</parameter>,
+                                 <parameter><link linkend="gsize"><type>gsize</type></link> length</parameter>,
+                                 <parameter><link linkend="GDestroyNotify"><type>GDestroyNotify</type></link> free_func</parameter>);</programlisting>
+<para>Prepare a bulk transfer.</para>
+<refsect3 id="fpi-usb-transfer-fill-bulk-full.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>transfer</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpiUsbTransfer"><type>FpiUsbTransfer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>endpoint</para></entry>
+<entry role="parameter_description"><para>The endpoint to send the transfer to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>buffer</para></entry>
+<entry role="parameter_description"><para>The data to send.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>length</para></entry>
+<entry role="parameter_description"><para>The size of <parameter>buffer</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>free_func</para></entry>
+<entry role="parameter_description"><para>Destroy notify for <parameter>buffer</parameter>
+. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>destroy</acronym> buffer]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-usb-transfer-fill-control" role="function">
+<title>fpi_usb_transfer_fill_control&#160;()</title>
+<indexterm zone="fpi-usb-transfer-fill-control"><primary>fpi_usb_transfer_fill_control</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_usb_transfer_fill_control (<parameter><link linkend="FpiUsbTransfer"><type>FpiUsbTransfer</type></link> *transfer</parameter>,
+                               <parameter><link linkend="GUsbDeviceDirection"><type>GUsbDeviceDirection</type></link> direction</parameter>,
+                               <parameter><link linkend="GUsbDeviceRequestType"><type>GUsbDeviceRequestType</type></link> request_type</parameter>,
+                               <parameter><link linkend="GUsbDeviceRecipient"><type>GUsbDeviceRecipient</type></link> recipient</parameter>,
+                               <parameter><link linkend="guint8"><type>guint8</type></link> request</parameter>,
+                               <parameter><link linkend="guint16"><type>guint16</type></link> value</parameter>,
+                               <parameter><link linkend="guint16"><type>guint16</type></link> idx</parameter>,
+                               <parameter><link linkend="gsize"><type>gsize</type></link> length</parameter>);</programlisting>
+<para>Prepare a control transfer. The function will create a new buffer,
+you can initialize the buffer after calling this function.</para>
+<refsect3 id="fpi-usb-transfer-fill-control.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>transfer</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpiUsbTransfer"><type>FpiUsbTransfer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>direction</para></entry>
+<entry role="parameter_description"><para>The direction of the control transfer</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>request_type</para></entry>
+<entry role="parameter_description"><para>The request type</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>recipient</para></entry>
+<entry role="parameter_description"><para>The recipient</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>request</para></entry>
+<entry role="parameter_description"><para>The control transfer request</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>value</para></entry>
+<entry role="parameter_description"><para>The control transfer value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>idx</para></entry>
+<entry role="parameter_description"><para>The control transfer index</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>length</para></entry>
+<entry role="parameter_description"><para>The size of the transfer</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-usb-transfer-fill-interrupt" role="function">
+<title>fpi_usb_transfer_fill_interrupt&#160;()</title>
+<indexterm zone="fpi-usb-transfer-fill-interrupt"><primary>fpi_usb_transfer_fill_interrupt</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_usb_transfer_fill_interrupt (<parameter><link linkend="FpiUsbTransfer"><type>FpiUsbTransfer</type></link> *transfer</parameter>,
+                                 <parameter><link linkend="guint8"><type>guint8</type></link> endpoint</parameter>,
+                                 <parameter><link linkend="gsize"><type>gsize</type></link> length</parameter>);</programlisting>
+<para>Prepare an interrupt transfer. The function will create a new buffer,
+you can initialize the buffer after calling this function.</para>
+<refsect3 id="fpi-usb-transfer-fill-interrupt.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>transfer</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpiUsbTransfer"><type>FpiUsbTransfer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>endpoint</para></entry>
+<entry role="parameter_description"><para>The endpoint to send the transfer to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>length</para></entry>
+<entry role="parameter_description"><para>The size of the transfer</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-usb-transfer-fill-interrupt-full" role="function">
+<title>fpi_usb_transfer_fill_interrupt_full&#160;()</title>
+<indexterm zone="fpi-usb-transfer-fill-interrupt-full"><primary>fpi_usb_transfer_fill_interrupt_full</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_usb_transfer_fill_interrupt_full (<parameter><link linkend="FpiUsbTransfer"><type>FpiUsbTransfer</type></link> *transfer</parameter>,
+                                      <parameter><link linkend="guint8"><type>guint8</type></link> endpoint</parameter>,
+                                      <parameter><link linkend="guint8"><type>guint8</type></link> *buffer</parameter>,
+                                      <parameter><link linkend="gsize"><type>gsize</type></link> length</parameter>,
+                                      <parameter><link linkend="GDestroyNotify"><type>GDestroyNotify</type></link> free_func</parameter>);</programlisting>
+<para>Prepare an interrupt transfer.</para>
+<refsect3 id="fpi-usb-transfer-fill-interrupt-full.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>transfer</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpiUsbTransfer"><type>FpiUsbTransfer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>endpoint</para></entry>
+<entry role="parameter_description"><para>The endpoint to send the transfer to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>buffer</para></entry>
+<entry role="parameter_description"><para>The data to send.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>length</para></entry>
+<entry role="parameter_description"><para>The size of <parameter>buffer</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>free_func</para></entry>
+<entry role="parameter_description"><para>Destroy notify for <parameter>buffer</parameter>
+. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>destroy</acronym> buffer]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-usb-transfer-submit" role="function">
+<title>fpi_usb_transfer_submit&#160;()</title>
+<indexterm zone="fpi-usb-transfer-submit"><primary>fpi_usb_transfer_submit</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_usb_transfer_submit (<parameter><link linkend="FpiUsbTransfer"><type>FpiUsbTransfer</type></link> *transfer</parameter>,
+                         <parameter><link linkend="guint"><type>guint</type></link> timeout_ms</parameter>,
+                         <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                         <parameter><link linkend="FpiUsbTransferCallback"><type>FpiUsbTransferCallback</type></link> callback</parameter>,
+                         <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Submit a USB transfer with a specific timeout and callback functions.</para>
+<para>Note that <link linkend="FpiUsbTransfer"><type>FpiUsbTransfer</type></link> will be stolen when this function is called.
+So that all associated data will be free'ed automatically, after the
+callback ran unless <link linkend="fpi-usb-transfer-ref"><function>fpi_usb_transfer_ref()</function></link> is explicitly called.</para>
+<refsect3 id="fpi-usb-transfer-submit.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>transfer</para></entry>
+<entry role="parameter_description"><para>The transfer to submit, must have been filled. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>timeout_ms</para></entry>
+<entry role="parameter_description"><para>Timeout for the transfer in ms</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>cancellable</para></entry>
+<entry role="parameter_description"><para>Cancellable to use, e.g. <link linkend="fpi-device-get-cancellable"><function>fpi_device_get_cancellable()</function></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>callback</para></entry>
+<entry role="parameter_description"><para>Callback on completion or error</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>Data to pass to callback</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-usb-transfer-submit-sync" role="function">
+<title>fpi_usb_transfer_submit_sync&#160;()</title>
+<indexterm zone="fpi-usb-transfer-submit-sync"><primary>fpi_usb_transfer_submit_sync</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+fpi_usb_transfer_submit_sync (<parameter><link linkend="FpiUsbTransfer"><type>FpiUsbTransfer</type></link> *transfer</parameter>,
+                              <parameter><link linkend="guint"><type>guint</type></link> timeout_ms</parameter>,
+                              <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Synchronously submit a USB transfer with a specific timeout.
+Only use this function with short timeouts as the application will
+be blocked otherwise.</para>
+<para>Note that you still need to <link linkend="fpi-usb-transfer-unref"><function>fpi_usb_transfer_unref()</function></link> the
+<link linkend="FpiUsbTransfer"><type>FpiUsbTransfer</type></link> afterwards.</para>
+<refsect3 id="fpi-usb-transfer-submit-sync.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>transfer</para></entry>
+<entry role="parameter_description"><para>The transfer to submit, must have been filled.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>timeout_ms</para></entry>
+<entry role="parameter_description"><para>Timeout for the transfer in millisecnods</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>Location to store <link linkend="GError"><type>GError</type></link> to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fpi-usb-transfer-submit-sync.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><type>TRUE</type></link> on success, otherwise <link linkend="FALSE:CAPS"><type>FALSE</type></link> and <parameter>error</parameter>
+will be set</para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="libfprint-2-USB-transfer-helpers.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="FPI-USB-ENDPOINT-IN:CAPS" role="macro">
+<title>FPI_USB_ENDPOINT_IN</title>
+<indexterm zone="FPI-USB-ENDPOINT-IN:CAPS"><primary>FPI_USB_ENDPOINT_IN</primary></indexterm>
+<programlisting language="C">#define FPI_USB_ENDPOINT_IN 0x80
+</programlisting>
+</refsect2>
+<refsect2 id="FPI-USB-ENDPOINT-OUT:CAPS" role="macro">
+<title>FPI_USB_ENDPOINT_OUT</title>
+<indexterm zone="FPI-USB-ENDPOINT-OUT:CAPS"><primary>FPI_USB_ENDPOINT_OUT</primary></indexterm>
+<programlisting language="C">#define FPI_USB_ENDPOINT_OUT 0x00
+</programlisting>
+</refsect2>
+<refsect2 id="FpiTransferType" role="enum">
+<title>enum FpiTransferType</title>
+<indexterm zone="FpiTransferType"><primary>FpiTransferType</primary></indexterm>
+<para>Type of the transfer.</para>
+<refsect3 id="FpiTransferType.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="FP-TRANSFER-NONE:CAPS">FP_TRANSFER_NONE</para></entry>
+<entry role="enum_member_description"><para>Type not set</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-TRANSFER-CONTROL:CAPS">FP_TRANSFER_CONTROL</para></entry>
+<entry role="enum_member_description"><para>Control transfer</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-TRANSFER-BULK:CAPS">FP_TRANSFER_BULK</para></entry>
+<entry role="enum_member_description"><para>Bulk transfer</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FP-TRANSFER-INTERRUPT:CAPS">FP_TRANSFER_INTERRUPT</para></entry>
+<entry role="enum_member_description"><para>Interrupt transfer</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="FpiUsbTransfer" role="struct">
+<title>FpiUsbTransfer</title>
+<indexterm zone="FpiUsbTransfer"><primary>FpiUsbTransfer</primary></indexterm>
+<programlisting language="C">typedef struct {
+  FpDevice *device;
+
+  FpiSsm   *ssm;
+
+  gssize    length;
+  gssize    actual_length;
+
+  guchar   *buffer;
+} FpiUsbTransfer;
+</programlisting>
+<para>Helper for handling USB transfers.</para>
+<refsect3 id="FpiUsbTransfer.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="FpDevice"><type>FpDevice</type></link>&#160;*<structfield id="FpiUsbTransfer.device">device</structfield>;</para></entry>
+<entry role="struct_member_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link> that the transfer belongs to.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="FpiSsm"><type>FpiSsm</type></link>&#160;*<structfield id="FpiUsbTransfer.ssm">ssm</structfield>;</para></entry>
+<entry role="struct_member_description"><para>Storage slot to associate the transfer with a state machine.
+Used by <link linkend="fpi-ssm-usb-transfer-cb"><function>fpi_ssm_usb_transfer_cb()</function></link> to modify the given state machine.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gssize"><type>gssize</type></link>&#160;<structfield id="FpiUsbTransfer.length">length</structfield>;</para></entry>
+<entry role="struct_member_description"><para>The requested length of the transfer in bytes.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gssize"><type>gssize</type></link>&#160;<structfield id="FpiUsbTransfer.actual-length">actual_length</structfield>;</para></entry>
+<entry role="struct_member_description"><para>The actual length of the transfer
+(see also <link linkend="fpi-usb-transfer-set-short-error"><function>fpi_usb_transfer_set_short_error()</function></link>)</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="guchar"><type>guchar</type></link>&#160;*<structfield id="FpiUsbTransfer.buffer">buffer</structfield>;</para></entry>
+<entry role="struct_member_description"><para>The transferred data.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+
+</refsect1>
+
+</refentry>

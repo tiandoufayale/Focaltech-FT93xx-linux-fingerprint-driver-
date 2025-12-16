@@ -1,0 +1,403 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
+[
+  <!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+]>
+<refentry id="libfprint-2-SPI-transfer-helpers">
+<refmeta>
+<refentrytitle role="top_of_page" id="libfprint-2-SPI-transfer-helpers.top_of_page">SPI transfer helpers</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBFPRINT-2 Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>SPI transfer helpers</refname>
+<refpurpose>Helpers to ease SPI transfers</refpurpose>
+</refnamediv>
+
+<refsect1 id="libfprint-2-SPI-transfer-helpers.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_proto_type" colwidth="150px"/>
+<colspec colname="functions_proto_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="FpiSpiTransferCallback">*FpiSpiTransferCallback</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="FpiSpiTransfer"><returnvalue>FpiSpiTransfer</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fpi-spi-transfer-new">fpi_spi_transfer_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="FpiSpiTransfer"><returnvalue>FpiSpiTransfer</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fpi-spi-transfer-ref">fpi_spi_transfer_ref</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-spi-transfer-unref">fpi_spi_transfer_unref</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-spi-transfer-write">fpi_spi_transfer_write</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-spi-transfer-write-full">fpi_spi_transfer_write_full</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-spi-transfer-read">fpi_spi_transfer_read</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-spi-transfer-read-full">fpi_spi_transfer_read_full</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-spi-transfer-submit">fpi_spi_transfer_submit</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-spi-transfer-submit-sync">fpi_spi_transfer_submit_sync</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="libfprint-2-SPI-transfer-helpers.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="other_proto_type" colwidth="150px"/>
+<colspec colname="other_proto_name"/>
+<tbody>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="FpiSpiTransfer">FpiSpiTransfer</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+
+<refsect1 id="libfprint-2-SPI-transfer-helpers.description" role="desc">
+<title role="desc.title">Description</title>
+<para><link linkend="FpiSpiTransfer"><type>FpiSpiTransfer</type></link> is a structure to simplify the SPI transfer handling
+for the linux spidev device. The main goal are to ease memory management
+and provide a usable asynchronous API to libfprint drivers.</para>
+<para>Currently only transfers with a write and subsequent read are supported.</para>
+<para>Drivers should always use this API rather than calling read/write/ioctl on
+the spidev device.</para>
+<para>Setting G_MESSAGES_DEBUG and FP_DEBUG_TRANSFER will result in the message
+content to be dumped.</para>
+
+</refsect1>
+<refsect1 id="libfprint-2-SPI-transfer-helpers.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="FpiSpiTransferCallback" role="function">
+<title>FpiSpiTransferCallback&#160;()</title>
+<indexterm zone="FpiSpiTransferCallback"><primary>FpiSpiTransferCallback</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*FpiSpiTransferCallback<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="FpiSpiTransfer"><type>FpiSpiTransfer</type></link> *transfer</parameter>,
+                           <parameter><link linkend="FpDevice"><type>FpDevice</type></link> *dev</parameter>,
+                           <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>,
+                           <parameter><link linkend="GError"><type>GError</type></link> *error</parameter>);</programlisting>
+</refsect2>
+<refsect2 id="fpi-spi-transfer-new" role="function">
+<title>fpi_spi_transfer_new&#160;()</title>
+<indexterm zone="fpi-spi-transfer-new"><primary>fpi_spi_transfer_new</primary></indexterm>
+<programlisting language="C"><link linkend="FpiSpiTransfer"><returnvalue>FpiSpiTransfer</returnvalue></link>&#160;*
+fpi_spi_transfer_new (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                      <parameter><link linkend="int"><type>int</type></link> spidev_fd</parameter>);</programlisting>
+<para>Creates a new <link linkend="FpiSpiTransfer"><type>FpiSpiTransfer</type></link>.</para>
+<refsect3 id="fpi-spi-transfer-new.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link> the transfer is for</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>spidev_fd</para></entry>
+<entry role="parameter_description"><para>The file descriptor for the spidev device</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fpi-spi-transfer-new.returns" role="returns">
+<title>Returns</title>
+<para>A newly created <link linkend="FpiSpiTransfer"><type>FpiSpiTransfer</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fpi-spi-transfer-ref" role="function">
+<title>fpi_spi_transfer_ref&#160;()</title>
+<indexterm zone="fpi-spi-transfer-ref"><primary>fpi_spi_transfer_ref</primary></indexterm>
+<programlisting language="C"><link linkend="FpiSpiTransfer"><returnvalue>FpiSpiTransfer</returnvalue></link>&#160;*
+fpi_spi_transfer_ref (<parameter><link linkend="FpiSpiTransfer"><type>FpiSpiTransfer</type></link> *self</parameter>);</programlisting>
+<para>Increments the reference count of <parameter>self</parameter>
+ by one.</para>
+<refsect3 id="fpi-spi-transfer-ref.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>self</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpiSpiTransfer"><type>FpiSpiTransfer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fpi-spi-transfer-ref.returns" role="returns">
+<title>Returns</title>
+<para><parameter>self</parameter>
+. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fpi-spi-transfer-unref" role="function">
+<title>fpi_spi_transfer_unref&#160;()</title>
+<indexterm zone="fpi-spi-transfer-unref"><primary>fpi_spi_transfer_unref</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_spi_transfer_unref (<parameter><link linkend="FpiSpiTransfer"><type>FpiSpiTransfer</type></link> *self</parameter>);</programlisting>
+<para>Decrements the reference count of <parameter>self</parameter>
+ by one, freeing the structure when
+the reference count reaches zero.</para>
+<refsect3 id="fpi-spi-transfer-unref.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>self</para></entry>
+<entry role="parameter_description"><para>A <link linkend="FpiSpiTransfer"><type>FpiSpiTransfer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-spi-transfer-write" role="function">
+<title>fpi_spi_transfer_write&#160;()</title>
+<indexterm zone="fpi-spi-transfer-write"><primary>fpi_spi_transfer_write</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_spi_transfer_write (<parameter><link linkend="FpiSpiTransfer"><type>FpiSpiTransfer</type></link> *transfer</parameter>,
+                        <parameter><link linkend="gsize"><type>gsize</type></link> length</parameter>);</programlisting>
+<para>Prepare the write part of an SPI transfer allocating a new buffer
+internally that will be free'ed automatically.</para>
+<refsect3 id="fpi-spi-transfer-write.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>transfer</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpiSpiTransfer"><type>FpiSpiTransfer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>length</para></entry>
+<entry role="parameter_description"><para>The buffer size to allocate</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-spi-transfer-write-full" role="function">
+<title>fpi_spi_transfer_write_full&#160;()</title>
+<indexterm zone="fpi-spi-transfer-write-full"><primary>fpi_spi_transfer_write_full</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_spi_transfer_write_full (<parameter><link linkend="FpiSpiTransfer"><type>FpiSpiTransfer</type></link> *transfer</parameter>,
+                             <parameter><link linkend="guint8"><type>guint8</type></link> *buffer</parameter>,
+                             <parameter><link linkend="gsize"><type>gsize</type></link> length</parameter>,
+                             <parameter><link linkend="GDestroyNotify"><type>GDestroyNotify</type></link> free_func</parameter>);</programlisting>
+<para>Prepare the write part of an SPI transfer.</para>
+<refsect3 id="fpi-spi-transfer-write-full.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>transfer</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpiSpiTransfer"><type>FpiSpiTransfer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>buffer</para></entry>
+<entry role="parameter_description"><para>The data to write.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>length</para></entry>
+<entry role="parameter_description"><para>The size of <parameter>buffer</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>free_func</para></entry>
+<entry role="parameter_description"><para>Destroy notify for <parameter>buffer</parameter>
+. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>destroy</acronym> buffer]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-spi-transfer-read" role="function">
+<title>fpi_spi_transfer_read&#160;()</title>
+<indexterm zone="fpi-spi-transfer-read"><primary>fpi_spi_transfer_read</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_spi_transfer_read (<parameter><link linkend="FpiSpiTransfer"><type>FpiSpiTransfer</type></link> *transfer</parameter>,
+                       <parameter><link linkend="gsize"><type>gsize</type></link> length</parameter>);</programlisting>
+<para>Prepare the read part of an SPI transfer allocating a new buffer
+internally that will be free'ed automatically.</para>
+<refsect3 id="fpi-spi-transfer-read.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>transfer</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpiSpiTransfer"><type>FpiSpiTransfer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>length</para></entry>
+<entry role="parameter_description"><para>The buffer size to allocate</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-spi-transfer-read-full" role="function">
+<title>fpi_spi_transfer_read_full&#160;()</title>
+<indexterm zone="fpi-spi-transfer-read-full"><primary>fpi_spi_transfer_read_full</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_spi_transfer_read_full (<parameter><link linkend="FpiSpiTransfer"><type>FpiSpiTransfer</type></link> *transfer</parameter>,
+                            <parameter><link linkend="guint8"><type>guint8</type></link> *buffer</parameter>,
+                            <parameter><link linkend="gsize"><type>gsize</type></link> length</parameter>,
+                            <parameter><link linkend="GDestroyNotify"><type>GDestroyNotify</type></link> free_func</parameter>);</programlisting>
+<para>Prepare the read part of an SPI transfer.</para>
+<refsect3 id="fpi-spi-transfer-read-full.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>transfer</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpiSpiTransfer"><type>FpiSpiTransfer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>buffer</para></entry>
+<entry role="parameter_description"><para>Buffer to read data into.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>length</para></entry>
+<entry role="parameter_description"><para>The size of <parameter>buffer</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>free_func</para></entry>
+<entry role="parameter_description"><para>Destroy notify for <parameter>buffer</parameter>
+. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>destroy</acronym> buffer]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-spi-transfer-submit" role="function">
+<title>fpi_spi_transfer_submit&#160;()</title>
+<indexterm zone="fpi-spi-transfer-submit"><primary>fpi_spi_transfer_submit</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_spi_transfer_submit (<parameter><link linkend="FpiSpiTransfer"><type>FpiSpiTransfer</type></link> *transfer</parameter>,
+                         <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                         <parameter><link linkend="FpiSpiTransferCallback"><type>FpiSpiTransferCallback</type></link> callback</parameter>,
+                         <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Submit an SPI transfer with a specific timeout and callback functions.</para>
+<para>The underlying transfer cannot be cancelled. The current implementation
+will only call <parameter>callback</parameter>
+ after the transfer has been completed.</para>
+<para>Note that <link linkend="FpiSpiTransfer"><type>FpiSpiTransfer</type></link> will be stolen when this function is called.
+So that all associated data will be free'ed automatically, after the
+callback ran unless <link linkend="fpi-usb-transfer-ref"><function>fpi_usb_transfer_ref()</function></link> is explicitly called.</para>
+<refsect3 id="fpi-spi-transfer-submit.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>transfer</para></entry>
+<entry role="parameter_description"><para>The transfer to submit, must have been filled. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>cancellable</para></entry>
+<entry role="parameter_description"><para>Cancellable to use, e.g. <link linkend="fpi-device-get-cancellable"><function>fpi_device_get_cancellable()</function></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>callback</para></entry>
+<entry role="parameter_description"><para>Callback on completion or error</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>Data to pass to callback</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-spi-transfer-submit-sync" role="function">
+<title>fpi_spi_transfer_submit_sync&#160;()</title>
+<indexterm zone="fpi-spi-transfer-submit-sync"><primary>fpi_spi_transfer_submit_sync</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+fpi_spi_transfer_submit_sync (<parameter><link linkend="FpiSpiTransfer"><type>FpiSpiTransfer</type></link> *transfer</parameter>,
+                              <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Synchronously submit an SPI transfer. Use of this function is discouraged
+as it will block all other operations in the application.</para>
+<para>Note that you still need to <link linkend="fpi-spi-transfer-unref"><function>fpi_spi_transfer_unref()</function></link> the
+<link linkend="FpiSpiTransfer"><type>FpiSpiTransfer</type></link> afterwards.</para>
+<refsect3 id="fpi-spi-transfer-submit-sync.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>transfer</para></entry>
+<entry role="parameter_description"><para>The transfer to submit, must have been filled.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>Location to store <link linkend="GError"><type>GError</type></link> to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fpi-spi-transfer-submit-sync.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><type>TRUE</type></link> on success, otherwise <link linkend="FALSE:CAPS"><type>FALSE</type></link> and <parameter>error</parameter>
+will be set</para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="libfprint-2-SPI-transfer-helpers.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="FpiSpiTransfer" role="struct">
+<title>FpiSpiTransfer</title>
+<indexterm zone="FpiSpiTransfer"><primary>FpiSpiTransfer</primary></indexterm>
+<programlisting language="C">typedef struct {
+  FpDevice *device;
+
+  FpiSsm   *ssm;
+
+  gssize    length_wr;
+  gssize    length_rd;
+
+  guchar   *buffer_wr;
+  guchar   *buffer_rd;
+} FpiSpiTransfer;
+</programlisting>
+<para>Helper for handling SPI transfers. Currently transfers can either be pure
+write/read transfers or a write followed by a read (full duplex support
+can easily be added if desired).</para>
+<refsect3 id="FpiSpiTransfer.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="FpDevice"><type>FpDevice</type></link>&#160;*<structfield id="FpiSpiTransfer.device">device</structfield>;</para></entry>
+<entry role="struct_member_description"><para>The <link linkend="FpDevice"><type>FpDevice</type></link> that the transfer belongs to.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="FpiSsm"><type>FpiSsm</type></link>&#160;*<structfield id="FpiSpiTransfer.ssm">ssm</structfield>;</para></entry>
+<entry role="struct_member_description"><para>Storage slot to associate the transfer with a state machine.
+Used by <link linkend="fpi-ssm-spi-transfer-cb"><function>fpi_ssm_spi_transfer_cb()</function></link> to modify the given state machine.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gssize"><type>gssize</type></link>&#160;<structfield id="FpiSpiTransfer.length-wr">length_wr</structfield>;</para></entry>
+<entry role="struct_member_description"><para>The length of the write buffer</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gssize"><type>gssize</type></link>&#160;<structfield id="FpiSpiTransfer.length-rd">length_rd</structfield>;</para></entry>
+<entry role="struct_member_description"><para>The length of the read buffer</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="guchar"><type>guchar</type></link>&#160;*<structfield id="FpiSpiTransfer.buffer-wr">buffer_wr</structfield>;</para></entry>
+<entry role="struct_member_description"><para>The write buffer.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="guchar"><type>guchar</type></link>&#160;*<structfield id="FpiSpiTransfer.buffer-rd">buffer_rd</structfield>;</para></entry>
+<entry role="struct_member_description"><para>The read buffer.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+
+</refsect1>
+
+</refentry>

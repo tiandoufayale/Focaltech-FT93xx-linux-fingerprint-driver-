@@ -1,0 +1,99 @@
+83% symbol docs coverage.
+419 symbols documented.
+11 symbols incomplete.
+87 not documented.
+
+
+BMKT_CORRUPT_TEMPLATE_DATA
+BMKT_RSP_CANCEL_OP_OK
+BMKT_RSP_CAPTURE_COMPLETE
+BMKT_RSP_DATABASE_CAPACITY_REPORT
+BMKT_RSP_DELETE_PROGRESS
+BMKT_RSP_DEL_USER_FP_OK
+BMKT_RSP_ENROLL_OK
+BMKT_RSP_ENROLL_READY
+BMKT_RSP_FPS_MODE_REPORT
+BMKT_RSP_GENERAL_ERROR
+BMKT_RSP_GET_ENROLLED_FINGERS_REPORT
+BMKT_RSP_GET_SECURITY_LEVEL_REPORT
+BMKT_RSP_ID_OK
+BMKT_RSP_QUERY_RESPONSE_COMPLETE
+BMKT_RSP_REPEAT_LAST_BMKT_RSP_FAIL
+BMKT_RSP_RETRIEVE_FINAL_RESULT_FAIL
+BMKT_RSP_SEND_NEXT_USER_ID
+BMKT_RSP_SENSOR_STATUS_REPORT
+BMKT_RSP_SET_SECURITY_LEVEL_REPORT
+BMKT_RSP_TEMPLATE_RECORDS_REPORT
+BMKT_RSP_VERIFY_OK
+BMKT_RSP_VERSION_INFO
+BMKT_SENSOR_NOT_INIT
+BMKT_SENSOR_STIMULUS_ERROR
+FPI_USB_ENDPOINT_IN
+FPI_USB_ENDPOINT_OUT
+FP_DEVICE_ERROR
+FP_DEVICE_RETRY
+FP_TYPE_CONTEXT
+FP_TYPE_DEVICE
+FP_TYPE_IMAGE
+FP_TYPE_IMAGE_DEVICE
+FP_TYPE_PRINT
+FpContext
+FpDevice
+FpDeviceFeature
+FpDeviceType
+FpFinger
+FpFingerStatusFlags
+FpIdEntry (<items>)
+FpImage (<items>)
+FpImageDevice
+FpMinutia
+FpPrint
+FpScanType
+FpiImageFlags (FPI_IMAGE_NONE, FPI_IMAGE_PARTIAL)
+FpiMatchResult
+FpiPrintType
+FpiSpiTransferCallback (<parameters>)
+FpiUsbTransferCallback (<parameters>)
+bmkt_auth_resp
+bmkt_del_all_users_resp
+bmkt_del_user_resp
+bmkt_enroll_resp
+bmkt_enroll_template
+bmkt_enroll_templates_resp
+bmkt_enrolled_fingers
+bmkt_enrolled_fingers_resp
+bmkt_finger_event_t
+bmkt_finger_state_t
+bmkt_fps_mode_resp
+bmkt_get_db_capacity_resp
+bmkt_get_version_resp
+bmkt_mode
+bmkt_mode_level2
+bmkt_response
+bmkt_response_data_t
+bmkt_sec_level
+bmkt_sensor_desc_t
+bmkt_set_sec_level_resp
+bmkt_transport_config_t
+bmkt_transport_type
+bmkt_usb_config
+fp_device_error_quark
+fp_device_get_device_id
+fp_device_get_driver
+fp_device_get_name
+fp_device_is_open
+fp_device_retry_quark
+fp_image_new (<parameters>)
+fpi_byte_writer_get_pos
+fpi_byte_writer_get_size
+fpi_device_class_auto_initialize_features (device_class)
+fpi_device_get_driver_data
+fpi_image_resize (<parameters>)
+fpi_print_bz3_match (temp)
+fpi_ssm_cancel_delayed_state_change (<parameters>)
+fpi_usb_transfer_set_short_error (<parameters>)
+
+drivers_api:long_description
+drivers_api:short_description
+fpi-context:long_description
+fpi-context:short_description

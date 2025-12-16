@@ -1,0 +1,614 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Internal FpImageDevice: libfprint Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="libfprint Reference Manual">
+<link rel="up" href="driver-dev.html" title="Device methods for drivers">
+<link rel="prev" href="libfprint-2-Internal-FpDevice.html" title="Internal FpDevice">
+<link rel="next" href="driver-helpers.html" title="USB, SPI and State Machine helpers">
+<meta name="generator" content="GTK-Doc V1.34.0 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#libfprint-2-Internal-FpImageDevice.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="driver-dev.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="libfprint-2-Internal-FpDevice.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="driver-helpers.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="libfprint-2-Internal-FpImageDevice"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libfprint-2-Internal-FpImageDevice.top_of_page"></a>Internal FpImageDevice</span></h2>
+<p>Internal FpImageDevice — Internal image device functions</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="libfprint-2-Internal-FpImageDevice.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpImageDevice.html#fpi-image-device-session-error" title="fpi_image_device_session_error ()">fpi_image_device_session_error</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpImageDevice.html#fpi-image-device-open-complete" title="fpi_image_device_open_complete ()">fpi_image_device_open_complete</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpImageDevice.html#fpi-image-device-close-complete" title="fpi_image_device_close_complete ()">fpi_image_device_close_complete</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpImageDevice.html#fpi-image-device-activate-complete" title="fpi_image_device_activate_complete ()">fpi_image_device_activate_complete</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpImageDevice.html#fpi-image-device-deactivate-complete" title="fpi_image_device_deactivate_complete ()">fpi_image_device_deactivate_complete</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpImageDevice.html#fpi-image-device-report-finger-status" title="fpi_image_device_report_finger_status ()">fpi_image_device_report_finger_status</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpImageDevice.html#fpi-image-device-image-captured" title="fpi_image_device_image_captured ()">fpi_image_device_image_captured</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpImageDevice.html#fpi-image-device-retry-scan" title="fpi_image_device_retry_scan ()">fpi_image_device_retry_scan</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Internal-FpImageDevice.html#fpi-image-device-set-bz3-threshold" title="fpi_image_device_set_bz3_threshold ()">fpi_image_device_set_bz3_threshold</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libfprint-2-Internal-FpImageDevice.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libfprint-2-Internal-FpImageDevice.html#FpiImageDeviceState" title="enum FpiImageDeviceState">FpiImageDeviceState</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="libfprint-2-Internal-FpImageDevice.html#FpImageDeviceClass" title="FpImageDeviceClass">FpImageDeviceClass</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libfprint-2-Internal-FpImageDevice.description"></a><h2>Description</h2>
+<p>Internal image device functions. See <a class="link" href="FpImageDevice.html" title="FpImageDevice"><span class="type">FpImageDevice</span></a> for public routines.</p>
+</div>
+<div class="refsect1">
+<a name="libfprint-2-Internal-FpImageDevice.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="fpi-image-device-session-error"></a><h3>fpi_image_device_session_error ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_image_device_session_error (<em class="parameter"><code><a class="link" href="FpImageDevice.html" title="FpImageDevice"><span class="type">FpImageDevice</span></a> *self</code></em>,
+                                <em class="parameter"><code><span class="type">GError</span> *error</code></em>);</pre>
+<p>Report an error while interacting with the device. This effectively
+aborts the current ongoing action. Note that doing so will result in
+the deactivation handler to be called and this function must not be
+used to report an error during deactivation.</p>
+<div class="refsect3">
+<a name="fpi-image-device-session-error.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpImageDevice.html" title="FpImageDevice"><span class="type">FpImageDevice</span></a> imaging fingerprint device</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>The <span class="type">GError</span> to report. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-image-device-open-complete"></a><h3>fpi_image_device_open_complete ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_image_device_open_complete (<em class="parameter"><code><a class="link" href="FpImageDevice.html" title="FpImageDevice"><span class="type">FpImageDevice</span></a> *self</code></em>,
+                                <em class="parameter"><code><span class="type">GError</span> *error</code></em>);</pre>
+<p>Reports completion of open operation.</p>
+<div class="refsect3">
+<a name="fpi-image-device-open-complete.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpImageDevice.html" title="FpImageDevice"><span class="type">FpImageDevice</span></a> imaging fingerprint device</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>The <span class="type">GError</span> or <code class="literal">NULL</code> on success. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-image-device-close-complete"></a><h3>fpi_image_device_close_complete ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_image_device_close_complete (<em class="parameter"><code><a class="link" href="FpImageDevice.html" title="FpImageDevice"><span class="type">FpImageDevice</span></a> *self</code></em>,
+                                 <em class="parameter"><code><span class="type">GError</span> *error</code></em>);</pre>
+<p>Reports completion of close operation.</p>
+<div class="refsect3">
+<a name="fpi-image-device-close-complete.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpImageDevice.html" title="FpImageDevice"><span class="type">FpImageDevice</span></a> imaging fingerprint device</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>The <span class="type">GError</span> or <code class="literal">NULL</code> on success. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-image-device-activate-complete"></a><h3>fpi_image_device_activate_complete ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_image_device_activate_complete (<em class="parameter"><code><a class="link" href="FpImageDevice.html" title="FpImageDevice"><span class="type">FpImageDevice</span></a> *self</code></em>,
+                                    <em class="parameter"><code><span class="type">GError</span> *error</code></em>);</pre>
+<p>Reports completion of device activation.</p>
+<div class="refsect3">
+<a name="fpi-image-device-activate-complete.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpImageDevice.html" title="FpImageDevice"><span class="type">FpImageDevice</span></a> imaging fingerprint device</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>The <span class="type">GError</span> or <code class="literal">NULL</code> on success. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-image-device-deactivate-complete"></a><h3>fpi_image_device_deactivate_complete ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_image_device_deactivate_complete (<em class="parameter"><code><a class="link" href="FpImageDevice.html" title="FpImageDevice"><span class="type">FpImageDevice</span></a> *self</code></em>,
+                                      <em class="parameter"><code><span class="type">GError</span> *error</code></em>);</pre>
+<p>Reports completion of device deactivation.</p>
+<div class="refsect3">
+<a name="fpi-image-device-deactivate-complete.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpImageDevice.html" title="FpImageDevice"><span class="type">FpImageDevice</span></a> imaging fingerprint device</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>The <span class="type">GError</span> or <code class="literal">NULL</code> on success. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-image-device-report-finger-status"></a><h3>fpi_image_device_report_finger_status ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_image_device_report_finger_status (<em class="parameter"><code><a class="link" href="FpImageDevice.html" title="FpImageDevice"><span class="type">FpImageDevice</span></a> *self</code></em>,
+                                       <em class="parameter"><code><span class="type">gboolean</span> present</code></em>);</pre>
+<p>Reports from the driver whether the user's finger is on
+the sensor.</p>
+<div class="refsect3">
+<a name="fpi-image-device-report-finger-status.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpImageDevice.html" title="FpImageDevice"><span class="type">FpImageDevice</span></a> imaging fingerprint device</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>present</p></td>
+<td class="parameter_description"><p>whether the finger is present on the sensor</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-image-device-image-captured"></a><h3>fpi_image_device_image_captured ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_image_device_image_captured (<em class="parameter"><code><a class="link" href="FpImageDevice.html" title="FpImageDevice"><span class="type">FpImageDevice</span></a> *self</code></em>,
+                                 <em class="parameter"><code><a class="link" href="FpImage.html" title="FpImage"><span class="type">FpImage</span></a> *image</code></em>);</pre>
+<p>Reports an image capture. Only use this function if the image was
+captured successfully. If there was an issue where the user should
+retry, use <a class="link" href="libfprint-2-Internal-FpImageDevice.html#fpi-image-device-retry-scan" title="fpi_image_device_retry_scan ()"><code class="function">fpi_image_device_retry_scan()</code></a> to report the retry condition.</p>
+<p>In the event of a fatal error for the operation use
+<a class="link" href="libfprint-2-Internal-FpImageDevice.html#fpi-image-device-session-error" title="fpi_image_device_session_error ()"><code class="function">fpi_image_device_session_error()</code></a>. This will abort the entire operation
+including e.g. an enroll operation which captures multiple images during
+one session.</p>
+<div class="refsect3">
+<a name="fpi-image-device-image-captured.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpImageDevice.html" title="FpImageDevice"><span class="type">FpImageDevice</span></a> imaging fingerprint device</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>image</p></td>
+<td class="parameter_description"><p>whether the finger is present on the sensor</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-image-device-retry-scan"></a><h3>fpi_image_device_retry_scan ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_image_device_retry_scan (<em class="parameter"><code><a class="link" href="FpImageDevice.html" title="FpImageDevice"><span class="type">FpImageDevice</span></a> *self</code></em>,
+                             <em class="parameter"><code><a class="link" href="FpDevice.html#FpDeviceRetry" title="enum FpDeviceRetry"><span class="type">FpDeviceRetry</span></a> retry</code></em>);</pre>
+<p>Reports a scan failure to the user. This may or may not abort the
+current session. It is the equivalent of <a class="link" href="libfprint-2-Internal-FpImageDevice.html#fpi-image-device-image-captured" title="fpi_image_device_image_captured ()"><code class="function">fpi_image_device_image_captured()</code></a>
+in the case of a retryable error condition (e.g. short swipe).</p>
+<div class="refsect3">
+<a name="fpi-image-device-retry-scan.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpImageDevice.html" title="FpImageDevice"><span class="type">FpImageDevice</span></a> imaging fingerprint device</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>retry</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpDevice.html#FpDeviceRetry" title="enum FpDeviceRetry"><span class="type">FpDeviceRetry</span></a> error code to report</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-image-device-set-bz3-threshold"></a><h3>fpi_image_device_set_bz3_threshold ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_image_device_set_bz3_threshold (<em class="parameter"><code><a class="link" href="FpImageDevice.html" title="FpImageDevice"><span class="type">FpImageDevice</span></a> *self</code></em>,
+                                    <em class="parameter"><code><span class="type">gint</span> bz3_threshold</code></em>);</pre>
+<p>Dynamically adjust the bz3 threshold. This is only needed for drivers
+that support devices with different properties. It should generally be
+called from the probe callback, but is acceptable to call from the open
+callback.</p>
+<div class="refsect3">
+<a name="fpi-image-device-set-bz3-threshold.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpImageDevice.html" title="FpImageDevice"><span class="type">FpImageDevice</span></a> imaging fingerprint device</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>bz3_threshold</p></td>
+<td class="parameter_description"><p>BZ3 threshold to use</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="libfprint-2-Internal-FpImageDevice.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="FpiImageDeviceState"></a><h3>enum FpiImageDeviceState</h3>
+<p>The state of an imaging device while doing a capture. The state is
+passed through to the driver using the ::<code class="function">activate()</code> or ::<code class="function">change_state()</code> vfuncs.</p>
+<p>The driver needs to call <a class="link" href="libfprint-2-Internal-FpImageDevice.html#fpi-image-device-report-finger-status" title="fpi_image_device_report_finger_status ()"><code class="function">fpi_image_device_report_finger_status()</code></a> to move
+between the different states. Note that the capture state might be entered
+unconditionally if the device supports raw capturing.</p>
+<p>A usual run would look like:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>inactive -&gt; activating: activate vfunc is called</p></li>
+<li class="listitem"><p>activating -&gt; idle: <a class="link" href="libfprint-2-Internal-FpImageDevice.html#fpi-image-device-activate-complete" title="fpi_image_device_activate_complete ()"><code class="function">fpi_image_device_activate_complete()</code></a></p></li>
+<li class="listitem"><p>idle -&gt; await-finger-on</p></li>
+<li class="listitem"><p>await-finger-on -&gt; capture: <a class="link" href="libfprint-2-Internal-FpImageDevice.html#fpi-image-device-report-finger-status" title="fpi_image_device_report_finger_status ()"><code class="function">fpi_image_device_report_finger_status()</code></a></p></li>
+<li class="listitem"><p>capture -&gt; await-finger-off: <a class="link" href="libfprint-2-Internal-FpImageDevice.html#fpi-image-device-image-captured" title="fpi_image_device_image_captured ()"><code class="function">fpi_image_device_image_captured()</code></a></p></li>
+<li class="listitem"><p>await-finger-off -&gt; idle: <a class="link" href="libfprint-2-Internal-FpImageDevice.html#fpi-image-device-report-finger-status" title="fpi_image_device_report_finger_status ()"><code class="function">fpi_image_device_report_finger_status()</code></a></p></li>
+<li class="listitem"><p>idle -&gt; deactivating: deactivate vfunc is called</p></li>
+<li class="listitem"><p>deactivating -&gt; inactive: <a class="link" href="libfprint-2-Internal-FpImageDevice.html#fpi-image-device-deactivate-complete" title="fpi_image_device_deactivate_complete ()"><code class="function">fpi_image_device_deactivate_complete()</code></a></p></li>
+</ul></div>
+<p>Raw mode is currently not supported (not waiting for finger), but in that
+case the following transitions are valid:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>idle -&gt; capture</p></li>
+<li class="listitem"><p>capture -&gt; idle</p></li>
+</ul></div>
+<p>Also valid are these transitions in case of errors or cancellations:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>activating -&gt; inactive: <a class="link" href="libfprint-2-Internal-FpImageDevice.html#fpi-image-device-activate-complete" title="fpi_image_device_activate_complete ()"><code class="function">fpi_image_device_activate_complete()</code></a></p></li>
+<li class="listitem"><p>await-finger-on -&gt; deactivating: deactivate vfunc is called</p></li>
+<li class="listitem"><p>capture -&gt; deactivating: deactivate vfunc is called</p></li>
+<li class="listitem"><p>await-finger-off -&gt; deactivating: deactivate vfunc is called</p></li>
+</ul></div>
+<div class="refsect3">
+<a name="FpiImageDeviceState.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="FPI-IMAGE-DEVICE-STATE-INACTIVE:CAPS"></a>FPI_IMAGE_DEVICE_STATE_INACTIVE</p></td>
+<td class="enum_member_description">
+<p>inactive</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FPI-IMAGE-DEVICE-STATE-ACTIVATING:CAPS"></a>FPI_IMAGE_DEVICE_STATE_ACTIVATING</p></td>
+<td class="enum_member_description">
+<p>State during activate callback</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FPI-IMAGE-DEVICE-STATE-DEACTIVATING:CAPS"></a>FPI_IMAGE_DEVICE_STATE_DEACTIVATING</p></td>
+<td class="enum_member_description">
+<p>State during deactivate callback</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FPI-IMAGE-DEVICE-STATE-IDLE:CAPS"></a>FPI_IMAGE_DEVICE_STATE_IDLE</p></td>
+<td class="enum_member_description">
+<p>Activated but idle</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FPI-IMAGE-DEVICE-STATE-AWAIT-FINGER-ON:CAPS"></a>FPI_IMAGE_DEVICE_STATE_AWAIT_FINGER_ON</p></td>
+<td class="enum_member_description">
+<p>waiting for the finger to be pressed or swiped</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FPI-IMAGE-DEVICE-STATE-CAPTURE:CAPS"></a>FPI_IMAGE_DEVICE_STATE_CAPTURE</p></td>
+<td class="enum_member_description">
+<p>capturing an image</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FPI-IMAGE-DEVICE-STATE-AWAIT-FINGER-OFF:CAPS"></a>FPI_IMAGE_DEVICE_STATE_AWAIT_FINGER_OFF</p></td>
+<td class="enum_member_description">
+<p>waiting for the finger to be removed</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpImageDeviceClass"></a><h3>FpImageDeviceClass</h3>
+<pre class="programlisting">typedef struct {
+  FpDeviceClass parent_class;
+
+  gint          bz3_threshold;
+  gint          img_width;
+  gint          img_height;
+
+  void          (*img_open)     (FpImageDevice *dev);
+  void          (*img_close)    (FpImageDevice *dev);
+  void          (*activate)     (FpImageDevice *dev);
+  void          (*change_state) (FpImageDevice      *dev,
+                                 FpiImageDeviceState state);
+  void          (*deactivate)   (FpImageDevice *dev);
+} FpImageDeviceClass;
+</pre>
+<p>These are the main entry points for drivers to implement. Drivers may not
+implement all of these entry points if they do not support the operation
+(or a default implementation is sufficient).</p>
+<p>Drivers *must* eventually call the corresponding function to finish the
+operation. It is also acceptable to call the generic
+<a class="link" href="libfprint-2-Internal-FpDevice.html#fpi-device-action-error" title="fpi_device_action_error ()"><code class="function">fpi_device_action_error()</code></a> function but doing so is not recommended in most
+usecases.</p>
+<p>Image drivers must expect a <em class="parameter"><code>deactivate</code></em>
+ call to happen at any point during
+image capture.</p>
+<p>This API is solely intended for drivers. It is purely internal and neither
+API nor ABI stable.</p>
+<div class="refsect3">
+<a name="FpImageDeviceClass.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><span class="type">gint</span> <em class="structfield"><code><a name="FpImageDeviceClass.bz3-threshold"></a>bz3_threshold</code></em>;</p></td>
+<td class="struct_member_description"><p>Threshold to consider bozorth3 score a match, default: 40</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">gint</span> <em class="structfield"><code><a name="FpImageDeviceClass.img-width"></a>img_width</code></em>;</p></td>
+<td class="struct_member_description"><p>Width of the image, only provide if constant</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">gint</span> <em class="structfield"><code><a name="FpImageDeviceClass.img-height"></a>img_height</code></em>;</p></td>
+<td class="struct_member_description"><p>Height of the image, only provide if constant</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="FpImageDeviceClass.img-open"></a>img_open</code></em> ()</p></td>
+<td class="struct_member_description"><p>Open the device and do basic initialization
+(use this instead of the <a class="link" href="libfprint-2-Internal-FpDevice.html#FpDeviceClass" title="FpDeviceClass"><span class="type">FpDeviceClass</span></a> open vfunc)</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="FpImageDeviceClass.img-close"></a>img_close</code></em> ()</p></td>
+<td class="struct_member_description"><p>Close the device
+(use this instead of the <a class="link" href="libfprint-2-Internal-FpDevice.html#FpDeviceClass" title="FpDeviceClass"><span class="type">FpDeviceClass</span></a> close vfunc)</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="FpImageDeviceClass.activate"></a>activate</code></em> ()</p></td>
+<td class="struct_member_description"><p>Start image capture and finger detection</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="FpImageDeviceClass.change-state"></a>change_state</code></em> ()</p></td>
+<td class="struct_member_description"><p>Notification about the current device state (i.e. waiting for
+finger or image capture). Implementing this is optional, it can e.g. be
+used to flash an LED when waiting for a finger.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="FpImageDeviceClass.deactivate"></a>deactivate</code></em> ()</p></td>
+<td class="struct_member_description"><p>Stop image capture and finger detection</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.34.0</div>
+</body>
+</html>

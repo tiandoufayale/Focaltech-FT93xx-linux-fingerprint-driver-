@@ -1,0 +1,280 @@
+<ARG>
+<NAME>FpDevice::device-id</NAME>
+<TYPE>char*</TYPE>
+<RANGE></RANGE>
+<FLAGS>r</FLAGS>
+<NICK>Device ID</NICK>
+<BLURB>String describing the device, often generic but may be a serial number.</BLURB>
+<DEFAULT>""</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>FpDevice::driver</NAME>
+<TYPE>char*</TYPE>
+<RANGE></RANGE>
+<FLAGS>r</FLAGS>
+<NICK>Driver</NICK>
+<BLURB>String describing the driver.</BLURB>
+<DEFAULT>NULL</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>FpDevice::finger-status</NAME>
+<TYPE>FpFingerStatusFlags</TYPE>
+<RANGE></RANGE>
+<FLAGS>r</FLAGS>
+<NICK>FingerStatus</NICK>
+<BLURB>The status of the finger.</BLURB>
+<DEFAULT></DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>FpDevice::fpi-driver-data</NAME>
+<TYPE>guint64</TYPE>
+<RANGE></RANGE>
+<FLAGS>wX</FLAGS>
+<NICK>Driver Data</NICK>
+<BLURB>Private: The driver data from the ID table entry.</BLURB>
+<DEFAULT>0</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>FpDevice::fpi-environ</NAME>
+<TYPE>char*</TYPE>
+<RANGE></RANGE>
+<FLAGS>wX</FLAGS>
+<NICK>Virtual Environment</NICK>
+<BLURB>Private: The environment variable for the virtual device.</BLURB>
+<DEFAULT>NULL</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>FpDevice::fpi-udev-data-hidraw</NAME>
+<TYPE>char*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rwX</FLAGS>
+<NICK>Udev data: hidraw path</NICK>
+<BLURB>Private: The path to /dev/hidrawN.</BLURB>
+<DEFAULT>NULL</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>FpDevice::fpi-udev-data-spidev</NAME>
+<TYPE>char*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rwX</FLAGS>
+<NICK>Udev data: spidev path</NICK>
+<BLURB>Private: The path to /dev/spidevN.M.</BLURB>
+<DEFAULT>NULL</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>FpDevice::fpi-usb-device</NAME>
+<TYPE>GUsbDevice*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rwX</FLAGS>
+<NICK>USB Device</NICK>
+<BLURB>Private: The USB device for the device.</BLURB>
+<DEFAULT></DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>FpDevice::name</NAME>
+<TYPE>char*</TYPE>
+<RANGE></RANGE>
+<FLAGS>r</FLAGS>
+<NICK>Device Name</NICK>
+<BLURB>Human readable name for the device.</BLURB>
+<DEFAULT>NULL</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>FpDevice::nr-enroll-stages</NAME>
+<TYPE>guint</TYPE>
+<RANGE></RANGE>
+<FLAGS>r</FLAGS>
+<NICK>EnrollStages</NICK>
+<BLURB>Number of enroll stages needed on the device.</BLURB>
+<DEFAULT>0</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>FpDevice::open</NAME>
+<TYPE>gboolean</TYPE>
+<RANGE></RANGE>
+<FLAGS>r</FLAGS>
+<NICK>Opened</NICK>
+<BLURB>Whether the device is open or not.</BLURB>
+<DEFAULT>FALSE</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>FpDevice::removed</NAME>
+<TYPE>gboolean</TYPE>
+<RANGE></RANGE>
+<FLAGS>r</FLAGS>
+<NICK>Removed</NICK>
+<BLURB>Whether the device has been removed from the system.</BLURB>
+<DEFAULT>FALSE</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>FpDevice::scan-type</NAME>
+<TYPE>FpScanType</TYPE>
+<RANGE></RANGE>
+<FLAGS>r</FLAGS>
+<NICK>ScanType</NICK>
+<BLURB>The scan type of the device.</BLURB>
+<DEFAULT>FP_SCAN_TYPE_SWIPE</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>FpDevice::temperature</NAME>
+<TYPE>FpTemperature</TYPE>
+<RANGE></RANGE>
+<FLAGS>r</FLAGS>
+<NICK>Temperature</NICK>
+<BLURB>The temperature estimation for device to prevent overheating.</BLURB>
+<DEFAULT>FP_TEMPERATURE_COLD</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>FpImageDevice::fpi-image-device-state</NAME>
+<TYPE>FpiImageDeviceState</TYPE>
+<RANGE></RANGE>
+<FLAGS>r</FLAGS>
+<NICK>Image Device State</NICK>
+<BLURB>Private: The state of the image device.</BLURB>
+<DEFAULT>FPI_IMAGE_DEVICE_STATE_INACTIVE</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>FpImage::height</NAME>
+<TYPE>guint</TYPE>
+<RANGE><= 65535</RANGE>
+<FLAGS>rwX</FLAGS>
+<NICK>Height</NICK>
+<BLURB>The height of the image.</BLURB>
+<DEFAULT>0</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>FpImage::width</NAME>
+<TYPE>guint</TYPE>
+<RANGE><= 65535</RANGE>
+<FLAGS>rwX</FLAGS>
+<NICK>Width</NICK>
+<BLURB>The width of the image.</BLURB>
+<DEFAULT>0</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>FpPrint::description</NAME>
+<TYPE>char*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Description</NICK>
+<BLURB>A user defined description for the print.</BLURB>
+<DEFAULT>NULL</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>FpPrint::device-id</NAME>
+<TYPE>char*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rwX</FLAGS>
+<NICK>Device ID</NICK>
+<BLURB>Unique ID allowing to check if a device is compatible with the print.</BLURB>
+<DEFAULT>NULL</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>FpPrint::device-stored</NAME>
+<TYPE>gboolean</TYPE>
+<RANGE></RANGE>
+<FLAGS>rwX</FLAGS>
+<NICK>Device Stored</NICK>
+<BLURB>Whether the print is a handle for data that is stored on the device.</BLURB>
+<DEFAULT>FALSE</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>FpPrint::driver</NAME>
+<TYPE>char*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rwX</FLAGS>
+<NICK>Driver</NICK>
+<BLURB>The name of the driver that created the print.</BLURB>
+<DEFAULT>NULL</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>FpPrint::enroll-date</NAME>
+<TYPE>GDate*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Enroll Date</NICK>
+<BLURB>The date of enrollment.</BLURB>
+<DEFAULT></DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>FpPrint::finger</NAME>
+<TYPE>FpFinger</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Finger</NICK>
+<BLURB>The enrolled finger.</BLURB>
+<DEFAULT>FP_FINGER_UNKNOWN</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>FpPrint::fpi-data</NAME>
+<TYPE>GVariant*</TYPE>
+<RANGE>GVariant<*></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Raw Data</NICK>
+<BLURB>The raw data for internal use only.</BLURB>
+<DEFAULT>NULL</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>FpPrint::fpi-prints</NAME>
+<TYPE>gpointer</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Prints</NICK>
+<BLURB>Prints for internal use only.</BLURB>
+<DEFAULT></DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>FpPrint::fpi-type</NAME>
+<TYPE>FpiPrintType</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Type</NICK>
+<BLURB>Private: The type of the print data.</BLURB>
+<DEFAULT>FPI_PRINT_UNDEFINED</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>FpPrint::image</NAME>
+<TYPE>FpImage*</TYPE>
+<RANGE></RANGE>
+<FLAGS>r</FLAGS>
+<NICK>Image</NICK>
+<BLURB>The image that was used for the print, only valid for newly enrolled prints on image based devices.</BLURB>
+<DEFAULT></DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>FpPrint::username</NAME>
+<TYPE>char*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Username</NICK>
+<BLURB>The username that the enrolled print belongs to.</BLURB>
+<DEFAULT>NULL</DEFAULT>
+</ARG>
+

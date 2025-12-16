@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<book xmlns="http://www.devhelp.net/book" title="libfprint Reference Manual" link="index.html" author="" name="libfprint-2" version="2" language="c">
+  <chapters>
+    <sub name="Library Overview" link="pt01.html">
+      <sub name="Introduction" link="intro.html"/>
+      <sub name="Advanced Topics" link="advanced-topics.html"/>
+      <sub name="Getting Started" link="getting-started.html"/>
+    </sub>
+    <sub name="Library API Documentation" link="pt02.html">
+      <sub name="FpContext" link="FpContext.html"/>
+      <sub name="FpDevice" link="FpDevice.html"/>
+      <sub name="FpImageDevice" link="FpImageDevice.html"/>
+      <sub name="FpPrint" link="FpPrint.html"/>
+      <sub name="FpImage" link="FpImage.html"/>
+    </sub>
+    <sub name="Writing Drivers" link="pt03.html">
+      <sub name="Device methods for drivers" link="driver-dev.html">
+        <sub name="Internal FpDevice" link="libfprint-2-Internal-FpDevice.html"/>
+        <sub name="Internal FpImageDevice" link="libfprint-2-Internal-FpImageDevice.html"/>
+      </sub>
+      <sub name="USB, SPI and State Machine helpers" link="driver-helpers.html">
+        <sub name="SPI transfer helpers" link="libfprint-2-SPI-transfer-helpers.html"/>
+        <sub name="USB transfer helpers" link="libfprint-2-USB-transfer-helpers.html"/>
+        <sub name="Sequential state machine" link="libfprint-2-Sequential-state-machine.html"/>
+        <sub name="Logging" link="libfprint-2-Logging.html"/>
+      </sub>
+      <sub name="Image manipulation" link="driver-img.html">
+        <sub name="Internal FpImage" link="libfprint-2-Internal-FpImage.html"/>
+        <sub name="Image frame assembly" link="libfprint-2-Image-frame-assembly.html"/>
+      </sub>
+      <sub name="Print handling" link="driver-print.html">
+        <sub name="Internal FpPrint" link="libfprint-2-Internal-FpPrint.html"/>
+      </sub>
+      <sub name="Listing drivers" link="driver-misc.html">
+        <sub name="fpi-context" link="libfprint-2-fpi-context.html"/>
+      </sub>
+    </sub>
+    <sub name="API Index" link="api-index.html"/>
+    <sub name="Index of deprecated API" link="deprecated-api-index.html"/>
+  </chapters>
+  <functions>
+    <keyword type="function" name="fp_context_new ()" link="FpContext.html#fp-context-new"/>
+    <keyword type="function" name="fp_context_enumerate ()" link="FpContext.html#fp-context-enumerate"/>
+    <keyword type="function" name="fp_context_get_devices ()" link="FpContext.html#fp-context-get-devices"/>
+    <keyword type="macro" name="FP_TYPE_CONTEXT" link="FpContext.html#FP-TYPE-CONTEXT:CAPS"/>
+    <keyword type="struct" name="struct FpContextClass" link="FpContext.html#FpContextClass"/>
+    <keyword type="struct" name="FpContext" link="FpContext.html#FpContext-struct"/>
+    <keyword type="signal" name="The “device-added” signal" link="FpContext.html#FpContext-device-added"/>
+    <keyword type="signal" name="The “device-removed” signal" link="FpContext.html#FpContext-device-removed"/>
+    <keyword type="function" name="fp_device_retry_quark ()" link="FpDevice.html#fp-device-retry-quark"/>
+    <keyword type="function" name="fp_device_error_quark ()" link="FpDevice.html#fp-device-error-quark"/>
+    <keyword type="function" name="FpEnrollProgress ()" link="FpDevice.html#FpEnrollProgress"/>
+    <keyword type="function" name="FpMatchCb ()" link="FpDevice.html#FpMatchCb"/>
+    <keyword type="function" name="fp_device_get_driver ()" link="FpDevice.html#fp-device-get-driver"/>
+    <keyword type="function" name="fp_device_get_device_id ()" link="FpDevice.html#fp-device-get-device-id"/>
+    <keyword type="function" name="fp_device_get_name ()" link="FpDevice.html#fp-device-get-name"/>
+    <keyword type="function" name="fp_device_get_scan_type ()" link="FpDevice.html#fp-device-get-scan-type"/>
+    <keyword type="function" name="fp_device_get_nr_enroll_stages ()" link="FpDevice.html#fp-device-get-nr-enroll-stages"/>
+    <keyword type="function" name="fp_device_get_finger_status ()" link="FpDevice.html#fp-device-get-finger-status"/>
+    <keyword type="function" name="fp_device_get_features ()" link="FpDevice.html#fp-device-get-features"/>
+    <keyword type="function" name="fp_device_has_feature ()" link="FpDevice.html#fp-device-has-feature"/>
+    <keyword type="function" name="fp_device_has_storage ()" link="FpDevice.html#fp-device-has-storage" deprecated="1.92.0: Use fp_device_has_feature() instead."/>
+    <keyword type="function" name="fp_device_supports_identify ()" link="FpDevice.html#fp-device-supports-identify" deprecated="1.92.0: Use fp_device_has_feature() instead."/>
+    <keyword type="function" name="fp_device_supports_capture ()" link="FpDevice.html#fp-device-supports-capture" deprecated="1.92.0: Use fp_device_has_feature() instead."/>
+    <keyword type="function" name="fp_device_is_open ()" link="FpDevice.html#fp-device-is-open"/>
+    <keyword type="function" name="fp_device_open ()" link="FpDevice.html#fp-device-open"/>
+    <keyword type="function" name="fp_device_close ()" link="FpDevice.html#fp-device-close"/>
+    <keyword type="function" name="fp_device_enroll ()" link="FpDevice.html#fp-device-enroll"/>
+    <keyword type="function" name="fp_device_verify ()" link="FpDevice.html#fp-device-verify"/>
+    <keyword type="function" name="fp_device_identify ()" link="FpDevice.html#fp-device-identify"/>
+    <keyword type="function" name="fp_device_capture ()" link="FpDevice.html#fp-device-capture"/>
+    <keyword type="function" name="fp_device_delete_print ()" link="FpDevice.html#fp-device-delete-print"/>
+    <keyword type="function" name="fp_device_list_prints ()" link="FpDevice.html#fp-device-list-prints"/>
+    <keyword type="function" name="fp_device_clear_storage ()" link="FpDevice.html#fp-device-clear-storage"/>
+    <keyword type="function" name="fp_device_suspend ()" link="FpDevice.html#fp-device-suspend"/>
+    <keyword type="function" name="fp_device_resume ()" link="FpDevice.html#fp-device-resume"/>
+    <keyword type="function" name="fp_device_open_finish ()" link="FpDevice.html#fp-device-open-finish"/>
+    <keyword type="function" name="fp_device_close_finish ()" link="FpDevice.html#fp-device-close-finish"/>
+    <keyword type="function" name="fp_device_enroll_finish ()" link="FpDevice.html#fp-device-enroll-finish"/>
+    <keyword type="function" name="fp_device_verify_finish ()" link="FpDevice.html#fp-device-verify-finish"/>
+    <keyword type="function" name="fp_device_identify_finish ()" link="FpDevice.html#fp-device-identify-finish"/>
+    <keyword type="function" name="fp_device_capture_finish ()" link="FpDevice.html#fp-device-capture-finish"/>
+    <keyword type="function" name="fp_device_delete_print_finish ()" link="FpDevice.html#fp-device-delete-print-finish"/>
+    <keyword type="function" name="fp_device_list_prints_finish ()" link="FpDevice.html#fp-device-list-prints-finish"/>
+    <keyword type="function" name="fp_device_clear_storage_finish ()" link="FpDevice.html#fp-device-clear-storage-finish"/>
+    <keyword type="function" name="fp_device_suspend_finish ()" link="FpDevice.html#fp-device-suspend-finish"/>
+    <keyword type="function" name="fp_device_resume_finish ()" link="FpDevice.html#fp-device-resume-finish"/>
+    <keyword type="function" name="fp_device_open_sync ()" link="FpDevice.html#fp-device-open-sync"/>
+    <keyword type="function" name="fp_device_close_sync ()" link="FpDevice.html#fp-device-close-sync"/>
+    <keyword type="function" name="fp_device_enroll_sync ()" link="FpDevice.html#fp-device-enroll-sync"/>
+    <keyword type="function" name="fp_device_verify_sync ()" link="FpDevice.html#fp-device-verify-sync"/>
+    <keyword type="function" name="fp_device_identify_sync ()" link="FpDevice.html#fp-device-identify-sync"/>
+    <keyword type="function" name="fp_device_capture_sync ()" link="FpDevice.html#fp-device-capture-sync"/>
+    <keyword type="function" name="fp_device_delete_print_sync ()" link="FpDevice.html#fp-device-delete-print-sync"/>
+    <keyword type="function" name="fp_device_list_prints_sync ()" link="FpDevice.html#fp-device-list-prints-sync"/>
+    <keyword type="function" name="fp_device_clear_storage_sync ()" link="FpDevice.html#fp-device-clear-storage-sync"/>
+    <keyword type="function" name="fp_device_suspend_sync ()" link="FpDevice.html#fp-device-suspend-sync"/>
+    <keyword type="function" name="fp_device_resume_sync ()" link="FpDevice.html#fp-device-resume-sync"/>
+    <keyword type="macro" name="FP_TYPE_DEVICE" link="FpDevice.html#FP-TYPE-DEVICE:CAPS"/>
+    <keyword type="macro" name="FP_DEVICE_RETRY" link="FpDevice.html#FP-DEVICE-RETRY:CAPS"/>
+    <keyword type="macro" name="FP_DEVICE_ERROR" link="FpDevice.html#FP-DEVICE-ERROR:CAPS"/>
+    <keyword type="enum" name="enum FpDeviceType" link="FpDevice.html#FpDeviceType"/>
+    <keyword type="enum" name="enum FpDeviceFeature" link="FpDevice.html#FpDeviceFeature"/>
+    <keyword type="enum" name="enum FpScanType" link="FpDevice.html#FpScanType"/>
+    <keyword type="enum" name="enum FpDeviceRetry" link="FpDevice.html#FpDeviceRetry"/>
+    <keyword type="enum" name="enum FpDeviceError" link="FpDevice.html#FpDeviceError"/>
+    <keyword type="enum" name="enum FpFingerStatusFlags" link="FpDevice.html#FpFingerStatusFlags"/>
+    <keyword type="struct" name="FpDevice" link="FpDevice.html#FpDevice-struct"/>
+    <keyword type="property" name="The “device-id” property" link="FpDevice.html#FpDevice--device-id"/>
+    <keyword type="property" name="The “driver” property" link="FpDevice.html#FpDevice--driver"/>
+    <keyword type="property" name="The “finger-status” property" link="FpDevice.html#FpDevice--finger-status"/>
+    <keyword type="property" name="The “fpi-driver-data” property" link="FpDevice.html#FpDevice--fpi-driver-data"/>
+    <keyword type="property" name="The “fpi-environ” property" link="FpDevice.html#FpDevice--fpi-environ"/>
+    <keyword type="property" name="The “fpi-udev-data-hidraw” property" link="FpDevice.html#FpDevice--fpi-udev-data-hidraw"/>
+    <keyword type="property" name="The “fpi-udev-data-spidev” property" link="FpDevice.html#FpDevice--fpi-udev-data-spidev"/>
+    <keyword type="property" name="The “fpi-usb-device” property" link="FpDevice.html#FpDevice--fpi-usb-device"/>
+    <keyword type="property" name="The “name” property" link="FpDevice.html#FpDevice--name"/>
+    <keyword type="property" name="The “nr-enroll-stages” property" link="FpDevice.html#FpDevice--nr-enroll-stages"/>
+    <keyword type="property" name="The “open” property" link="FpDevice.html#FpDevice--open"/>
+    <keyword type="property" name="The “removed” property" link="FpDevice.html#FpDevice--removed"/>
+    <keyword type="property" name="The “scan-type” property" link="FpDevice.html#FpDevice--scan-type"/>
+    <keyword type="property" name="The “temperature” property" link="FpDevice.html#FpDevice--temperature"/>
+    <keyword type="signal" name="The “removed” signal" link="FpDevice.html#FpDevice-removed"/>
+    <keyword type="macro" name="FP_TYPE_IMAGE_DEVICE" link="FpImageDevice.html#FP-TYPE-IMAGE-DEVICE:CAPS"/>
+    <keyword type="struct" name="FpImageDevice" link="FpImageDevice.html#FpImageDevice-struct"/>
+    <keyword type="property" name="The “fpi-image-device-state” property" link="FpImageDevice.html#FpImageDevice--fpi-image-device-state"/>
+    <keyword type="signal" name="The “fpi-image-device-state-changed” signal" link="FpImageDevice.html#FpImageDevice-fpi-image-device-state-changed"/>
+    <keyword type="function" name="fp_print_new ()" link="FpPrint.html#fp-print-new"/>
+    <keyword type="function" name="fp_print_get_driver ()" link="FpPrint.html#fp-print-get-driver"/>
+    <keyword type="function" name="fp_print_get_device_id ()" link="FpPrint.html#fp-print-get-device-id"/>
+    <keyword type="function" name="fp_print_get_device_stored ()" link="FpPrint.html#fp-print-get-device-stored"/>
+    <keyword type="function" name="fp_print_get_image ()" link="FpPrint.html#fp-print-get-image"/>
+    <keyword type="function" name="fp_print_get_finger ()" link="FpPrint.html#fp-print-get-finger"/>
+    <keyword type="function" name="fp_print_get_username ()" link="FpPrint.html#fp-print-get-username"/>
+    <keyword type="function" name="fp_print_get_description ()" link="FpPrint.html#fp-print-get-description"/>
+    <keyword type="function" name="fp_print_get_enroll_date ()" link="FpPrint.html#fp-print-get-enroll-date"/>
+    <keyword type="function" name="fp_print_set_finger ()" link="FpPrint.html#fp-print-set-finger"/>
+    <keyword type="function" name="fp_print_set_username ()" link="FpPrint.html#fp-print-set-username"/>
+    <keyword type="function" name="fp_print_set_description ()" link="FpPrint.html#fp-print-set-description"/>
+    <keyword type="function" name="fp_print_set_enroll_date ()" link="FpPrint.html#fp-print-set-enroll-date"/>
+    <keyword type="function" name="fp_print_compatible ()" link="FpPrint.html#fp-print-compatible"/>
+    <keyword type="function" name="fp_print_equal ()" link="FpPrint.html#fp-print-equal"/>
+    <keyword type="function" name="fp_print_serialize ()" link="FpPrint.html#fp-print-serialize"/>
+    <keyword type="function" name="fp_print_deserialize ()" link="FpPrint.html#fp-print-deserialize"/>
+    <keyword type="macro" name="FP_TYPE_PRINT" link="FpPrint.html#FP-TYPE-PRINT:CAPS"/>
+    <keyword type="enum" name="enum FpFinger" link="FpPrint.html#FpFinger"/>
+    <keyword type="struct" name="FpPrint" link="FpPrint.html#FpPrint-struct"/>
+    <keyword type="property" name="The “description” property" link="FpPrint.html#FpPrint--description"/>
+    <keyword type="property" name="The “device-id” property" link="FpPrint.html#FpPrint--device-id"/>
+    <keyword type="property" name="The “device-stored” property" link="FpPrint.html#FpPrint--device-stored"/>
+    <keyword type="property" name="The “driver” property" link="FpPrint.html#FpPrint--driver"/>
+    <keyword type="property" name="The “enroll-date” property" link="FpPrint.html#FpPrint--enroll-date"/>
+    <keyword type="property" name="The “finger” property" link="FpPrint.html#FpPrint--finger"/>
+    <keyword type="property" name="The “fpi-data” property" link="FpPrint.html#FpPrint--fpi-data"/>
+    <keyword type="property" name="The “fpi-prints” property" link="FpPrint.html#FpPrint--fpi-prints"/>
+    <keyword type="property" name="The “fpi-type” property" link="FpPrint.html#FpPrint--fpi-type"/>
+    <keyword type="property" name="The “image” property" link="FpPrint.html#FpPrint--image"/>
+    <keyword type="property" name="The “username” property" link="FpPrint.html#FpPrint--username"/>
+    <keyword type="function" name="fp_image_new ()" link="FpImage.html#fp-image-new"/>
+    <keyword type="function" name="fp_image_get_width ()" link="FpImage.html#fp-image-get-width"/>
+    <keyword type="function" name="fp_image_get_height ()" link="FpImage.html#fp-image-get-height"/>
+    <keyword type="function" name="fp_image_get_ppmm ()" link="FpImage.html#fp-image-get-ppmm"/>
+    <keyword type="function" name="fp_image_get_minutiae ()" link="FpImage.html#fp-image-get-minutiae"/>
+    <keyword type="function" name="fp_image_detect_minutiae ()" link="FpImage.html#fp-image-detect-minutiae"/>
+    <keyword type="function" name="fp_image_detect_minutiae_finish ()" link="FpImage.html#fp-image-detect-minutiae-finish"/>
+    <keyword type="function" name="fp_image_get_data ()" link="FpImage.html#fp-image-get-data"/>
+    <keyword type="function" name="fp_image_get_binarized ()" link="FpImage.html#fp-image-get-binarized"/>
+    <keyword type="function" name="fp_minutia_get_coords ()" link="FpImage.html#fp-minutia-get-coords"/>
+    <keyword type="macro" name="FP_TYPE_IMAGE" link="FpImage.html#FP-TYPE-IMAGE:CAPS"/>
+    <keyword type="typedef" name="FpMinutia" link="FpImage.html#FpMinutia"/>
+    <keyword type="struct" name="FpImage" link="FpImage.html#FpImage-struct"/>
+    <keyword type="property" name="The “height” property" link="FpImage.html#FpImage--height"/>
+    <keyword type="property" name="The “width” property" link="FpImage.html#FpImage--width"/>
+    <keyword type="function" name="FpTimeoutFunc ()" link="libfprint-2-Internal-FpDevice.html#FpTimeoutFunc"/>
+    <keyword type="function" name="fpi_device_get_usb_device ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-get-usb-device"/>
+    <keyword type="function" name="fpi_device_get_udev_data ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-get-udev-data"/>
+    <keyword type="function" name="fpi_device_get_virtual_env ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-get-virtual-env"/>
+    <keyword type="function" name="fpi_device_get_current_action ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-get-current-action"/>
+    <keyword type="function" name="fpi_device_retry_new ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-retry-new"/>
+    <keyword type="function" name="fpi_device_error_new ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-error-new"/>
+    <keyword type="function" name="fpi_device_retry_new_msg ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-retry-new-msg"/>
+    <keyword type="function" name="fpi_device_error_new_msg ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-error-new-msg"/>
+    <keyword type="function" name="fpi_device_get_driver_data ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-get-driver-data"/>
+    <keyword type="function" name="fpi_device_get_enroll_data ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-get-enroll-data"/>
+    <keyword type="function" name="fpi_device_get_capture_data ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-get-capture-data"/>
+    <keyword type="function" name="fpi_device_get_verify_data ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-get-verify-data"/>
+    <keyword type="function" name="fpi_device_get_identify_data ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-get-identify-data"/>
+    <keyword type="function" name="fpi_device_get_delete_data ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-get-delete-data"/>
+    <keyword type="function" name="fpi_device_get_cancellable ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-get-cancellable"/>
+    <keyword type="function" name="fpi_device_action_is_cancelled ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-action-is-cancelled"/>
+    <keyword type="function" name="fpi_device_add_timeout ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-add-timeout"/>
+    <keyword type="function" name="fpi_device_set_nr_enroll_stages ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-set-nr-enroll-stages"/>
+    <keyword type="function" name="fpi_device_set_scan_type ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-set-scan-type"/>
+    <keyword type="function" name="fpi_device_update_features ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-update-features"/>
+    <keyword type="function" name="fpi_device_critical_enter ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-critical-enter"/>
+    <keyword type="function" name="fpi_device_critical_leave ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-critical-leave"/>
+    <keyword type="function" name="fpi_device_remove ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-remove"/>
+    <keyword type="function" name="fpi_device_report_finger_status ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-report-finger-status"/>
+    <keyword type="function" name="fpi_device_report_finger_status_changes ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-report-finger-status-changes"/>
+    <keyword type="function" name="fpi_device_action_error ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-action-error"/>
+    <keyword type="function" name="fpi_device_probe_complete ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-probe-complete"/>
+    <keyword type="function" name="fpi_device_open_complete ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-open-complete"/>
+    <keyword type="function" name="fpi_device_close_complete ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-close-complete"/>
+    <keyword type="function" name="fpi_device_enroll_complete ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-enroll-complete"/>
+    <keyword type="function" name="fpi_device_verify_complete ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-verify-complete"/>
+    <keyword type="function" name="fpi_device_identify_complete ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-identify-complete"/>
+    <keyword type="function" name="fpi_device_capture_complete ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-capture-complete"/>
+    <keyword type="function" name="fpi_device_clear_storage_complete ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-clear-storage-complete"/>
+    <keyword type="function" name="fpi_device_delete_complete ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-delete-complete"/>
+    <keyword type="function" name="fpi_device_list_complete ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-list-complete"/>
+    <keyword type="function" name="fpi_device_suspend_complete ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-suspend-complete"/>
+    <keyword type="function" name="fpi_device_resume_complete ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-resume-complete"/>
+    <keyword type="function" name="fpi_device_enroll_progress ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-enroll-progress"/>
+    <keyword type="function" name="fpi_device_verify_report ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-verify-report"/>
+    <keyword type="function" name="fpi_device_identify_report ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-identify-report"/>
+    <keyword type="function" name="fpi_device_class_auto_initialize_features ()" link="libfprint-2-Internal-FpDevice.html#fpi-device-class-auto-initialize-features"/>
+    <keyword type="struct" name="FpDeviceClass" link="libfprint-2-Internal-FpDevice.html#FpDeviceClass"/>
+    <keyword type="enum" name="enum FpiDeviceAction" link="libfprint-2-Internal-FpDevice.html#FpiDeviceAction"/>
+    <keyword type="struct" name="struct FpIdEntry" link="libfprint-2-Internal-FpDevice.html#FpIdEntry"/>
+    <keyword type="enum" name="enum FpiDeviceUdevSubtypeFlags" link="libfprint-2-Internal-FpDevice.html#FpiDeviceUdevSubtypeFlags"/>
+    <keyword type="function" name="fpi_image_device_session_error ()" link="libfprint-2-Internal-FpImageDevice.html#fpi-image-device-session-error"/>
+    <keyword type="function" name="fpi_image_device_open_complete ()" link="libfprint-2-Internal-FpImageDevice.html#fpi-image-device-open-complete"/>
+    <keyword type="function" name="fpi_image_device_close_complete ()" link="libfprint-2-Internal-FpImageDevice.html#fpi-image-device-close-complete"/>
+    <keyword type="function" name="fpi_image_device_activate_complete ()" link="libfprint-2-Internal-FpImageDevice.html#fpi-image-device-activate-complete"/>
+    <keyword type="function" name="fpi_image_device_deactivate_complete ()" link="libfprint-2-Internal-FpImageDevice.html#fpi-image-device-deactivate-complete"/>
+    <keyword type="function" name="fpi_image_device_report_finger_status ()" link="libfprint-2-Internal-FpImageDevice.html#fpi-image-device-report-finger-status"/>
+    <keyword type="function" name="fpi_image_device_image_captured ()" link="libfprint-2-Internal-FpImageDevice.html#fpi-image-device-image-captured"/>
+    <keyword type="function" name="fpi_image_device_retry_scan ()" link="libfprint-2-Internal-FpImageDevice.html#fpi-image-device-retry-scan"/>
+    <keyword type="function" name="fpi_image_device_set_bz3_threshold ()" link="libfprint-2-Internal-FpImageDevice.html#fpi-image-device-set-bz3-threshold"/>
+    <keyword type="enum" name="enum FpiImageDeviceState" link="libfprint-2-Internal-FpImageDevice.html#FpiImageDeviceState"/>
+    <keyword type="struct" name="FpImageDeviceClass" link="libfprint-2-Internal-FpImageDevice.html#FpImageDeviceClass"/>
+    <keyword type="function" name="FpiSpiTransferCallback ()" link="libfprint-2-SPI-transfer-helpers.html#FpiSpiTransferCallback"/>
+    <keyword type="function" name="fpi_spi_transfer_new ()" link="libfprint-2-SPI-transfer-helpers.html#fpi-spi-transfer-new"/>
+    <keyword type="function" name="fpi_spi_transfer_ref ()" link="libfprint-2-SPI-transfer-helpers.html#fpi-spi-transfer-ref"/>
+    <keyword type="function" name="fpi_spi_transfer_unref ()" link="libfprint-2-SPI-transfer-helpers.html#fpi-spi-transfer-unref"/>
+    <keyword type="function" name="fpi_spi_transfer_write ()" link="libfprint-2-SPI-transfer-helpers.html#fpi-spi-transfer-write"/>
+    <keyword type="function" name="fpi_spi_transfer_write_full ()" link="libfprint-2-SPI-transfer-helpers.html#fpi-spi-transfer-write-full"/>
+    <keyword type="function" name="fpi_spi_transfer_read ()" link="libfprint-2-SPI-transfer-helpers.html#fpi-spi-transfer-read"/>
+    <keyword type="function" name="fpi_spi_transfer_read_full ()" link="libfprint-2-SPI-transfer-helpers.html#fpi-spi-transfer-read-full"/>
+    <keyword type="function" name="fpi_spi_transfer_submit ()" link="libfprint-2-SPI-transfer-helpers.html#fpi-spi-transfer-submit"/>
+    <keyword type="function" name="fpi_spi_transfer_submit_sync ()" link="libfprint-2-SPI-transfer-helpers.html#fpi-spi-transfer-submit-sync"/>
+    <keyword type="struct" name="FpiSpiTransfer" link="libfprint-2-SPI-transfer-helpers.html#FpiSpiTransfer"/>
+    <keyword type="function" name="FpiUsbTransferCallback ()" link="libfprint-2-USB-transfer-helpers.html#FpiUsbTransferCallback"/>
+    <keyword type="function" name="fpi_usb_transfer_new ()" link="libfprint-2-USB-transfer-helpers.html#fpi-usb-transfer-new"/>
+    <keyword type="function" name="fpi_usb_transfer_ref ()" link="libfprint-2-USB-transfer-helpers.html#fpi-usb-transfer-ref"/>
+    <keyword type="function" name="fpi_usb_transfer_unref ()" link="libfprint-2-USB-transfer-helpers.html#fpi-usb-transfer-unref"/>
+    <keyword type="function" name="fpi_usb_transfer_set_short_error ()" link="libfprint-2-USB-transfer-helpers.html#fpi-usb-transfer-set-short-error"/>
+    <keyword type="function" name="fpi_usb_transfer_fill_bulk ()" link="libfprint-2-USB-transfer-helpers.html#fpi-usb-transfer-fill-bulk"/>
+    <keyword type="function" name="fpi_usb_transfer_fill_bulk_full ()" link="libfprint-2-USB-transfer-helpers.html#fpi-usb-transfer-fill-bulk-full"/>
+    <keyword type="function" name="fpi_usb_transfer_fill_control ()" link="libfprint-2-USB-transfer-helpers.html#fpi-usb-transfer-fill-control"/>
+    <keyword type="function" name="fpi_usb_transfer_fill_interrupt ()" link="libfprint-2-USB-transfer-helpers.html#fpi-usb-transfer-fill-interrupt"/>
+    <keyword type="function" name="fpi_usb_transfer_fill_interrupt_full ()" link="libfprint-2-USB-transfer-helpers.html#fpi-usb-transfer-fill-interrupt-full"/>
+    <keyword type="function" name="fpi_usb_transfer_submit ()" link="libfprint-2-USB-transfer-helpers.html#fpi-usb-transfer-submit"/>
+    <keyword type="function" name="fpi_usb_transfer_submit_sync ()" link="libfprint-2-USB-transfer-helpers.html#fpi-usb-transfer-submit-sync"/>
+    <keyword type="macro" name="FPI_USB_ENDPOINT_IN" link="libfprint-2-USB-transfer-helpers.html#FPI-USB-ENDPOINT-IN:CAPS"/>
+    <keyword type="macro" name="FPI_USB_ENDPOINT_OUT" link="libfprint-2-USB-transfer-helpers.html#FPI-USB-ENDPOINT-OUT:CAPS"/>
+    <keyword type="enum" name="enum FpiTransferType" link="libfprint-2-USB-transfer-helpers.html#FpiTransferType"/>
+    <keyword type="struct" name="FpiUsbTransfer" link="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer"/>
+    <keyword type="function" name="FpiSsmCompletedCallback ()" link="libfprint-2-Sequential-state-machine.html#FpiSsmCompletedCallback"/>
+    <keyword type="function" name="FpiSsmHandlerCallback ()" link="libfprint-2-Sequential-state-machine.html#FpiSsmHandlerCallback"/>
+    <keyword type="macro" name="fpi_ssm_new()" link="libfprint-2-Sequential-state-machine.html#fpi-ssm-new"/>
+    <keyword type="function" name="fpi_ssm_new_full ()" link="libfprint-2-Sequential-state-machine.html#fpi-ssm-new-full"/>
+    <keyword type="function" name="fpi_ssm_free ()" link="libfprint-2-Sequential-state-machine.html#fpi-ssm-free"/>
+    <keyword type="function" name="fpi_ssm_start ()" link="libfprint-2-Sequential-state-machine.html#fpi-ssm-start"/>
+    <keyword type="function" name="fpi_ssm_start_subsm ()" link="libfprint-2-Sequential-state-machine.html#fpi-ssm-start-subsm"/>
+    <keyword type="function" name="fpi_ssm_next_state ()" link="libfprint-2-Sequential-state-machine.html#fpi-ssm-next-state"/>
+    <keyword type="function" name="fpi_ssm_next_state_delayed ()" link="libfprint-2-Sequential-state-machine.html#fpi-ssm-next-state-delayed"/>
+    <keyword type="function" name="fpi_ssm_jump_to_state ()" link="libfprint-2-Sequential-state-machine.html#fpi-ssm-jump-to-state"/>
+    <keyword type="function" name="fpi_ssm_jump_to_state_delayed ()" link="libfprint-2-Sequential-state-machine.html#fpi-ssm-jump-to-state-delayed"/>
+    <keyword type="function" name="fpi_ssm_cancel_delayed_state_change ()" link="libfprint-2-Sequential-state-machine.html#fpi-ssm-cancel-delayed-state-change"/>
+    <keyword type="function" name="fpi_ssm_mark_completed ()" link="libfprint-2-Sequential-state-machine.html#fpi-ssm-mark-completed"/>
+    <keyword type="function" name="fpi_ssm_mark_failed ()" link="libfprint-2-Sequential-state-machine.html#fpi-ssm-mark-failed"/>
+    <keyword type="function" name="fpi_ssm_set_data ()" link="libfprint-2-Sequential-state-machine.html#fpi-ssm-set-data"/>
+    <keyword type="function" name="fpi_ssm_get_data ()" link="libfprint-2-Sequential-state-machine.html#fpi-ssm-get-data"/>
+    <keyword type="function" name="fpi_ssm_get_device ()" link="libfprint-2-Sequential-state-machine.html#fpi-ssm-get-device"/>
+    <keyword type="function" name="fpi_ssm_get_error ()" link="libfprint-2-Sequential-state-machine.html#fpi-ssm-get-error"/>
+    <keyword type="function" name="fpi_ssm_dup_error ()" link="libfprint-2-Sequential-state-machine.html#fpi-ssm-dup-error"/>
+    <keyword type="function" name="fpi_ssm_get_cur_state ()" link="libfprint-2-Sequential-state-machine.html#fpi-ssm-get-cur-state"/>
+    <keyword type="function" name="fpi_ssm_silence_debug ()" link="libfprint-2-Sequential-state-machine.html#fpi-ssm-silence-debug"/>
+    <keyword type="function" name="fpi_ssm_spi_transfer_cb ()" link="libfprint-2-Sequential-state-machine.html#fpi-ssm-spi-transfer-cb"/>
+    <keyword type="function" name="fpi_ssm_spi_transfer_with_weak_pointer_cb ()" link="libfprint-2-Sequential-state-machine.html#fpi-ssm-spi-transfer-with-weak-pointer-cb"/>
+    <keyword type="function" name="fpi_ssm_usb_transfer_cb ()" link="libfprint-2-Sequential-state-machine.html#fpi-ssm-usb-transfer-cb"/>
+    <keyword type="function" name="fpi_ssm_usb_transfer_with_weak_pointer_cb ()" link="libfprint-2-Sequential-state-machine.html#fpi-ssm-usb-transfer-with-weak-pointer-cb"/>
+    <keyword type="struct" name="FpiSsm" link="libfprint-2-Sequential-state-machine.html#FpiSsm"/>
+    <keyword type="macro" name="BUG_ON()" link="libfprint-2-Logging.html#BUG-ON:CAPS"/>
+    <keyword type="macro" name="BUG" link="libfprint-2-Logging.html#BUG:CAPS"/>
+    <keyword type="macro" name="fp_dbg" link="libfprint-2-Logging.html#fp-dbg"/>
+    <keyword type="macro" name="fp_info" link="libfprint-2-Logging.html#fp-info"/>
+    <keyword type="macro" name="fp_warn" link="libfprint-2-Logging.html#fp-warn"/>
+    <keyword type="macro" name="fp_err" link="libfprint-2-Logging.html#fp-err"/>
+    <keyword type="function" name="fpi_std_sq_dev ()" link="libfprint-2-Internal-FpImage.html#fpi-std-sq-dev"/>
+    <keyword type="function" name="fpi_mean_sq_diff_norm ()" link="libfprint-2-Internal-FpImage.html#fpi-mean-sq-diff-norm"/>
+    <keyword type="function" name="fpi_image_resize ()" link="libfprint-2-Internal-FpImage.html#fpi-image-resize"/>
+    <keyword type="enum" name="enum FpiImageFlags" link="libfprint-2-Internal-FpImage.html#FpiImageFlags"/>
+    <keyword type="struct" name="FpImage" link="libfprint-2-Internal-FpImage.html#FpImage-struct"/>
+    <keyword type="property" name="The “height” property" link="libfprint-2-Internal-FpImage.html#FpImage--height"/>
+    <keyword type="property" name="The “width” property" link="libfprint-2-Internal-FpImage.html#FpImage--width"/>
+    <keyword type="function" name="fpi_do_movement_estimation ()" link="libfprint-2-Image-frame-assembly.html#fpi-do-movement-estimation"/>
+    <keyword type="function" name="fpi_assemble_frames ()" link="libfprint-2-Image-frame-assembly.html#fpi-assemble-frames"/>
+    <keyword type="function" name="fpi_assemble_lines ()" link="libfprint-2-Image-frame-assembly.html#fpi-assemble-lines"/>
+    <keyword type="struct" name="struct fpi_frame" link="libfprint-2-Image-frame-assembly.html#fpi-frame"/>
+    <keyword type="struct" name="struct fpi_frame_asmbl_ctx" link="libfprint-2-Image-frame-assembly.html#fpi-frame-asmbl-ctx"/>
+    <keyword type="struct" name="struct fpi_line_asmbl_ctx" link="libfprint-2-Image-frame-assembly.html#fpi-line-asmbl-ctx"/>
+    <keyword type="function" name="fpi_print_add_print ()" link="libfprint-2-Internal-FpPrint.html#fpi-print-add-print"/>
+    <keyword type="function" name="fpi_print_set_type ()" link="libfprint-2-Internal-FpPrint.html#fpi-print-set-type"/>
+    <keyword type="function" name="fpi_print_set_device_stored ()" link="libfprint-2-Internal-FpPrint.html#fpi-print-set-device-stored"/>
+    <keyword type="function" name="fpi_print_add_from_image ()" link="libfprint-2-Internal-FpPrint.html#fpi-print-add-from-image"/>
+    <keyword type="function" name="fpi_print_bz3_match ()" link="libfprint-2-Internal-FpPrint.html#fpi-print-bz3-match"/>
+    <keyword type="function" name="fpi_print_generate_user_id ()" link="libfprint-2-Internal-FpPrint.html#fpi-print-generate-user-id"/>
+    <keyword type="function" name="fpi_print_fill_from_user_id ()" link="libfprint-2-Internal-FpPrint.html#fpi-print-fill-from-user-id"/>
+    <keyword type="enum" name="enum FpiPrintType" link="libfprint-2-Internal-FpPrint.html#FpiPrintType"/>
+    <keyword type="enum" name="enum FpiMatchResult" link="libfprint-2-Internal-FpPrint.html#FpiMatchResult"/>
+    <keyword type="function" name="fpi_get_driver_types ()" link="libfprint-2-fpi-context.html#fpi-get-driver-types" stability="Private"/>
+    <keyword type="constant" name="FP_DEVICE_TYPE_VIRTUAL" link="FpDevice.html#FP-DEVICE-TYPE-VIRTUAL:CAPS"/>
+    <keyword type="constant" name="FP_DEVICE_TYPE_UDEV" link="FpDevice.html#FP-DEVICE-TYPE-UDEV:CAPS"/>
+    <keyword type="constant" name="FP_DEVICE_TYPE_USB" link="FpDevice.html#FP-DEVICE-TYPE-USB:CAPS"/>
+    <keyword type="constant" name="FP_DEVICE_FEATURE_NONE" link="FpDevice.html#FP-DEVICE-FEATURE-NONE:CAPS"/>
+    <keyword type="constant" name="FP_DEVICE_FEATURE_CAPTURE" link="FpDevice.html#FP-DEVICE-FEATURE-CAPTURE:CAPS"/>
+    <keyword type="constant" name="FP_DEVICE_FEATURE_IDENTIFY" link="FpDevice.html#FP-DEVICE-FEATURE-IDENTIFY:CAPS"/>
+    <keyword type="constant" name="FP_DEVICE_FEATURE_VERIFY" link="FpDevice.html#FP-DEVICE-FEATURE-VERIFY:CAPS"/>
+    <keyword type="constant" name="FP_DEVICE_FEATURE_STORAGE" link="FpDevice.html#FP-DEVICE-FEATURE-STORAGE:CAPS"/>
+    <keyword type="constant" name="FP_DEVICE_FEATURE_STORAGE_LIST" link="FpDevice.html#FP-DEVICE-FEATURE-STORAGE-LIST:CAPS"/>
+    <keyword type="constant" name="FP_DEVICE_FEATURE_STORAGE_DELETE" link="FpDevice.html#FP-DEVICE-FEATURE-STORAGE-DELETE:CAPS"/>
+    <keyword type="constant" name="FP_DEVICE_FEATURE_STORAGE_CLEAR" link="FpDevice.html#FP-DEVICE-FEATURE-STORAGE-CLEAR:CAPS"/>
+    <keyword type="constant" name="FP_DEVICE_FEATURE_DUPLICATES_CHECK" link="FpDevice.html#FP-DEVICE-FEATURE-DUPLICATES-CHECK:CAPS"/>
+    <keyword type="constant" name="FP_DEVICE_FEATURE_ALWAYS_ON" link="FpDevice.html#FP-DEVICE-FEATURE-ALWAYS-ON:CAPS"/>
+    <keyword type="constant" name="FP_DEVICE_FEATURE_UPDATE_PRINT" link="FpDevice.html#FP-DEVICE-FEATURE-UPDATE-PRINT:CAPS"/>
+    <keyword type="constant" name="FP_SCAN_TYPE_SWIPE" link="FpDevice.html#FP-SCAN-TYPE-SWIPE:CAPS"/>
+    <keyword type="constant" name="FP_SCAN_TYPE_PRESS" link="FpDevice.html#FP-SCAN-TYPE-PRESS:CAPS"/>
+    <keyword type="constant" name="FP_DEVICE_RETRY_GENERAL" link="FpDevice.html#FP-DEVICE-RETRY-GENERAL:CAPS"/>
+    <keyword type="constant" name="FP_DEVICE_RETRY_TOO_SHORT" link="FpDevice.html#FP-DEVICE-RETRY-TOO-SHORT:CAPS"/>
+    <keyword type="constant" name="FP_DEVICE_RETRY_CENTER_FINGER" link="FpDevice.html#FP-DEVICE-RETRY-CENTER-FINGER:CAPS"/>
+    <keyword type="constant" name="FP_DEVICE_RETRY_REMOVE_FINGER" link="FpDevice.html#FP-DEVICE-RETRY-REMOVE-FINGER:CAPS"/>
+    <keyword type="constant" name="FP_DEVICE_RETRY_TOO_FAST" link="FpDevice.html#FP-DEVICE-RETRY-TOO-FAST:CAPS"/>
+    <keyword type="constant" name="FP_DEVICE_ERROR_GENERAL" link="FpDevice.html#FP-DEVICE-ERROR-GENERAL:CAPS"/>
+    <keyword type="constant" name="FP_DEVICE_ERROR_NOT_SUPPORTED" link="FpDevice.html#FP-DEVICE-ERROR-NOT-SUPPORTED:CAPS"/>
+    <keyword type="constant" name="FP_DEVICE_ERROR_NOT_OPEN" link="FpDevice.html#FP-DEVICE-ERROR-NOT-OPEN:CAPS"/>
+    <keyword type="constant" name="FP_DEVICE_ERROR_ALREADY_OPEN" link="FpDevice.html#FP-DEVICE-ERROR-ALREADY-OPEN:CAPS"/>
+    <keyword type="constant" name="FP_DEVICE_ERROR_BUSY" link="FpDevice.html#FP-DEVICE-ERROR-BUSY:CAPS"/>
+    <keyword type="constant" name="FP_DEVICE_ERROR_PROTO" link="FpDevice.html#FP-DEVICE-ERROR-PROTO:CAPS"/>
+    <keyword type="constant" name="FP_DEVICE_ERROR_DATA_INVALID" link="FpDevice.html#FP-DEVICE-ERROR-DATA-INVALID:CAPS"/>
+    <keyword type="constant" name="FP_DEVICE_ERROR_DATA_NOT_FOUND" link="FpDevice.html#FP-DEVICE-ERROR-DATA-NOT-FOUND:CAPS"/>
+    <keyword type="constant" name="FP_DEVICE_ERROR_DATA_FULL" link="FpDevice.html#FP-DEVICE-ERROR-DATA-FULL:CAPS"/>
+    <keyword type="constant" name="FP_DEVICE_ERROR_DATA_DUPLICATE" link="FpDevice.html#FP-DEVICE-ERROR-DATA-DUPLICATE:CAPS"/>
+    <keyword type="constant" name="FP_DEVICE_ERROR_REMOVED" link="FpDevice.html#FP-DEVICE-ERROR-REMOVED:CAPS"/>
+    <keyword type="constant" name="FP_DEVICE_ERROR_TOO_HOT" link="FpDevice.html#FP-DEVICE-ERROR-TOO-HOT:CAPS"/>
+    <keyword type="constant" name="FP_FINGER_STATUS_NONE" link="FpDevice.html#FP-FINGER-STATUS-NONE:CAPS"/>
+    <keyword type="constant" name="FP_FINGER_STATUS_NEEDED" link="FpDevice.html#FP-FINGER-STATUS-NEEDED:CAPS"/>
+    <keyword type="constant" name="FP_FINGER_STATUS_PRESENT" link="FpDevice.html#FP-FINGER-STATUS-PRESENT:CAPS"/>
+    <keyword type="constant" name="FP_FINGER_UNKNOWN" link="FpPrint.html#FP-FINGER-UNKNOWN:CAPS"/>
+    <keyword type="constant" name="FP_FINGER_LEFT_THUMB" link="FpPrint.html#FP-FINGER-LEFT-THUMB:CAPS"/>
+    <keyword type="constant" name="FP_FINGER_LEFT_INDEX" link="FpPrint.html#FP-FINGER-LEFT-INDEX:CAPS"/>
+    <keyword type="constant" name="FP_FINGER_LEFT_MIDDLE" link="FpPrint.html#FP-FINGER-LEFT-MIDDLE:CAPS"/>
+    <keyword type="constant" name="FP_FINGER_LEFT_RING" link="FpPrint.html#FP-FINGER-LEFT-RING:CAPS"/>
+    <keyword type="constant" name="FP_FINGER_LEFT_LITTLE" link="FpPrint.html#FP-FINGER-LEFT-LITTLE:CAPS"/>
+    <keyword type="constant" name="FP_FINGER_RIGHT_THUMB" link="FpPrint.html#FP-FINGER-RIGHT-THUMB:CAPS"/>
+    <keyword type="constant" name="FP_FINGER_RIGHT_INDEX" link="FpPrint.html#FP-FINGER-RIGHT-INDEX:CAPS"/>
+    <keyword type="constant" name="FP_FINGER_RIGHT_MIDDLE" link="FpPrint.html#FP-FINGER-RIGHT-MIDDLE:CAPS"/>
+    <keyword type="constant" name="FP_FINGER_RIGHT_RING" link="FpPrint.html#FP-FINGER-RIGHT-RING:CAPS"/>
+    <keyword type="constant" name="FP_FINGER_RIGHT_LITTLE" link="FpPrint.html#FP-FINGER-RIGHT-LITTLE:CAPS"/>
+    <keyword type="constant" name="FP_FINGER_FIRST" link="FpPrint.html#FP-FINGER-FIRST:CAPS"/>
+    <keyword type="constant" name="FP_FINGER_LAST" link="FpPrint.html#FP-FINGER-LAST:CAPS"/>
+    <keyword type="constant" name="FPI_DEVICE_ACTION_NONE" link="libfprint-2-Internal-FpDevice.html#FPI-DEVICE-ACTION-NONE:CAPS"/>
+    <keyword type="constant" name="FPI_DEVICE_ACTION_PROBE" link="libfprint-2-Internal-FpDevice.html#FPI-DEVICE-ACTION-PROBE:CAPS"/>
+    <keyword type="constant" name="FPI_DEVICE_ACTION_OPEN" link="libfprint-2-Internal-FpDevice.html#FPI-DEVICE-ACTION-OPEN:CAPS"/>
+    <keyword type="constant" name="FPI_DEVICE_ACTION_CLOSE" link="libfprint-2-Internal-FpDevice.html#FPI-DEVICE-ACTION-CLOSE:CAPS"/>
+    <keyword type="constant" name="FPI_DEVICE_ACTION_ENROLL" link="libfprint-2-Internal-FpDevice.html#FPI-DEVICE-ACTION-ENROLL:CAPS"/>
+    <keyword type="constant" name="FPI_DEVICE_ACTION_VERIFY" link="libfprint-2-Internal-FpDevice.html#FPI-DEVICE-ACTION-VERIFY:CAPS"/>
+    <keyword type="constant" name="FPI_DEVICE_ACTION_IDENTIFY" link="libfprint-2-Internal-FpDevice.html#FPI-DEVICE-ACTION-IDENTIFY:CAPS"/>
+    <keyword type="constant" name="FPI_DEVICE_ACTION_CAPTURE" link="libfprint-2-Internal-FpDevice.html#FPI-DEVICE-ACTION-CAPTURE:CAPS"/>
+    <keyword type="constant" name="FPI_DEVICE_ACTION_LIST" link="libfprint-2-Internal-FpDevice.html#FPI-DEVICE-ACTION-LIST:CAPS"/>
+    <keyword type="constant" name="FPI_DEVICE_ACTION_DELETE" link="libfprint-2-Internal-FpDevice.html#FPI-DEVICE-ACTION-DELETE:CAPS"/>
+    <keyword type="constant" name="FPI_DEVICE_ACTION_CLEAR_STORAGE" link="libfprint-2-Internal-FpDevice.html#FPI-DEVICE-ACTION-CLEAR-STORAGE:CAPS"/>
+    <keyword type="constant" name="FPI_DEVICE_UDEV_SUBTYPE_SPIDEV" link="libfprint-2-Internal-FpDevice.html#FPI-DEVICE-UDEV-SUBTYPE-SPIDEV:CAPS"/>
+    <keyword type="constant" name="FPI_DEVICE_UDEV_SUBTYPE_HIDRAW" link="libfprint-2-Internal-FpDevice.html#FPI-DEVICE-UDEV-SUBTYPE-HIDRAW:CAPS"/>
+    <keyword type="constant" name="FPI_IMAGE_DEVICE_STATE_INACTIVE" link="libfprint-2-Internal-FpImageDevice.html#FPI-IMAGE-DEVICE-STATE-INACTIVE:CAPS"/>
+    <keyword type="constant" name="FPI_IMAGE_DEVICE_STATE_ACTIVATING" link="libfprint-2-Internal-FpImageDevice.html#FPI-IMAGE-DEVICE-STATE-ACTIVATING:CAPS"/>
+    <keyword type="constant" name="FPI_IMAGE_DEVICE_STATE_DEACTIVATING" link="libfprint-2-Internal-FpImageDevice.html#FPI-IMAGE-DEVICE-STATE-DEACTIVATING:CAPS"/>
+    <keyword type="constant" name="FPI_IMAGE_DEVICE_STATE_IDLE" link="libfprint-2-Internal-FpImageDevice.html#FPI-IMAGE-DEVICE-STATE-IDLE:CAPS"/>
+    <keyword type="constant" name="FPI_IMAGE_DEVICE_STATE_AWAIT_FINGER_ON" link="libfprint-2-Internal-FpImageDevice.html#FPI-IMAGE-DEVICE-STATE-AWAIT-FINGER-ON:CAPS"/>
+    <keyword type="constant" name="FPI_IMAGE_DEVICE_STATE_CAPTURE" link="libfprint-2-Internal-FpImageDevice.html#FPI-IMAGE-DEVICE-STATE-CAPTURE:CAPS"/>
+    <keyword type="constant" name="FPI_IMAGE_DEVICE_STATE_AWAIT_FINGER_OFF" link="libfprint-2-Internal-FpImageDevice.html#FPI-IMAGE-DEVICE-STATE-AWAIT-FINGER-OFF:CAPS"/>
+    <keyword type="constant" name="FP_TRANSFER_NONE" link="libfprint-2-USB-transfer-helpers.html#FP-TRANSFER-NONE:CAPS"/>
+    <keyword type="constant" name="FP_TRANSFER_CONTROL" link="libfprint-2-USB-transfer-helpers.html#FP-TRANSFER-CONTROL:CAPS"/>
+    <keyword type="constant" name="FP_TRANSFER_BULK" link="libfprint-2-USB-transfer-helpers.html#FP-TRANSFER-BULK:CAPS"/>
+    <keyword type="constant" name="FP_TRANSFER_INTERRUPT" link="libfprint-2-USB-transfer-helpers.html#FP-TRANSFER-INTERRUPT:CAPS"/>
+    <keyword type="constant" name="FPI_IMAGE_NONE" link="libfprint-2-Internal-FpImage.html#FPI-IMAGE-NONE:CAPS"/>
+    <keyword type="constant" name="FPI_IMAGE_V_FLIPPED" link="libfprint-2-Internal-FpImage.html#FPI-IMAGE-V-FLIPPED:CAPS"/>
+    <keyword type="constant" name="FPI_IMAGE_H_FLIPPED" link="libfprint-2-Internal-FpImage.html#FPI-IMAGE-H-FLIPPED:CAPS"/>
+    <keyword type="constant" name="FPI_IMAGE_COLORS_INVERTED" link="libfprint-2-Internal-FpImage.html#FPI-IMAGE-COLORS-INVERTED:CAPS"/>
+    <keyword type="constant" name="FPI_IMAGE_PARTIAL" link="libfprint-2-Internal-FpImage.html#FPI-IMAGE-PARTIAL:CAPS"/>
+    <keyword type="constant" name="FPI_PRINT_UNDEFINED" link="libfprint-2-Internal-FpPrint.html#FPI-PRINT-UNDEFINED:CAPS"/>
+    <keyword type="constant" name="FPI_PRINT_RAW" link="libfprint-2-Internal-FpPrint.html#FPI-PRINT-RAW:CAPS"/>
+    <keyword type="constant" name="FPI_PRINT_NBIS" link="libfprint-2-Internal-FpPrint.html#FPI-PRINT-NBIS:CAPS"/>
+    <keyword type="constant" name="FPI_MATCH_ERROR" link="libfprint-2-Internal-FpPrint.html#FPI-MATCH-ERROR:CAPS"/>
+    <keyword type="constant" name="FPI_MATCH_FAIL" link="libfprint-2-Internal-FpPrint.html#FPI-MATCH-FAIL:CAPS"/>
+    <keyword type="constant" name="FPI_MATCH_SUCCESS" link="libfprint-2-Internal-FpPrint.html#FPI-MATCH-SUCCESS:CAPS"/>
+    <keyword type="member" name="FpContextClass.device-added" link="FpContext.html#FpContextClass.device-added"/>
+    <keyword type="member" name="FpContextClass.device-removed" link="FpContext.html#FpContextClass.device-removed"/>
+    <keyword type="member" name="FpImage-struct.width" link="FpImage.html#FpImage-struct.width"/>
+    <keyword type="member" name="FpImage-struct.height" link="FpImage.html#FpImage-struct.height"/>
+    <keyword type="member" name="FpImage-struct.ppmm" link="FpImage.html#FpImage-struct.ppmm"/>
+    <keyword type="member" name="FpImage-struct.flags" link="FpImage.html#FpImage-struct.flags"/>
+    <keyword type="member" name="FpDeviceClass.id" link="libfprint-2-Internal-FpDevice.html#FpDeviceClass.id"/>
+    <keyword type="member" name="FpDeviceClass.full-name" link="libfprint-2-Internal-FpDevice.html#FpDeviceClass.full-name"/>
+    <keyword type="member" name="FpDeviceClass.type" link="libfprint-2-Internal-FpDevice.html#FpDeviceClass.type"/>
+    <keyword type="member" name="FpDeviceClass.id-table" link="libfprint-2-Internal-FpDevice.html#FpDeviceClass.id-table"/>
+    <keyword type="member" name="FpDeviceClass.features" link="libfprint-2-Internal-FpDevice.html#FpDeviceClass.features"/>
+    <keyword type="member" name="FpDeviceClass.nr-enroll-stages" link="libfprint-2-Internal-FpDevice.html#FpDeviceClass.nr-enroll-stages"/>
+    <keyword type="member" name="FpDeviceClass.scan-type" link="libfprint-2-Internal-FpDevice.html#FpDeviceClass.scan-type"/>
+    <keyword type="member" name="FpDeviceClass.temp-hot-seconds" link="libfprint-2-Internal-FpDevice.html#FpDeviceClass.temp-hot-seconds"/>
+    <keyword type="member" name="FpDeviceClass.temp-cold-seconds" link="libfprint-2-Internal-FpDevice.html#FpDeviceClass.temp-cold-seconds"/>
+    <keyword type="member" name="FpDeviceClass.usb-discover" link="libfprint-2-Internal-FpDevice.html#FpDeviceClass.usb-discover"/>
+    <keyword type="member" name="FpDeviceClass.probe" link="libfprint-2-Internal-FpDevice.html#FpDeviceClass.probe"/>
+    <keyword type="member" name="FpDeviceClass.open" link="libfprint-2-Internal-FpDevice.html#FpDeviceClass.open"/>
+    <keyword type="member" name="FpDeviceClass.close" link="libfprint-2-Internal-FpDevice.html#FpDeviceClass.close"/>
+    <keyword type="member" name="FpDeviceClass.enroll" link="libfprint-2-Internal-FpDevice.html#FpDeviceClass.enroll"/>
+    <keyword type="member" name="FpDeviceClass.verify" link="libfprint-2-Internal-FpDevice.html#FpDeviceClass.verify"/>
+    <keyword type="member" name="FpDeviceClass.identify" link="libfprint-2-Internal-FpDevice.html#FpDeviceClass.identify"/>
+    <keyword type="member" name="FpDeviceClass.capture" link="libfprint-2-Internal-FpDevice.html#FpDeviceClass.capture"/>
+    <keyword type="member" name="FpDeviceClass.list" link="libfprint-2-Internal-FpDevice.html#FpDeviceClass.list"/>
+    <keyword type="member" name="FpDeviceClass.delete" link="libfprint-2-Internal-FpDevice.html#FpDeviceClass.delete"/>
+    <keyword type="member" name="FpDeviceClass.clear-storage" link="libfprint-2-Internal-FpDevice.html#FpDeviceClass.clear-storage"/>
+    <keyword type="member" name="FpDeviceClass.cancel" link="libfprint-2-Internal-FpDevice.html#FpDeviceClass.cancel"/>
+    <keyword type="member" name="FpDeviceClass.suspend" link="libfprint-2-Internal-FpDevice.html#FpDeviceClass.suspend"/>
+    <keyword type="member" name="FpDeviceClass.resume" link="libfprint-2-Internal-FpDevice.html#FpDeviceClass.resume"/>
+    <keyword type="member" name="FpImageDeviceClass.bz3-threshold" link="libfprint-2-Internal-FpImageDevice.html#FpImageDeviceClass.bz3-threshold"/>
+    <keyword type="member" name="FpImageDeviceClass.img-width" link="libfprint-2-Internal-FpImageDevice.html#FpImageDeviceClass.img-width"/>
+    <keyword type="member" name="FpImageDeviceClass.img-height" link="libfprint-2-Internal-FpImageDevice.html#FpImageDeviceClass.img-height"/>
+    <keyword type="member" name="FpImageDeviceClass.img-open" link="libfprint-2-Internal-FpImageDevice.html#FpImageDeviceClass.img-open"/>
+    <keyword type="member" name="FpImageDeviceClass.img-close" link="libfprint-2-Internal-FpImageDevice.html#FpImageDeviceClass.img-close"/>
+    <keyword type="member" name="FpImageDeviceClass.activate" link="libfprint-2-Internal-FpImageDevice.html#FpImageDeviceClass.activate"/>
+    <keyword type="member" name="FpImageDeviceClass.change-state" link="libfprint-2-Internal-FpImageDevice.html#FpImageDeviceClass.change-state"/>
+    <keyword type="member" name="FpImageDeviceClass.deactivate" link="libfprint-2-Internal-FpImageDevice.html#FpImageDeviceClass.deactivate"/>
+    <keyword type="member" name="FpiSpiTransfer.device" link="libfprint-2-SPI-transfer-helpers.html#FpiSpiTransfer.device"/>
+    <keyword type="member" name="FpiSpiTransfer.ssm" link="libfprint-2-SPI-transfer-helpers.html#FpiSpiTransfer.ssm"/>
+    <keyword type="member" name="FpiSpiTransfer.length-wr" link="libfprint-2-SPI-transfer-helpers.html#FpiSpiTransfer.length-wr"/>
+    <keyword type="member" name="FpiSpiTransfer.length-rd" link="libfprint-2-SPI-transfer-helpers.html#FpiSpiTransfer.length-rd"/>
+    <keyword type="member" name="FpiSpiTransfer.buffer-wr" link="libfprint-2-SPI-transfer-helpers.html#FpiSpiTransfer.buffer-wr"/>
+    <keyword type="member" name="FpiSpiTransfer.buffer-rd" link="libfprint-2-SPI-transfer-helpers.html#FpiSpiTransfer.buffer-rd"/>
+    <keyword type="member" name="FpiUsbTransfer.device" link="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer.device"/>
+    <keyword type="member" name="FpiUsbTransfer.ssm" link="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer.ssm"/>
+    <keyword type="member" name="FpiUsbTransfer.length" link="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer.length"/>
+    <keyword type="member" name="FpiUsbTransfer.actual-length" link="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer.actual-length"/>
+    <keyword type="member" name="FpiUsbTransfer.buffer" link="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer.buffer"/>
+    <keyword type="member" name="fpi-frame.delta-x" link="libfprint-2-Image-frame-assembly.html#fpi-frame.delta-x"/>
+    <keyword type="member" name="fpi-frame.delta-y" link="libfprint-2-Image-frame-assembly.html#fpi-frame.delta-y"/>
+    <keyword type="member" name="fpi-frame.data" link="libfprint-2-Image-frame-assembly.html#fpi-frame.data"/>
+    <keyword type="member" name="fpi-frame-asmbl-ctx.frame-width" link="libfprint-2-Image-frame-assembly.html#fpi-frame-asmbl-ctx.frame-width"/>
+    <keyword type="member" name="fpi-frame-asmbl-ctx.frame-height" link="libfprint-2-Image-frame-assembly.html#fpi-frame-asmbl-ctx.frame-height"/>
+    <keyword type="member" name="fpi-frame-asmbl-ctx.image-width" link="libfprint-2-Image-frame-assembly.html#fpi-frame-asmbl-ctx.image-width"/>
+    <keyword type="member" name="fpi-frame-asmbl-ctx.get-pixel" link="libfprint-2-Image-frame-assembly.html#fpi-frame-asmbl-ctx.get-pixel"/>
+    <keyword type="member" name="fpi-line-asmbl-ctx.line-width" link="libfprint-2-Image-frame-assembly.html#fpi-line-asmbl-ctx.line-width"/>
+    <keyword type="member" name="fpi-line-asmbl-ctx.max-height" link="libfprint-2-Image-frame-assembly.html#fpi-line-asmbl-ctx.max-height"/>
+    <keyword type="member" name="fpi-line-asmbl-ctx.resolution" link="libfprint-2-Image-frame-assembly.html#fpi-line-asmbl-ctx.resolution"/>
+    <keyword type="member" name="fpi-line-asmbl-ctx.median-filter-size" link="libfprint-2-Image-frame-assembly.html#fpi-line-asmbl-ctx.median-filter-size"/>
+    <keyword type="member" name="fpi-line-asmbl-ctx.max-search-offset" link="libfprint-2-Image-frame-assembly.html#fpi-line-asmbl-ctx.max-search-offset"/>
+    <keyword type="member" name="fpi-line-asmbl-ctx.get-deviation" link="libfprint-2-Image-frame-assembly.html#fpi-line-asmbl-ctx.get-deviation"/>
+    <keyword type="member" name="fpi-line-asmbl-ctx.get-pixel" link="libfprint-2-Image-frame-assembly.html#fpi-line-asmbl-ctx.get-pixel"/>
+  </functions>
+</book>

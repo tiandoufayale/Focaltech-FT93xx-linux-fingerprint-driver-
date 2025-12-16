@@ -1,0 +1,319 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
+[
+  <!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+]>
+<refentry id="libfprint-2-Image-frame-assembly">
+<refmeta>
+<refentrytitle role="top_of_page" id="libfprint-2-Image-frame-assembly.top_of_page">Image frame assembly</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBFPRINT-2 Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>Image frame assembly</refname>
+<refpurpose>Image frame assembly helpers</refpurpose>
+</refnamediv>
+
+<refsect1 id="libfprint-2-Image-frame-assembly.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_proto_type" colwidth="150px"/>
+<colspec colname="functions_proto_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-do-movement-estimation">fpi_do_movement_estimation</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="FpImage"><returnvalue>FpImage</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fpi-assemble-frames">fpi_assemble_frames</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="FpImage"><returnvalue>FpImage</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fpi-assemble-lines">fpi_assemble_lines</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="libfprint-2-Image-frame-assembly.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="other_proto_type" colwidth="150px"/>
+<colspec colname="other_proto_name"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="fpi-frame">fpi_frame</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="fpi-frame-asmbl-ctx">fpi_frame_asmbl_ctx</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="fpi-line-asmbl-ctx">fpi_line_asmbl_ctx</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+
+<refsect1 id="libfprint-2-Image-frame-assembly.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Those are the helpers to manipulate capture data from fingerprint readers
+into a uniform image that can be further processed. This is usually used
+by drivers for devices which have a small sensor and thus need to capture
+data in small stripes.</para>
+
+</refsect1>
+<refsect1 id="libfprint-2-Image-frame-assembly.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="fpi-do-movement-estimation" role="function">
+<title>fpi_do_movement_estimation&#160;()</title>
+<indexterm zone="fpi-do-movement-estimation"><primary>fpi_do_movement_estimation</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_do_movement_estimation (<parameter><type>struct fpi_frame_asmbl_ctx</type> *ctx</parameter>,
+                            <parameter><link linkend="GSList"><type>GSList</type></link> *stripes</parameter>);</programlisting>
+<para>fpi_do_movement_estimation() estimates the movement between adjacent
+frames, populating <parameter>delta_x</parameter>
+ and <parameter>delta_y</parameter>
+ values for each <link linkend="fpi-frame"><type>fpi_frame</type></link>.</para>
+<para>This function is used for devices that don't do movement estimation
+in hardware. If hardware movement estimation is supported, the driver
+should populate <parameter>delta_x</parameter>
+ and <parameter>delta_y</parameter>
+ instead.</para>
+<refsect3 id="fpi-do-movement-estimation.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>ctx</para></entry>
+<entry role="parameter_description"><para><link linkend="fpi-frame-asmbl-ctx"><type>fpi_frame_asmbl_ctx</type></link> - frame assembling context</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>stripes</para></entry>
+<entry role="parameter_description"><para>a singly-linked list of <link linkend="fpi-frame"><type>fpi_frame</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-assemble-frames" role="function">
+<title>fpi_assemble_frames&#160;()</title>
+<indexterm zone="fpi-assemble-frames"><primary>fpi_assemble_frames</primary></indexterm>
+<programlisting language="C"><link linkend="FpImage"><returnvalue>FpImage</returnvalue></link>&#160;*
+fpi_assemble_frames (<parameter><type>struct fpi_frame_asmbl_ctx</type> *ctx</parameter>,
+                     <parameter><link linkend="GSList"><type>GSList</type></link> *stripes</parameter>);</programlisting>
+<para>fpi_assemble_frames() assembles individual frames into a single image.
+It expects <parameter>delta_x</parameter>
+ and <parameter>delta_y</parameter>
+ of <link linkend="fpi-frame"><type>fpi_frame</type></link> to be populated.</para>
+<refsect3 id="fpi-assemble-frames.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>ctx</para></entry>
+<entry role="parameter_description"><para><link linkend="fpi-frame-asmbl-ctx"><type>fpi_frame_asmbl_ctx</type></link> - frame assembling context</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>stripes</para></entry>
+<entry role="parameter_description"><para>linked list of <link linkend="fpi-frame"><type>fpi_frame</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fpi-assemble-frames.returns" role="returns">
+<title>Returns</title>
+<para> a newly allocated <link linkend="fp-img"><type>fp_img</type></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="fpi-assemble-lines" role="function">
+<title>fpi_assemble_lines&#160;()</title>
+<indexterm zone="fpi-assemble-lines"><primary>fpi_assemble_lines</primary></indexterm>
+<programlisting language="C"><link linkend="FpImage"><returnvalue>FpImage</returnvalue></link>&#160;*
+fpi_assemble_lines (<parameter><type>struct fpi_line_asmbl_ctx</type> *ctx</parameter>,
+                    <parameter><link linkend="GSList"><type>GSList</type></link> *lines</parameter>,
+                    <parameter><link linkend="size-t"><type>size_t</type></link> num_lines</parameter>);</programlisting>
+<para><link linkend="fpi-assemble-lines"><type>fpi_assemble_lines</type></link> assembles individual lines into a single image.
+It also rescales image to account variable swiping speed.</para>
+<para>Note that <parameter>num_lines</parameter>
+ might be shorter than the length of the list,
+if some lines should be skipped.</para>
+<refsect3 id="fpi-assemble-lines.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>ctx</para></entry>
+<entry role="parameter_description"><para><link linkend="fpi-frame-asmbl-ctx"><type>fpi_frame_asmbl_ctx</type></link> - frame assembling context</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>lines</para></entry>
+<entry role="parameter_description"><para>linked list of lines</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>num_lines</para></entry>
+<entry role="parameter_description"><para>number of items in <parameter>lines</parameter>
+to process</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fpi-assemble-lines.returns" role="returns">
+<title>Returns</title>
+<para> a newly allocated <link linkend="fp-img"><type>fp_img</type></link>.</para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="libfprint-2-Image-frame-assembly.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="fpi-frame" role="struct">
+<title>struct fpi_frame</title>
+<indexterm zone="fpi-frame"><primary>fpi_frame</primary></indexterm>
+<programlisting language="C">struct fpi_frame {
+  int           delta_x;
+  int           delta_y;
+  unsigned char data[0];
+};
+</programlisting>
+<para><link linkend="fpi-frame"><type>fpi_frame</type></link> is used to store frames for swipe sensors. Drivers should
+populate delta_x and delta_y if the device supports hardware movement
+estimation.</para>
+<refsect3 id="fpi-frame.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="int"><type>int</type></link>&#160;<structfield id="fpi-frame.delta-x">delta_x</structfield>;</para></entry>
+<entry role="struct_member_description"><para>X offset of the frame</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="int"><type>int</type></link>&#160;<structfield id="fpi-frame.delta-y">delta_y</structfield>;</para></entry>
+<entry role="struct_member_description"><para>Y offset of the frame</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para>unsigned&#160;<link linkend="char"><type>char</type></link>&#160;<structfield id="fpi-frame.data">data</structfield>[0];</para></entry>
+<entry role="struct_member_description"><para>bitmap</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="fpi-frame-asmbl-ctx" role="struct">
+<title>struct fpi_frame_asmbl_ctx</title>
+<indexterm zone="fpi-frame-asmbl-ctx"><primary>fpi_frame_asmbl_ctx</primary></indexterm>
+<programlisting language="C">struct fpi_frame_asmbl_ctx {
+  unsigned int  frame_width;
+  unsigned int  frame_height;
+  unsigned int  image_width;
+  unsigned char (*get_pixel)(struct fpi_frame_asmbl_ctx *ctx,
+                             struct fpi_frame           *frame,
+                             unsigned int                x,
+                             unsigned int                y);
+};
+</programlisting>
+<para><link linkend="fpi-frame-asmbl-ctx"><type>fpi_frame_asmbl_ctx</type></link> is a structure holding the context for frame
+assembling routines.</para>
+<para>Drivers should define their own <link linkend="fpi-frame-asmbl-ctx"><type>fpi_frame_asmbl_ctx</type></link> depending on
+hardware parameters of scanner. <parameter>image_width</parameter>
+ is usually 25% wider than
+<parameter>frame_width</parameter>
+ to take horizontal movement into account.</para>
+<refsect3 id="fpi-frame-asmbl-ctx.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para>unsigned&#160;<link linkend="int"><type>int</type></link>&#160;<structfield id="fpi-frame-asmbl-ctx.frame-width">frame_width</structfield>;</para></entry>
+<entry role="struct_member_description"><para>width of the frame</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para>unsigned&#160;<link linkend="int"><type>int</type></link>&#160;<structfield id="fpi-frame-asmbl-ctx.frame-height">frame_height</structfield>;</para></entry>
+<entry role="struct_member_description"><para>height of the frame</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para>unsigned&#160;<link linkend="int"><type>int</type></link>&#160;<structfield id="fpi-frame-asmbl-ctx.image-width">image_width</structfield>;</para></entry>
+<entry role="struct_member_description"><para>resulting image width</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="fpi-frame-asmbl-ctx.get-pixel">get_pixel</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>pixel accessor, returns pixel brightness at x,y of frame</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="fpi-line-asmbl-ctx" role="struct">
+<title>struct fpi_line_asmbl_ctx</title>
+<indexterm zone="fpi-line-asmbl-ctx"><primary>fpi_line_asmbl_ctx</primary></indexterm>
+<programlisting language="C">struct fpi_line_asmbl_ctx {
+  unsigned int line_width;
+  unsigned int max_height;
+  unsigned int resolution;
+  unsigned int median_filter_size;
+  unsigned int max_search_offset;
+  int          (*get_deviation)(struct fpi_line_asmbl_ctx *ctx,
+                                GSList                    *line1,
+                                GSList                    *line2);
+  unsigned char (*get_pixel)(struct fpi_line_asmbl_ctx *ctx,
+                             GSList                    *line,
+                             unsigned int               x);
+};
+</programlisting>
+<para><link linkend="fpi-line-asmbl-ctx"><type>fpi_line_asmbl_ctx</type></link> is a structure holding the context for line assembling
+routines.</para>
+<para>Drivers should define their own <link linkend="fpi-line-asmbl-ctx"><type>fpi_line_asmbl_ctx</type></link> depending on
+the hardware parameters of the scanner. Swipe scanners of this type usually
+return two lines, the second line is often narrower than first and is used
+for movement estimation.</para>
+<para>The <parameter>max_search_offset</parameter>
+ value indicates how many lines forward the assembling
+routines should look while searching for next line. This value depends on
+how fast the hardware sends frames.</para>
+<para>The function pointed to by <parameter>get_deviation</parameter>
+ should return the numerical difference
+between two lines. Higher values means lines are more different. If the reader
+returns two lines at a time, this function should be used to estimate the
+difference between pairs of lines.</para>
+<refsect3 id="fpi-line-asmbl-ctx.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para>unsigned&#160;<link linkend="int"><type>int</type></link>&#160;<structfield id="fpi-line-asmbl-ctx.line-width">line_width</structfield>;</para></entry>
+<entry role="struct_member_description"><para>width of line</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para>unsigned&#160;<link linkend="int"><type>int</type></link>&#160;<structfield id="fpi-line-asmbl-ctx.max-height">max_height</structfield>;</para></entry>
+<entry role="struct_member_description"><para>maximal height of assembled image</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para>unsigned&#160;<link linkend="int"><type>int</type></link>&#160;<structfield id="fpi-line-asmbl-ctx.resolution">resolution</structfield>;</para></entry>
+<entry role="struct_member_description"><para>scale factor used for line assembling routines.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para>unsigned&#160;<link linkend="int"><type>int</type></link>&#160;<structfield id="fpi-line-asmbl-ctx.median-filter-size">median_filter_size</structfield>;</para></entry>
+<entry role="struct_member_description"><para>size of median filter for movement estimation</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para>unsigned&#160;<link linkend="int"><type>int</type></link>&#160;<structfield id="fpi-line-asmbl-ctx.max-search-offset">max_search_offset</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the number of lines to search for the next line</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="fpi-line-asmbl-ctx.get-deviation">get_deviation</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>pointer to a function that returns the numerical difference
+between two lines</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="fpi-line-asmbl-ctx.get-pixel">get_pixel</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>pixel accessor, returns pixel brightness at x of line</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+
+</refsect1>
+
+</refentry>

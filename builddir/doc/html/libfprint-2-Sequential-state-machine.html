@@ -1,0 +1,1142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Sequential state machine: libfprint Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="libfprint Reference Manual">
+<link rel="up" href="driver-helpers.html" title="USB, SPI and State Machine helpers">
+<link rel="prev" href="libfprint-2-USB-transfer-helpers.html" title="USB transfer helpers">
+<link rel="next" href="libfprint-2-Logging.html" title="Logging">
+<meta name="generator" content="GTK-Doc V1.34.0 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#libfprint-2-Sequential-state-machine.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="driver-helpers.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="libfprint-2-USB-transfer-helpers.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libfprint-2-Logging.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="libfprint-2-Sequential-state-machine"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libfprint-2-Sequential-state-machine.top_of_page"></a>Sequential state machine</span></h2>
+<p>Sequential state machine — State machine helpers</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="libfprint-2-Sequential-state-machine.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<span class="c_punctuation">(</span><a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsmCompletedCallback" title="FpiSsmCompletedCallback ()">*FpiSsmCompletedCallback</a><span class="c_punctuation">)</span> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<span class="c_punctuation">(</span><a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsmHandlerCallback" title="FpiSsmHandlerCallback ()">*FpiSsmHandlerCallback</a><span class="c_punctuation">)</span> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-new" title="fpi_ssm_new()">fpi_ssm_new</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="returnvalue">FpiSsm</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-new-full" title="fpi_ssm_new_full ()">fpi_ssm_new_full</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-free" title="fpi_ssm_free ()">fpi_ssm_free</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-start" title="fpi_ssm_start ()">fpi_ssm_start</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-start-subsm" title="fpi_ssm_start_subsm ()">fpi_ssm_start_subsm</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-next-state" title="fpi_ssm_next_state ()">fpi_ssm_next_state</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-next-state-delayed" title="fpi_ssm_next_state_delayed ()">fpi_ssm_next_state_delayed</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-jump-to-state" title="fpi_ssm_jump_to_state ()">fpi_ssm_jump_to_state</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-jump-to-state-delayed" title="fpi_ssm_jump_to_state_delayed ()">fpi_ssm_jump_to_state_delayed</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-cancel-delayed-state-change" title="fpi_ssm_cancel_delayed_state_change ()">fpi_ssm_cancel_delayed_state_change</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-mark-completed" title="fpi_ssm_mark_completed ()">fpi_ssm_mark_completed</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-mark-failed" title="fpi_ssm_mark_failed ()">fpi_ssm_mark_failed</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-set-data" title="fpi_ssm_set_data ()">fpi_ssm_set_data</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gpointer</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-get-data" title="fpi_ssm_get_data ()">fpi_ssm_get_data</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="FpDevice.html" title="FpDevice"><span class="returnvalue">FpDevice</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-get-device" title="fpi_ssm_get_device ()">fpi_ssm_get_device</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GError</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-get-error" title="fpi_ssm_get_error ()">fpi_ssm_get_error</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GError</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-dup-error" title="fpi_ssm_dup_error ()">fpi_ssm_dup_error</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">int</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-get-cur-state" title="fpi_ssm_get_cur_state ()">fpi_ssm_get_cur_state</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-silence-debug" title="fpi_ssm_silence_debug ()">fpi_ssm_silence_debug</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-spi-transfer-cb" title="fpi_ssm_spi_transfer_cb ()">fpi_ssm_spi_transfer_cb</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-spi-transfer-with-weak-pointer-cb" title="fpi_ssm_spi_transfer_with_weak_pointer_cb ()">fpi_ssm_spi_transfer_with_weak_pointer_cb</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-usb-transfer-cb" title="fpi_ssm_usb_transfer_cb ()">fpi_ssm_usb_transfer_cb</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-usb-transfer-with-weak-pointer-cb" title="fpi_ssm_usb_transfer_with_weak_pointer_cb ()">fpi_ssm_usb_transfer_with_weak_pointer_cb</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libfprint-2-Sequential-state-machine.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm">FpiSsm</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libfprint-2-Sequential-state-machine.description"></a><h2>Description</h2>
+<p>Asynchronous driver design encourages some kind of state machine behind it.
+<a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> provides a simple mechanism to implement a state machine, which
+is often entirely linear. You can however also jump to a specific state
+or do an early return from the SSM by completing it.</p>
+<p>e.g. <code class="literal">S1</code> ↦ <code class="literal">S2</code> ↦ <code class="literal">S3</code> ↦ <code class="literal">S4</code> ↦ <code class="literal">C1</code> ↦ <code class="literal">C2</code> ↦ <code class="literal">final</code></p>
+<p>Where <code class="literal">S1</code> is the start state. The <code class="literal">C1</code> and later states are cleanup states
+that may be defined. The difference is that these states will never be
+skipped when marking the SSM as completed.</p>
+<p>Use <a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-new" title="fpi_ssm_new()"><code class="function">fpi_ssm_new()</code></a> to create a new state machine with a defined number of
+states. Note that the state numbers start at zero, making them match the
+first value in a C enumeration.</p>
+<p>To start a ssm, you pass in a completion callback function to <a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-start" title="fpi_ssm_start ()"><code class="function">fpi_ssm_start()</code></a>
+which gets called when the ssm completes (both on failure and on success).
+Starting a ssm also takes ownership of it and it will be automatically
+free'ed after the callback function has been called.</p>
+<p>To iterate to the next state, call <a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-next-state" title="fpi_ssm_next_state ()"><code class="function">fpi_ssm_next_state()</code></a>. It is legal to
+attempt to iterate beyond the final state - this is equivalent to marking
+the ssm as successfully completed.</p>
+<p>To mark successful completion of a SSM, either iterate beyond the final
+state or call <a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-mark-completed" title="fpi_ssm_mark_completed ()"><code class="function">fpi_ssm_mark_completed()</code></a> from any state.</p>
+<p>To mark failed completion of a SSM, call <a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-mark-failed" title="fpi_ssm_mark_failed ()"><code class="function">fpi_ssm_mark_failed()</code></a> from any
+state. You must pass a non-zero error code.</p>
+<p>Your state handling function looks at the return value of
+<a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-get-cur-state" title="fpi_ssm_get_cur_state ()"><code class="function">fpi_ssm_get_cur_state()</code></a> in order to determine the current state and hence
+which operations to perform (a switch statement is appropriate).</p>
+<p>Typically, the state handling function fires off an asynchronous
+communication with the device (such as a USB transfer), and the
+callback function iterates the machine to the next state
+upon success (or fails).</p>
+</div>
+<div class="refsect1">
+<a name="libfprint-2-Sequential-state-machine.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="FpiSsmCompletedCallback"></a><h3>FpiSsmCompletedCallback ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+<span class="c_punctuation">(</span>*FpiSsmCompletedCallback<span class="c_punctuation">)</span> (<em class="parameter"><code><a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> *ssm</code></em>,
+                            <em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *dev</code></em>,
+                            <em class="parameter"><code><span class="type">GError</span> *error</code></em>);</pre>
+<p>The callback called when a state machine completes successfully,
+as set when calling <a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-start" title="fpi_ssm_start ()"><code class="function">fpi_ssm_start()</code></a>.</p>
+<div class="refsect3">
+<a name="FpiSsmCompletedCallback.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>ssm</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> state machine</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>dev</p></td>
+<td class="parameter_description"><p>the <span class="type">fp_dev</span> fingerprint device</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>The <span class="type">GError</span> or <code class="literal">NULL</code> on successful completion. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpiSsmHandlerCallback"></a><h3>FpiSsmHandlerCallback ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+<span class="c_punctuation">(</span>*FpiSsmHandlerCallback<span class="c_punctuation">)</span> (<em class="parameter"><code><a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> *ssm</code></em>,
+                          <em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *dev</code></em>);</pre>
+<p>The callback called when a state machine transitions from one
+state to the next, as set when calling <a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-new" title="fpi_ssm_new()"><code class="function">fpi_ssm_new()</code></a>.</p>
+<div class="refsect3">
+<a name="FpiSsmHandlerCallback.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>ssm</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> state machine</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>dev</p></td>
+<td class="parameter_description"><p>the <span class="type">fp_dev</span> fingerprint device</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-ssm-new"></a><h3>fpi_ssm_new()</h3>
+<pre class="programlisting">#define             fpi_ssm_new(dev, handler, nr_states)</pre>
+<p>Allocate a new ssm, with <em class="parameter"><code>nr_states</code></em>
+ states. The <em class="parameter"><code>handler</code></em>
+ callback
+will be called after each state transition.
+This is a macro that calls <a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-new-full" title="fpi_ssm_new_full ()"><code class="function">fpi_ssm_new_full()</code></a> using <em class="parameter"><code>nr_states</code></em>
+ as the
+cleanup states and using the stringified version of <em class="parameter"><code>nr_states</code></em>
+. It should
+be used with an enum value.</p>
+<div class="refsect3">
+<a name="fpi-ssm-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>dev</p></td>
+<td class="parameter_description"><p>a <span class="type">fp_dev</span> fingerprint device</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>handler</p></td>
+<td class="parameter_description"><p>the callback function</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>nr_states</p></td>
+<td class="parameter_description"><p>the number of states</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fpi-ssm-new.returns"></a><h4>Returns</h4>
+<p> a new <a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> state machine</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-ssm-new-full"></a><h3>fpi_ssm_new_full ()</h3>
+<pre class="programlisting"><a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="returnvalue">FpiSsm</span></a> *
+fpi_ssm_new_full (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *dev</code></em>,
+                  <em class="parameter"><code><a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsmHandlerCallback" title="FpiSsmHandlerCallback ()"><span class="type">FpiSsmHandlerCallback</span></a> handler</code></em>,
+                  <em class="parameter"><code><span class="type">int</span> nr_states</code></em>,
+                  <em class="parameter"><code><span class="type">int</span> start_cleanup</code></em>,
+                  <em class="parameter"><code>const <span class="type">char</span> *machine_name</code></em>);</pre>
+<p>Allocate a new ssm, with <em class="parameter"><code>nr_states</code></em>
+ states. The <em class="parameter"><code>handler</code></em>
+ callback
+will be called after each state transition.</p>
+<div class="refsect3">
+<a name="fpi-ssm-new-full.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>dev</p></td>
+<td class="parameter_description"><p>a <span class="type">fp_dev</span> fingerprint device</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>handler</p></td>
+<td class="parameter_description"><p>the callback function</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>nr_states</p></td>
+<td class="parameter_description"><p>the number of states</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>start_cleanup</p></td>
+<td class="parameter_description"><p>the first cleanup state</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>machine_name</p></td>
+<td class="parameter_description"><p>the name of the state machine (for debug purposes)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fpi-ssm-new-full.returns"></a><h4>Returns</h4>
+<p> a new <a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> state machine</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-ssm-free"></a><h3>fpi_ssm_free ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_ssm_free (<em class="parameter"><code><a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> *machine</code></em>);</pre>
+<p>Frees a state machine. This does not call any error or success
+callbacks, so you need to do this yourself.</p>
+<div class="refsect3">
+<a name="fpi-ssm-free.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>machine</p></td>
+<td class="parameter_description"><p>an <a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> state machine</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-ssm-start"></a><h3>fpi_ssm_start ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_ssm_start (<em class="parameter"><code><a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> *ssm</code></em>,
+               <em class="parameter"><code><a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsmCompletedCallback" title="FpiSsmCompletedCallback ()"><span class="type">FpiSsmCompletedCallback</span></a> callback</code></em>);</pre>
+<p>Starts a state machine. You can also use this function to restart
+a completed or failed state machine. The <em class="parameter"><code>callback</code></em>
+ will be called
+on completion.</p>
+<p>Note that <em class="parameter"><code>ssm</code></em>
+ will be stolen when this function is called.
+So that all associated data will be free'ed automatically, after the
+<em class="parameter"><code>callback</code></em>
+ is ran.</p>
+<div class="refsect3">
+<a name="fpi-ssm-start.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>ssm</p></td>
+<td class="parameter_description"><p>an <a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> state machine. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>the <a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsmCompletedCallback" title="FpiSsmCompletedCallback ()"><span class="type">FpiSsmCompletedCallback</span></a> callback to call on completion</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-ssm-start-subsm"></a><h3>fpi_ssm_start_subsm ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_ssm_start_subsm (<em class="parameter"><code><a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> *parent</code></em>,
+                     <em class="parameter"><code><a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> *child</code></em>);</pre>
+<p>Starts a state machine as a child of another. if the child completes
+successfully, the parent will be advanced to the next state. if the
+child fails, the parent will be marked as failed with the same error code.</p>
+<p>The child will be automatically freed upon completion or failure.</p>
+<div class="refsect3">
+<a name="fpi-ssm-start-subsm.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>parent</p></td>
+<td class="parameter_description"><p>an <a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> state machine</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>child</p></td>
+<td class="parameter_description"><p>an <a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> state machine</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-ssm-next-state"></a><h3>fpi_ssm_next_state ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_ssm_next_state (<em class="parameter"><code><a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> *machine</code></em>);</pre>
+<p>Iterate to next state of a state machine. If the current state is the
+last state, then the state machine will be marked as completed, as
+if calling <a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-mark-completed" title="fpi_ssm_mark_completed ()"><code class="function">fpi_ssm_mark_completed()</code></a>.</p>
+<div class="refsect3">
+<a name="fpi-ssm-next-state.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>machine</p></td>
+<td class="parameter_description"><p>an <a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> state machine</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-ssm-next-state-delayed"></a><h3>fpi_ssm_next_state_delayed ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_ssm_next_state_delayed (<em class="parameter"><code><a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> *machine</code></em>,
+                            <em class="parameter"><code><span class="type">int</span> delay</code></em>);</pre>
+<p>Iterate to next state of a state machine with a delay of <em class="parameter"><code>delay</code></em>
+ ms. If the
+current state is the last state, then the state machine will be marked as
+completed, as if calling <a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-mark-completed" title="fpi_ssm_mark_completed ()"><code class="function">fpi_ssm_mark_completed()</code></a>.</p>
+<div class="refsect3">
+<a name="fpi-ssm-next-state-delayed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>machine</p></td>
+<td class="parameter_description"><p>an <a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> state machine</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>delay</p></td>
+<td class="parameter_description"><p>the milliseconds to wait before switching to the next state</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-ssm-jump-to-state"></a><h3>fpi_ssm_jump_to_state ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_ssm_jump_to_state (<em class="parameter"><code><a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> *machine</code></em>,
+                       <em class="parameter"><code><span class="type">int</span> state</code></em>);</pre>
+<p>Jump to the <em class="parameter"><code>state</code></em>
+ state, bypassing intermediary states.
+If <em class="parameter"><code>state</code></em>
+ is the last state, the machine won't be completed unless
+<a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-mark-completed" title="fpi_ssm_mark_completed ()"><code class="function">fpi_ssm_mark_completed()</code></a> isn't explicitly called.</p>
+<div class="refsect3">
+<a name="fpi-ssm-jump-to-state.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>machine</p></td>
+<td class="parameter_description"><p>an <a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> state machine</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>state</p></td>
+<td class="parameter_description"><p>the state to jump to</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-ssm-jump-to-state-delayed"></a><h3>fpi_ssm_jump_to_state_delayed ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_ssm_jump_to_state_delayed (<em class="parameter"><code><a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> *machine</code></em>,
+                               <em class="parameter"><code><span class="type">int</span> state</code></em>,
+                               <em class="parameter"><code><span class="type">int</span> delay</code></em>);</pre>
+<p>Jump to the <em class="parameter"><code>state</code></em>
+ state with a delay of <em class="parameter"><code>delay</code></em>
+ milliseconds, bypassing
+intermediary states.</p>
+<div class="refsect3">
+<a name="fpi-ssm-jump-to-state-delayed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>machine</p></td>
+<td class="parameter_description"><p>an <a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> state machine</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>state</p></td>
+<td class="parameter_description"><p>the state to jump to</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>delay</p></td>
+<td class="parameter_description"><p>the milliseconds to wait before switching to <em class="parameter"><code>state</code></em>
+state</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-ssm-cancel-delayed-state-change"></a><h3>fpi_ssm_cancel_delayed_state_change ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_ssm_cancel_delayed_state_change (<em class="parameter"><code><a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> *machine</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-ssm-mark-completed"></a><h3>fpi_ssm_mark_completed ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_ssm_mark_completed (<em class="parameter"><code><a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> *machine</code></em>);</pre>
+<p>Mark a ssm as completed successfully. The callback set when creating
+the state machine with <a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-new" title="fpi_ssm_new()"><code class="function">fpi_ssm_new()</code></a> will be called synchronously.</p>
+<p>Note that any later cleanup state will still be executed.</p>
+<div class="refsect3">
+<a name="fpi-ssm-mark-completed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>machine</p></td>
+<td class="parameter_description"><p>an <a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> state machine</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-ssm-mark-failed"></a><h3>fpi_ssm_mark_failed ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_ssm_mark_failed (<em class="parameter"><code><a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> *machine</code></em>,
+                     <em class="parameter"><code><span class="type">GError</span> *error</code></em>);</pre>
+<p>Mark a state machine as failed with <em class="parameter"><code>error</code></em>
+ as the error code, completing it.</p>
+<div class="refsect3">
+<a name="fpi-ssm-mark-failed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>machine</p></td>
+<td class="parameter_description"><p>an <a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> state machine</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <span class="type">GError</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-ssm-set-data"></a><h3>fpi_ssm_set_data ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_ssm_set_data (<em class="parameter"><code><a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> *machine</code></em>,
+                  <em class="parameter"><code><span class="type">gpointer</span> ssm_data</code></em>,
+                  <em class="parameter"><code><span class="type">GDestroyNotify</span> ssm_data_destroy</code></em>);</pre>
+<p>Sets <em class="parameter"><code>machine</code></em>
+'s data (freeing the existing data, if any).</p>
+<div class="refsect3">
+<a name="fpi-ssm-set-data.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>machine</p></td>
+<td class="parameter_description"><p>an <a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> state machine</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>ssm_data</p></td>
+<td class="parameter_description"><p>a pointer to machine data. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>ssm_data_destroy</p></td>
+<td class="parameter_description"><p><span class="type">GDestroyNotify</span> for <em class="parameter"><code>ssm_data</code></em>
+. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-ssm-get-data"></a><h3>fpi_ssm_get_data ()</h3>
+<pre class="programlisting"><span class="returnvalue">gpointer</span>
+fpi_ssm_get_data (<em class="parameter"><code><a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> *machine</code></em>);</pre>
+<p>Retrieve the pointer to SSM data set with <code class="function">fpi_ssm_set_ssm_data()</code></p>
+<div class="refsect3">
+<a name="fpi-ssm-get-data.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>machine</p></td>
+<td class="parameter_description"><p>an <a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> state machine</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fpi-ssm-get-data.returns"></a><h4>Returns</h4>
+<p> a pointer</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-ssm-get-device"></a><h3>fpi_ssm_get_device ()</h3>
+<pre class="programlisting"><a class="link" href="FpDevice.html" title="FpDevice"><span class="returnvalue">FpDevice</span></a> *
+fpi_ssm_get_device (<em class="parameter"><code><a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> *machine</code></em>);</pre>
+<p>Retrieve the device that the SSM is for.</p>
+<div class="refsect3">
+<a name="fpi-ssm-get-device.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>machine</p></td>
+<td class="parameter_description"><p>an <a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> state machine</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fpi-ssm-get-device.returns"></a><h4>Returns</h4>
+<p> <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-ssm-get-error"></a><h3>fpi_ssm_get_error ()</h3>
+<pre class="programlisting"><span class="returnvalue">GError</span> *
+fpi_ssm_get_error (<em class="parameter"><code><a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> *machine</code></em>);</pre>
+<p>Returns the error code set by <a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-mark-failed" title="fpi_ssm_mark_failed ()"><code class="function">fpi_ssm_mark_failed()</code></a>.</p>
+<div class="refsect3">
+<a name="fpi-ssm-get-error.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>machine</p></td>
+<td class="parameter_description"><p>an <a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> state machine</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fpi-ssm-get-error.returns"></a><h4>Returns</h4>
+<p>a error code. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-ssm-dup-error"></a><h3>fpi_ssm_dup_error ()</h3>
+<pre class="programlisting"><span class="returnvalue">GError</span> *
+fpi_ssm_dup_error (<em class="parameter"><code><a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> *machine</code></em>);</pre>
+<p>Returns the error code set by <a class="link" href="libfprint-2-Sequential-state-machine.html#fpi-ssm-mark-failed" title="fpi_ssm_mark_failed ()"><code class="function">fpi_ssm_mark_failed()</code></a>.</p>
+<div class="refsect3">
+<a name="fpi-ssm-dup-error.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>machine</p></td>
+<td class="parameter_description"><p>an <a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> state machine</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fpi-ssm-dup-error.returns"></a><h4>Returns</h4>
+<p>a error code. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-ssm-get-cur-state"></a><h3>fpi_ssm_get_cur_state ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>
+fpi_ssm_get_cur_state (<em class="parameter"><code><a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> *machine</code></em>);</pre>
+<p>Returns the value of the current state. Note that states are
+0-indexed, so a value of 0 means “the first state”.</p>
+<div class="refsect3">
+<a name="fpi-ssm-get-cur-state.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>machine</p></td>
+<td class="parameter_description"><p>an <a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> state machine</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fpi-ssm-get-cur-state.returns"></a><h4>Returns</h4>
+<p> the current state.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-ssm-silence-debug"></a><h3>fpi_ssm_silence_debug ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_ssm_silence_debug (<em class="parameter"><code><a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> *machine</code></em>);</pre>
+<p>Turn off state change debug messages from this SSM. This does not disable
+all messages, as e.g. the initial state, SSM completion and cleanup states
+are still printed out.</p>
+<p>Use if the SSM loops and would flood the debug log otherwise.</p>
+<div class="refsect3">
+<a name="fpi-ssm-silence-debug.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>machine</p></td>
+<td class="parameter_description"><p>an <a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> state machine</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-ssm-spi-transfer-cb"></a><h3>fpi_ssm_spi_transfer_cb ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_ssm_spi_transfer_cb (<em class="parameter"><code><a class="link" href="libfprint-2-SPI-transfer-helpers.html#FpiSpiTransfer" title="FpiSpiTransfer"><span class="type">FpiSpiTransfer</span></a> *transfer</code></em>,
+                         <em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                         <em class="parameter"><code><span class="type">gpointer</span> unused_data</code></em>,
+                         <em class="parameter"><code><span class="type">GError</span> *error</code></em>);</pre>
+<p>Can be used in as a <a class="link" href="libfprint-2-SPI-transfer-helpers.html#FpiSpiTransfer" title="FpiSpiTransfer"><span class="type">FpiSpiTransfer</span></a> callback handler to automatically
+advance or fail a statemachine on transfer completion.</p>
+<p>Make sure to set the <a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> on the transfer.</p>
+<div class="refsect3">
+<a name="fpi-ssm-spi-transfer-cb.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>transfer</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libfprint-2-SPI-transfer-helpers.html#FpiSpiTransfer" title="FpiSpiTransfer"><span class="type">FpiSpiTransfer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>unused_data</p></td>
+<td class="parameter_description"><p>User data (unused)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>The <span class="type">GError</span> or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-ssm-spi-transfer-with-weak-pointer-cb"></a><h3>fpi_ssm_spi_transfer_with_weak_pointer_cb ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_ssm_spi_transfer_with_weak_pointer_cb
+                               (<em class="parameter"><code><a class="link" href="libfprint-2-SPI-transfer-helpers.html#FpiSpiTransfer" title="FpiSpiTransfer"><span class="type">FpiSpiTransfer</span></a> *transfer</code></em>,
+                                <em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                                <em class="parameter"><code><span class="type">gpointer</span> weak_ptr</code></em>,
+                                <em class="parameter"><code><span class="type">GError</span> *error</code></em>);</pre>
+<p>Can be used in as a <a class="link" href="libfprint-2-SPI-transfer-helpers.html#FpiSpiTransfer" title="FpiSpiTransfer"><span class="type">FpiSpiTransfer</span></a> callback handler to automatically
+advance or fail a statemachine on transfer completion.
+Passing a <span class="type">gpointer</span>* as <em class="parameter"><code>weak_ptr</code></em>
+ permits to nullify it once we're done
+with the transfer.</p>
+<p>Make sure to set the <a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> on the transfer.</p>
+<div class="refsect3">
+<a name="fpi-ssm-spi-transfer-with-weak-pointer-cb.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>transfer</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libfprint-2-SPI-transfer-helpers.html#FpiSpiTransfer" title="FpiSpiTransfer"><span class="type">FpiSpiTransfer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>weak_ptr</p></td>
+<td class="parameter_description"><p>A <span class="type">gpointer</span> pointer to nullify. You can pass a pointer to any
+<span class="type">gpointer</span> to nullify when the callback is completed. I.e a
+pointer to the current <a class="link" href="libfprint-2-SPI-transfer-helpers.html#FpiSpiTransfer" title="FpiSpiTransfer"><span class="type">FpiSpiTransfer</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>The <span class="type">GError</span> or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-ssm-usb-transfer-cb"></a><h3>fpi_ssm_usb_transfer_cb ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_ssm_usb_transfer_cb (<em class="parameter"><code><a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer" title="FpiUsbTransfer"><span class="type">FpiUsbTransfer</span></a> *transfer</code></em>,
+                         <em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                         <em class="parameter"><code><span class="type">gpointer</span> unused_data</code></em>,
+                         <em class="parameter"><code><span class="type">GError</span> *error</code></em>);</pre>
+<p>Can be used in as a <a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer" title="FpiUsbTransfer"><span class="type">FpiUsbTransfer</span></a> callback handler to automatically
+advance or fail a statemachine on transfer completion.</p>
+<p>Make sure to set the <a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> on the transfer.</p>
+<div class="refsect3">
+<a name="fpi-ssm-usb-transfer-cb.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>transfer</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer" title="FpiUsbTransfer"><span class="type">FpiUsbTransfer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>unused_data</p></td>
+<td class="parameter_description"><p>User data (unused)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>The <span class="type">GError</span> or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fpi-ssm-usb-transfer-with-weak-pointer-cb"></a><h3>fpi_ssm_usb_transfer_with_weak_pointer_cb ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fpi_ssm_usb_transfer_with_weak_pointer_cb
+                               (<em class="parameter"><code><a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer" title="FpiUsbTransfer"><span class="type">FpiUsbTransfer</span></a> *transfer</code></em>,
+                                <em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                                <em class="parameter"><code><span class="type">gpointer</span> weak_ptr</code></em>,
+                                <em class="parameter"><code><span class="type">GError</span> *error</code></em>);</pre>
+<p>Can be used in as a <a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer" title="FpiUsbTransfer"><span class="type">FpiUsbTransfer</span></a> callback handler to automatically
+advance or fail a statemachine on transfer completion.
+Passing a <span class="type">gpointer</span>* as <em class="parameter"><code>weak_ptr</code></em>
+ permits to nullify it once we're done
+with the transfer.</p>
+<p>Make sure to set the <a class="link" href="libfprint-2-Sequential-state-machine.html#FpiSsm" title="FpiSsm"><span class="type">FpiSsm</span></a> on the transfer.</p>
+<div class="refsect3">
+<a name="fpi-ssm-usb-transfer-with-weak-pointer-cb.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>transfer</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer" title="FpiUsbTransfer"><span class="type">FpiUsbTransfer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>weak_ptr</p></td>
+<td class="parameter_description"><p>A <span class="type">gpointer</span> pointer to nullify. You can pass a pointer to any
+<span class="type">gpointer</span> to nullify when the callback is completed. I.e a
+pointer to the current <a class="link" href="libfprint-2-USB-transfer-helpers.html#FpiUsbTransfer" title="FpiUsbTransfer"><span class="type">FpiUsbTransfer</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>The <span class="type">GError</span> or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="libfprint-2-Sequential-state-machine.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="FpiSsm"></a><h3>FpiSsm</h3>
+<pre class="programlisting">typedef struct _FpiSsm FpiSsm;</pre>
+<p>Sequential state machine that iterates sequentially over
+a predefined series of states. Can be terminated by either completion or
+failure error conditions.</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.34.0</div>
+</body>
+</html>

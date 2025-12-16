@@ -1,0 +1,12 @@
+GObject
+  FpContext
+  FpDevice
+    FpImageDevice
+  FpImage
+  GInitiallyUnowned
+    FpPrint
+  GUsbDevice
+GInterface
+  GTypePlugin
+  GAsyncInitable
+  GInitable

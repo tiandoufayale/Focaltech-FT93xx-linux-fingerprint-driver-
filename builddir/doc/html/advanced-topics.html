@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Advanced Topics: libfprint Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="libfprint Reference Manual">
+<link rel="up" href="pt01.html" title="Part I. Library Overview">
+<link rel="prev" href="intro.html" title="Introduction">
+<link rel="next" href="getting-started.html" title="Getting Started">
+<meta name="generator" content="GTK-Doc V1.34.0 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="pt01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="intro.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="getting-started.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="chapter">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="advanced-topics"></a>Advanced Topics</h2></div></div></div>
+<div class="refsect2">
+<a name="compatibility"></a><h3>Device and print compatibility</h3>
+<p>
+    Moving off generic conceptual ideas and onto libfprint-specific
+    implementation details, here are some introductory notes regarding how
+    libfprint copes with compatibility of fingerprints.
+    </p>
+<p>
+    libfprint deals with a whole variety of different fingerprint readers and
+    the design includes considerations of compatibility and interoperability
+    between multiple devices. Your application should also be prepared to
+    work with more than one type of fingerprint reader and should consider that
+    enrolled fingerprint X may not be compatible with the device the user has
+    plugged in today.
+    </p>
+<p>
+    libfprint implements the principle that fingerprints from different devices
+    are not necessarily compatible. For example, different devices may see
+    significantly different areas of fingerprint surface, and comparing images
+    between the devices would be unreliable. Also, devices can stretch and
+    distort images in different ways.
+    </p>
+<p>
+    libfprint also implements the principle that in some cases, fingerprints
+    <span class="emphasis"><em>are</em></span> compatible between different devices. If you go and buy two
+    identical fingerprint readers, it seems logical that you should be able
+    to enroll on one and verify on another without problems.
+    </p>
+<p>
+    libfprint takes a fairly simplistic approach to these issues. Internally,
+    fingerprint hardware is driven by individual drivers. libfprint enforces
+    that a fingerprint that came from a device backed by driver X is never
+    compared to a fingerprint that came from a device backed by driver Y.
+    </p>
+<p>
+    Additionally, libfprint is designed for the situation where a single driver
+    may support a range of devices which differ in imaging or scanning
+    properties. For example, a driver may support two ranges of devices which
+    even though are programmed over the same interface, one device sees
+    substantially less of the finger flesh, therefore images from the two
+    device types should be incompatible despite being from the same driver. To
+    implement this, each driver assigns a <span class="emphasis"><em>device type</em></span> to each device
+    that it detects based on its imaging characteristics. libfprint ensures that
+    two prints being compared have the same device type.
+    </p>
+<p>
+    In summary, libfprint represents fingerprints in several internal structures
+    and each representation will offer you a way of determining the
+    <a class="ulink" href="#driver" target="_top">driver</a> and <a class="ulink" href="#device-id" target="_top">device ID</a> of the print in
+    question. Prints are only compatible if the driver ID <span class="strong"><strong>and</strong></span> devtypes
+    match. libfprint does offer you some "is this print compatible?" helper
+    functions, so you don't have to worry about these details too much.
+    </p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="driver"></a><h3>Driver</h3>
+<p>
+    Each driver is assigned a unique string identifier by the project maintainer.
+    </p>
+<p>
+    The only reason you may be interested in retrieving the driver ID for a
+    driver is for the purpose of checking if some print data is compatible
+    with a device. libfprint uses the driver ID as one way of checking that
+    the print you are trying to verify is compatible with the device in
+    question - it ensures that enrollment data from one driver is never fed to
+    another. Note that libfprint does provide you with helper functions to
+    determine whether a print is compatible with a device, so under most
+    circumstances, you don't have to worry about driver IDs at all.
+    </p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="device-id"></a><h3>Device ID</h3>
+<p>
+    Internally, the behind a device assigns a string identifier to the device
+    This cannot be used as a unique ID for a specific device as many devices
+    under the same range may share the same devtype. The device ID may even
+    be the same string in all cases. It is guaranteed to have a non-zero length
+    and be a valid file name. It defaults to "0".
+    </p>
+<p>
+    The only reason you may be interested in retrieving the device ID for a
+    device is for the purpose of checking if some print data is compatible
+    with a device. libfprint uses the device ID as one way of checking that the
+    print you are verifying is compatible with the device in question - the
+    device ID must be equal. This effectively allows drivers to support more
+    than one type of device where the data from each one is not compatible with
+    the other. Note that libfprint does provide you with helper functions to
+    determine whether a print is compatible with a device, so under most
+    circumstances, you don't have to worry about devtypes at all.
+    </p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.34.0</div>
+</body>
+</html>

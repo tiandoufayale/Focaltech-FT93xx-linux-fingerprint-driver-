@@ -1,0 +1,2337 @@
+<MACRO>
+<NAME>FP_TYPE_CONTEXT</NAME>
+#define FP_TYPE_CONTEXT (fp_context_get_type ())
+</MACRO>
+<STRUCT>
+<NAME>FpContextClass</NAME>
+struct _FpContextClass
+{
+  GObjectClass parent_class;
+
+  void         (*device_added)            (FpContext *context,
+                                           FpDevice  *device);
+  void         (*device_removed)          (FpContext *context,
+                                           FpDevice  *device);
+};
+</STRUCT>
+<FUNCTION>
+<NAME>fp_context_new</NAME>
+<RETURNS>FpContext *</RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_context_enumerate</NAME>
+<RETURNS>void</RETURNS>
+FpContext *context
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_context_get_devices</NAME>
+<RETURNS>GPtrArray *</RETURNS>
+FpContext *context
+</FUNCTION>
+<STRUCT>
+<NAME>FpContext</NAME>
+</STRUCT>
+<MACRO>
+<NAME>TEMP_COLD_THRESH</NAME>
+#define TEMP_COLD_THRESH (0.26894142136999512075)
+</MACRO>
+<MACRO>
+<NAME>TEMP_WARM_HOT_THRESH</NAME>
+#define TEMP_WARM_HOT_THRESH (1.0 - TEMP_COLD_THRESH)
+</MACRO>
+<MACRO>
+<NAME>TEMP_HOT_WARM_THRESH</NAME>
+#define TEMP_HOT_WARM_THRESH (0.5)
+</MACRO>
+<MACRO>
+<NAME>TEMP_DELAY_SECONDS</NAME>
+#define TEMP_DELAY_SECONDS 0.1
+</MACRO>
+<MACRO>
+<NAME>DEFAULT_TEMP_HOT_SECONDS</NAME>
+#define DEFAULT_TEMP_HOT_SECONDS (3 * 60)
+</MACRO>
+<MACRO>
+<NAME>DEFAULT_TEMP_COLD_SECONDS</NAME>
+#define DEFAULT_TEMP_COLD_SECONDS (9 * 60)
+</MACRO>
+<FUNCTION>
+<NAME>fpi_device_suspend</NAME>
+<RETURNS>void</RETURNS>
+FpDevice *device
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_resume</NAME>
+<RETURNS>void</RETURNS>
+FpDevice *device
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_configure_wakeup</NAME>
+<RETURNS>void</RETURNS>
+FpDevice *device, gboolean  enabled
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_update_temp</NAME>
+<RETURNS>void</RETURNS>
+FpDevice *device, gboolean  is_active
+</FUNCTION>
+<MACRO>
+<NAME>FP_TYPE_DEVICE</NAME>
+#define FP_TYPE_DEVICE (fp_device_get_type ())
+</MACRO>
+<MACRO>
+<NAME>FP_DEVICE_RETRY</NAME>
+#define FP_DEVICE_RETRY (fp_device_retry_quark ())
+</MACRO>
+<MACRO>
+<NAME>FP_DEVICE_ERROR</NAME>
+#define FP_DEVICE_ERROR (fp_device_error_quark ())
+</MACRO>
+<ENUM>
+<NAME>FpDeviceType</NAME>
+typedef enum {
+  FP_DEVICE_TYPE_VIRTUAL,
+  FP_DEVICE_TYPE_UDEV,
+  FP_DEVICE_TYPE_USB,
+} FpDeviceType;
+</ENUM>
+<ENUM>
+<NAME>FpDeviceFeature</NAME>
+typedef enum /*< flags >*/ {
+  FP_DEVICE_FEATURE_NONE = 0,
+  FP_DEVICE_FEATURE_CAPTURE = 1 << 0,
+  FP_DEVICE_FEATURE_IDENTIFY = 1 << 1,
+  FP_DEVICE_FEATURE_VERIFY = 1 << 2,
+  FP_DEVICE_FEATURE_STORAGE = 1 << 3,
+  FP_DEVICE_FEATURE_STORAGE_LIST = 1 << 4,
+  FP_DEVICE_FEATURE_STORAGE_DELETE = 1 << 5,
+  FP_DEVICE_FEATURE_STORAGE_CLEAR = 1 << 6,
+  FP_DEVICE_FEATURE_DUPLICATES_CHECK = 1 << 7,
+  FP_DEVICE_FEATURE_ALWAYS_ON = 1 << 8,
+  FP_DEVICE_FEATURE_UPDATE_PRINT = 1 << 9,
+} FpDeviceFeature;
+</ENUM>
+<ENUM>
+<NAME>FpScanType</NAME>
+typedef enum {
+  FP_SCAN_TYPE_SWIPE,
+  FP_SCAN_TYPE_PRESS,
+} FpScanType;
+</ENUM>
+<ENUM>
+<NAME>FpTemperature</NAME>
+typedef enum {
+  FP_TEMPERATURE_COLD,
+  FP_TEMPERATURE_WARM,
+  FP_TEMPERATURE_HOT,
+} FpTemperature;
+</ENUM>
+<ENUM>
+<NAME>FpDeviceRetry</NAME>
+typedef enum {
+  FP_DEVICE_RETRY_GENERAL,
+  FP_DEVICE_RETRY_TOO_SHORT,
+  FP_DEVICE_RETRY_CENTER_FINGER,
+  FP_DEVICE_RETRY_REMOVE_FINGER,
+  FP_DEVICE_RETRY_TOO_FAST,
+} FpDeviceRetry;
+</ENUM>
+<ENUM>
+<NAME>FpDeviceError</NAME>
+typedef enum {
+  FP_DEVICE_ERROR_GENERAL,
+  FP_DEVICE_ERROR_NOT_SUPPORTED,
+  FP_DEVICE_ERROR_NOT_OPEN,
+  FP_DEVICE_ERROR_ALREADY_OPEN,
+  FP_DEVICE_ERROR_BUSY,
+  FP_DEVICE_ERROR_PROTO,
+  FP_DEVICE_ERROR_DATA_INVALID,
+  FP_DEVICE_ERROR_DATA_NOT_FOUND,
+  FP_DEVICE_ERROR_DATA_FULL,
+  FP_DEVICE_ERROR_DATA_DUPLICATE,
+  /* Leave some room to add more DATA related errors */
+  FP_DEVICE_ERROR_REMOVED = 0x100,
+  FP_DEVICE_ERROR_TOO_HOT,
+} FpDeviceError;
+</ENUM>
+<FUNCTION>
+<NAME>fp_device_retry_quark</NAME>
+<RETURNS>GQuark</RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_error_quark</NAME>
+<RETURNS>GQuark</RETURNS>
+void
+</FUNCTION>
+<USER_FUNCTION>
+<NAME>FpEnrollProgress</NAME>
+<RETURNS>void</RETURNS>
+FpDevice *device, gint      completed_stages, FpPrint  *print, gpointer  user_data, GError   *error
+</USER_FUNCTION>
+<USER_FUNCTION>
+<NAME>FpMatchCb</NAME>
+<RETURNS>void</RETURNS>
+FpDevice *device, FpPrint  *match, FpPrint  *print, gpointer  user_data, GError   *error
+</USER_FUNCTION>
+<FUNCTION>
+<NAME>fp_device_get_driver</NAME>
+<RETURNS>const gchar *</RETURNS>
+FpDevice *device
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_get_device_id</NAME>
+<RETURNS>const gchar *</RETURNS>
+FpDevice *device
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_get_name</NAME>
+<RETURNS>const gchar *</RETURNS>
+FpDevice *device
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_is_open</NAME>
+<RETURNS>gboolean</RETURNS>
+FpDevice *device
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_get_scan_type</NAME>
+<RETURNS>FpScanType</RETURNS>
+FpDevice *device
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_get_finger_status</NAME>
+<RETURNS>FpFingerStatusFlags</RETURNS>
+FpDevice *device
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_get_nr_enroll_stages</NAME>
+<RETURNS>gint</RETURNS>
+FpDevice *device
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_get_temperature</NAME>
+<RETURNS>FpTemperature</RETURNS>
+FpDevice *device
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_get_features</NAME>
+<RETURNS>FpDeviceFeature</RETURNS>
+FpDevice *device
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_has_feature</NAME>
+<RETURNS>gboolean</RETURNS>
+FpDevice       *device, FpDeviceFeature feature
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_open</NAME>
+<RETURNS>void</RETURNS>
+FpDevice           *device, GCancellable       *cancellable, GAsyncReadyCallback callback, gpointer            user_data
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_close</NAME>
+<RETURNS>void</RETURNS>
+FpDevice           *device, GCancellable       *cancellable, GAsyncReadyCallback callback, gpointer            user_data
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_suspend</NAME>
+<RETURNS>void</RETURNS>
+FpDevice           *device, GCancellable       *cancellable, GAsyncReadyCallback callback, gpointer            user_data
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_resume</NAME>
+<RETURNS>void</RETURNS>
+FpDevice           *device, GCancellable       *cancellable, GAsyncReadyCallback callback, gpointer            user_data
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_enroll</NAME>
+<RETURNS>void</RETURNS>
+FpDevice           *device, FpPrint            *template_print, GCancellable       *cancellable, FpEnrollProgress    progress_cb, gpointer            progress_data, GDestroyNotify      progress_destroy, GAsyncReadyCallback callback, gpointer            user_data
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_verify</NAME>
+<RETURNS>void</RETURNS>
+FpDevice           *device, FpPrint            *enrolled_print, GCancellable       *cancellable, FpMatchCb           match_cb, gpointer            match_data, GDestroyNotify      match_destroy, GAsyncReadyCallback callback, gpointer            user_data
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_identify</NAME>
+<RETURNS>void</RETURNS>
+FpDevice           *device, GPtrArray          *prints, GCancellable       *cancellable, FpMatchCb           match_cb, gpointer            match_data, GDestroyNotify      match_destroy, GAsyncReadyCallback callback, gpointer            user_data
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_capture</NAME>
+<RETURNS>void</RETURNS>
+FpDevice           *device, gboolean            wait_for_finger, GCancellable       *cancellable, GAsyncReadyCallback callback, gpointer            user_data
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_delete_print</NAME>
+<RETURNS>void</RETURNS>
+FpDevice           *device, FpPrint            *enrolled_print, GCancellable       *cancellable, GAsyncReadyCallback callback, gpointer            user_data
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_list_prints</NAME>
+<RETURNS>void</RETURNS>
+FpDevice           *device, GCancellable       *cancellable, GAsyncReadyCallback callback, gpointer            user_data
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_clear_storage</NAME>
+<RETURNS>void</RETURNS>
+FpDevice           *device, GCancellable       *cancellable, GAsyncReadyCallback callback, gpointer            user_data
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_open_finish</NAME>
+<RETURNS>gboolean</RETURNS>
+FpDevice     *device, GAsyncResult *result, GError      **error
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_close_finish</NAME>
+<RETURNS>gboolean</RETURNS>
+FpDevice     *device, GAsyncResult *result, GError      **error
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_suspend_finish</NAME>
+<RETURNS>gboolean</RETURNS>
+FpDevice     *device, GAsyncResult *result, GError      **error
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_resume_finish</NAME>
+<RETURNS>gboolean</RETURNS>
+FpDevice     *device, GAsyncResult *result, GError      **error
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_enroll_finish</NAME>
+<RETURNS>FpPrint *</RETURNS>
+FpDevice     *device, GAsyncResult *result, GError      **error
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_verify_finish</NAME>
+<RETURNS>gboolean</RETURNS>
+FpDevice     *device, GAsyncResult *result, gboolean     *match, FpPrint     **print, GError      **error
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_identify_finish</NAME>
+<RETURNS>gboolean</RETURNS>
+FpDevice     *device, GAsyncResult *result, FpPrint     **match, FpPrint     **print, GError      **error
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_capture_finish</NAME>
+<RETURNS>FpImage *</RETURNS>
+FpDevice     *device, GAsyncResult *result, GError      **error
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_delete_print_finish</NAME>
+<RETURNS>gboolean</RETURNS>
+FpDevice     *device, GAsyncResult *result, GError      **error
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_list_prints_finish</NAME>
+<RETURNS>GPtrArray *</RETURNS>
+FpDevice     *device, GAsyncResult *result, GError      **error
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_clear_storage_finish</NAME>
+<RETURNS>gboolean</RETURNS>
+FpDevice     *device, GAsyncResult *result, GError      **error
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_open_sync</NAME>
+<RETURNS>gboolean</RETURNS>
+FpDevice     *device, GCancellable *cancellable, GError      **error
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_close_sync</NAME>
+<RETURNS>gboolean</RETURNS>
+FpDevice     *device, GCancellable *cancellable, GError      **error
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_enroll_sync</NAME>
+<RETURNS>FpPrint *</RETURNS>
+FpDevice        *device, FpPrint         *template_print, GCancellable    *cancellable, FpEnrollProgress progress_cb, gpointer         progress_data, GError         **error
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_verify_sync</NAME>
+<RETURNS>gboolean</RETURNS>
+FpDevice     *device, FpPrint      *enrolled_print, GCancellable *cancellable, FpMatchCb     match_cb, gpointer      match_data, gboolean     *match, FpPrint     **print, GError      **error
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_identify_sync</NAME>
+<RETURNS>gboolean</RETURNS>
+FpDevice     *device, GPtrArray    *prints, GCancellable *cancellable, FpMatchCb     match_cb, gpointer      match_data, FpPrint     **match, FpPrint     **print, GError      **error
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_capture_sync</NAME>
+<RETURNS>FpImage *</RETURNS>
+FpDevice     *device, gboolean      wait_for_finger, GCancellable *cancellable, GError      **error
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_delete_print_sync</NAME>
+<RETURNS>gboolean</RETURNS>
+FpDevice     *device, FpPrint      *enrolled_print, GCancellable *cancellable, GError      **error
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_list_prints_sync</NAME>
+<RETURNS>GPtrArray *</RETURNS>
+FpDevice     *device, GCancellable *cancellable, GError      **error
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_clear_storage_sync</NAME>
+<RETURNS>gboolean</RETURNS>
+FpDevice     *device, GCancellable *cancellable, GError      **error
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_suspend_sync</NAME>
+<RETURNS>gboolean</RETURNS>
+FpDevice     *device, GCancellable *cancellable, GError      **error
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_resume_sync</NAME>
+<RETURNS>gboolean</RETURNS>
+FpDevice     *device, GCancellable *cancellable, GError      **error
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_supports_identify</NAME>
+<DEPRECATED/>
+<RETURNS>gboolean</RETURNS>
+FpDevice *device
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_supports_capture</NAME>
+<DEPRECATED/>
+<RETURNS>gboolean</RETURNS>
+FpDevice *device
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_device_has_storage</NAME>
+<DEPRECATED/>
+<RETURNS>gboolean</RETURNS>
+FpDevice *device
+</FUNCTION>
+<STRUCT>
+<NAME>FpDevice</NAME>
+</STRUCT>
+<STRUCT>
+<NAME>FpDeviceClass</NAME>
+</STRUCT>
+<MACRO>
+<NAME>IMG_ENROLL_STAGES</NAME>
+#define IMG_ENROLL_STAGES 5
+</MACRO>
+<FUNCTION>
+<NAME>fpi_image_device_activate</NAME>
+<RETURNS>void</RETURNS>
+FpImageDevice *image_device
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_image_device_deactivate</NAME>
+<RETURNS>void</RETURNS>
+FpImageDevice *image_device, gboolean       cancelling
+</FUNCTION>
+<MACRO>
+<NAME>FP_TYPE_IMAGE_DEVICE</NAME>
+#define FP_TYPE_IMAGE_DEVICE (fp_image_device_get_type ())
+</MACRO>
+<STRUCT>
+<NAME>FpImageDevice</NAME>
+</STRUCT>
+<STRUCT>
+<NAME>FpImageDeviceClass</NAME>
+</STRUCT>
+<MACRO>
+<NAME>FP_TYPE_IMAGE</NAME>
+#define FP_TYPE_IMAGE (fp_image_get_type ())
+</MACRO>
+<TYPEDEF>
+<NAME>FpMinutia</NAME>
+typedef struct fp_minutia FpMinutia;
+</TYPEDEF>
+<FUNCTION>
+<NAME>fp_image_new</NAME>
+<RETURNS>FpImage *</RETURNS>
+gint width, gint height
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_image_get_width</NAME>
+<RETURNS>guint</RETURNS>
+FpImage *self
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_image_get_height</NAME>
+<RETURNS>guint</RETURNS>
+FpImage *self
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_image_get_ppmm</NAME>
+<RETURNS>gdouble</RETURNS>
+FpImage *self
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_image_get_minutiae</NAME>
+<RETURNS>GPtrArray *</RETURNS>
+FpImage *self
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_image_detect_minutiae</NAME>
+<RETURNS>void</RETURNS>
+FpImage            *self, GCancellable       *cancellable, GAsyncReadyCallback callback, gpointer            user_data
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_image_detect_minutiae_finish</NAME>
+<RETURNS>gboolean</RETURNS>
+FpImage      *self, GAsyncResult *result, GError      **error
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_image_get_data</NAME>
+<RETURNS>const guchar *</RETURNS>
+FpImage *self, gsize   *len
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_image_get_binarized</NAME>
+<RETURNS>const guchar *</RETURNS>
+FpImage *self, gsize   *len
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_minutia_get_coords</NAME>
+<RETURNS>void</RETURNS>
+FpMinutia *min, gint      *x, gint      *y
+</FUNCTION>
+<STRUCT>
+<NAME>FpImage</NAME>
+</STRUCT>
+<STRUCT>
+<NAME>FpPrint</NAME>
+struct _FpPrint
+{
+  GInitiallyUnowned parent_instance;
+
+  FpiPrintType      type;
+
+  gchar            *driver;
+  gchar            *device_id;
+  gboolean          device_stored;
+
+  FpImage          *image;
+
+  /* Metadata */
+  FpFinger   finger;
+  gchar     *username;
+  gchar     *description;
+  GDate     *enroll_date;
+
+  GVariant  *data;
+  GPtrArray *prints;
+};
+</STRUCT>
+<MACRO>
+<NAME>FP_TYPE_PRINT</NAME>
+#define FP_TYPE_PRINT (fp_print_get_type ())
+</MACRO>
+<MACRO>
+<NAME>FP_FINGER_IS_VALID</NAME>
+#define FP_FINGER_IS_VALID(finger) \
+  ((finger) >= FP_FINGER_FIRST && (finger) <= FP_FINGER_LAST)
+</MACRO>
+<ENUM>
+<NAME>FpFinger</NAME>
+typedef enum {
+  FP_FINGER_UNKNOWN = 0,
+  FP_FINGER_LEFT_THUMB,
+  FP_FINGER_LEFT_INDEX,
+  FP_FINGER_LEFT_MIDDLE,
+  FP_FINGER_LEFT_RING,
+  FP_FINGER_LEFT_LITTLE,
+  FP_FINGER_RIGHT_THUMB,
+  FP_FINGER_RIGHT_INDEX,
+  FP_FINGER_RIGHT_MIDDLE,
+  FP_FINGER_RIGHT_RING,
+  FP_FINGER_RIGHT_LITTLE,
+
+  FP_FINGER_FIRST = FP_FINGER_LEFT_THUMB,
+  FP_FINGER_LAST = FP_FINGER_RIGHT_LITTLE,
+} FpFinger;
+</ENUM>
+<ENUM>
+<NAME>FpFingerStatusFlags</NAME>
+typedef enum {
+  FP_FINGER_STATUS_NONE    = 0,
+  FP_FINGER_STATUS_NEEDED  = 1 << 0,
+  FP_FINGER_STATUS_PRESENT = 1 << 1,
+} FpFingerStatusFlags;
+</ENUM>
+<FUNCTION>
+<NAME>fp_print_new</NAME>
+<RETURNS>FpPrint *</RETURNS>
+FpDevice *device
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_print_get_driver</NAME>
+<RETURNS>const gchar *</RETURNS>
+FpPrint *print
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_print_get_device_id</NAME>
+<RETURNS>const gchar *</RETURNS>
+FpPrint *print
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_print_get_image</NAME>
+<RETURNS>FpImage *</RETURNS>
+FpPrint *print
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_print_get_finger</NAME>
+<RETURNS>FpFinger</RETURNS>
+FpPrint *print
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_print_get_username</NAME>
+<RETURNS>const gchar *</RETURNS>
+FpPrint *print
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_print_get_description</NAME>
+<RETURNS>const gchar *</RETURNS>
+FpPrint *print
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_print_get_enroll_date</NAME>
+<RETURNS>const GDate *</RETURNS>
+FpPrint *print
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_print_get_device_stored</NAME>
+<RETURNS>gboolean</RETURNS>
+FpPrint *print
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_print_set_finger</NAME>
+<RETURNS>void</RETURNS>
+FpPrint *print, FpFinger finger
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_print_set_username</NAME>
+<RETURNS>void</RETURNS>
+FpPrint     *print, const gchar *username
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_print_set_description</NAME>
+<RETURNS>void</RETURNS>
+FpPrint     *print, const gchar *description
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_print_set_enroll_date</NAME>
+<RETURNS>void</RETURNS>
+FpPrint     *print, const GDate *enroll_date
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_print_compatible</NAME>
+<RETURNS>gboolean</RETURNS>
+FpPrint  *self, FpDevice *device
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_print_equal</NAME>
+<RETURNS>gboolean</RETURNS>
+FpPrint *self, FpPrint *other
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_print_serialize</NAME>
+<RETURNS>gboolean</RETURNS>
+FpPrint *print, guchar **data, gsize   *length, GError **error
+</FUNCTION>
+<FUNCTION>
+<NAME>fp_print_deserialize</NAME>
+<RETURNS>FpPrint *</RETURNS>
+const guchar *data, gsize         length, GError      **error
+</FUNCTION>
+<STRUCT>
+<NAME>FpPrint</NAME>
+</STRUCT>
+<STRUCT>
+<NAME>fpi_frame</NAME>
+struct fpi_frame
+{
+  int           delta_x;
+  int           delta_y;
+  unsigned char data[0];
+};
+</STRUCT>
+<STRUCT>
+<NAME>fpi_frame_asmbl_ctx</NAME>
+struct fpi_frame_asmbl_ctx
+{
+  unsigned int  frame_width;
+  unsigned int  frame_height;
+  unsigned int  image_width;
+  unsigned char (*get_pixel)(struct fpi_frame_asmbl_ctx *ctx,
+                             struct fpi_frame           *frame,
+                             unsigned int                x,
+                             unsigned int                y);
+};
+</STRUCT>
+<FUNCTION>
+<NAME>fpi_do_movement_estimation</NAME>
+<RETURNS>void</RETURNS>
+struct fpi_frame_asmbl_ctx *ctx, GSList                     *stripes
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_assemble_frames</NAME>
+<RETURNS>FpImage *</RETURNS>
+struct fpi_frame_asmbl_ctx *ctx, GSList                     *stripes
+</FUNCTION>
+<STRUCT>
+<NAME>fpi_line_asmbl_ctx</NAME>
+struct fpi_line_asmbl_ctx
+{
+  unsigned int line_width;
+  unsigned int max_height;
+  unsigned int resolution;
+  unsigned int median_filter_size;
+  unsigned int max_search_offset;
+  int          (*get_deviation)(struct fpi_line_asmbl_ctx *ctx,
+                                GSList                    *line1,
+                                GSList                    *line2);
+  unsigned char (*get_pixel)(struct fpi_line_asmbl_ctx *ctx,
+                             GSList                    *line,
+                             unsigned int               x);
+};
+</STRUCT>
+<FUNCTION>
+<NAME>fpi_assemble_lines</NAME>
+<RETURNS>FpImage *</RETURNS>
+struct fpi_line_asmbl_ctx *ctx, GSList                    *lines, size_t                     num_lines
+</FUNCTION>
+<MACRO>
+<NAME>FPI_BYTE_READER</NAME>
+#define FPI_BYTE_READER(reader) ((FpiByteReader *) (reader))
+</MACRO>
+<STRUCT>
+<NAME>FpiByteReader</NAME>
+typedef struct {
+  const guint8 *data;
+  guint size;
+
+  guint byte;  /* Byte position */
+
+  /* < private > */
+} FpiByteReader;
+</STRUCT>
+<FUNCTION>
+<NAME>fpi_byte_reader_new</NAME>
+<RETURNS>FpiByteReader *</RETURNS>
+const guint8 *data, guint size
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_free</NAME>
+<RETURNS>void</RETURNS>
+FpiByteReader *reader
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_init</NAME>
+<RETURNS>void</RETURNS>
+FpiByteReader *reader, const guint8 *data, guint size
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_peek_sub_reader</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader * reader, FpiByteReader * sub_reader, guint           size
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_sub_reader</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader * reader, FpiByteReader * sub_reader, guint           size
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_set_pos</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader *reader, guint pos
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_pos</NAME>
+<RETURNS>guint</RETURNS>
+const FpiByteReader *reader
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_remaining</NAME>
+<RETURNS>guint</RETURNS>
+const FpiByteReader *reader
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_size</NAME>
+<RETURNS>guint</RETURNS>
+const FpiByteReader *reader
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_skip</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader *reader, guint nbytes
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_uint8</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader *reader, guint8 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_int8</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader *reader, gint8 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_uint16_le</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader *reader, guint16 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_int16_le</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader *reader, gint16 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_uint16_be</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader *reader, guint16 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_int16_be</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader *reader, gint16 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_uint24_le</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader *reader, guint32 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_int24_le</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader *reader, gint32 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_uint24_be</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader *reader, guint32 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_int24_be</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader *reader, gint32 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_uint32_le</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader *reader, guint32 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_int32_le</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader *reader, gint32 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_uint32_be</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader *reader, guint32 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_int32_be</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader *reader, gint32 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_uint64_le</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader *reader, guint64 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_int64_le</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader *reader, gint64 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_uint64_be</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader *reader, guint64 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_int64_be</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader *reader, gint64 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_peek_uint8</NAME>
+<RETURNS>gboolean</RETURNS>
+const FpiByteReader *reader, guint8 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_peek_int8</NAME>
+<RETURNS>gboolean</RETURNS>
+const FpiByteReader *reader, gint8 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_peek_uint16_le</NAME>
+<RETURNS>gboolean</RETURNS>
+const FpiByteReader *reader, guint16 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_peek_int16_le</NAME>
+<RETURNS>gboolean</RETURNS>
+const FpiByteReader *reader, gint16 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_peek_uint16_be</NAME>
+<RETURNS>gboolean</RETURNS>
+const FpiByteReader *reader, guint16 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_peek_int16_be</NAME>
+<RETURNS>gboolean</RETURNS>
+const FpiByteReader *reader, gint16 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_peek_uint24_le</NAME>
+<RETURNS>gboolean</RETURNS>
+const FpiByteReader *reader, guint32 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_peek_int24_le</NAME>
+<RETURNS>gboolean</RETURNS>
+const FpiByteReader *reader, gint32 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_peek_uint24_be</NAME>
+<RETURNS>gboolean</RETURNS>
+const FpiByteReader *reader, guint32 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_peek_int24_be</NAME>
+<RETURNS>gboolean</RETURNS>
+const FpiByteReader *reader, gint32 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_peek_uint32_le</NAME>
+<RETURNS>gboolean</RETURNS>
+const FpiByteReader *reader, guint32 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_peek_int32_le</NAME>
+<RETURNS>gboolean</RETURNS>
+const FpiByteReader *reader, gint32 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_peek_uint32_be</NAME>
+<RETURNS>gboolean</RETURNS>
+const FpiByteReader *reader, guint32 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_peek_int32_be</NAME>
+<RETURNS>gboolean</RETURNS>
+const FpiByteReader *reader, gint32 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_peek_uint64_le</NAME>
+<RETURNS>gboolean</RETURNS>
+const FpiByteReader *reader, guint64 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_peek_int64_le</NAME>
+<RETURNS>gboolean</RETURNS>
+const FpiByteReader *reader, gint64 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_peek_uint64_be</NAME>
+<RETURNS>gboolean</RETURNS>
+const FpiByteReader *reader, guint64 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_peek_int64_be</NAME>
+<RETURNS>gboolean</RETURNS>
+const FpiByteReader *reader, gint64 *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_float32_le</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader *reader, gfloat *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_float32_be</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader *reader, gfloat *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_float64_le</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader *reader, gdouble *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_float64_be</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader *reader, gdouble *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_peek_float32_le</NAME>
+<RETURNS>gboolean</RETURNS>
+const FpiByteReader *reader, gfloat *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_peek_float32_be</NAME>
+<RETURNS>gboolean</RETURNS>
+const FpiByteReader *reader, gfloat *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_peek_float64_le</NAME>
+<RETURNS>gboolean</RETURNS>
+const FpiByteReader *reader, gdouble *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_peek_float64_be</NAME>
+<RETURNS>gboolean</RETURNS>
+const FpiByteReader *reader, gdouble *val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_dup_data</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader * reader, guint size, guint8       ** val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_data</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader * reader, guint size, const guint8 ** val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_peek_data</NAME>
+<RETURNS>gboolean</RETURNS>
+const FpiByteReader * reader, guint size, const guint8 ** val
+</FUNCTION>
+<MACRO>
+<NAME>fpi_byte_reader_dup_string</NAME>
+#define fpi_byte_reader_dup_string(reader,str) \
+    fpi_byte_reader_dup_string_utf8(reader,str)
+</MACRO>
+<FUNCTION>
+<NAME>fpi_byte_reader_dup_string_utf8</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader * reader, gchar   ** str
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_dup_string_utf16</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader * reader, guint16 ** str
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_dup_string_utf32</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader * reader, guint32 ** str
+</FUNCTION>
+<MACRO>
+<NAME>fpi_byte_reader_skip_string</NAME>
+#define fpi_byte_reader_skip_string(reader) \
+    fpi_byte_reader_skip_string_utf8(reader)
+</MACRO>
+<FUNCTION>
+<NAME>fpi_byte_reader_skip_string_utf8</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_skip_string_utf16</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_skip_string_utf32</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader * reader
+</FUNCTION>
+<MACRO>
+<NAME>fpi_byte_reader_get_string</NAME>
+#define fpi_byte_reader_get_string(reader,str) \
+    fpi_byte_reader_get_string_utf8(reader,str)
+</MACRO>
+<MACRO>
+<NAME>fpi_byte_reader_peek_string</NAME>
+#define fpi_byte_reader_peek_string(reader,str) \
+    fpi_byte_reader_peek_string_utf8(reader,str)
+</MACRO>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_string_utf8</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader * reader, const gchar ** str
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_peek_string_utf8</NAME>
+<RETURNS>gboolean</RETURNS>
+const FpiByteReader * reader, const gchar ** str
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_masked_scan_uint32</NAME>
+<RETURNS>guint</RETURNS>
+const FpiByteReader * reader, guint32               mask, guint32               pattern, guint                 offset, guint                 size
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_masked_scan_uint32_peek</NAME>
+<RETURNS>guint</RETURNS>
+const FpiByteReader * reader, guint32 mask, guint32 pattern, guint offset, guint size, guint32 * value
+</FUNCTION>
+<MACRO>
+<NAME>FPI_BYTE_READER_INIT</NAME>
+#define FPI_BYTE_READER_INIT(data, size) {data, size, 0}
+</MACRO>
+<FUNCTION>
+<NAME>fpi_byte_reader_skip_unchecked</NAME>
+<RETURNS>void</RETURNS>
+FpiByteReader * reader, guint nbytes
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_peek_data_unchecked</NAME>
+<RETURNS>const guint8 *</RETURNS>
+const FpiByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_data_unchecked</NAME>
+<RETURNS>const guint8 *</RETURNS>
+FpiByteReader * reader, guint size
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_dup_data_unchecked</NAME>
+<RETURNS>guint8 *</RETURNS>
+FpiByteReader * reader, guint size
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_pos_unchecked</NAME>
+<RETURNS>guint</RETURNS>
+const FpiByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_remaining_unchecked</NAME>
+<RETURNS>guint</RETURNS>
+const FpiByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_size_unchecked</NAME>
+<RETURNS>guint</RETURNS>
+const FpiByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_remaining_inline</NAME>
+<RETURNS>guint</RETURNS>
+const FpiByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_size_inline</NAME>
+<RETURNS>guint</RETURNS>
+const FpiByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_init_inline</NAME>
+<RETURNS>void</RETURNS>
+FpiByteReader * reader, const guint8 * data, guint size
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_peek_sub_reader_inline</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader * reader, FpiByteReader * sub_reader, guint size
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_sub_reader_inline</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader * reader, FpiByteReader * sub_reader, guint size
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_dup_data_inline</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader * reader, guint size, guint8 ** val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_data_inline</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader * reader, guint size, const guint8 ** val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_peek_data_inline</NAME>
+<RETURNS>gboolean</RETURNS>
+const FpiByteReader * reader, guint size, const guint8 ** val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_get_pos_inline</NAME>
+<RETURNS>guint</RETURNS>
+const FpiByteReader * reader
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_reader_skip_inline</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteReader * reader, guint nbytes
+</FUNCTION>
+<MACRO>
+<NAME>FPI_BYTE_WRITER</NAME>
+#define FPI_BYTE_WRITER(writer) ((FpiByteWriter *) (writer))
+</MACRO>
+<STRUCT>
+<NAME>FpiByteWriter</NAME>
+typedef struct {
+  FpiByteReader parent;
+
+  guint alloc_size;
+
+  gboolean fixed;
+  gboolean owned;
+
+  /* < private > */
+} FpiByteWriter;
+</STRUCT>
+<FUNCTION>
+<NAME>fpi_byte_writer_new</NAME>
+<RETURNS>FpiByteWriter *</RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_new_with_size</NAME>
+<RETURNS>FpiByteWriter *</RETURNS>
+guint size, gboolean fixed
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_new_with_data</NAME>
+<RETURNS>FpiByteWriter *</RETURNS>
+guint8 *data, guint size, gboolean initialized
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_init</NAME>
+<RETURNS>void</RETURNS>
+FpiByteWriter *writer
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_init_with_size</NAME>
+<RETURNS>void</RETURNS>
+FpiByteWriter *writer, guint size, gboolean fixed
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_init_with_data</NAME>
+<RETURNS>void</RETURNS>
+FpiByteWriter *writer, guint8 *data, guint size, gboolean initialized
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_free</NAME>
+<RETURNS>void</RETURNS>
+FpiByteWriter *writer
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_free_and_get_data</NAME>
+<RETURNS>guint8 *</RETURNS>
+FpiByteWriter *writer
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_reset</NAME>
+<RETURNS>void</RETURNS>
+FpiByteWriter *writer
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_reset_and_get_data</NAME>
+<RETURNS>guint8 *</RETURNS>
+FpiByteWriter *writer
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_get_pos</NAME>
+<RETURNS>guint</RETURNS>
+const FpiByteWriter *writer
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_set_pos</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteWriter *writer, guint pos
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_change_pos</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteWriter *writer, gint pos
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_get_size</NAME>
+<RETURNS>guint</RETURNS>
+const FpiByteWriter *writer
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_get_remaining</NAME>
+<RETURNS>guint</RETURNS>
+const FpiByteWriter *writer
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_ensure_free_space</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteWriter *writer, guint size
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_put_uint8</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteWriter *writer, guint8 val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_put_int8</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteWriter *writer, gint8 val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_put_uint16_be</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteWriter *writer, guint16 val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_put_uint16_le</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteWriter *writer, guint16 val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_put_int16_be</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteWriter *writer, gint16 val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_put_int16_le</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteWriter *writer, gint16 val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_put_uint24_be</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteWriter *writer, guint32 val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_put_uint24_le</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteWriter *writer, guint32 val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_put_int24_be</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteWriter *writer, gint32 val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_put_int24_le</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteWriter *writer, gint32 val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_put_uint32_be</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteWriter *writer, guint32 val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_put_uint32_le</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteWriter *writer, guint32 val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_put_int32_be</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteWriter *writer, gint32 val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_put_int32_le</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteWriter *writer, gint32 val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_put_uint64_be</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteWriter *writer, guint64 val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_put_uint64_le</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteWriter *writer, guint64 val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_put_int64_be</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteWriter *writer, gint64 val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_put_int64_le</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteWriter *writer, gint64 val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_put_float32_be</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteWriter *writer, gfloat val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_put_float32_le</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteWriter *writer, gfloat val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_put_float64_be</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteWriter *writer, gdouble val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_put_float64_le</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteWriter *writer, gdouble val
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_put_data</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteWriter *writer, const guint8 *data, guint size
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_fill</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteWriter *writer, guint8 value, guint size
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_put_string_utf8</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteWriter *writer, const gchar *data
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_put_string_utf16</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteWriter *writer, const guint16 *data
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_put_string_utf32</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteWriter *writer, const guint32 *data
+</FUNCTION>
+<MACRO>
+<NAME>fpi_byte_writer_put_string</NAME>
+#define fpi_byte_writer_put_string(writer, data) \
+  fpi_byte_writer_put_string_utf8(writer, data)
+</MACRO>
+<FUNCTION>
+<NAME>fpi_byte_writer_next_pow2</NAME>
+<RETURNS>guint</RETURNS>
+guint n
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_ensure_free_space_inline</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteWriter * writer, guint size
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_put_data_unchecked</NAME>
+<RETURNS>void</RETURNS>
+FpiByteWriter * writer, const guint8 * data, guint size
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_put_data_inline</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteWriter * writer, const guint8 * data, guint size
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_fill_unchecked</NAME>
+<RETURNS>void</RETURNS>
+FpiByteWriter * writer, guint8 value, guint size
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_byte_writer_fill_inline</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiByteWriter * writer, guint8 value, guint size
+</FUNCTION>
+<MACRO>
+<NAME>FP_GNUC_ACCESS</NAME>
+#define FP_GNUC_ACCESS(m, p, s) __attribute__((access (m, p, s)))
+</MACRO>
+<FUNCTION>
+<NAME>fpi_get_driver_types</NAME>
+<RETURNS>GArray *</RETURNS>
+void
+</FUNCTION>
+<ENUM>
+<NAME>FpiDeviceUdevSubtypeFlags</NAME>
+typedef enum {
+  FPI_DEVICE_UDEV_SUBTYPE_SPIDEV = 1 << 0,
+  FPI_DEVICE_UDEV_SUBTYPE_HIDRAW = 1 << 1,
+} FpiDeviceUdevSubtypeFlags;
+</ENUM>
+<STRUCT>
+<NAME>FpIdEntry</NAME>
+struct _FpIdEntry
+{
+  union
+  {
+    struct
+    {
+      guint pid;
+      guint vid;
+    };
+    const gchar *virtual_envvar;
+    struct
+    {
+      FpiDeviceUdevSubtypeFlags udev_types;
+      const gchar              *spi_acpi_id;
+      struct
+      {
+        guint pid;
+        guint vid;
+      } hid_id;
+    };
+  };
+  guint64 driver_data;
+};
+</STRUCT>
+<STRUCT>
+<NAME>FpDeviceClass</NAME>
+struct _FpDeviceClass
+{
+  /*< private >*/
+  GObjectClass parent_class;
+
+  /*< public >*/
+  /* Static information about the driver. */
+  const gchar     *id;
+  const gchar     *full_name;
+  FpDeviceType     type;
+  const FpIdEntry *id_table;
+  FpDeviceFeature  features;
+
+  /* Defaults for device properties */
+  gint       nr_enroll_stages;
+  FpScanType scan_type;
+
+  /* Simple device temperature model constants */
+  gint32 temp_hot_seconds;
+  gint32 temp_cold_seconds;
+
+  /* Callbacks */
+  gint (*usb_discover) (GUsbDevice *usb_device);
+  void (*probe)    (FpDevice *device);
+  void (*open)     (FpDevice *device);
+  void (*close)    (FpDevice *device);
+  void (*enroll)   (FpDevice *device);
+  void (*verify)   (FpDevice *device);
+  void (*identify) (FpDevice *device);
+  void (*capture)  (FpDevice *device);
+  void (*list)     (FpDevice *device);
+  void (*delete)   (FpDevice * device);
+  void (*clear_storage)  (FpDevice * device);
+
+  void (*cancel)   (FpDevice *device);
+  void (*suspend)  (FpDevice *device);
+  void (*resume)   (FpDevice *device);
+};
+</STRUCT>
+<FUNCTION>
+<NAME>fpi_device_class_auto_initialize_features</NAME>
+<RETURNS>void</RETURNS>
+FpDeviceClass *device_class
+</FUNCTION>
+<USER_FUNCTION>
+<NAME>FpTimeoutFunc</NAME>
+<RETURNS>void</RETURNS>
+FpDevice *device, gpointer  user_data
+</USER_FUNCTION>
+<ENUM>
+<NAME>FpiDeviceAction</NAME>
+typedef enum {
+  FPI_DEVICE_ACTION_NONE = 0,
+  FPI_DEVICE_ACTION_PROBE,
+  FPI_DEVICE_ACTION_OPEN,
+  FPI_DEVICE_ACTION_CLOSE,
+  FPI_DEVICE_ACTION_ENROLL,
+  FPI_DEVICE_ACTION_VERIFY,
+  FPI_DEVICE_ACTION_IDENTIFY,
+  FPI_DEVICE_ACTION_CAPTURE,
+  FPI_DEVICE_ACTION_LIST,
+  FPI_DEVICE_ACTION_DELETE,
+  FPI_DEVICE_ACTION_CLEAR_STORAGE,
+} FpiDeviceAction;
+</ENUM>
+<FUNCTION>
+<NAME>fpi_device_get_usb_device</NAME>
+<RETURNS>GUsbDevice *</RETURNS>
+FpDevice *device
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_get_virtual_env</NAME>
+<RETURNS>const gchar *</RETURNS>
+FpDevice *device
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_get_udev_data</NAME>
+<RETURNS>gpointer</RETURNS>
+FpDevice                 *device, FpiDeviceUdevSubtypeFlags subtype
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_get_current_action</NAME>
+<RETURNS>FpiDeviceAction</RETURNS>
+FpDevice *device
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_action_is_cancelled</NAME>
+<RETURNS>gboolean</RETURNS>
+FpDevice *device
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_retry_new</NAME>
+<RETURNS>GError *</RETURNS>
+FpDeviceRetry error
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_error_new</NAME>
+<RETURNS>GError *</RETURNS>
+FpDeviceError error
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_retry_new_msg</NAME>
+<RETURNS>GError *</RETURNS>
+FpDeviceRetry error, const gchar  *msg, ...
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_error_new_msg</NAME>
+<RETURNS>GError *</RETURNS>
+FpDeviceError error, const gchar  *msg, ...
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_get_driver_data</NAME>
+<RETURNS>guint64</RETURNS>
+FpDevice *device
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_get_enroll_data</NAME>
+<RETURNS>void</RETURNS>
+FpDevice *device, FpPrint **print
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_get_capture_data</NAME>
+<RETURNS>void</RETURNS>
+FpDevice *device, gboolean *wait_for_finger
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_get_verify_data</NAME>
+<RETURNS>void</RETURNS>
+FpDevice *device, FpPrint **print
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_get_identify_data</NAME>
+<RETURNS>void</RETURNS>
+FpDevice   *device, GPtrArray **prints
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_get_delete_data</NAME>
+<RETURNS>void</RETURNS>
+FpDevice *device, FpPrint **print
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_get_cancellable</NAME>
+<RETURNS>GCancellable *</RETURNS>
+FpDevice *device
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_remove</NAME>
+<RETURNS>void</RETURNS>
+FpDevice *device
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_add_timeout</NAME>
+<RETURNS>GSource *</RETURNS>
+FpDevice      *device, gint           interval, FpTimeoutFunc  func, gpointer       user_data, GDestroyNotify destroy_notify
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_set_nr_enroll_stages</NAME>
+<RETURNS>void</RETURNS>
+FpDevice *device, gint      enroll_stages
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_set_scan_type</NAME>
+<RETURNS>void</RETURNS>
+FpDevice  *device, FpScanType scan_type
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_update_features</NAME>
+<RETURNS>void</RETURNS>
+FpDevice       *device, FpDeviceFeature update, FpDeviceFeature value
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_action_error</NAME>
+<RETURNS>void</RETURNS>
+FpDevice *device, GError   *error
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_critical_enter</NAME>
+<RETURNS>void</RETURNS>
+FpDevice *device
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_critical_leave</NAME>
+<RETURNS>void</RETURNS>
+FpDevice *device
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_probe_complete</NAME>
+<RETURNS>void</RETURNS>
+FpDevice    *device, const gchar *device_id, const gchar *device_name, GError      *error
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_open_complete</NAME>
+<RETURNS>void</RETURNS>
+FpDevice *device, GError   *error
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_close_complete</NAME>
+<RETURNS>void</RETURNS>
+FpDevice *device, GError   *error
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_enroll_complete</NAME>
+<RETURNS>void</RETURNS>
+FpDevice *device, FpPrint  *print, GError   *error
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_verify_complete</NAME>
+<RETURNS>void</RETURNS>
+FpDevice *device, GError   *error
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_identify_complete</NAME>
+<RETURNS>void</RETURNS>
+FpDevice *device, GError   *error
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_capture_complete</NAME>
+<RETURNS>void</RETURNS>
+FpDevice *device, FpImage  *image, GError   *error
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_delete_complete</NAME>
+<RETURNS>void</RETURNS>
+FpDevice *device, GError   *error
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_list_complete</NAME>
+<RETURNS>void</RETURNS>
+FpDevice  *device, GPtrArray *prints, GError    *error
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_clear_storage_complete</NAME>
+<RETURNS>void</RETURNS>
+FpDevice *device, GError   *error
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_suspend_complete</NAME>
+<RETURNS>void</RETURNS>
+FpDevice *device, GError   *error
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_resume_complete</NAME>
+<RETURNS>void</RETURNS>
+FpDevice *device, GError   *error
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_enroll_progress</NAME>
+<RETURNS>void</RETURNS>
+FpDevice *device, gint      completed_stages, FpPrint  *print, GError   *error
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_verify_report</NAME>
+<RETURNS>void</RETURNS>
+FpDevice      *device, FpiMatchResult result, FpPrint       *print, GError        *error
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_identify_report</NAME>
+<RETURNS>void</RETURNS>
+FpDevice *device, FpPrint  *match, FpPrint  *print, GError   *error
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_report_finger_status</NAME>
+<RETURNS>gboolean</RETURNS>
+FpDevice           *device, FpFingerStatusFlags finger_status
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_device_report_finger_status_changes</NAME>
+<RETURNS>gboolean</RETURNS>
+FpDevice           *device, FpFingerStatusFlags added_status, FpFingerStatusFlags removed_status
+</FUNCTION>
+<ENUM>
+<NAME>FpiImageDeviceState</NAME>
+typedef enum {
+  FPI_IMAGE_DEVICE_STATE_INACTIVE,
+  FPI_IMAGE_DEVICE_STATE_ACTIVATING,
+  FPI_IMAGE_DEVICE_STATE_DEACTIVATING,
+  FPI_IMAGE_DEVICE_STATE_IDLE,
+  FPI_IMAGE_DEVICE_STATE_AWAIT_FINGER_ON,
+  FPI_IMAGE_DEVICE_STATE_CAPTURE,
+  FPI_IMAGE_DEVICE_STATE_AWAIT_FINGER_OFF,
+} FpiImageDeviceState;
+</ENUM>
+<STRUCT>
+<NAME>FpImageDeviceClass</NAME>
+struct _FpImageDeviceClass
+{
+  FpDeviceClass parent_class;
+
+  gint          bz3_threshold;
+  gint          img_width;
+  gint          img_height;
+
+  void          (*img_open)     (FpImageDevice *dev);
+  void          (*img_close)    (FpImageDevice *dev);
+  void          (*activate)     (FpImageDevice *dev);
+  void          (*change_state) (FpImageDevice      *dev,
+                                 FpiImageDeviceState state);
+  void          (*deactivate)   (FpImageDevice *dev);
+};
+</STRUCT>
+<FUNCTION>
+<NAME>fpi_image_device_set_bz3_threshold</NAME>
+<RETURNS>void</RETURNS>
+FpImageDevice *self, gint           bz3_threshold
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_image_device_session_error</NAME>
+<RETURNS>void</RETURNS>
+FpImageDevice *self, GError        *error
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_image_device_open_complete</NAME>
+<RETURNS>void</RETURNS>
+FpImageDevice *self, GError        *error
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_image_device_close_complete</NAME>
+<RETURNS>void</RETURNS>
+FpImageDevice *self, GError        *error
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_image_device_activate_complete</NAME>
+<RETURNS>void</RETURNS>
+FpImageDevice *self, GError        *error
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_image_device_deactivate_complete</NAME>
+<RETURNS>void</RETURNS>
+FpImageDevice *self, GError        *error
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_image_device_report_finger_status</NAME>
+<RETURNS>void</RETURNS>
+FpImageDevice *self, gboolean       present
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_image_device_image_captured</NAME>
+<RETURNS>void</RETURNS>
+FpImageDevice *self, FpImage       *image
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_image_device_retry_scan</NAME>
+<RETURNS>void</RETURNS>
+FpImageDevice *self, FpDeviceRetry  retry
+</FUNCTION>
+<ENUM>
+<NAME>FpiImageFlags</NAME>
+typedef enum {
+  FPI_IMAGE_NONE            = 0,
+  FPI_IMAGE_V_FLIPPED       = 1 << 0,
+  FPI_IMAGE_H_FLIPPED       = 1 << 1,
+  FPI_IMAGE_COLORS_INVERTED = 1 << 2,
+  FPI_IMAGE_PARTIAL         = 1 << 3,
+} FpiImageFlags;
+</ENUM>
+<STRUCT>
+<NAME>FpImage</NAME>
+struct _FpImage
+{
+  /*< private >*/
+  GObject parent;
+
+  /*< public >*/
+  guint         width;
+  guint         height;
+
+  gdouble       ppmm;
+
+  FpiImageFlags flags;
+
+  /*< private >*/
+  guint8    *data;
+  guint8    *binarized;
+
+  GPtrArray *minutiae;
+
+  gboolean   detection_in_progress;
+};
+</STRUCT>
+<FUNCTION>
+<NAME>fpi_std_sq_dev</NAME>
+<RETURNS>gint</RETURNS>
+const guint8 *buf, gint          size
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_mean_sq_diff_norm</NAME>
+<RETURNS>gint</RETURNS>
+const guint8 *buf1, const guint8 *buf2, gint          size
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_image_resize</NAME>
+<RETURNS>FpImage *</RETURNS>
+FpImage *orig, guint    w_factor, guint    h_factor
+</FUNCTION>
+<MACRO>
+<NAME>fp_dbg</NAME>
+#define fp_dbg g_debug
+</MACRO>
+<MACRO>
+<NAME>fp_info</NAME>
+#define fp_info g_debug
+</MACRO>
+<MACRO>
+<NAME>fp_warn</NAME>
+#define fp_warn g_warning
+</MACRO>
+<MACRO>
+<NAME>fp_err</NAME>
+#define fp_err g_critical
+</MACRO>
+<MACRO>
+<NAME>BUG_ON</NAME>
+#define BUG_ON(condition) \
+  G_STMT_START          \
+  if (condition) \
+    {                        \
+      char *s;                        \
+      s = g_strconcat ("BUG: (", #condition, ")", NULL); \
+      fp_err ("%s: %s() %s:%d", s, G_STRFUNC, __FILE__, __LINE__); \
+      g_free (s);                     \
+    } \
+  G_STMT_END
+</MACRO>
+<MACRO>
+<NAME>BUG</NAME>
+#define BUG() BUG_ON (1)
+</MACRO>
+<STRUCT>
+<NAME>fp_minutia</NAME>
+struct fp_minutia
+{
+  int    x;
+  int    y;
+  int    ex;
+  int    ey;
+  int    direction;
+  double reliability;
+  int    type;
+  int    appearing;
+  int    feature_id;
+  int   *nbrs;
+  int   *ridge_counts;
+  int    num_nbrs;
+};
+</STRUCT>
+<STRUCT>
+<NAME>fp_minutiae</NAME>
+struct fp_minutiae
+{
+  int                 alloc;
+  int                 num;
+  struct fp_minutia **list;
+};
+</STRUCT>
+<ENUM>
+<NAME>FpiPrintType</NAME>
+typedef enum {
+  FPI_PRINT_UNDEFINED = 0,
+  FPI_PRINT_RAW,
+  FPI_PRINT_NBIS,
+} FpiPrintType;
+</ENUM>
+<ENUM>
+<NAME>FpiMatchResult</NAME>
+typedef enum {
+  FPI_MATCH_ERROR = -1, /* -1 for g_task_propagate_int */
+  FPI_MATCH_FAIL,
+  FPI_MATCH_SUCCESS,
+} FpiMatchResult;
+</ENUM>
+<FUNCTION>
+<NAME>fpi_print_add_print</NAME>
+<RETURNS>void</RETURNS>
+FpPrint *print, FpPrint *add
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_print_set_type</NAME>
+<RETURNS>void</RETURNS>
+FpPrint     *print, FpiPrintType type
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_print_set_device_stored</NAME>
+<RETURNS>void</RETURNS>
+FpPrint *print, gboolean device_stored
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_print_add_from_image</NAME>
+<RETURNS>gboolean</RETURNS>
+FpPrint *print, FpImage *image, GError **error
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_print_bz3_match</NAME>
+<RETURNS>FpiMatchResult</RETURNS>
+FpPrint *temp, FpPrint *print, gint     bz3_threshold, GError **error
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_print_generate_user_id</NAME>
+<RETURNS>gchar *</RETURNS>
+FpPrint *print
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_print_fill_from_user_id</NAME>
+<RETURNS>gboolean</RETURNS>
+FpPrint    *print, const char *user_id
+</FUNCTION>
+<MACRO>
+<NAME>FPI_TYPE_SPI_TRANSFER</NAME>
+#define FPI_TYPE_SPI_TRANSFER (fpi_spi_transfer_get_type ())
+</MACRO>
+<USER_FUNCTION>
+<NAME>FpiSpiTransferCallback</NAME>
+<RETURNS>void</RETURNS>
+FpiSpiTransfer *transfer, FpDevice       *dev, gpointer        user_data, GError         *error
+</USER_FUNCTION>
+<STRUCT>
+<NAME>FpiSpiTransfer</NAME>
+struct _FpiSpiTransfer
+{
+  /*< public >*/
+  FpDevice *device;
+
+  FpiSsm   *ssm;
+
+  gssize    length_wr;
+  gssize    length_rd;
+
+  guchar   *buffer_wr;
+  guchar   *buffer_rd;
+
+  /*< private >*/
+  guint ref_count;
+
+  int   spidev_fd;
+
+  /* Callbacks */
+  gpointer               user_data;
+  FpiSpiTransferCallback callback;
+
+  /* Data free function */
+  GDestroyNotify free_buffer_wr;
+  GDestroyNotify free_buffer_rd;
+};
+</STRUCT>
+<FUNCTION>
+<NAME>fpi_spi_transfer_get_type</NAME>
+<RETURNS>GType</RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_spi_transfer_new</NAME>
+<RETURNS>FpiSpiTransfer *</RETURNS>
+FpDevice *device, int       spidev_fd
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_spi_transfer_ref</NAME>
+<RETURNS>FpiSpiTransfer *</RETURNS>
+FpiSpiTransfer *self
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_spi_transfer_unref</NAME>
+<RETURNS>void</RETURNS>
+FpiSpiTransfer *self
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_spi_transfer_write</NAME>
+<RETURNS>void</RETURNS>
+FpiSpiTransfer *transfer, gsize           length
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_spi_transfer_write_full</NAME>
+<RETURNS>void</RETURNS>
+FpiSpiTransfer *transfer, guint8         *buffer, gsize           length, GDestroyNotify  free_func
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_spi_transfer_read</NAME>
+<RETURNS>void</RETURNS>
+FpiSpiTransfer *transfer, gsize           length
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_spi_transfer_read_full</NAME>
+<RETURNS>void</RETURNS>
+FpiSpiTransfer *transfer, guint8         *buffer, gsize           length, GDestroyNotify  free_func
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_spi_transfer_submit</NAME>
+<RETURNS>void</RETURNS>
+FpiSpiTransfer        *transfer, GCancellable          *cancellable, FpiSpiTransferCallback callback, gpointer               user_data
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_spi_transfer_submit_sync</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiSpiTransfer *transfer, GError        **error
+</FUNCTION>
+<STRUCT>
+<NAME>FpiSsm</NAME>
+</STRUCT>
+<USER_FUNCTION>
+<NAME>FpiSsmCompletedCallback</NAME>
+<RETURNS>void</RETURNS>
+FpiSsm   *ssm, FpDevice *dev, GError   *error
+</USER_FUNCTION>
+<USER_FUNCTION>
+<NAME>FpiSsmHandlerCallback</NAME>
+<RETURNS>void</RETURNS>
+FpiSsm   *ssm, FpDevice *dev
+</USER_FUNCTION>
+<MACRO>
+<NAME>fpi_ssm_new</NAME>
+#define fpi_ssm_new(dev, handler, nr_states) \
+  fpi_ssm_new_full (dev, handler, nr_states, nr_states, #nr_states)
+</MACRO>
+<FUNCTION>
+<NAME>fpi_ssm_new_full</NAME>
+<RETURNS>FpiSsm *</RETURNS>
+FpDevice             *dev, FpiSsmHandlerCallback handler, int                   nr_states, int                   start_cleanup, const char           *machine_name
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_ssm_free</NAME>
+<RETURNS>void</RETURNS>
+FpiSsm *machine
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_ssm_start</NAME>
+<RETURNS>void</RETURNS>
+FpiSsm                 *ssm, FpiSsmCompletedCallback callback
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_ssm_start_subsm</NAME>
+<RETURNS>void</RETURNS>
+FpiSsm *parent, FpiSsm *child
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_ssm_next_state</NAME>
+<RETURNS>void</RETURNS>
+FpiSsm *machine
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_ssm_jump_to_state</NAME>
+<RETURNS>void</RETURNS>
+FpiSsm *machine, int     state
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_ssm_next_state_delayed</NAME>
+<RETURNS>void</RETURNS>
+FpiSsm *machine, int     delay
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_ssm_jump_to_state_delayed</NAME>
+<RETURNS>void</RETURNS>
+FpiSsm *machine, int     state, int     delay
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_ssm_cancel_delayed_state_change</NAME>
+<RETURNS>void</RETURNS>
+FpiSsm *machine
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_ssm_mark_completed</NAME>
+<RETURNS>void</RETURNS>
+FpiSsm *machine
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_ssm_mark_completed_delayed</NAME>
+<RETURNS>void</RETURNS>
+FpiSsm *machine, int     delay
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_ssm_mark_failed</NAME>
+<RETURNS>void</RETURNS>
+FpiSsm *machine, GError *error
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_ssm_set_data</NAME>
+<RETURNS>void</RETURNS>
+FpiSsm        *machine, gpointer       ssm_data, GDestroyNotify ssm_data_destroy
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_ssm_get_data</NAME>
+<RETURNS>gpointer</RETURNS>
+FpiSsm *machine
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_ssm_get_device</NAME>
+<RETURNS>FpDevice *</RETURNS>
+FpiSsm *machine
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_ssm_get_error</NAME>
+<RETURNS>GError *</RETURNS>
+FpiSsm *machine
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_ssm_dup_error</NAME>
+<RETURNS>GError *</RETURNS>
+FpiSsm *machine
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_ssm_get_cur_state</NAME>
+<RETURNS>int</RETURNS>
+FpiSsm *machine
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_ssm_silence_debug</NAME>
+<RETURNS>void</RETURNS>
+FpiSsm *machine
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_ssm_usb_transfer_cb</NAME>
+<RETURNS>void</RETURNS>
+FpiUsbTransfer *transfer, FpDevice       *device, gpointer        unused_data, GError         *error
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_ssm_usb_transfer_with_weak_pointer_cb</NAME>
+<RETURNS>void</RETURNS>
+FpiUsbTransfer *transfer, FpDevice       *device, gpointer        weak_ptr, GError         *error
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_ssm_spi_transfer_cb</NAME>
+<RETURNS>void</RETURNS>
+FpiSpiTransfer *transfer, FpDevice       *device, gpointer        unused_data, GError         *error
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_ssm_spi_transfer_with_weak_pointer_cb</NAME>
+<RETURNS>void</RETURNS>
+FpiSpiTransfer *transfer, FpDevice       *device, gpointer        weak_ptr, GError         *error
+</FUNCTION>
+<STRUCT>
+<NAME>FpiSpiTransfer</NAME>
+</STRUCT>
+<STRUCT>
+<NAME>FpiSsm</NAME>
+</STRUCT>
+<STRUCT>
+<NAME>FpiUsbTransfer</NAME>
+</STRUCT>
+<MACRO>
+<NAME>FPI_TYPE_USB_TRANSFER</NAME>
+#define FPI_TYPE_USB_TRANSFER (fpi_usb_transfer_get_type ())
+</MACRO>
+<MACRO>
+<NAME>FPI_USB_ENDPOINT_IN</NAME>
+#define FPI_USB_ENDPOINT_IN 0x80
+</MACRO>
+<MACRO>
+<NAME>FPI_USB_ENDPOINT_OUT</NAME>
+#define FPI_USB_ENDPOINT_OUT 0x00
+</MACRO>
+<USER_FUNCTION>
+<NAME>FpiUsbTransferCallback</NAME>
+<RETURNS>void</RETURNS>
+FpiUsbTransfer *transfer, FpDevice       *dev, gpointer        user_data, GError         *error
+</USER_FUNCTION>
+<ENUM>
+<NAME>FpiTransferType</NAME>
+typedef enum  {
+  FP_TRANSFER_NONE = -1,
+  FP_TRANSFER_CONTROL = 0,
+  FP_TRANSFER_BULK = 2,
+  FP_TRANSFER_INTERRUPT = 3,
+} FpiTransferType;
+</ENUM>
+<STRUCT>
+<NAME>FpiUsbTransfer</NAME>
+struct _FpiUsbTransfer
+{
+  /*< public >*/
+  FpDevice *device;
+
+  FpiSsm   *ssm;
+
+  gssize    length;
+  gssize    actual_length;
+
+  guchar   *buffer;
+
+  /*< private >*/
+  guint ref_count;
+
+  /* USB Transfer information */
+  FpiTransferType type;
+  guint8          endpoint;
+
+  /* Control Transfer options */
+  GUsbDeviceDirection   direction;
+  GUsbDeviceRequestType request_type;
+  GUsbDeviceRecipient   recipient;
+  guint8                request;
+  guint16               value;
+  guint16               idx;
+
+  /* Flags */
+  gboolean short_is_error;
+
+  /* Callbacks */
+  gpointer               user_data;
+  FpiUsbTransferCallback callback;
+
+  /* Data free function */
+  GDestroyNotify free_buffer;
+};
+</STRUCT>
+<FUNCTION>
+<NAME>fpi_usb_transfer_get_type</NAME>
+<RETURNS>GType</RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_usb_transfer_new</NAME>
+<RETURNS>FpiUsbTransfer *</RETURNS>
+FpDevice *device
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_usb_transfer_ref</NAME>
+<RETURNS>FpiUsbTransfer *</RETURNS>
+FpiUsbTransfer *self
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_usb_transfer_unref</NAME>
+<RETURNS>void</RETURNS>
+FpiUsbTransfer *self
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_usb_transfer_set_short_error</NAME>
+<RETURNS>void</RETURNS>
+FpiUsbTransfer *transfer, gboolean        short_is_error
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_usb_transfer_fill_bulk</NAME>
+<RETURNS>void</RETURNS>
+FpiUsbTransfer *transfer, guint8          endpoint, gsize           length
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_usb_transfer_fill_bulk_full</NAME>
+<RETURNS>void</RETURNS>
+FpiUsbTransfer *transfer, guint8          endpoint, guint8         *buffer, gsize           length, GDestroyNotify  free_func
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_usb_transfer_fill_control</NAME>
+<RETURNS>void</RETURNS>
+FpiUsbTransfer       *transfer, GUsbDeviceDirection   direction, GUsbDeviceRequestType request_type, GUsbDeviceRecipient   recipient, guint8                request, guint16               value, guint16               idx, gsize                 length
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_usb_transfer_fill_interrupt</NAME>
+<RETURNS>void</RETURNS>
+FpiUsbTransfer *transfer, guint8          endpoint, gsize           length
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_usb_transfer_fill_interrupt_full</NAME>
+<RETURNS>void</RETURNS>
+FpiUsbTransfer *transfer, guint8          endpoint, guint8         *buffer, gsize           length, GDestroyNotify  free_func
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_usb_transfer_submit</NAME>
+<RETURNS>void</RETURNS>
+FpiUsbTransfer        *transfer, guint                  timeout_ms, GCancellable          *cancellable, FpiUsbTransferCallback callback, gpointer               user_data
+</FUNCTION>
+<FUNCTION>
+<NAME>fpi_usb_transfer_submit_sync</NAME>
+<RETURNS>gboolean</RETURNS>
+FpiUsbTransfer *transfer, guint           timeout_ms, GError        **error
+</FUNCTION>
+<STRUCT>
+<NAME>FpiSsm</NAME>
+</STRUCT>

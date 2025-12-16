@@ -1,0 +1,1035 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>FpPrint: libfprint Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="libfprint Reference Manual">
+<link rel="up" href="pt02.html" title="Part II. Library API Documentation">
+<link rel="prev" href="FpImageDevice.html" title="FpImageDevice">
+<link rel="next" href="FpImage.html" title="FpImage">
+<meta name="generator" content="GTK-Doc V1.34.0 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#FpPrint.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#FpPrint.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#FpPrint.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="pt02.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="FpImageDevice.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="FpImage.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="FpPrint"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="FpPrint.top_of_page"></a>FpPrint</span></h2>
+<p>FpPrint — Fingerprint handling</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="FpPrint.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="FpPrint.html" title="FpPrint"><span class="returnvalue">FpPrint</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="FpPrint.html#fp-print-new" title="fp_print_new ()">fp_print_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">gchar</span> *
+</td>
+<td class="function_name">
+<a class="link" href="FpPrint.html#fp-print-get-driver" title="fp_print_get_driver ()">fp_print_get_driver</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">gchar</span> *
+</td>
+<td class="function_name">
+<a class="link" href="FpPrint.html#fp-print-get-device-id" title="fp_print_get_device_id ()">fp_print_get_device_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpPrint.html#fp-print-get-device-stored" title="fp_print_get_device_stored ()">fp_print_get_device_stored</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="FpImage.html" title="FpImage"><span class="returnvalue">FpImage</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="FpPrint.html#fp-print-get-image" title="fp_print_get_image ()">fp_print_get_image</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="FpPrint.html#FpFinger" title="enum FpFinger"><span class="returnvalue">FpFinger</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="FpPrint.html#fp-print-get-finger" title="fp_print_get_finger ()">fp_print_get_finger</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">gchar</span> *
+</td>
+<td class="function_name">
+<a class="link" href="FpPrint.html#fp-print-get-username" title="fp_print_get_username ()">fp_print_get_username</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">gchar</span> *
+</td>
+<td class="function_name">
+<a class="link" href="FpPrint.html#fp-print-get-description" title="fp_print_get_description ()">fp_print_get_description</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">GDate</span> *
+</td>
+<td class="function_name">
+<a class="link" href="FpPrint.html#fp-print-get-enroll-date" title="fp_print_get_enroll_date ()">fp_print_get_enroll_date</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpPrint.html#fp-print-set-finger" title="fp_print_set_finger ()">fp_print_set_finger</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpPrint.html#fp-print-set-username" title="fp_print_set_username ()">fp_print_set_username</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpPrint.html#fp-print-set-description" title="fp_print_set_description ()">fp_print_set_description</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpPrint.html#fp-print-set-enroll-date" title="fp_print_set_enroll_date ()">fp_print_set_enroll_date</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpPrint.html#fp-print-compatible" title="fp_print_compatible ()">fp_print_compatible</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpPrint.html#fp-print-equal" title="fp_print_equal ()">fp_print_equal</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpPrint.html#fp-print-serialize" title="fp_print_serialize ()">fp_print_serialize</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="FpPrint.html" title="FpPrint"><span class="returnvalue">FpPrint</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="FpPrint.html#fp-print-deserialize" title="fp_print_deserialize ()">fp_print_deserialize</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="FpPrint.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<span class="type">char</span> *</td>
+<td class="property_name"><a class="link" href="FpPrint.html#FpPrint--description" title="The “description” property">description</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">char</span> *</td>
+<td class="property_name"><a class="link" href="FpPrint.html#FpPrint--device-id" title="The “device-id” property">device-id</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="FpPrint.html#FpPrint--device-stored" title="The “device-stored” property">device-stored</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">char</span> *</td>
+<td class="property_name"><a class="link" href="FpPrint.html#FpPrint--driver" title="The “driver” property">driver</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">GDate</span> *</td>
+<td class="property_name"><a class="link" href="FpPrint.html#FpPrint--enroll-date" title="The “enroll-date” property">enroll-date</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a class="link" href="FpPrint.html#FpFinger" title="enum FpFinger"><span class="type">FpFinger</span></a></td>
+<td class="property_name"><a class="link" href="FpPrint.html#FpPrint--finger" title="The “finger” property">finger</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">GVariant</span> *</td>
+<td class="property_name"><a class="link" href="FpPrint.html#FpPrint--fpi-data" title="The “fpi-data” property">fpi-data</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gpointer</span></td>
+<td class="property_name"><a class="link" href="FpPrint.html#FpPrint--fpi-prints" title="The “fpi-prints” property">fpi-prints</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a class="link" href="libfprint-2-Internal-FpPrint.html#FpiPrintType" title="enum FpiPrintType"><span class="type">FpiPrintType</span></a></td>
+<td class="property_name"><a class="link" href="FpPrint.html#FpPrint--fpi-type" title="The “fpi-type” property">fpi-type</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<a class="link" href="FpImage.html" title="FpImage"><span class="type">FpImage</span></a> *</td>
+<td class="property_name"><a class="link" href="FpPrint.html#FpPrint--image" title="The “image” property">image</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">char</span> *</td>
+<td class="property_name"><a class="link" href="FpPrint.html#FpPrint--username" title="The “username” property">username</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="FpPrint.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="FpPrint.html#FP-TYPE-PRINT:CAPS" title="FP_TYPE_PRINT">FP_TYPE_PRINT</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="FpPrint.html#FpFinger" title="enum FpFinger">FpFinger</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="FpPrint.html#FpPrint-struct" title="FpPrint">FpPrint</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="FpPrint.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> GInitiallyUnowned
+        <span class="lineart">╰──</span> FpPrint
+</pre>
+</div>
+<div class="refsect1">
+<a name="FpPrint.description"></a><h2>Description</h2>
+<p>Interaction with prints and their storage.</p>
+</div>
+<div class="refsect1">
+<a name="FpPrint.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="fp-print-new"></a><h3>fp_print_new ()</h3>
+<pre class="programlisting"><a class="link" href="FpPrint.html" title="FpPrint"><span class="returnvalue">FpPrint</span></a> *
+fp_print_new (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>);</pre>
+<p>Create a new <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a>. This is only useful to prepare an enrollment
+of a new print using <a class="link" href="FpDevice.html#fp-device-enroll" title="fp_device_enroll ()"><code class="function">fp_device_enroll()</code></a>. For this you should first
+create a new print, fill in the relevant metadata, and then start
+enrollment.</p>
+<div class="refsect3">
+<a name="fp-print-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-print-new.returns"></a><h4>Returns</h4>
+<p>A newly created <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20floating"><span class="acronym">transfer floating</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-print-get-driver"></a><h3>fp_print_get_driver ()</h3>
+<pre class="programlisting">const <span class="returnvalue">gchar</span> *
+fp_print_get_driver (<em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> *print</code></em>);</pre>
+<p>Returns the driver that the print was created for.</p>
+<div class="refsect3">
+<a name="fp-print-get-driver.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>print</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-print-get-driver.returns"></a><h4>Returns</h4>
+<p>The driver. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-print-get-device-id"></a><h3>fp_print_get_device_id ()</h3>
+<pre class="programlisting">const <span class="returnvalue">gchar</span> *
+fp_print_get_device_id (<em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> *print</code></em>);</pre>
+<p>Returns the device ID that the print was created for.</p>
+<div class="refsect3">
+<a name="fp-print-get-device-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>print</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-print-get-device-id.returns"></a><h4>Returns</h4>
+<p>The device ID. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-print-get-device-stored"></a><h3>fp_print_get_device_stored ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fp_print_get_device_stored (<em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> *print</code></em>);</pre>
+<p>Whether the print is actually stored on the device and this is
+just a handle to use that references the device stored data.</p>
+<div class="refsect3">
+<a name="fp-print-get-device-stored.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>print</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-print-get-device-stored.returns"></a><h4>Returns</h4>
+<p> Whether the print is stored on the device</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-print-get-image"></a><h3>fp_print_get_image ()</h3>
+<pre class="programlisting"><a class="link" href="FpImage.html" title="FpImage"><span class="returnvalue">FpImage</span></a> *
+fp_print_get_image (<em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> *print</code></em>);</pre>
+<p>Returns the image that the print was created from, or <code class="literal">NULL</code></p>
+<div class="refsect3">
+<a name="fp-print-get-image.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>print</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-print-get-image.returns"></a><h4>Returns</h4>
+<p>The <a class="link" href="FpImage.html" title="FpImage"><span class="type">FpImage</span></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>][<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-print-get-finger"></a><h3>fp_print_get_finger ()</h3>
+<pre class="programlisting"><a class="link" href="FpPrint.html#FpFinger" title="enum FpFinger"><span class="returnvalue">FpFinger</span></a>
+fp_print_get_finger (<em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> *print</code></em>);</pre>
+<p>Returns the finger that the print was created for.</p>
+<div class="refsect3">
+<a name="fp-print-get-finger.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>print</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-print-get-finger.returns"></a><h4>Returns</h4>
+<p> The <a class="link" href="FpPrint.html#FpFinger" title="enum FpFinger"><span class="type">FpFinger</span></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-print-get-username"></a><h3>fp_print_get_username ()</h3>
+<pre class="programlisting">const <span class="returnvalue">gchar</span> *
+fp_print_get_username (<em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> *print</code></em>);</pre>
+<p>Returns the user defined username for the print.</p>
+<div class="refsect3">
+<a name="fp-print-get-username.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>print</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-print-get-username.returns"></a><h4>Returns</h4>
+<p>The username. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>][<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-print-get-description"></a><h3>fp_print_get_description ()</h3>
+<pre class="programlisting">const <span class="returnvalue">gchar</span> *
+fp_print_get_description (<em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> *print</code></em>);</pre>
+<p>Returns the user defined description for the print.</p>
+<div class="refsect3">
+<a name="fp-print-get-description.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>print</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-print-get-description.returns"></a><h4>Returns</h4>
+<p>The description. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>][<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-print-get-enroll-date"></a><h3>fp_print_get_enroll_date ()</h3>
+<pre class="programlisting">const <span class="returnvalue">GDate</span> *
+fp_print_get_enroll_date (<em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> *print</code></em>);</pre>
+<p>Returns the user defined enroll date for the print.</p>
+<div class="refsect3">
+<a name="fp-print-get-enroll-date.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>print</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-print-get-enroll-date.returns"></a><h4>Returns</h4>
+<p>The <span class="type">GDate</span>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>][<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-print-set-finger"></a><h3>fp_print_set_finger ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fp_print_set_finger (<em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> *print</code></em>,
+                     <em class="parameter"><code><a class="link" href="FpPrint.html#FpFinger" title="enum FpFinger"><span class="type">FpFinger</span></a> finger</code></em>);</pre>
+<p>Set the finger that the print is for.</p>
+<div class="refsect3">
+<a name="fp-print-set-finger.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>print</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>finger</p></td>
+<td class="parameter_description"><p>The <a class="link" href="FpPrint.html#FpFinger" title="enum FpFinger"><span class="type">FpFinger</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-print-set-username"></a><h3>fp_print_set_username ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fp_print_set_username (<em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> *print</code></em>,
+                       <em class="parameter"><code>const <span class="type">gchar</span> *username</code></em>);</pre>
+<p>Set the username for the print.</p>
+<div class="refsect3">
+<a name="fp-print-set-username.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>print</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>username</p></td>
+<td class="parameter_description"><p>The new username. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-print-set-description"></a><h3>fp_print_set_description ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fp_print_set_description (<em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> *print</code></em>,
+                          <em class="parameter"><code>const <span class="type">gchar</span> *description</code></em>);</pre>
+<p>Set the description for the print.</p>
+<div class="refsect3">
+<a name="fp-print-set-description.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>print</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>description</p></td>
+<td class="parameter_description"><p>The new description. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-print-set-enroll-date"></a><h3>fp_print_set_enroll_date ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fp_print_set_enroll_date (<em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> *print</code></em>,
+                          <em class="parameter"><code>const <span class="type">GDate</span> *enroll_date</code></em>);</pre>
+<p>Set the enroll date for the print.</p>
+<div class="refsect3">
+<a name="fp-print-set-enroll-date.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>print</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>enroll_date</p></td>
+<td class="parameter_description"><p>The new enroll date. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-print-compatible"></a><h3>fp_print_compatible ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fp_print_compatible (<em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> *self</code></em>,
+                     <em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>);</pre>
+<p>Tests whether the prints is compatible with the given device.</p>
+<div class="refsect3">
+<a name="fp-print-compatible.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-print-compatible.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the print is compatible with the device</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-print-equal"></a><h3>fp_print_equal ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fp_print_equal (<em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> *self</code></em>,
+                <em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> *other</code></em>);</pre>
+<p>Tests whether the prints can be considered equal. This only compares the
+actual information about the print, not the metadata.</p>
+<div class="refsect3">
+<a name="fp-print-equal.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>First <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>other</p></td>
+<td class="parameter_description"><p>Second <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-print-equal.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the prints are equal</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-print-serialize"></a><h3>fp_print_serialize ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fp_print_serialize (<em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> *print</code></em>,
+                    <em class="parameter"><code><span class="type">guchar</span> **data</code></em>,
+                    <em class="parameter"><code><span class="type">gsize</span> *length</code></em>,
+                    <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Serialize a print definition for permanent storage. Note that this is
+lossy in the sense that e.g. the image data is discarded.</p>
+<div class="refsect3">
+<a name="fp-print-serialize.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>print</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>Return location for data pointer. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/array"><span class="acronym">array</span></a> length=length][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>][<a href="http://foldoc.org/out"><span class="acronym">out</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>length</p></td>
+<td class="parameter_description"><p>Length of <em class="parameter"><code>data</code></em>
+. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>][<a href="http://foldoc.org/out"><span class="acronym">out</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for error</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-print-serialize.returns"></a><h4>Returns</h4>
+<p><code class="literal">TRUE</code> on success. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/type"><span class="acronym">type</span></a> void]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-print-deserialize"></a><h3>fp_print_deserialize ()</h3>
+<pre class="programlisting"><a class="link" href="FpPrint.html" title="FpPrint"><span class="returnvalue">FpPrint</span></a> *
+fp_print_deserialize (<em class="parameter"><code>const <span class="type">guchar</span> *data</code></em>,
+                      <em class="parameter"><code><span class="type">gsize</span> length</code></em>,
+                      <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Deserialize a print definition from permanent storage.</p>
+<div class="refsect3">
+<a name="fp-print-deserialize.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>The binary data. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/array"><span class="acronym">array</span></a> length=length]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>length</p></td>
+<td class="parameter_description"><p>Length of the data</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for error</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-print-deserialize.returns"></a><h4>Returns</h4>
+<p>A newly created <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> on success. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="FpPrint.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="FP-TYPE-PRINT:CAPS"></a><h3>FP_TYPE_PRINT</h3>
+<pre class="programlisting">#define FP_TYPE_PRINT (fp_print_get_type ())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpFinger"></a><h3>enum FpFinger</h3>
+<div class="refsect3">
+<a name="FpFinger.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="FP-FINGER-UNKNOWN:CAPS"></a>FP_FINGER_UNKNOWN</p></td>
+<td class="enum_member_description">
+<p>The finger is unknown</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-FINGER-LEFT-THUMB:CAPS"></a>FP_FINGER_LEFT_THUMB</p></td>
+<td class="enum_member_description">
+<p>Left thumb</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-FINGER-LEFT-INDEX:CAPS"></a>FP_FINGER_LEFT_INDEX</p></td>
+<td class="enum_member_description">
+<p>Left index finger</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-FINGER-LEFT-MIDDLE:CAPS"></a>FP_FINGER_LEFT_MIDDLE</p></td>
+<td class="enum_member_description">
+<p>Left middle finger</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-FINGER-LEFT-RING:CAPS"></a>FP_FINGER_LEFT_RING</p></td>
+<td class="enum_member_description">
+<p>Left ring finger</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-FINGER-LEFT-LITTLE:CAPS"></a>FP_FINGER_LEFT_LITTLE</p></td>
+<td class="enum_member_description">
+<p>Left little finger</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-FINGER-RIGHT-THUMB:CAPS"></a>FP_FINGER_RIGHT_THUMB</p></td>
+<td class="enum_member_description">
+<p>Right thumb</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-FINGER-RIGHT-INDEX:CAPS"></a>FP_FINGER_RIGHT_INDEX</p></td>
+<td class="enum_member_description">
+<p>Right index finger</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-FINGER-RIGHT-MIDDLE:CAPS"></a>FP_FINGER_RIGHT_MIDDLE</p></td>
+<td class="enum_member_description">
+<p>Right middle finger</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-FINGER-RIGHT-RING:CAPS"></a>FP_FINGER_RIGHT_RING</p></td>
+<td class="enum_member_description">
+<p>Right ring finger</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-FINGER-RIGHT-LITTLE:CAPS"></a>FP_FINGER_RIGHT_LITTLE</p></td>
+<td class="enum_member_description">
+<p>Right little finger</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-FINGER-FIRST:CAPS"></a>FP_FINGER_FIRST</p></td>
+<td class="enum_member_description">
+<p>The first finger in the fp-print order</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-FINGER-LAST:CAPS"></a>FP_FINGER_LAST</p></td>
+<td class="enum_member_description">
+<p>The last finger in the fp-print order</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpPrint-struct"></a><h3>FpPrint</h3>
+<pre class="programlisting">typedef struct _FpPrint FpPrint;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="FpPrint.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="FpPrint--description"></a><h3>The <code class="literal">“description”</code> property</h3>
+<pre class="programlisting">  “description”              <span class="type">char</span> *</pre>
+<p>A user defined description for the print.</p>
+<p>Owner: FpPrint</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpPrint--device-id"></a><h3>The <code class="literal">“device-id”</code> property</h3>
+<pre class="programlisting">  “device-id”                <span class="type">char</span> *</pre>
+<p>Unique ID allowing to check if a device is compatible with the print.</p>
+<p>Owner: FpPrint</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpPrint--device-stored"></a><h3>The <code class="literal">“device-stored”</code> property</h3>
+<pre class="programlisting">  “device-stored”            <span class="type">gboolean</span></pre>
+<p>Whether the print is a handle for data that is stored on the device.</p>
+<p>Owner: FpPrint</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpPrint--driver"></a><h3>The <code class="literal">“driver”</code> property</h3>
+<pre class="programlisting">  “driver”                   <span class="type">char</span> *</pre>
+<p>The name of the driver that created the print.</p>
+<p>Owner: FpPrint</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpPrint--enroll-date"></a><h3>The <code class="literal">“enroll-date”</code> property</h3>
+<pre class="programlisting">  “enroll-date”              <span class="type">GDate</span> *</pre>
+<p>The date of enrollment.</p>
+<p>Owner: FpPrint</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpPrint--finger"></a><h3>The <code class="literal">“finger”</code> property</h3>
+<pre class="programlisting">  “finger”                   <a class="link" href="FpPrint.html#FpFinger" title="enum FpFinger"><span class="type">FpFinger</span></a></pre>
+<p>The enrolled finger.</p>
+<p>Owner: FpPrint</p>
+<p>Flags: Read / Write</p>
+<p>Default value: FP_FINGER_UNKNOWN</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpPrint--fpi-data"></a><h3>The <code class="literal">“fpi-data”</code> property</h3>
+<pre class="programlisting">  “fpi-data”                 <span class="type">GVariant</span> *</pre>
+<p>The raw data for internal use only.</p>
+<p>Owner: FpPrint</p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: GVariant&lt;*&gt;</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpPrint--fpi-prints"></a><h3>The <code class="literal">“fpi-prints”</code> property</h3>
+<pre class="programlisting">  “fpi-prints”               <span class="type">gpointer</span></pre>
+<p>Prints for internal use only.</p>
+<p>Owner: FpPrint</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpPrint--fpi-type"></a><h3>The <code class="literal">“fpi-type”</code> property</h3>
+<pre class="programlisting">  “fpi-type”                 <a class="link" href="libfprint-2-Internal-FpPrint.html#FpiPrintType" title="enum FpiPrintType"><span class="type">FpiPrintType</span></a></pre>
+<p>Private: The type of the print data.</p>
+<p>Owner: FpPrint</p>
+<p>Flags: Read / Write</p>
+<p>Default value: FPI_PRINT_UNDEFINED</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpPrint--image"></a><h3>The <code class="literal">“image”</code> property</h3>
+<pre class="programlisting">  “image”                    <a class="link" href="FpImage.html" title="FpImage"><span class="type">FpImage</span></a> *</pre>
+<p>The image that was used for the print, only valid for newly enrolled prints on image based devices.</p>
+<p>Owner: FpPrint</p>
+<p>Flags: Read</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpPrint--username"></a><h3>The <code class="literal">“username”</code> property</h3>
+<pre class="programlisting">  “username”                 <span class="type">char</span> *</pre>
+<p>The username that the enrolled print belongs to.</p>
+<p>Owner: FpPrint</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.34.0</div>
+</body>
+</html>

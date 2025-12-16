@@ -1,0 +1,5 @@
+[Test]
+Type=session
+# We can't use TestEnvironment as per
+#  https://gitlab.gnome.org/GNOME/gnome-desktop-testing/-/issues/1
+Exec=env G_DEBUG=fatal-warnings G_MESSAGES_DEBUG=all G_TEST_SRCDIR=/home/tiandou/下载/libfprint/tests G_TEST_BUILDDIR=/home/tiandou/下载/libfprint/builddir/tests FP_DEVICE_EMULATION=1 FP_DRIVERS_ALLOWLIST=uru4000 FP_PRINTS_PATH=/home/tiandou/下载/libfprint/examples/prints LD_LIBRARY_PATH=/usr/local/lib/x86_64-linux-gnu /usr/local/libexec/installed-tests/libfprint-2/umockdev-test.py /usr/local/share/installed-tests/libfprint-2/uru4000-4500

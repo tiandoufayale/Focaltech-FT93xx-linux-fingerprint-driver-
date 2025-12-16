@@ -1,0 +1,19 @@
+[
+  "/home/tiandou/\u4e0b\u8f7d/libfprint/meson.build",
+  "/home/tiandou/\u4e0b\u8f7d/libfprint/meson_options.txt",
+  "/home/tiandou/\u4e0b\u8f7d/libfprint/libfprint/meson.build",
+  "/home/tiandou/\u4e0b\u8f7d/libfprint/libfprint/empty_file",
+  "/usr/lib/cargo/bin/coreutils/echo",
+  "/home/tiandou/\u4e0b\u8f7d/libfprint/libfprint/nbis/include/meson.build",
+  "/home/tiandou/\u4e0b\u8f7d/libfprint/libfprint/nbis/libfprint-include/meson.build",
+  "/home/tiandou/\u4e0b\u8f7d/libfprint/doc/meson.build",
+  "/home/tiandou/\u4e0b\u8f7d/libfprint/doc/xml/meson.build",
+  "/home/tiandou/\u4e0b\u8f7d/libfprint/doc/xml/gtkdocentities.ent.in",
+  "/home/tiandou/\u4e0b\u8f7d/libfprint/data/meson.build",
+  "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/meson.build",
+  "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/create-driver-test.py.in",
+  "/usr/bin/python3.13",
+  "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/driver.test.in",
+  "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/test.in",
+  "/home/tiandou/\u4e0b\u8f7d/libfprint/examples/meson.build"
+]

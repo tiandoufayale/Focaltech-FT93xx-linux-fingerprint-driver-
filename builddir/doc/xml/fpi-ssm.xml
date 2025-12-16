@@ -1,0 +1,813 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
+[
+  <!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+]>
+<refentry id="libfprint-2-Sequential-state-machine">
+<refmeta>
+<refentrytitle role="top_of_page" id="libfprint-2-Sequential-state-machine.top_of_page">Sequential state machine</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBFPRINT-2 Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>Sequential state machine</refname>
+<refpurpose>State machine helpers</refpurpose>
+</refnamediv>
+
+<refsect1 id="libfprint-2-Sequential-state-machine.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_proto_type" colwidth="150px"/>
+<colspec colname="functions_proto_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="FpiSsmCompletedCallback">*FpiSsmCompletedCallback</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="FpiSsmHandlerCallback">*FpiSsmHandlerCallback</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="fpi-ssm-new">fpi_ssm_new</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="FpiSsm"><returnvalue>FpiSsm</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fpi-ssm-new-full">fpi_ssm_new_full</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-ssm-free">fpi_ssm_free</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-ssm-start">fpi_ssm_start</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-ssm-start-subsm">fpi_ssm_start_subsm</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-ssm-next-state">fpi_ssm_next_state</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-ssm-next-state-delayed">fpi_ssm_next_state_delayed</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-ssm-jump-to-state">fpi_ssm_jump_to_state</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-ssm-jump-to-state-delayed">fpi_ssm_jump_to_state_delayed</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-ssm-cancel-delayed-state-change">fpi_ssm_cancel_delayed_state_change</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-ssm-mark-completed">fpi_ssm_mark_completed</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-ssm-mark-failed">fpi_ssm_mark_failed</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-ssm-set-data">fpi_ssm_set_data</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gpointer"><returnvalue>gpointer</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-ssm-get-data">fpi_ssm_get_data</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="FpDevice"><returnvalue>FpDevice</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fpi-ssm-get-device">fpi_ssm_get_device</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GError"><returnvalue>GError</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fpi-ssm-get-error">fpi_ssm_get_error</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GError"><returnvalue>GError</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="fpi-ssm-dup-error">fpi_ssm_dup_error</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="int"><returnvalue>int</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-ssm-get-cur-state">fpi_ssm_get_cur_state</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-ssm-silence-debug">fpi_ssm_silence_debug</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-ssm-spi-transfer-cb">fpi_ssm_spi_transfer_cb</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-ssm-spi-transfer-with-weak-pointer-cb">fpi_ssm_spi_transfer_with_weak_pointer_cb</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-ssm-usb-transfer-cb">fpi_ssm_usb_transfer_cb</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-ssm-usb-transfer-with-weak-pointer-cb">fpi_ssm_usb_transfer_with_weak_pointer_cb</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="libfprint-2-Sequential-state-machine.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="other_proto_type" colwidth="150px"/>
+<colspec colname="other_proto_name"/>
+<tbody>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="FpiSsm">FpiSsm</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+
+<refsect1 id="libfprint-2-Sequential-state-machine.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Asynchronous driver design encourages some kind of state machine behind it.
+<link linkend="FpiSsm"><type>FpiSsm</type></link> provides a simple mechanism to implement a state machine, which
+is often entirely linear. You can however also jump to a specific state
+or do an early return from the SSM by completing it.</para>
+<para>e.g. <literal>S1</literal> ↦ <literal>S2</literal> ↦ <literal>S3</literal> ↦ <literal>S4</literal> ↦ <literal>C1</literal> ↦ <literal>C2</literal> ↦ <literal>final</literal></para>
+<para>Where <literal>S1</literal> is the start state. The <literal>C1</literal> and later states are cleanup states
+that may be defined. The difference is that these states will never be
+skipped when marking the SSM as completed.</para>
+<para>Use <link linkend="fpi-ssm-new"><function>fpi_ssm_new()</function></link> to create a new state machine with a defined number of
+states. Note that the state numbers start at zero, making them match the
+first value in a C enumeration.</para>
+<para>To start a ssm, you pass in a completion callback function to <link linkend="fpi-ssm-start"><function>fpi_ssm_start()</function></link>
+which gets called when the ssm completes (both on failure and on success).
+Starting a ssm also takes ownership of it and it will be automatically
+free'ed after the callback function has been called.</para>
+<para>To iterate to the next state, call <link linkend="fpi-ssm-next-state"><function>fpi_ssm_next_state()</function></link>. It is legal to
+attempt to iterate beyond the final state - this is equivalent to marking
+the ssm as successfully completed.</para>
+<para>To mark successful completion of a SSM, either iterate beyond the final
+state or call <link linkend="fpi-ssm-mark-completed"><function>fpi_ssm_mark_completed()</function></link> from any state.</para>
+<para>To mark failed completion of a SSM, call <link linkend="fpi-ssm-mark-failed"><function>fpi_ssm_mark_failed()</function></link> from any
+state. You must pass a non-zero error code.</para>
+<para>Your state handling function looks at the return value of
+<link linkend="fpi-ssm-get-cur-state"><function>fpi_ssm_get_cur_state()</function></link> in order to determine the current state and hence
+which operations to perform (a switch statement is appropriate).</para>
+<para>Typically, the state handling function fires off an asynchronous
+communication with the device (such as a USB transfer), and the
+callback function iterates the machine to the next state
+upon success (or fails).</para>
+
+</refsect1>
+<refsect1 id="libfprint-2-Sequential-state-machine.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="FpiSsmCompletedCallback" role="function">
+<title>FpiSsmCompletedCallback&#160;()</title>
+<indexterm zone="FpiSsmCompletedCallback"><primary>FpiSsmCompletedCallback</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*FpiSsmCompletedCallback<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="FpiSsm"><type>FpiSsm</type></link> *ssm</parameter>,
+                            <parameter><link linkend="FpDevice"><type>FpDevice</type></link> *dev</parameter>,
+                            <parameter><link linkend="GError"><type>GError</type></link> *error</parameter>);</programlisting>
+<para>The callback called when a state machine completes successfully,
+as set when calling <link linkend="fpi-ssm-start"><function>fpi_ssm_start()</function></link>.</para>
+<refsect3 id="FpiSsmCompletedCallback.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>ssm</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpiSsm"><type>FpiSsm</type></link> state machine</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>dev</para></entry>
+<entry role="parameter_description"><para>the <link linkend="fp-dev"><type>fp_dev</type></link> fingerprint device</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GError"><type>GError</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link> on successful completion. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="FpiSsmHandlerCallback" role="function">
+<title>FpiSsmHandlerCallback&#160;()</title>
+<indexterm zone="FpiSsmHandlerCallback"><primary>FpiSsmHandlerCallback</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*FpiSsmHandlerCallback<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="FpiSsm"><type>FpiSsm</type></link> *ssm</parameter>,
+                          <parameter><link linkend="FpDevice"><type>FpDevice</type></link> *dev</parameter>);</programlisting>
+<para>The callback called when a state machine transitions from one
+state to the next, as set when calling <link linkend="fpi-ssm-new"><function>fpi_ssm_new()</function></link>.</para>
+<refsect3 id="FpiSsmHandlerCallback.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>ssm</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpiSsm"><type>FpiSsm</type></link> state machine</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>dev</para></entry>
+<entry role="parameter_description"><para>the <link linkend="fp-dev"><type>fp_dev</type></link> fingerprint device</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-ssm-new" role="macro">
+<title>fpi_ssm_new()</title>
+<indexterm zone="fpi-ssm-new"><primary>fpi_ssm_new</primary></indexterm>
+<programlisting language="C">#define             fpi_ssm_new(dev, handler, nr_states)</programlisting>
+<para>Allocate a new ssm, with <parameter>nr_states</parameter>
+ states. The <parameter>handler</parameter>
+ callback
+will be called after each state transition.
+This is a macro that calls <link linkend="fpi-ssm-new-full"><function>fpi_ssm_new_full()</function></link> using <parameter>nr_states</parameter>
+ as the
+cleanup states and using the stringified version of <parameter>nr_states</parameter>
+. It should
+be used with an enum value.</para>
+<refsect3 id="fpi-ssm-new.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>dev</para></entry>
+<entry role="parameter_description"><para>a <link linkend="fp-dev"><type>fp_dev</type></link> fingerprint device</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>handler</para></entry>
+<entry role="parameter_description"><para>the callback function</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>nr_states</para></entry>
+<entry role="parameter_description"><para>the number of states</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fpi-ssm-new.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="FpiSsm"><type>FpiSsm</type></link> state machine</para>
+</refsect3></refsect2>
+<refsect2 id="fpi-ssm-new-full" role="function">
+<title>fpi_ssm_new_full&#160;()</title>
+<indexterm zone="fpi-ssm-new-full"><primary>fpi_ssm_new_full</primary></indexterm>
+<programlisting language="C"><link linkend="FpiSsm"><returnvalue>FpiSsm</returnvalue></link>&#160;*
+fpi_ssm_new_full (<parameter><link linkend="FpDevice"><type>FpDevice</type></link> *dev</parameter>,
+                  <parameter><link linkend="FpiSsmHandlerCallback"><type>FpiSsmHandlerCallback</type></link> handler</parameter>,
+                  <parameter><link linkend="int"><type>int</type></link> nr_states</parameter>,
+                  <parameter><link linkend="int"><type>int</type></link> start_cleanup</parameter>,
+                  <parameter>const <link linkend="char"><type>char</type></link> *machine_name</parameter>);</programlisting>
+<para>Allocate a new ssm, with <parameter>nr_states</parameter>
+ states. The <parameter>handler</parameter>
+ callback
+will be called after each state transition.</para>
+<refsect3 id="fpi-ssm-new-full.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>dev</para></entry>
+<entry role="parameter_description"><para>a <link linkend="fp-dev"><type>fp_dev</type></link> fingerprint device</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>handler</para></entry>
+<entry role="parameter_description"><para>the callback function</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>nr_states</para></entry>
+<entry role="parameter_description"><para>the number of states</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>start_cleanup</para></entry>
+<entry role="parameter_description"><para>the first cleanup state</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>machine_name</para></entry>
+<entry role="parameter_description"><para>the name of the state machine (for debug purposes)</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fpi-ssm-new-full.returns" role="returns">
+<title>Returns</title>
+<para> a new <link linkend="FpiSsm"><type>FpiSsm</type></link> state machine</para>
+</refsect3></refsect2>
+<refsect2 id="fpi-ssm-free" role="function">
+<title>fpi_ssm_free&#160;()</title>
+<indexterm zone="fpi-ssm-free"><primary>fpi_ssm_free</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_ssm_free (<parameter><link linkend="FpiSsm"><type>FpiSsm</type></link> *machine</parameter>);</programlisting>
+<para>Frees a state machine. This does not call any error or success
+callbacks, so you need to do this yourself.</para>
+<refsect3 id="fpi-ssm-free.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>machine</para></entry>
+<entry role="parameter_description"><para>an <link linkend="FpiSsm"><type>FpiSsm</type></link> state machine</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-ssm-start" role="function">
+<title>fpi_ssm_start&#160;()</title>
+<indexterm zone="fpi-ssm-start"><primary>fpi_ssm_start</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_ssm_start (<parameter><link linkend="FpiSsm"><type>FpiSsm</type></link> *ssm</parameter>,
+               <parameter><link linkend="FpiSsmCompletedCallback"><type>FpiSsmCompletedCallback</type></link> callback</parameter>);</programlisting>
+<para>Starts a state machine. You can also use this function to restart
+a completed or failed state machine. The <parameter>callback</parameter>
+ will be called
+on completion.</para>
+<para>Note that <parameter>ssm</parameter>
+ will be stolen when this function is called.
+So that all associated data will be free'ed automatically, after the
+<parameter>callback</parameter>
+ is ran.</para>
+<refsect3 id="fpi-ssm-start.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>ssm</para></entry>
+<entry role="parameter_description"><para>an <link linkend="FpiSsm"><type>FpiSsm</type></link> state machine. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>callback</para></entry>
+<entry role="parameter_description"><para>the <link linkend="FpiSsmCompletedCallback"><type>FpiSsmCompletedCallback</type></link> callback to call on completion</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-ssm-start-subsm" role="function">
+<title>fpi_ssm_start_subsm&#160;()</title>
+<indexterm zone="fpi-ssm-start-subsm"><primary>fpi_ssm_start_subsm</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_ssm_start_subsm (<parameter><link linkend="FpiSsm"><type>FpiSsm</type></link> *parent</parameter>,
+                     <parameter><link linkend="FpiSsm"><type>FpiSsm</type></link> *child</parameter>);</programlisting>
+<para>Starts a state machine as a child of another. if the child completes
+successfully, the parent will be advanced to the next state. if the
+child fails, the parent will be marked as failed with the same error code.</para>
+<para>The child will be automatically freed upon completion or failure.</para>
+<refsect3 id="fpi-ssm-start-subsm.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>parent</para></entry>
+<entry role="parameter_description"><para>an <link linkend="FpiSsm"><type>FpiSsm</type></link> state machine</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>child</para></entry>
+<entry role="parameter_description"><para>an <link linkend="FpiSsm"><type>FpiSsm</type></link> state machine</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-ssm-next-state" role="function">
+<title>fpi_ssm_next_state&#160;()</title>
+<indexterm zone="fpi-ssm-next-state"><primary>fpi_ssm_next_state</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_ssm_next_state (<parameter><link linkend="FpiSsm"><type>FpiSsm</type></link> *machine</parameter>);</programlisting>
+<para>Iterate to next state of a state machine. If the current state is the
+last state, then the state machine will be marked as completed, as
+if calling <link linkend="fpi-ssm-mark-completed"><function>fpi_ssm_mark_completed()</function></link>.</para>
+<refsect3 id="fpi-ssm-next-state.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>machine</para></entry>
+<entry role="parameter_description"><para>an <link linkend="FpiSsm"><type>FpiSsm</type></link> state machine</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-ssm-next-state-delayed" role="function">
+<title>fpi_ssm_next_state_delayed&#160;()</title>
+<indexterm zone="fpi-ssm-next-state-delayed"><primary>fpi_ssm_next_state_delayed</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_ssm_next_state_delayed (<parameter><link linkend="FpiSsm"><type>FpiSsm</type></link> *machine</parameter>,
+                            <parameter><link linkend="int"><type>int</type></link> delay</parameter>);</programlisting>
+<para>Iterate to next state of a state machine with a delay of <parameter>delay</parameter>
+ ms. If the
+current state is the last state, then the state machine will be marked as
+completed, as if calling <link linkend="fpi-ssm-mark-completed"><function>fpi_ssm_mark_completed()</function></link>.</para>
+<refsect3 id="fpi-ssm-next-state-delayed.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>machine</para></entry>
+<entry role="parameter_description"><para>an <link linkend="FpiSsm"><type>FpiSsm</type></link> state machine</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>delay</para></entry>
+<entry role="parameter_description"><para>the milliseconds to wait before switching to the next state</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-ssm-jump-to-state" role="function">
+<title>fpi_ssm_jump_to_state&#160;()</title>
+<indexterm zone="fpi-ssm-jump-to-state"><primary>fpi_ssm_jump_to_state</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_ssm_jump_to_state (<parameter><link linkend="FpiSsm"><type>FpiSsm</type></link> *machine</parameter>,
+                       <parameter><link linkend="int"><type>int</type></link> state</parameter>);</programlisting>
+<para>Jump to the <parameter>state</parameter>
+ state, bypassing intermediary states.
+If <parameter>state</parameter>
+ is the last state, the machine won't be completed unless
+<link linkend="fpi-ssm-mark-completed"><function>fpi_ssm_mark_completed()</function></link> isn't explicitly called.</para>
+<refsect3 id="fpi-ssm-jump-to-state.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>machine</para></entry>
+<entry role="parameter_description"><para>an <link linkend="FpiSsm"><type>FpiSsm</type></link> state machine</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>state</para></entry>
+<entry role="parameter_description"><para>the state to jump to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-ssm-jump-to-state-delayed" role="function">
+<title>fpi_ssm_jump_to_state_delayed&#160;()</title>
+<indexterm zone="fpi-ssm-jump-to-state-delayed"><primary>fpi_ssm_jump_to_state_delayed</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_ssm_jump_to_state_delayed (<parameter><link linkend="FpiSsm"><type>FpiSsm</type></link> *machine</parameter>,
+                               <parameter><link linkend="int"><type>int</type></link> state</parameter>,
+                               <parameter><link linkend="int"><type>int</type></link> delay</parameter>);</programlisting>
+<para>Jump to the <parameter>state</parameter>
+ state with a delay of <parameter>delay</parameter>
+ milliseconds, bypassing
+intermediary states.</para>
+<refsect3 id="fpi-ssm-jump-to-state-delayed.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>machine</para></entry>
+<entry role="parameter_description"><para>an <link linkend="FpiSsm"><type>FpiSsm</type></link> state machine</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>state</para></entry>
+<entry role="parameter_description"><para>the state to jump to</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>delay</para></entry>
+<entry role="parameter_description"><para>the milliseconds to wait before switching to <parameter>state</parameter>
+state</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-ssm-cancel-delayed-state-change" role="function">
+<title>fpi_ssm_cancel_delayed_state_change&#160;()</title>
+<indexterm zone="fpi-ssm-cancel-delayed-state-change"><primary>fpi_ssm_cancel_delayed_state_change</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_ssm_cancel_delayed_state_change (<parameter><link linkend="FpiSsm"><type>FpiSsm</type></link> *machine</parameter>);</programlisting>
+</refsect2>
+<refsect2 id="fpi-ssm-mark-completed" role="function">
+<title>fpi_ssm_mark_completed&#160;()</title>
+<indexterm zone="fpi-ssm-mark-completed"><primary>fpi_ssm_mark_completed</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_ssm_mark_completed (<parameter><link linkend="FpiSsm"><type>FpiSsm</type></link> *machine</parameter>);</programlisting>
+<para>Mark a ssm as completed successfully. The callback set when creating
+the state machine with <link linkend="fpi-ssm-new"><function>fpi_ssm_new()</function></link> will be called synchronously.</para>
+<para>Note that any later cleanup state will still be executed.</para>
+<refsect3 id="fpi-ssm-mark-completed.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>machine</para></entry>
+<entry role="parameter_description"><para>an <link linkend="FpiSsm"><type>FpiSsm</type></link> state machine</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-ssm-mark-failed" role="function">
+<title>fpi_ssm_mark_failed&#160;()</title>
+<indexterm zone="fpi-ssm-mark-failed"><primary>fpi_ssm_mark_failed</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_ssm_mark_failed (<parameter><link linkend="FpiSsm"><type>FpiSsm</type></link> *machine</parameter>,
+                     <parameter><link linkend="GError"><type>GError</type></link> *error</parameter>);</programlisting>
+<para>Mark a state machine as failed with <parameter>error</parameter>
+ as the error code, completing it.</para>
+<refsect3 id="fpi-ssm-mark-failed.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>machine</para></entry>
+<entry role="parameter_description"><para>an <link linkend="FpiSsm"><type>FpiSsm</type></link> state machine</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GError"><type>GError</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-ssm-set-data" role="function">
+<title>fpi_ssm_set_data&#160;()</title>
+<indexterm zone="fpi-ssm-set-data"><primary>fpi_ssm_set_data</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_ssm_set_data (<parameter><link linkend="FpiSsm"><type>FpiSsm</type></link> *machine</parameter>,
+                  <parameter><link linkend="gpointer"><type>gpointer</type></link> ssm_data</parameter>,
+                  <parameter><link linkend="GDestroyNotify"><type>GDestroyNotify</type></link> ssm_data_destroy</parameter>);</programlisting>
+<para>Sets <parameter>machine</parameter>
+'s data (freeing the existing data, if any).</para>
+<refsect3 id="fpi-ssm-set-data.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>machine</para></entry>
+<entry role="parameter_description"><para>an <link linkend="FpiSsm"><type>FpiSsm</type></link> state machine</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>ssm_data</para></entry>
+<entry role="parameter_description"><para>a pointer to machine data. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>ssm_data_destroy</para></entry>
+<entry role="parameter_description"><para><link linkend="GDestroyNotify"><type>GDestroyNotify</type></link> for <parameter>ssm_data</parameter>
+. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-ssm-get-data" role="function">
+<title>fpi_ssm_get_data&#160;()</title>
+<indexterm zone="fpi-ssm-get-data"><primary>fpi_ssm_get_data</primary></indexterm>
+<programlisting language="C"><link linkend="gpointer"><returnvalue>gpointer</returnvalue></link>
+fpi_ssm_get_data (<parameter><link linkend="FpiSsm"><type>FpiSsm</type></link> *machine</parameter>);</programlisting>
+<para>Retrieve the pointer to SSM data set with <link linkend="fpi-ssm-set-ssm-data"><function>fpi_ssm_set_ssm_data()</function></link></para>
+<refsect3 id="fpi-ssm-get-data.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>machine</para></entry>
+<entry role="parameter_description"><para>an <link linkend="FpiSsm"><type>FpiSsm</type></link> state machine</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fpi-ssm-get-data.returns" role="returns">
+<title>Returns</title>
+<para> a pointer</para>
+</refsect3></refsect2>
+<refsect2 id="fpi-ssm-get-device" role="function">
+<title>fpi_ssm_get_device&#160;()</title>
+<indexterm zone="fpi-ssm-get-device"><primary>fpi_ssm_get_device</primary></indexterm>
+<programlisting language="C"><link linkend="FpDevice"><returnvalue>FpDevice</returnvalue></link>&#160;*
+fpi_ssm_get_device (<parameter><link linkend="FpiSsm"><type>FpiSsm</type></link> *machine</parameter>);</programlisting>
+<para>Retrieve the device that the SSM is for.</para>
+<refsect3 id="fpi-ssm-get-device.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>machine</para></entry>
+<entry role="parameter_description"><para>an <link linkend="FpiSsm"><type>FpiSsm</type></link> state machine</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fpi-ssm-get-device.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="FpDevice"><type>FpDevice</type></link></para>
+</refsect3></refsect2>
+<refsect2 id="fpi-ssm-get-error" role="function">
+<title>fpi_ssm_get_error&#160;()</title>
+<indexterm zone="fpi-ssm-get-error"><primary>fpi_ssm_get_error</primary></indexterm>
+<programlisting language="C"><link linkend="GError"><returnvalue>GError</returnvalue></link>&#160;*
+fpi_ssm_get_error (<parameter><link linkend="FpiSsm"><type>FpiSsm</type></link> *machine</parameter>);</programlisting>
+<para>Returns the error code set by <link linkend="fpi-ssm-mark-failed"><function>fpi_ssm_mark_failed()</function></link>.</para>
+<refsect3 id="fpi-ssm-get-error.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>machine</para></entry>
+<entry role="parameter_description"><para>an <link linkend="FpiSsm"><type>FpiSsm</type></link> state machine</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fpi-ssm-get-error.returns" role="returns">
+<title>Returns</title>
+<para>a error code. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fpi-ssm-dup-error" role="function">
+<title>fpi_ssm_dup_error&#160;()</title>
+<indexterm zone="fpi-ssm-dup-error"><primary>fpi_ssm_dup_error</primary></indexterm>
+<programlisting language="C"><link linkend="GError"><returnvalue>GError</returnvalue></link>&#160;*
+fpi_ssm_dup_error (<parameter><link linkend="FpiSsm"><type>FpiSsm</type></link> *machine</parameter>);</programlisting>
+<para>Returns the error code set by <link linkend="fpi-ssm-mark-failed"><function>fpi_ssm_mark_failed()</function></link>.</para>
+<refsect3 id="fpi-ssm-dup-error.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>machine</para></entry>
+<entry role="parameter_description"><para>an <link linkend="FpiSsm"><type>FpiSsm</type></link> state machine</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fpi-ssm-dup-error.returns" role="returns">
+<title>Returns</title>
+<para>a error code. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="fpi-ssm-get-cur-state" role="function">
+<title>fpi_ssm_get_cur_state&#160;()</title>
+<indexterm zone="fpi-ssm-get-cur-state"><primary>fpi_ssm_get_cur_state</primary></indexterm>
+<programlisting language="C"><link linkend="int"><returnvalue>int</returnvalue></link>
+fpi_ssm_get_cur_state (<parameter><link linkend="FpiSsm"><type>FpiSsm</type></link> *machine</parameter>);</programlisting>
+<para>Returns the value of the current state. Note that states are
+0-indexed, so a value of 0 means “the first state”.</para>
+<refsect3 id="fpi-ssm-get-cur-state.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>machine</para></entry>
+<entry role="parameter_description"><para>an <link linkend="FpiSsm"><type>FpiSsm</type></link> state machine</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="fpi-ssm-get-cur-state.returns" role="returns">
+<title>Returns</title>
+<para> the current state.</para>
+</refsect3></refsect2>
+<refsect2 id="fpi-ssm-silence-debug" role="function">
+<title>fpi_ssm_silence_debug&#160;()</title>
+<indexterm zone="fpi-ssm-silence-debug"><primary>fpi_ssm_silence_debug</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_ssm_silence_debug (<parameter><link linkend="FpiSsm"><type>FpiSsm</type></link> *machine</parameter>);</programlisting>
+<para>Turn off state change debug messages from this SSM. This does not disable
+all messages, as e.g. the initial state, SSM completion and cleanup states
+are still printed out.</para>
+<para>Use if the SSM loops and would flood the debug log otherwise.</para>
+<refsect3 id="fpi-ssm-silence-debug.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>machine</para></entry>
+<entry role="parameter_description"><para>an <link linkend="FpiSsm"><type>FpiSsm</type></link> state machine</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-ssm-spi-transfer-cb" role="function">
+<title>fpi_ssm_spi_transfer_cb&#160;()</title>
+<indexterm zone="fpi-ssm-spi-transfer-cb"><primary>fpi_ssm_spi_transfer_cb</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_ssm_spi_transfer_cb (<parameter><link linkend="FpiSpiTransfer"><type>FpiSpiTransfer</type></link> *transfer</parameter>,
+                         <parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                         <parameter><link linkend="gpointer"><type>gpointer</type></link> unused_data</parameter>,
+                         <parameter><link linkend="GError"><type>GError</type></link> *error</parameter>);</programlisting>
+<para>Can be used in as a <link linkend="FpiSpiTransfer"><type>FpiSpiTransfer</type></link> callback handler to automatically
+advance or fail a statemachine on transfer completion.</para>
+<para>Make sure to set the <link linkend="FpiSsm"><type>FpiSsm</type></link> on the transfer.</para>
+<refsect3 id="fpi-ssm-spi-transfer-cb.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>transfer</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpiSpiTransfer"><type>FpiSpiTransfer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>unused_data</para></entry>
+<entry role="parameter_description"><para>User data (unused)</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GError"><type>GError</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-ssm-spi-transfer-with-weak-pointer-cb" role="function">
+<title>fpi_ssm_spi_transfer_with_weak_pointer_cb&#160;()</title>
+<indexterm zone="fpi-ssm-spi-transfer-with-weak-pointer-cb"><primary>fpi_ssm_spi_transfer_with_weak_pointer_cb</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_ssm_spi_transfer_with_weak_pointer_cb
+                               (<parameter><link linkend="FpiSpiTransfer"><type>FpiSpiTransfer</type></link> *transfer</parameter>,
+                                <parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                                <parameter><link linkend="gpointer"><type>gpointer</type></link> weak_ptr</parameter>,
+                                <parameter><link linkend="GError"><type>GError</type></link> *error</parameter>);</programlisting>
+<para>Can be used in as a <link linkend="FpiSpiTransfer"><type>FpiSpiTransfer</type></link> callback handler to automatically
+advance or fail a statemachine on transfer completion.
+Passing a <link linkend="gpointer"><type>gpointer</type></link>* as <parameter>weak_ptr</parameter>
+ permits to nullify it once we're done
+with the transfer.</para>
+<para>Make sure to set the <link linkend="FpiSsm"><type>FpiSsm</type></link> on the transfer.</para>
+<refsect3 id="fpi-ssm-spi-transfer-with-weak-pointer-cb.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>transfer</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpiSpiTransfer"><type>FpiSpiTransfer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>weak_ptr</para></entry>
+<entry role="parameter_description"><para>A <link linkend="gpointer"><type>gpointer</type></link> pointer to nullify. You can pass a pointer to any
+<link linkend="gpointer"><type>gpointer</type></link> to nullify when the callback is completed. I.e a
+pointer to the current <link linkend="FpiSpiTransfer"><type>FpiSpiTransfer</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GError"><type>GError</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-ssm-usb-transfer-cb" role="function">
+<title>fpi_ssm_usb_transfer_cb&#160;()</title>
+<indexterm zone="fpi-ssm-usb-transfer-cb"><primary>fpi_ssm_usb_transfer_cb</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_ssm_usb_transfer_cb (<parameter><link linkend="FpiUsbTransfer"><type>FpiUsbTransfer</type></link> *transfer</parameter>,
+                         <parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                         <parameter><link linkend="gpointer"><type>gpointer</type></link> unused_data</parameter>,
+                         <parameter><link linkend="GError"><type>GError</type></link> *error</parameter>);</programlisting>
+<para>Can be used in as a <link linkend="FpiUsbTransfer"><type>FpiUsbTransfer</type></link> callback handler to automatically
+advance or fail a statemachine on transfer completion.</para>
+<para>Make sure to set the <link linkend="FpiSsm"><type>FpiSsm</type></link> on the transfer.</para>
+<refsect3 id="fpi-ssm-usb-transfer-cb.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>transfer</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpiUsbTransfer"><type>FpiUsbTransfer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>unused_data</para></entry>
+<entry role="parameter_description"><para>User data (unused)</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GError"><type>GError</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-ssm-usb-transfer-with-weak-pointer-cb" role="function">
+<title>fpi_ssm_usb_transfer_with_weak_pointer_cb&#160;()</title>
+<indexterm zone="fpi-ssm-usb-transfer-with-weak-pointer-cb"><primary>fpi_ssm_usb_transfer_with_weak_pointer_cb</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_ssm_usb_transfer_with_weak_pointer_cb
+                               (<parameter><link linkend="FpiUsbTransfer"><type>FpiUsbTransfer</type></link> *transfer</parameter>,
+                                <parameter><link linkend="FpDevice"><type>FpDevice</type></link> *device</parameter>,
+                                <parameter><link linkend="gpointer"><type>gpointer</type></link> weak_ptr</parameter>,
+                                <parameter><link linkend="GError"><type>GError</type></link> *error</parameter>);</programlisting>
+<para>Can be used in as a <link linkend="FpiUsbTransfer"><type>FpiUsbTransfer</type></link> callback handler to automatically
+advance or fail a statemachine on transfer completion.
+Passing a <link linkend="gpointer"><type>gpointer</type></link>* as <parameter>weak_ptr</parameter>
+ permits to nullify it once we're done
+with the transfer.</para>
+<para>Make sure to set the <link linkend="FpiSsm"><type>FpiSsm</type></link> on the transfer.</para>
+<refsect3 id="fpi-ssm-usb-transfer-with-weak-pointer-cb.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>transfer</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpiUsbTransfer"><type>FpiUsbTransfer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>device</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpDevice"><type>FpDevice</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>weak_ptr</para></entry>
+<entry role="parameter_description"><para>A <link linkend="gpointer"><type>gpointer</type></link> pointer to nullify. You can pass a pointer to any
+<link linkend="gpointer"><type>gpointer</type></link> to nullify when the callback is completed. I.e a
+pointer to the current <link linkend="FpiUsbTransfer"><type>FpiUsbTransfer</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GError"><type>GError</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="libfprint-2-Sequential-state-machine.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="FpiSsm" role="struct">
+<title>FpiSsm</title>
+<indexterm zone="FpiSsm"><primary>FpiSsm</primary></indexterm>
+<programlisting language="C">typedef struct _FpiSsm FpiSsm;</programlisting>
+<para>Sequential state machine that iterates sequentially over
+a predefined series of states. Can be terminated by either completion or
+failure error conditions.</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>

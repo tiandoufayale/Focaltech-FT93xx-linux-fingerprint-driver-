@@ -1,0 +1,3299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>FpDevice: libfprint Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="libfprint Reference Manual">
+<link rel="up" href="pt02.html" title="Part II. Library API Documentation">
+<link rel="prev" href="FpContext.html" title="FpContext">
+<link rel="next" href="FpImageDevice.html" title="FpImageDevice">
+<meta name="generator" content="GTK-Doc V1.34.0 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#FpDevice.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#FpDevice.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_interfaces">  <span class="dim">|</span> 
+                  <a href="#FpDevice.implemented-interfaces" class="shortcut">Implemented Interfaces</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#FpDevice.properties" class="shortcut">Properties</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#FpDevice.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="pt02.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="FpContext.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="FpImageDevice.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="FpDevice"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="FpDevice.top_of_page"></a>FpDevice</span></h2>
+<p>FpDevice — Fingerpint device routines</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="FpDevice.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GQuark</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-retry-quark" title="fp_device_retry_quark ()">fp_device_retry_quark</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GQuark</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-error-quark" title="fp_device_error_quark ()">fp_device_error_quark</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<span class="c_punctuation">(</span><a class="link" href="FpDevice.html#FpEnrollProgress" title="FpEnrollProgress ()">*FpEnrollProgress</a><span class="c_punctuation">)</span> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<span class="c_punctuation">(</span><a class="link" href="FpDevice.html#FpMatchCb" title="FpMatchCb ()">*FpMatchCb</a><span class="c_punctuation">)</span> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">gchar</span> *
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-get-driver" title="fp_device_get_driver ()">fp_device_get_driver</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">gchar</span> *
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-get-device-id" title="fp_device_get_device_id ()">fp_device_get_device_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">gchar</span> *
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-get-name" title="fp_device_get_name ()">fp_device_get_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="FpDevice.html#FpScanType" title="enum FpScanType"><span class="returnvalue">FpScanType</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-get-scan-type" title="fp_device_get_scan_type ()">fp_device_get_scan_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gint</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-get-nr-enroll-stages" title="fp_device_get_nr_enroll_stages ()">fp_device_get_nr_enroll_stages</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="FpDevice.html#FpFingerStatusFlags" title="enum FpFingerStatusFlags"><span class="returnvalue">FpFingerStatusFlags</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-get-finger-status" title="fp_device_get_finger_status ()">fp_device_get_finger_status</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="FpDevice.html#FpDeviceFeature" title="enum FpDeviceFeature"><span class="returnvalue">FpDeviceFeature</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-get-features" title="fp_device_get_features ()">fp_device_get_features</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-has-feature" title="fp_device_has_feature ()">fp_device_has_feature</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-has-storage" title="fp_device_has_storage ()">fp_device_has_storage</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-supports-identify" title="fp_device_supports_identify ()">fp_device_supports_identify</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-supports-capture" title="fp_device_supports_capture ()">fp_device_supports_capture</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-is-open" title="fp_device_is_open ()">fp_device_is_open</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-open" title="fp_device_open ()">fp_device_open</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-close" title="fp_device_close ()">fp_device_close</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-enroll" title="fp_device_enroll ()">fp_device_enroll</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-verify" title="fp_device_verify ()">fp_device_verify</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-identify" title="fp_device_identify ()">fp_device_identify</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-capture" title="fp_device_capture ()">fp_device_capture</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-delete-print" title="fp_device_delete_print ()">fp_device_delete_print</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-list-prints" title="fp_device_list_prints ()">fp_device_list_prints</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-clear-storage" title="fp_device_clear_storage ()">fp_device_clear_storage</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-suspend" title="fp_device_suspend ()">fp_device_suspend</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-resume" title="fp_device_resume ()">fp_device_resume</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-open-finish" title="fp_device_open_finish ()">fp_device_open_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-close-finish" title="fp_device_close_finish ()">fp_device_close_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="FpPrint.html" title="FpPrint"><span class="returnvalue">FpPrint</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-enroll-finish" title="fp_device_enroll_finish ()">fp_device_enroll_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-verify-finish" title="fp_device_verify_finish ()">fp_device_verify_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-identify-finish" title="fp_device_identify_finish ()">fp_device_identify_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="FpImage.html" title="FpImage"><span class="returnvalue">FpImage</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-capture-finish" title="fp_device_capture_finish ()">fp_device_capture_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-delete-print-finish" title="fp_device_delete_print_finish ()">fp_device_delete_print_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GPtrArray</span> *
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-list-prints-finish" title="fp_device_list_prints_finish ()">fp_device_list_prints_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-clear-storage-finish" title="fp_device_clear_storage_finish ()">fp_device_clear_storage_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-suspend-finish" title="fp_device_suspend_finish ()">fp_device_suspend_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-resume-finish" title="fp_device_resume_finish ()">fp_device_resume_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-open-sync" title="fp_device_open_sync ()">fp_device_open_sync</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-close-sync" title="fp_device_close_sync ()">fp_device_close_sync</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="FpPrint.html" title="FpPrint"><span class="returnvalue">FpPrint</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-enroll-sync" title="fp_device_enroll_sync ()">fp_device_enroll_sync</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-verify-sync" title="fp_device_verify_sync ()">fp_device_verify_sync</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-identify-sync" title="fp_device_identify_sync ()">fp_device_identify_sync</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="FpImage.html" title="FpImage"><span class="returnvalue">FpImage</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-capture-sync" title="fp_device_capture_sync ()">fp_device_capture_sync</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-delete-print-sync" title="fp_device_delete_print_sync ()">fp_device_delete_print_sync</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GPtrArray</span> *
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-list-prints-sync" title="fp_device_list_prints_sync ()">fp_device_list_prints_sync</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-clear-storage-sync" title="fp_device_clear_storage_sync ()">fp_device_clear_storage_sync</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-suspend-sync" title="fp_device_suspend_sync ()">fp_device_suspend_sync</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpDevice.html#fp-device-resume-sync" title="fp_device_resume_sync ()">fp_device_resume_sync</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="FpDevice.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<span class="type">char</span> *</td>
+<td class="property_name"><a class="link" href="FpDevice.html#FpDevice--device-id" title="The “device-id” property">device-id</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">char</span> *</td>
+<td class="property_name"><a class="link" href="FpDevice.html#FpDevice--driver" title="The “driver” property">driver</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type"><a class="link" href="FpDevice.html#FpFingerStatusFlags" title="enum FpFingerStatusFlags"><span class="type">FpFingerStatusFlags</span></a></td>
+<td class="property_name"><a class="link" href="FpDevice.html#FpDevice--finger-status" title="The “finger-status” property">finger-status</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint64</span></td>
+<td class="property_name"><a class="link" href="FpDevice.html#FpDevice--fpi-driver-data" title="The “fpi-driver-data” property">fpi-driver-data</a></td>
+<td class="property_flags">Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">char</span> *</td>
+<td class="property_name"><a class="link" href="FpDevice.html#FpDevice--fpi-environ" title="The “fpi-environ” property">fpi-environ</a></td>
+<td class="property_flags">Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">char</span> *</td>
+<td class="property_name"><a class="link" href="FpDevice.html#FpDevice--fpi-udev-data-hidraw" title="The “fpi-udev-data-hidraw” property">fpi-udev-data-hidraw</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">char</span> *</td>
+<td class="property_name"><a class="link" href="FpDevice.html#FpDevice--fpi-udev-data-spidev" title="The “fpi-udev-data-spidev” property">fpi-udev-data-spidev</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">GUsbDevice</span> *</td>
+<td class="property_name"><a class="link" href="FpDevice.html#FpDevice--fpi-usb-device" title="The “fpi-usb-device” property">fpi-usb-device</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">char</span> *</td>
+<td class="property_name"><a class="link" href="FpDevice.html#FpDevice--name" title="The “name” property">name</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="FpDevice.html#FpDevice--nr-enroll-stages" title="The “nr-enroll-stages” property">nr-enroll-stages</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="FpDevice.html#FpDevice--open" title="The “open” property">open</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="FpDevice.html#FpDevice--removed" title="The “removed” property">removed</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type"><a class="link" href="FpDevice.html#FpScanType" title="enum FpScanType"><span class="type">FpScanType</span></a></td>
+<td class="property_name"><a class="link" href="FpDevice.html#FpDevice--scan-type" title="The “scan-type” property">scan-type</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">FpTemperature</span></td>
+<td class="property_name"><a class="link" href="FpDevice.html#FpDevice--temperature" title="The “temperature” property">temperature</a></td>
+<td class="property_flags">Read</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="FpDevice.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="signal_proto_type">
+<col width="300px" class="signal_proto_name">
+<col width="200px" class="signal_proto_flags">
+</colgroup>
+<tbody><tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="FpDevice.html#FpDevice-removed" title="The “removed” signal">removed</a></td>
+<td class="signal_flags">Run Last</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="FpDevice.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="FpDevice.html#FP-TYPE-DEVICE:CAPS" title="FP_TYPE_DEVICE">FP_TYPE_DEVICE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="FpDevice.html#FP-DEVICE-RETRY:CAPS" title="FP_DEVICE_RETRY">FP_DEVICE_RETRY</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="FpDevice.html#FP-DEVICE-ERROR:CAPS" title="FP_DEVICE_ERROR">FP_DEVICE_ERROR</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="FpDevice.html#FpDeviceType" title="enum FpDeviceType">FpDeviceType</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="FpDevice.html#FpDeviceFeature" title="enum FpDeviceFeature">FpDeviceFeature</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="FpDevice.html#FpScanType" title="enum FpScanType">FpScanType</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="FpDevice.html#FpDeviceRetry" title="enum FpDeviceRetry">FpDeviceRetry</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="FpDevice.html#FpDeviceError" title="enum FpDeviceError">FpDeviceError</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="FpDevice.html#FpFingerStatusFlags" title="enum FpFingerStatusFlags">FpFingerStatusFlags</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="FpDevice.html#FpDevice-struct" title="FpDevice">FpDevice</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="FpDevice.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> FpDevice
+        <span class="lineart">╰──</span> <a class="link" href="FpImageDevice.html" title="FpImageDevice">FpImageDevice</a>
+</pre>
+</div>
+<div class="refsect1">
+<a name="FpDevice.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+FpDevice implements
+ GAsyncInitable.</p>
+</div>
+<div class="refsect1">
+<a name="FpDevice.description"></a><h2>Description</h2>
+<p>These are the public <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> routines.</p>
+</div>
+<div class="refsect1">
+<a name="FpDevice.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="fp-device-retry-quark"></a><h3>fp_device_retry_quark ()</h3>
+<pre class="programlisting"><span class="returnvalue">GQuark</span>
+fp_device_retry_quark (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<div class="refsect3">
+<a name="fp-device-retry-quark.returns"></a><h4>Returns</h4>
+<p> Quark representing a retryable error.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-error-quark"></a><h3>fp_device_error_quark ()</h3>
+<pre class="programlisting"><span class="returnvalue">GQuark</span>
+fp_device_error_quark (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<div class="refsect3">
+<a name="fp-device-error-quark.returns"></a><h4>Returns</h4>
+<p> Quark representing a device error.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpEnrollProgress"></a><h3>FpEnrollProgress ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+<span class="c_punctuation">(</span>*FpEnrollProgress<span class="c_punctuation">)</span> (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                     <em class="parameter"><code><span class="type">gint</span> completed_stages</code></em>,
+                     <em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> *print</code></em>,
+                     <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>,
+                     <em class="parameter"><code><span class="type">GError</span> *error</code></em>);</pre>
+<p>The passed error is guaranteed to be of type <a class="link" href="FpDevice.html#FP-DEVICE-RETRY:CAPS" title="FP_DEVICE_RETRY"><code class="literal">FP_DEVICE_RETRY</code></a> if set.</p>
+<div class="refsect3">
+<a name="FpEnrollProgress.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>completed_stages</p></td>
+<td class="parameter_description"><p>Number of completed stages</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>print</p></td>
+<td class="parameter_description"><p>The last scanned print. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>][<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>User provided data. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>][<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p><span class="type">GError</span> or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>][<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpMatchCb"></a><h3>FpMatchCb ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+<span class="c_punctuation">(</span>*FpMatchCb<span class="c_punctuation">)</span> (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+              <em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> *match</code></em>,
+              <em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> *print</code></em>,
+              <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>,
+              <em class="parameter"><code><span class="type">GError</span> *error</code></em>);</pre>
+<p>Report the result of a match (identify or verify) operation.</p>
+<p>If <em class="parameter"><code>match</code></em>
+ is non-<code class="literal">NULL</code>, then it is set to the matching <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> as passed
+to the match operation. In this case <em class="parameter"><code>error</code></em>
+ will always be <code class="literal">NULL</code>.</p>
+<p>If <em class="parameter"><code>error</code></em>
+ is not <code class="literal">NULL</code> then its domain is guaranteed to be
+<a class="link" href="FpDevice.html#FP-DEVICE-RETRY:CAPS" title="FP_DEVICE_RETRY"><code class="literal">FP_DEVICE_RETRY</code></a>. All other error conditions will not be reported using
+this callback. If such an error occurs before a match/no-match decision
+can be made, then this callback will not be called. Should an error
+happen afterwards, then you will get a match report through this callback
+and an error when the operation finishes.</p>
+<p>If <em class="parameter"><code>match</code></em>
+ and <em class="parameter"><code>error</code></em>
+ are <code class="literal">NULL</code>, then a finger was presented but it did not
+match any known print.</p>
+<p><em class="parameter"><code>print</code></em>
+ represents the newly scanned print. The driver may or may not
+provide this information. Image based devices will provide it and it
+allows access to the raw data.</p>
+<p>This callback exists because it makes sense for drivers to wait e.g. on
+finger removal before completing the match operation. However, the
+success/failure can often be reported at an earlier time, and there is
+no need to make the user wait.</p>
+<div class="refsect3">
+<a name="FpMatchCb.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>match</p></td>
+<td class="parameter_description"><p>The matching print if any matched <em class="parameter"><code>print</code></em>
+. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>][<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>print</p></td>
+<td class="parameter_description"><p>The newly scanned print. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>][<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>User provided data. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>][<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p><span class="type">GError</span> or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>][<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-get-driver"></a><h3>fp_device_get_driver ()</h3>
+<pre class="programlisting">const <span class="returnvalue">gchar</span> *
+fp_device_get_driver (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>);</pre>
+<div class="refsect3">
+<a name="fp-device-get-driver.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-device-get-driver.returns"></a><h4>Returns</h4>
+<p>The ID of the driver. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-get-device-id"></a><h3>fp_device_get_device_id ()</h3>
+<pre class="programlisting">const <span class="returnvalue">gchar</span> *
+fp_device_get_device_id (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>);</pre>
+<div class="refsect3">
+<a name="fp-device-get-device-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-device-get-device-id.returns"></a><h4>Returns</h4>
+<p>The ID of the device. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-get-name"></a><h3>fp_device_get_name ()</h3>
+<pre class="programlisting">const <span class="returnvalue">gchar</span> *
+fp_device_get_name (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>);</pre>
+<div class="refsect3">
+<a name="fp-device-get-name.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-device-get-name.returns"></a><h4>Returns</h4>
+<p>The human readable name of the device. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-get-scan-type"></a><h3>fp_device_get_scan_type ()</h3>
+<pre class="programlisting"><a class="link" href="FpDevice.html#FpScanType" title="enum FpScanType"><span class="returnvalue">FpScanType</span></a>
+fp_device_get_scan_type (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>);</pre>
+<p>Retrieves the scan type of the device.</p>
+<div class="refsect3">
+<a name="fp-device-get-scan-type.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-device-get-scan-type.returns"></a><h4>Returns</h4>
+<p> The <a class="link" href="FpDevice.html#FpScanType" title="enum FpScanType"><span class="type">FpScanType</span></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-get-nr-enroll-stages"></a><h3>fp_device_get_nr_enroll_stages ()</h3>
+<pre class="programlisting"><span class="returnvalue">gint</span>
+fp_device_get_nr_enroll_stages (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>);</pre>
+<p>Retrieves the number of enroll stages for this device.</p>
+<div class="refsect3">
+<a name="fp-device-get-nr-enroll-stages.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-device-get-nr-enroll-stages.returns"></a><h4>Returns</h4>
+<p> The number of enroll stages</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-get-finger-status"></a><h3>fp_device_get_finger_status ()</h3>
+<pre class="programlisting"><a class="link" href="FpDevice.html#FpFingerStatusFlags" title="enum FpFingerStatusFlags"><span class="returnvalue">FpFingerStatusFlags</span></a>
+fp_device_get_finger_status (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>);</pre>
+<p>Retrieves the finger status flags for the device.
+This can be used by the UI to present the relevant feedback, although it
+is not guaranteed to be a relevant value when not performing any action.</p>
+<div class="refsect3">
+<a name="fp-device-get-finger-status.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-device-get-finger-status.returns"></a><h4>Returns</h4>
+<p> The current <a class="link" href="FpDevice.html#FpFingerStatusFlags" title="enum FpFingerStatusFlags"><span class="type">FpFingerStatusFlags</span></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-get-features"></a><h3>fp_device_get_features ()</h3>
+<pre class="programlisting"><a class="link" href="FpDevice.html#FpDeviceFeature" title="enum FpDeviceFeature"><span class="returnvalue">FpDeviceFeature</span></a>
+fp_device_get_features (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>);</pre>
+<p>Gets the <a class="link" href="FpDevice.html#FpDeviceFeature" title="enum FpDeviceFeature"><span class="type">FpDeviceFeature</span></a>'s supported by the <em class="parameter"><code>device</code></em>
+.</p>
+<div class="refsect3">
+<a name="fp-device-get-features.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-device-get-features.returns"></a><h4>Returns</h4>
+<p> <a class="link" href="FpDevice.html#FpDeviceFeature" title="enum FpDeviceFeature"><span class="type">FpDeviceFeature</span></a> flags of supported features</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-has-feature"></a><h3>fp_device_has_feature ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fp_device_has_feature (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                       <em class="parameter"><code><a class="link" href="FpDevice.html#FpDeviceFeature" title="enum FpDeviceFeature"><span class="type">FpDeviceFeature</span></a> feature</code></em>);</pre>
+<p>Checks if <em class="parameter"><code>device</code></em>
+ supports the requested <a class="link" href="FpDevice.html#FpDeviceFeature" title="enum FpDeviceFeature"><span class="type">FpDeviceFeature</span></a>'s.
+See <a class="link" href="FpDevice.html#fp-device-get-features" title="fp_device_get_features ()"><code class="function">fp_device_get_features()</code></a></p>
+<div class="refsect3">
+<a name="fp-device-has-feature.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>feature</p></td>
+<td class="parameter_description"><p><a class="link" href="FpDevice.html#FpDeviceFeature" title="enum FpDeviceFeature"><span class="type">FpDeviceFeature</span></a> flags to check against device supported features</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-device-has-feature.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if supported, <code class="literal">FALSE</code> otherwise</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-has-storage"></a><h3>fp_device_has_storage ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fp_device_has_storage (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>);</pre>
+<div class="warning">
+<p><code class="literal">fp_device_has_storage</code> has been deprecated since version 1.92.0 and should not be used in newly-written code.</p>
+<p>Use <a class="link" href="FpDevice.html#fp-device-has-feature" title="fp_device_has_feature ()"><code class="function">fp_device_has_feature()</code></a> instead.</p>
+</div>
+<p>Whether the device has on-chip storage. If it has, you can list the
+prints stored on the with <a class="link" href="FpDevice.html#fp-device-list-prints" title="fp_device_list_prints ()"><code class="function">fp_device_list_prints()</code></a> and you should
+always delete prints from the device again using
+<a class="link" href="FpDevice.html#fp-device-delete-print" title="fp_device_delete_print ()"><code class="function">fp_device_delete_print()</code></a>.</p>
+<div class="refsect3">
+<a name="fp-device-has-storage.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-supports-identify"></a><h3>fp_device_supports_identify ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fp_device_supports_identify (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>);</pre>
+<div class="warning">
+<p><code class="literal">fp_device_supports_identify</code> has been deprecated since version 1.92.0 and should not be used in newly-written code.</p>
+<p>Use <a class="link" href="FpDevice.html#fp-device-has-feature" title="fp_device_has_feature ()"><code class="function">fp_device_has_feature()</code></a> instead.</p>
+</div>
+<p>Check whether the device supports identification.</p>
+<div class="refsect3">
+<a name="fp-device-supports-identify.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-device-supports-identify.returns"></a><h4>Returns</h4>
+<p> Whether the device supports identification</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-supports-capture"></a><h3>fp_device_supports_capture ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fp_device_supports_capture (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>);</pre>
+<div class="warning">
+<p><code class="literal">fp_device_supports_capture</code> has been deprecated since version 1.92.0 and should not be used in newly-written code.</p>
+<p>Use <a class="link" href="FpDevice.html#fp-device-has-feature" title="fp_device_has_feature ()"><code class="function">fp_device_has_feature()</code></a> instead.</p>
+</div>
+<p>Check whether the device supports capturing images.</p>
+<div class="refsect3">
+<a name="fp-device-supports-capture.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-device-supports-capture.returns"></a><h4>Returns</h4>
+<p> Whether the device supports image capture</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-is-open"></a><h3>fp_device_is_open ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fp_device_is_open (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>);</pre>
+<div class="refsect3">
+<a name="fp-device-is-open.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-device-is-open.returns"></a><h4>Returns</h4>
+<p> Whether the device is open or not</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-open"></a><h3>fp_device_open ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fp_device_open (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
+                <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Start an asynchronous operation to open the device. The callback will
+be called once the operation has finished. Retrieve the result with
+<a class="link" href="FpDevice.html#fp-device-open-finish" title="fp_device_open_finish ()"><code class="function">fp_device_open_finish()</code></a>.</p>
+<div class="refsect3">
+<a name="fp-device-open.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <span class="type">GCancellable</span>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>the function to call on completion</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>the data to pass to <em class="parameter"><code>callback</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-close"></a><h3>fp_device_close ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fp_device_close (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                 <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                 <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
+                 <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Start an asynchronous operation to close the device. The callback will
+be called once the operation has finished. Retrieve the result with
+<a class="link" href="FpDevice.html#fp-device-close-finish" title="fp_device_close_finish ()"><code class="function">fp_device_close_finish()</code></a>.</p>
+<div class="refsect3">
+<a name="fp-device-close.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <span class="type">GCancellable</span>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>the function to call on completion</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>the data to pass to <em class="parameter"><code>callback</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-enroll"></a><h3>fp_device_enroll ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fp_device_enroll (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                  <em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> *template_print</code></em>,
+                  <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                  <em class="parameter"><code><a class="link" href="FpDevice.html#FpEnrollProgress" title="FpEnrollProgress ()"><span class="type">FpEnrollProgress</span></a> progress_cb</code></em>,
+                  <em class="parameter"><code><span class="type">gpointer</span> progress_data</code></em>,
+                  <em class="parameter"><code><span class="type">GDestroyNotify</span> progress_destroy</code></em>,
+                  <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
+                  <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Start an asynchronous operation to enroll a print. The callback will
+be called once the operation has finished. Retrieve the result with
+<a class="link" href="FpDevice.html#fp-device-enroll-finish" title="fp_device_enroll_finish ()"><code class="function">fp_device_enroll_finish()</code></a>.</p>
+<p>The <em class="parameter"><code>template_print</code></em>
+ parameter is a <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> with available metadata filled
+in and, optionally, with existing fingerprint data to be updated with newly
+enrolled fingerprints if a device driver supports it. The driver may make use
+of the metadata, when e.g. storing the print on device memory. It is undefined
+whether this print is filled in by the driver and returned, or whether the
+driver will return a newly created print after enrollment succeeded.</p>
+<div class="refsect3">
+<a name="fp-device-enroll.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>template_print</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20floating"><span class="acronym">transfer floating</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <span class="type">GCancellable</span>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>progress_cb</p></td>
+<td class="parameter_description"><p>progress reporting callback. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>][<a href="http://foldoc.org/closure"><span class="acronym">closure</span></a> progress_data][<a href="http://foldoc.org/scope%20notified"><span class="acronym">scope notified</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>progress_data</p></td>
+<td class="parameter_description"><p>user data for <em class="parameter"><code>progress_cb</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>progress_destroy</p></td>
+<td class="parameter_description"><p>Destroy notify for <em class="parameter"><code>progress_data</code></em>
+. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/destroy"><span class="acronym">destroy</span></a> progress_data]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>the function to call on completion. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/scope%20async"><span class="acronym">scope async</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>the data to pass to <em class="parameter"><code>callback</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-verify"></a><h3>fp_device_verify ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fp_device_verify (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                  <em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> *enrolled_print</code></em>,
+                  <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                  <em class="parameter"><code><a class="link" href="FpDevice.html#FpMatchCb" title="FpMatchCb ()"><span class="type">FpMatchCb</span></a> match_cb</code></em>,
+                  <em class="parameter"><code><span class="type">gpointer</span> match_data</code></em>,
+                  <em class="parameter"><code><span class="type">GDestroyNotify</span> match_destroy</code></em>,
+                  <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
+                  <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Start an asynchronous operation to verify a print. The callback will
+be called once the operation has finished. Retrieve the result with
+<a class="link" href="FpDevice.html#fp-device-verify-finish" title="fp_device_verify_finish ()"><code class="function">fp_device_verify_finish()</code></a>.</p>
+<div class="refsect3">
+<a name="fp-device-verify.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>enrolled_print</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> to verify</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <span class="type">GCancellable</span>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>match_cb</p></td>
+<td class="parameter_description"><p>match reporting callback. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>][<a href="http://foldoc.org/scope%20notified"><span class="acronym">scope notified</span></a>][<a href="http://foldoc.org/closure"><span class="acronym">closure</span></a> match_data]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>match_data</p></td>
+<td class="parameter_description"><p>user data for <em class="parameter"><code>match_cb</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>match_destroy</p></td>
+<td class="parameter_description"><p>Destroy notify for <em class="parameter"><code>match_data</code></em>
+. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/destroy"><span class="acronym">destroy</span></a> match_data]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>the function to call on completion</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>the data to pass to <em class="parameter"><code>callback</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-identify"></a><h3>fp_device_identify ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fp_device_identify (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                    <em class="parameter"><code><span class="type">GPtrArray</span> *prints</code></em>,
+                    <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                    <em class="parameter"><code><a class="link" href="FpDevice.html#FpMatchCb" title="FpMatchCb ()"><span class="type">FpMatchCb</span></a> match_cb</code></em>,
+                    <em class="parameter"><code><span class="type">gpointer</span> match_data</code></em>,
+                    <em class="parameter"><code><span class="type">GDestroyNotify</span> match_destroy</code></em>,
+                    <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
+                    <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Start an asynchronous operation to identify prints. The callback will
+be called once the operation has finished. Retrieve the result with
+<a class="link" href="FpDevice.html#fp-device-identify-finish" title="fp_device_identify_finish ()"><code class="function">fp_device_identify_finish()</code></a>.</p>
+<div class="refsect3">
+<a name="fp-device-identify.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>prints</p></td>
+<td class="parameter_description"><p><span class="type">GPtrArray</span> of <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> FpPrint][<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <span class="type">GCancellable</span>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>match_cb</p></td>
+<td class="parameter_description"><p>match reporting callback. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>][<a href="http://foldoc.org/scope%20notified"><span class="acronym">scope notified</span></a>][<a href="http://foldoc.org/closure"><span class="acronym">closure</span></a> match_data]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>match_data</p></td>
+<td class="parameter_description"><p>user data for <em class="parameter"><code>match_cb</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>match_destroy</p></td>
+<td class="parameter_description"><p>Destroy notify for <em class="parameter"><code>match_data</code></em>
+. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/destroy"><span class="acronym">destroy</span></a> match_data]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>the function to call on completion</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>the data to pass to <em class="parameter"><code>callback</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-capture"></a><h3>fp_device_capture ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fp_device_capture (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                   <em class="parameter"><code><span class="type">gboolean</span> wait_for_finger</code></em>,
+                   <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                   <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
+                   <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Start an asynchronous operation to capture an image. The callback will
+be called once the operation has finished. Retrieve the result with
+<a class="link" href="FpDevice.html#fp-device-capture-finish" title="fp_device_capture_finish ()"><code class="function">fp_device_capture_finish()</code></a>.</p>
+<div class="refsect3">
+<a name="fp-device-capture.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>wait_for_finger</p></td>
+<td class="parameter_description"><p>Whether to wait for a finger or not</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <span class="type">GCancellable</span>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>the function to call on completion</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>the data to pass to <em class="parameter"><code>callback</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-delete-print"></a><h3>fp_device_delete_print ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fp_device_delete_print (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                        <em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> *enrolled_print</code></em>,
+                        <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                        <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
+                        <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Start an asynchronous operation to delete a print from the device.
+The callback will be called once the operation has finished. Retrieve
+the result with <a class="link" href="FpDevice.html#fp-device-delete-print-finish" title="fp_device_delete_print_finish ()"><code class="function">fp_device_delete_print_finish()</code></a>.</p>
+<p>This only makes sense on devices that store prints on-chip, but is safe
+to always call.</p>
+<div class="refsect3">
+<a name="fp-device-delete-print.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>enrolled_print</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> to delete</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <span class="type">GCancellable</span>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>the function to call on completion</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>the data to pass to <em class="parameter"><code>callback</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-list-prints"></a><h3>fp_device_list_prints ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fp_device_list_prints (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                       <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                       <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
+                       <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Start an asynchronous operation to list all prints stored on the device.
+This only makes sense on devices that store prints on-chip.</p>
+<p>Retrieve the result with <a class="link" href="FpDevice.html#fp-device-list-prints-finish" title="fp_device_list_prints_finish ()"><code class="function">fp_device_list_prints_finish()</code></a>.</p>
+<div class="refsect3">
+<a name="fp-device-list-prints.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <span class="type">GCancellable</span>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>the function to call on completion</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>the data to pass to <em class="parameter"><code>callback</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-clear-storage"></a><h3>fp_device_clear_storage ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fp_device_clear_storage (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                         <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                         <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
+                         <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Start an asynchronous operation to delete all prints from the device.
+The callback will be called once the operation has finished. Retrieve
+the result with <a class="link" href="FpDevice.html#fp-device-clear-storage-finish" title="fp_device_clear_storage_finish ()"><code class="function">fp_device_clear_storage_finish()</code></a>.</p>
+<p>This only makes sense on devices that store prints on-chip, but is safe
+to always call.</p>
+<div class="refsect3">
+<a name="fp-device-clear-storage.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <span class="type">GCancellable</span>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>the function to call on completion</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>the data to pass to <em class="parameter"><code>callback</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-suspend"></a><h3>fp_device_suspend ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fp_device_suspend (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                   <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                   <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
+                   <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Prepare the device for system suspend. Retrieve the result with
+<a class="link" href="FpDevice.html#fp-device-suspend-finish" title="fp_device_suspend_finish ()"><code class="function">fp_device_suspend_finish()</code></a>.</p>
+<p>The suspend method can be called at any time (even if the device is not
+opened) and must be paired with a corresponding resume call. It is undefined
+when or how any ongoing operation is finished. This call might wait for an
+ongoing operation to finish, might cancel the ongoing operation or may
+prepare the device so that the host is resumed when the operation can be
+finished.</p>
+<p>If an ongoing operation must be cancelled then it will complete with an error
+code of <a class="link" href="FpDevice.html#FP-DEVICE-ERROR-BUSY:CAPS"><span class="type">FP_DEVICE_ERROR_BUSY</span></a> before the suspend async routine finishes.</p>
+<p>Any operation started while the device is suspended will fail with
+<a class="link" href="FpDevice.html#FP-DEVICE-ERROR-BUSY:CAPS"><span class="type">FP_DEVICE_ERROR_BUSY</span></a>, this includes calls to open or close the device.</p>
+<div class="refsect3">
+<a name="fp-device-suspend.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <span class="type">GCancellable</span>, or <code class="literal">NULL</code>, currently not used. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>the function to call on completion</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>the data to pass to <em class="parameter"><code>callback</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-resume"></a><h3>fp_device_resume ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fp_device_resume (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                  <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                  <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
+                  <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Resume device after system suspend. Retrieve the result with
+<a class="link" href="FpDevice.html#fp-device-suspend-finish" title="fp_device_suspend_finish ()"><code class="function">fp_device_suspend_finish()</code></a>.</p>
+<p>Note that it is not defined when any ongoing operation may return (success or
+error). You must be ready to handle this before, during or after the
+resume operation.</p>
+<div class="refsect3">
+<a name="fp-device-resume.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <span class="type">GCancellable</span>, or <code class="literal">NULL</code>, currently not used. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>the function to call on completion</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>the data to pass to <em class="parameter"><code>callback</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-open-finish"></a><h3>fp_device_open_finish ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fp_device_open_finish (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                       <em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
+                       <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Finish an asynchronous operation to open the device.
+See <a class="link" href="FpDevice.html#fp-device-open" title="fp_device_open ()"><code class="function">fp_device_open()</code></a>.</p>
+<div class="refsect3">
+<a name="fp-device-open-finish.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>result</p></td>
+<td class="parameter_description"><p>A <span class="type">GAsyncResult</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for errors, or <code class="literal">NULL</code> to ignore</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-device-open-finish.returns"></a><h4>Returns</h4>
+<p><code class="literal">FALSE</code> on error, <code class="literal">TRUE</code> otherwise. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/type"><span class="acronym">type</span></a> void]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-close-finish"></a><h3>fp_device_close_finish ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fp_device_close_finish (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                        <em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
+                        <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Finish an asynchronous operation to close the device.
+See <a class="link" href="FpDevice.html#fp-device-close" title="fp_device_close ()"><code class="function">fp_device_close()</code></a>.</p>
+<div class="refsect3">
+<a name="fp-device-close-finish.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>result</p></td>
+<td class="parameter_description"><p>A <span class="type">GAsyncResult</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for errors, or <code class="literal">NULL</code> to ignore</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-device-close-finish.returns"></a><h4>Returns</h4>
+<p><code class="literal">FALSE</code> on error, <code class="literal">TRUE</code> otherwise. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/type"><span class="acronym">type</span></a> void]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-enroll-finish"></a><h3>fp_device_enroll_finish ()</h3>
+<pre class="programlisting"><a class="link" href="FpPrint.html" title="FpPrint"><span class="returnvalue">FpPrint</span></a> *
+fp_device_enroll_finish (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                         <em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
+                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Finish an asynchronous operation to enroll a print. You should check
+for an error of type <a class="link" href="FpDevice.html#FP-DEVICE-RETRY:CAPS" title="FP_DEVICE_RETRY"><code class="literal">FP_DEVICE_RETRY</code></a> to prompt the user again if there
+was an interaction issue.
+See <a class="link" href="FpDevice.html#fp-device-enroll" title="fp_device_enroll ()"><code class="function">fp_device_enroll()</code></a>.</p>
+<div class="refsect3">
+<a name="fp-device-enroll-finish.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>result</p></td>
+<td class="parameter_description"><p>A <span class="type">GAsyncResult</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for errors, or <code class="literal">NULL</code> to ignore</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-device-enroll-finish.returns"></a><h4>Returns</h4>
+<p>The enrolled <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a>, or <code class="literal">NULL</code> on error. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-verify-finish"></a><h3>fp_device_verify_finish ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fp_device_verify_finish (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                         <em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
+                         <em class="parameter"><code><span class="type">gboolean</span> *match</code></em>,
+                         <em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> **print</code></em>,
+                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Finish an asynchronous operation to verify an enrolled print. You should check
+for an error of type <a class="link" href="FpDevice.html#FP-DEVICE-RETRY:CAPS" title="FP_DEVICE_RETRY"><code class="literal">FP_DEVICE_RETRY</code></a> to prompt the user again if there
+was an interaction issue.</p>
+<p>With <em class="parameter"><code>print</code></em>
+ you can fetch the newly created print and retrieve the image data if available.</p>
+<p>See <a class="link" href="FpDevice.html#fp-device-verify" title="fp_device_verify ()"><code class="function">fp_device_verify()</code></a>.</p>
+<div class="refsect3">
+<a name="fp-device-verify-finish.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>result</p></td>
+<td class="parameter_description"><p>A <span class="type">GAsyncResult</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>match</p></td>
+<td class="parameter_description"><p>Whether the user presented the correct finger. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>print</p></td>
+<td class="parameter_description"><p>Location to store the scanned print, or <code class="literal">NULL</code> to ignore. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>][<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for errors, or <code class="literal">NULL</code> to ignore</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-device-verify-finish.returns"></a><h4>Returns</h4>
+<p><code class="literal">FALSE</code> on error, <code class="literal">TRUE</code> otherwise. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/type"><span class="acronym">type</span></a> void]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-identify-finish"></a><h3>fp_device_identify_finish ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fp_device_identify_finish (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                           <em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
+                           <em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> **match</code></em>,
+                           <em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> **print</code></em>,
+                           <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Finish an asynchronous operation to identify a print. You should check
+for an error of type <a class="link" href="FpDevice.html#FP-DEVICE-RETRY:CAPS" title="FP_DEVICE_RETRY"><code class="literal">FP_DEVICE_RETRY</code></a> to prompt the user again if there
+was an interaction issue.</p>
+<p>Use <em class="parameter"><code>match</code></em>
+ to find the print that matched. With <em class="parameter"><code>print</code></em>
+ you can fetch the
+newly created print and retrieve the image data if available.</p>
+<p>See <a class="link" href="FpDevice.html#fp-device-identify" title="fp_device_identify ()"><code class="function">fp_device_identify()</code></a>.</p>
+<div class="refsect3">
+<a name="fp-device-identify-finish.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>result</p></td>
+<td class="parameter_description"><p>A <span class="type">GAsyncResult</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>match</p></td>
+<td class="parameter_description"><p>Location for the matched <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>][<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>print</p></td>
+<td class="parameter_description"><p>Location for the new <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>][<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for errors, or <code class="literal">NULL</code> to ignore</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-device-identify-finish.returns"></a><h4>Returns</h4>
+<p><code class="literal">FALSE</code> on error, <code class="literal">TRUE</code> otherwise. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/type"><span class="acronym">type</span></a> void]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-capture-finish"></a><h3>fp_device_capture_finish ()</h3>
+<pre class="programlisting"><a class="link" href="FpImage.html" title="FpImage"><span class="returnvalue">FpImage</span></a> *
+fp_device_capture_finish (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                          <em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
+                          <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Finish an asynchronous operation to capture an image. You should check
+for an error of type <a class="link" href="FpDevice.html#FP-DEVICE-RETRY:CAPS" title="FP_DEVICE_RETRY"><code class="literal">FP_DEVICE_RETRY</code></a> to prompt the user again if there
+was an interaction issue.</p>
+<p>See <a class="link" href="FpDevice.html#fp-device-capture" title="fp_device_capture ()"><code class="function">fp_device_capture()</code></a>.</p>
+<div class="refsect3">
+<a name="fp-device-capture-finish.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>result</p></td>
+<td class="parameter_description"><p>A <span class="type">GAsyncResult</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for errors, or <code class="literal">NULL</code> to ignore</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-device-capture-finish.returns"></a><h4>Returns</h4>
+<p><a class="link" href="FpImage.html" title="FpImage"><span class="type">FpImage</span></a> or <code class="literal">NULL</code> on error. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-delete-print-finish"></a><h3>fp_device_delete_print_finish ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fp_device_delete_print_finish (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                               <em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
+                               <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Finish an asynchronous operation to delete an enrolled print.</p>
+<p>See <a class="link" href="FpDevice.html#fp-device-delete-print" title="fp_device_delete_print ()"><code class="function">fp_device_delete_print()</code></a>.</p>
+<div class="refsect3">
+<a name="fp-device-delete-print-finish.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>result</p></td>
+<td class="parameter_description"><p>A <span class="type">GAsyncResult</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for errors, or <code class="literal">NULL</code> to ignore</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-device-delete-print-finish.returns"></a><h4>Returns</h4>
+<p><code class="literal">FALSE</code> on error, <code class="literal">TRUE</code> otherwise. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/type"><span class="acronym">type</span></a> void]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-list-prints-finish"></a><h3>fp_device_list_prints_finish ()</h3>
+<pre class="programlisting"><span class="returnvalue">GPtrArray</span> *
+fp_device_list_prints_finish (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                              <em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
+                              <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Finish an asynchronous operation to list all device stored prints.</p>
+<p>See <a class="link" href="FpDevice.html#fp-device-list-prints" title="fp_device_list_prints ()"><code class="function">fp_device_list_prints()</code></a>.</p>
+<div class="refsect3">
+<a name="fp-device-list-prints-finish.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>result</p></td>
+<td class="parameter_description"><p>A <span class="type">GAsyncResult</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for errors, or <code class="literal">NULL</code> to ignore</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-device-list-prints-finish.returns"></a><h4>Returns</h4>
+<p>Array of prints or <code class="literal">NULL</code> on error. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> FpPrint][<a href="http://foldoc.org/transfer%20container"><span class="acronym">transfer container</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-clear-storage-finish"></a><h3>fp_device_clear_storage_finish ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fp_device_clear_storage_finish (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                                <em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
+                                <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Finish an asynchronous operation to delete all enrolled prints.</p>
+<p>See <a class="link" href="FpDevice.html#fp-device-clear-storage" title="fp_device_clear_storage ()"><code class="function">fp_device_clear_storage()</code></a>.</p>
+<div class="refsect3">
+<a name="fp-device-clear-storage-finish.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>result</p></td>
+<td class="parameter_description"><p>A <span class="type">GAsyncResult</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for errors, or <code class="literal">NULL</code> to ignore</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-device-clear-storage-finish.returns"></a><h4>Returns</h4>
+<p><code class="literal">FALSE</code> on error, <code class="literal">TRUE</code> otherwise. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/type"><span class="acronym">type</span></a> void]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-suspend-finish"></a><h3>fp_device_suspend_finish ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fp_device_suspend_finish (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                          <em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
+                          <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Finish an asynchronous operation to prepare the device for suspend.
+See <a class="link" href="FpDevice.html#fp-device-suspend" title="fp_device_suspend ()"><code class="function">fp_device_suspend()</code></a>.</p>
+<p>The API user should accept an error of <a class="link" href="FpDevice.html#FP-DEVICE-ERROR-NOT-SUPPORTED:CAPS"><span class="type">FP_DEVICE_ERROR_NOT_SUPPORTED</span></a>.</p>
+<div class="refsect3">
+<a name="fp-device-suspend-finish.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>result</p></td>
+<td class="parameter_description"><p>A <span class="type">GAsyncResult</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for errors, or <code class="literal">NULL</code> to ignore</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-device-suspend-finish.returns"></a><h4>Returns</h4>
+<p><code class="literal">FALSE</code> on error, <code class="literal">TRUE</code> otherwise. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/type"><span class="acronym">type</span></a> void]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-resume-finish"></a><h3>fp_device_resume_finish ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fp_device_resume_finish (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                         <em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
+                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Finish an asynchronous operation to resume the device after suspend.
+See <a class="link" href="FpDevice.html#fp-device-resume" title="fp_device_resume ()"><code class="function">fp_device_resume()</code></a>.</p>
+<p>The API user should accept an error of <a class="link" href="FpDevice.html#FP-DEVICE-ERROR-NOT-SUPPORTED:CAPS"><span class="type">FP_DEVICE_ERROR_NOT_SUPPORTED</span></a>.</p>
+<div class="refsect3">
+<a name="fp-device-resume-finish.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>result</p></td>
+<td class="parameter_description"><p>A <span class="type">GAsyncResult</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for errors, or <code class="literal">NULL</code> to ignore</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-device-resume-finish.returns"></a><h4>Returns</h4>
+<p><code class="literal">FALSE</code> on error, <code class="literal">TRUE</code> otherwise. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/type"><span class="acronym">type</span></a> void]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-open-sync"></a><h3>fp_device_open_sync ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fp_device_open_sync (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                     <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                     <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Open the device synchronously.</p>
+<div class="refsect3">
+<a name="fp-device-open-sync.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <span class="type">GCancellable</span>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for errors, or <code class="literal">NULL</code> to ignore</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-device-open-sync.returns"></a><h4>Returns</h4>
+<p><code class="literal">FALSE</code> on error, <code class="literal">TRUE</code> otherwise. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/type"><span class="acronym">type</span></a> void]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-close-sync"></a><h3>fp_device_close_sync ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fp_device_close_sync (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                      <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                      <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Close the device synchronously.</p>
+<div class="refsect3">
+<a name="fp-device-close-sync.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <span class="type">GCancellable</span>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for errors, or <code class="literal">NULL</code> to ignore</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-device-close-sync.returns"></a><h4>Returns</h4>
+<p><code class="literal">FALSE</code> on error, <code class="literal">TRUE</code> otherwise. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/type"><span class="acronym">type</span></a> void]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-enroll-sync"></a><h3>fp_device_enroll_sync ()</h3>
+<pre class="programlisting"><a class="link" href="FpPrint.html" title="FpPrint"><span class="returnvalue">FpPrint</span></a> *
+fp_device_enroll_sync (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                       <em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> *template_print</code></em>,
+                       <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                       <em class="parameter"><code><a class="link" href="FpDevice.html#FpEnrollProgress" title="FpEnrollProgress ()"><span class="type">FpEnrollProgress</span></a> progress_cb</code></em>,
+                       <em class="parameter"><code><span class="type">gpointer</span> progress_data</code></em>,
+                       <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Enroll a new print. See <a class="link" href="FpDevice.html#fp-device-enroll" title="fp_device_enroll ()"><code class="function">fp_device_enroll()</code></a>. It is undefined whether
+<em class="parameter"><code>template_print</code></em>
+ is updated or a newly created <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> is returned.</p>
+<div class="refsect3">
+<a name="fp-device-enroll-sync.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>template_print</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> to fill in or use
+as a template. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20floating"><span class="acronym">transfer floating</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <span class="type">GCancellable</span>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>progress_cb</p></td>
+<td class="parameter_description"><p>progress reporting callback. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>][<a href="http://foldoc.org/scope%20call"><span class="acronym">scope call</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>progress_data</p></td>
+<td class="parameter_description"><p>user data for <em class="parameter"><code>progress_cb</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for errors, or <code class="literal">NULL</code> to ignore</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-device-enroll-sync.returns"></a><h4>Returns</h4>
+<p>A <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> on success, <code class="literal">NULL</code> otherwise. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-verify-sync"></a><h3>fp_device_verify_sync ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fp_device_verify_sync (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                       <em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> *enrolled_print</code></em>,
+                       <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                       <em class="parameter"><code><a class="link" href="FpDevice.html#FpMatchCb" title="FpMatchCb ()"><span class="type">FpMatchCb</span></a> match_cb</code></em>,
+                       <em class="parameter"><code><span class="type">gpointer</span> match_data</code></em>,
+                       <em class="parameter"><code><span class="type">gboolean</span> *match</code></em>,
+                       <em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> **print</code></em>,
+                       <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Verify a given print synchronously.</p>
+<div class="refsect3">
+<a name="fp-device-verify-sync.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>enrolled_print</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> to verify</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <span class="type">GCancellable</span>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>match_cb</p></td>
+<td class="parameter_description"><p>match reporting callback. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>][<a href="http://foldoc.org/scope%20call"><span class="acronym">scope call</span></a>][<a href="http://foldoc.org/closure"><span class="acronym">closure</span></a> match_data]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>match_data</p></td>
+<td class="parameter_description"><p>user data for <em class="parameter"><code>match_cb</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>match</p></td>
+<td class="parameter_description"><p>Whether the user presented the correct finger. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>print</p></td>
+<td class="parameter_description"><p>Location to store the scanned print, or <code class="literal">NULL</code> to ignore. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>][<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for errors, or <code class="literal">NULL</code> to ignore</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-device-verify-sync.returns"></a><h4>Returns</h4>
+<p><code class="literal">FALSE</code> on error, <code class="literal">TRUE</code> otherwise. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/type"><span class="acronym">type</span></a> void]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-identify-sync"></a><h3>fp_device_identify_sync ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fp_device_identify_sync (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                         <em class="parameter"><code><span class="type">GPtrArray</span> *prints</code></em>,
+                         <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                         <em class="parameter"><code><a class="link" href="FpDevice.html#FpMatchCb" title="FpMatchCb ()"><span class="type">FpMatchCb</span></a> match_cb</code></em>,
+                         <em class="parameter"><code><span class="type">gpointer</span> match_data</code></em>,
+                         <em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> **match</code></em>,
+                         <em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> **print</code></em>,
+                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Identify a print synchronously.</p>
+<div class="refsect3">
+<a name="fp-device-identify-sync.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>prints</p></td>
+<td class="parameter_description"><p><span class="type">GPtrArray</span> of <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> FpPrint][<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <span class="type">GCancellable</span>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>match_cb</p></td>
+<td class="parameter_description"><p>match reporting callback. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>][<a href="http://foldoc.org/scope%20call"><span class="acronym">scope call</span></a>][<a href="http://foldoc.org/closure"><span class="acronym">closure</span></a> match_data]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>match_data</p></td>
+<td class="parameter_description"><p>user data for <em class="parameter"><code>match_cb</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>match</p></td>
+<td class="parameter_description"><p>Location for the matched <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>][<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>print</p></td>
+<td class="parameter_description"><p>Location for the new <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>][<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for errors, or <code class="literal">NULL</code> to ignore</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-device-identify-sync.returns"></a><h4>Returns</h4>
+<p><code class="literal">FALSE</code> on error, <code class="literal">TRUE</code> otherwise. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/type"><span class="acronym">type</span></a> void]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-capture-sync"></a><h3>fp_device_capture_sync ()</h3>
+<pre class="programlisting"><a class="link" href="FpImage.html" title="FpImage"><span class="returnvalue">FpImage</span></a> *
+fp_device_capture_sync (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                        <em class="parameter"><code><span class="type">gboolean</span> wait_for_finger</code></em>,
+                        <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                        <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Start an synchronous operation to capture an image.</p>
+<div class="refsect3">
+<a name="fp-device-capture-sync.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>wait_for_finger</p></td>
+<td class="parameter_description"><p>Whether to wait for a finger or not</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <span class="type">GCancellable</span>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for errors, or <code class="literal">NULL</code> to ignore</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-device-capture-sync.returns"></a><h4>Returns</h4>
+<p>A new <a class="link" href="FpImage.html" title="FpImage"><span class="type">FpImage</span></a> or <code class="literal">NULL</code> on error. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-delete-print-sync"></a><h3>fp_device_delete_print_sync ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fp_device_delete_print_sync (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                             <em class="parameter"><code><a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> *enrolled_print</code></em>,
+                             <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                             <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Delete a given print from the device.</p>
+<div class="refsect3">
+<a name="fp-device-delete-print-sync.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>enrolled_print</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpPrint.html" title="FpPrint"><span class="type">FpPrint</span></a> to verify</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <span class="type">GCancellable</span>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for errors, or <code class="literal">NULL</code> to ignore</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-device-delete-print-sync.returns"></a><h4>Returns</h4>
+<p><code class="literal">FALSE</code> on error, <code class="literal">TRUE</code> otherwise. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/type"><span class="acronym">type</span></a> void]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-list-prints-sync"></a><h3>fp_device_list_prints_sync ()</h3>
+<pre class="programlisting"><span class="returnvalue">GPtrArray</span> *
+fp_device_list_prints_sync (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                            <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                            <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>List device stored prints synchronously.</p>
+<div class="refsect3">
+<a name="fp-device-list-prints-sync.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <span class="type">GCancellable</span>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for errors, or <code class="literal">NULL</code> to ignore</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-device-list-prints-sync.returns"></a><h4>Returns</h4>
+<p>Array of prints, or <code class="literal">NULL</code> on error. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> FpPrint][<a href="http://foldoc.org/transfer%20container"><span class="acronym">transfer container</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-clear-storage-sync"></a><h3>fp_device_clear_storage_sync ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fp_device_clear_storage_sync (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                              <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                              <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Clear sensor storage.</p>
+<div class="refsect3">
+<a name="fp-device-clear-storage-sync.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <span class="type">GCancellable</span>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for errors, or <code class="literal">NULL</code> to ignore</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-device-clear-storage-sync.returns"></a><h4>Returns</h4>
+<p><code class="literal">FALSE</code> on error, <code class="literal">TRUE</code> otherwise. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/type"><span class="acronym">type</span></a> void]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-suspend-sync"></a><h3>fp_device_suspend_sync ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fp_device_suspend_sync (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                        <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                        <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Prepare device for suspend.</p>
+<div class="refsect3">
+<a name="fp-device-suspend-sync.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <span class="type">GCancellable</span>, or <code class="literal">NULL</code>, currently not used. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for errors, or <code class="literal">NULL</code> to ignore</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-device-suspend-sync.returns"></a><h4>Returns</h4>
+<p><code class="literal">FALSE</code> on error, <code class="literal">TRUE</code> otherwise. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/type"><span class="acronym">type</span></a> void]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-device-resume-sync"></a><h3>fp_device_resume_sync ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fp_device_resume_sync (<em class="parameter"><code><a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device</code></em>,
+                       <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                       <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Resume device after suspend.</p>
+<div class="refsect3">
+<a name="fp-device-resume-sync.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <span class="type">GCancellable</span>, or <code class="literal">NULL</code>, currently not used. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for errors, or <code class="literal">NULL</code> to ignore</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-device-resume-sync.returns"></a><h4>Returns</h4>
+<p><code class="literal">FALSE</code> on error, <code class="literal">TRUE</code> otherwise. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/type"><span class="acronym">type</span></a> void]</span></p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="FpDevice.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="FP-TYPE-DEVICE:CAPS"></a><h3>FP_TYPE_DEVICE</h3>
+<pre class="programlisting">#define FP_TYPE_DEVICE (fp_device_get_type ())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FP-DEVICE-RETRY:CAPS"></a><h3>FP_DEVICE_RETRY</h3>
+<pre class="programlisting">#define FP_DEVICE_RETRY (fp_device_retry_quark ())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FP-DEVICE-ERROR:CAPS"></a><h3>FP_DEVICE_ERROR</h3>
+<pre class="programlisting">#define FP_DEVICE_ERROR (fp_device_error_quark ())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpDeviceType"></a><h3>enum FpDeviceType</h3>
+<div class="refsect3">
+<a name="FpDeviceType.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="FP-DEVICE-TYPE-VIRTUAL:CAPS"></a>FP_DEVICE_TYPE_VIRTUAL</p></td>
+<td class="enum_member_description">
+<p>The device is a virtual device</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-DEVICE-TYPE-UDEV:CAPS"></a>FP_DEVICE_TYPE_UDEV</p></td>
+<td class="enum_member_description">
+<p>The device is a udev device</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-DEVICE-TYPE-USB:CAPS"></a>FP_DEVICE_TYPE_USB</p></td>
+<td class="enum_member_description">
+<p>The device is a USB device</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpDeviceFeature"></a><h3>enum FpDeviceFeature</h3>
+<div class="refsect3">
+<a name="FpDeviceFeature.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="FP-DEVICE-FEATURE-NONE:CAPS"></a>FP_DEVICE_FEATURE_NONE</p></td>
+<td class="enum_member_description">
+<p>Device does not support any feature</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-DEVICE-FEATURE-CAPTURE:CAPS"></a>FP_DEVICE_FEATURE_CAPTURE</p></td>
+<td class="enum_member_description">
+<p>Supports image capture</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-DEVICE-FEATURE-IDENTIFY:CAPS"></a>FP_DEVICE_FEATURE_IDENTIFY</p></td>
+<td class="enum_member_description">
+<p>Supports finger identification</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-DEVICE-FEATURE-VERIFY:CAPS"></a>FP_DEVICE_FEATURE_VERIFY</p></td>
+<td class="enum_member_description">
+<p>Supports finger verification</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-DEVICE-FEATURE-STORAGE:CAPS"></a>FP_DEVICE_FEATURE_STORAGE</p></td>
+<td class="enum_member_description">
+<p>Device has a persistent storage</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-DEVICE-FEATURE-STORAGE-LIST:CAPS"></a>FP_DEVICE_FEATURE_STORAGE_LIST</p></td>
+<td class="enum_member_description">
+<p>Supports listing the storage templates</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-DEVICE-FEATURE-STORAGE-DELETE:CAPS"></a>FP_DEVICE_FEATURE_STORAGE_DELETE</p></td>
+<td class="enum_member_description">
+<p>Supports deleting stored templates</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-DEVICE-FEATURE-STORAGE-CLEAR:CAPS"></a>FP_DEVICE_FEATURE_STORAGE_CLEAR</p></td>
+<td class="enum_member_description">
+<p>Supports clearing the whole storage</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-DEVICE-FEATURE-DUPLICATES-CHECK:CAPS"></a>FP_DEVICE_FEATURE_DUPLICATES_CHECK</p></td>
+<td class="enum_member_description">
+<p>Natively supports duplicates detection</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-DEVICE-FEATURE-ALWAYS-ON:CAPS"></a>FP_DEVICE_FEATURE_ALWAYS_ON</p></td>
+<td class="enum_member_description">
+<p>Whether the device can run continuously</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-DEVICE-FEATURE-UPDATE-PRINT:CAPS"></a>FP_DEVICE_FEATURE_UPDATE_PRINT</p></td>
+<td class="enum_member_description">
+<p>Supports updating an existing print record using new scans</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpScanType"></a><h3>enum FpScanType</h3>
+<div class="refsect3">
+<a name="FpScanType.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="FP-SCAN-TYPE-SWIPE:CAPS"></a>FP_SCAN_TYPE_SWIPE</p></td>
+<td class="enum_member_description">
+<p>Sensor requires swiping the finger.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-SCAN-TYPE-PRESS:CAPS"></a>FP_SCAN_TYPE_PRESS</p></td>
+<td class="enum_member_description">
+<p>Sensor requires placing/pressing down the finger.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpDeviceRetry"></a><h3>enum FpDeviceRetry</h3>
+<p>Error codes representing scan failures resulting in the user needing to
+retry.</p>
+<div class="refsect3">
+<a name="FpDeviceRetry.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="FP-DEVICE-RETRY-GENERAL:CAPS"></a>FP_DEVICE_RETRY_GENERAL</p></td>
+<td class="enum_member_description">
+<p>The scan did not succeed due to poor scan quality
+or other general user scanning problem.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-DEVICE-RETRY-TOO-SHORT:CAPS"></a>FP_DEVICE_RETRY_TOO_SHORT</p></td>
+<td class="enum_member_description">
+<p>The scan did not succeed because the finger
+swipe was too short.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-DEVICE-RETRY-CENTER-FINGER:CAPS"></a>FP_DEVICE_RETRY_CENTER_FINGER</p></td>
+<td class="enum_member_description">
+<p>The scan did not succeed because the finger
+was not centered on the scanner.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-DEVICE-RETRY-REMOVE-FINGER:CAPS"></a>FP_DEVICE_RETRY_REMOVE_FINGER</p></td>
+<td class="enum_member_description">
+<p>The scan did not succeed due to quality or
+pressure problems; the user should remove their finger from the scanner
+before retrying.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-DEVICE-RETRY-TOO-FAST:CAPS"></a>FP_DEVICE_RETRY_TOO_FAST</p></td>
+<td class="enum_member_description">
+<p>The scan did not succeed because the finger
+swipe or touch was too fast.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpDeviceError"></a><h3>enum FpDeviceError</h3>
+<p>Error codes for device operations. More specific errors from other domains
+such as <span class="type">G_IO_ERROR</span> or <span class="type">G_USB_DEVICE_ERROR</span> may also be reported.</p>
+<div class="refsect3">
+<a name="FpDeviceError.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="FP-DEVICE-ERROR-GENERAL:CAPS"></a>FP_DEVICE_ERROR_GENERAL</p></td>
+<td class="enum_member_description">
+<p>A general error occurred.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-DEVICE-ERROR-NOT-SUPPORTED:CAPS"></a>FP_DEVICE_ERROR_NOT_SUPPORTED</p></td>
+<td class="enum_member_description">
+<p>The device does not support the requested
+operation.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-DEVICE-ERROR-NOT-OPEN:CAPS"></a>FP_DEVICE_ERROR_NOT_OPEN</p></td>
+<td class="enum_member_description">
+<p>The device needs to be opened to start this
+operation.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-DEVICE-ERROR-ALREADY-OPEN:CAPS"></a>FP_DEVICE_ERROR_ALREADY_OPEN</p></td>
+<td class="enum_member_description">
+<p>The device has already been opened.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-DEVICE-ERROR-BUSY:CAPS"></a>FP_DEVICE_ERROR_BUSY</p></td>
+<td class="enum_member_description">
+<p>The device is busy with another request.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-DEVICE-ERROR-PROTO:CAPS"></a>FP_DEVICE_ERROR_PROTO</p></td>
+<td class="enum_member_description">
+<p>Protocol error</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-DEVICE-ERROR-DATA-INVALID:CAPS"></a>FP_DEVICE_ERROR_DATA_INVALID</p></td>
+<td class="enum_member_description">
+<p>The passed data is invalid</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-DEVICE-ERROR-DATA-NOT-FOUND:CAPS"></a>FP_DEVICE_ERROR_DATA_NOT_FOUND</p></td>
+<td class="enum_member_description">
+<p>Requested print was not found on device</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-DEVICE-ERROR-DATA-FULL:CAPS"></a>FP_DEVICE_ERROR_DATA_FULL</p></td>
+<td class="enum_member_description">
+<p>No space on device available for operation</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-DEVICE-ERROR-DATA-DUPLICATE:CAPS"></a>FP_DEVICE_ERROR_DATA_DUPLICATE</p></td>
+<td class="enum_member_description">
+<p>Enrolling template duplicates storaged templates</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-DEVICE-ERROR-REMOVED:CAPS"></a>FP_DEVICE_ERROR_REMOVED</p></td>
+<td class="enum_member_description">
+<p>The device has been removed.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-DEVICE-ERROR-TOO-HOT:CAPS"></a>FP_DEVICE_ERROR_TOO_HOT</p></td>
+<td class="enum_member_description">
+<p>The device might be getting too hot</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpFingerStatusFlags"></a><h3>enum FpFingerStatusFlags</h3>
+<div class="refsect3">
+<a name="FpFingerStatusFlags.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="FP-FINGER-STATUS-NONE:CAPS"></a>FP_FINGER_STATUS_NONE</p></td>
+<td class="enum_member_description">
+<p>Sensor has not the finger on it, nor requires it</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-FINGER-STATUS-NEEDED:CAPS"></a>FP_FINGER_STATUS_NEEDED</p></td>
+<td class="enum_member_description">
+<p>Sensor waits for the finger</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="FP-FINGER-STATUS-PRESENT:CAPS"></a>FP_FINGER_STATUS_PRESENT</p></td>
+<td class="enum_member_description">
+<p>Sensor has the finger on it</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpDevice-struct"></a><h3>FpDevice</h3>
+<pre class="programlisting">typedef struct _FpDevice FpDevice;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="FpDevice.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="FpDevice--device-id"></a><h3>The <code class="literal">“device-id”</code> property</h3>
+<pre class="programlisting">  “device-id”                <span class="type">char</span> *</pre>
+<p>String describing the device, often generic but may be a serial number.</p>
+<p>Owner: FpDevice</p>
+<p>Flags: Read</p>
+<p>Default value: ""</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpDevice--driver"></a><h3>The <code class="literal">“driver”</code> property</h3>
+<pre class="programlisting">  “driver”                   <span class="type">char</span> *</pre>
+<p>String describing the driver.</p>
+<p>Owner: FpDevice</p>
+<p>Flags: Read</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpDevice--finger-status"></a><h3>The <code class="literal">“finger-status”</code> property</h3>
+<pre class="programlisting">  “finger-status”            <a class="link" href="FpDevice.html#FpFingerStatusFlags" title="enum FpFingerStatusFlags"><span class="type">FpFingerStatusFlags</span></a></pre>
+<p>The status of the finger.</p>
+<p>Owner: FpDevice</p>
+<p>Flags: Read</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpDevice--fpi-driver-data"></a><h3>The <code class="literal">“fpi-driver-data”</code> property</h3>
+<pre class="programlisting">  “fpi-driver-data”          <span class="type">guint64</span></pre>
+<p>Private: The driver data from the ID table entry.</p>
+<p>Owner: FpDevice</p>
+<p>Flags: Write / Construct Only</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpDevice--fpi-environ"></a><h3>The <code class="literal">“fpi-environ”</code> property</h3>
+<pre class="programlisting">  “fpi-environ”              <span class="type">char</span> *</pre>
+<p>Private: The environment variable for the virtual device.</p>
+<p>Owner: FpDevice</p>
+<p>Flags: Write / Construct Only</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpDevice--fpi-udev-data-hidraw"></a><h3>The <code class="literal">“fpi-udev-data-hidraw”</code> property</h3>
+<pre class="programlisting">  “fpi-udev-data-hidraw”     <span class="type">char</span> *</pre>
+<p>Private: The path to /dev/hidrawN.</p>
+<p>Owner: FpDevice</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpDevice--fpi-udev-data-spidev"></a><h3>The <code class="literal">“fpi-udev-data-spidev”</code> property</h3>
+<pre class="programlisting">  “fpi-udev-data-spidev”     <span class="type">char</span> *</pre>
+<p>Private: The path to /dev/spidevN.M.</p>
+<p>Owner: FpDevice</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpDevice--fpi-usb-device"></a><h3>The <code class="literal">“fpi-usb-device”</code> property</h3>
+<pre class="programlisting">  “fpi-usb-device”           <span class="type">GUsbDevice</span> *</pre>
+<p>Private: The USB device for the device.</p>
+<p>Owner: FpDevice</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpDevice--name"></a><h3>The <code class="literal">“name”</code> property</h3>
+<pre class="programlisting">  “name”                     <span class="type">char</span> *</pre>
+<p>Human readable name for the device.</p>
+<p>Owner: FpDevice</p>
+<p>Flags: Read</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpDevice--nr-enroll-stages"></a><h3>The <code class="literal">“nr-enroll-stages”</code> property</h3>
+<pre class="programlisting">  “nr-enroll-stages”         <span class="type">guint</span></pre>
+<p>Number of enroll stages needed on the device.</p>
+<p>Owner: FpDevice</p>
+<p>Flags: Read</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpDevice--open"></a><h3>The <code class="literal">“open”</code> property</h3>
+<pre class="programlisting">  “open”                     <span class="type">gboolean</span></pre>
+<p>Whether the device is open or not.</p>
+<p>Owner: FpDevice</p>
+<p>Flags: Read</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpDevice--removed"></a><h3>The <code class="literal">“removed”</code> property</h3>
+<pre class="programlisting">  “removed”                  <span class="type">gboolean</span></pre>
+<p>Whether the device has been removed from the system.</p>
+<p>Owner: FpDevice</p>
+<p>Flags: Read</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpDevice--scan-type"></a><h3>The <code class="literal">“scan-type”</code> property</h3>
+<pre class="programlisting">  “scan-type”                <a class="link" href="FpDevice.html#FpScanType" title="enum FpScanType"><span class="type">FpScanType</span></a></pre>
+<p>The scan type of the device.</p>
+<p>Owner: FpDevice</p>
+<p>Flags: Read</p>
+<p>Default value: FP_SCAN_TYPE_SWIPE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpDevice--temperature"></a><h3>The <code class="literal">“temperature”</code> property</h3>
+<pre class="programlisting">  “temperature”              <span class="type">FpTemperature</span></pre>
+<p>The temperature estimation for device to prevent overheating.</p>
+<p>Owner: FpDevice</p>
+<p>Flags: Read</p>
+<p>Default value: FP_TEMPERATURE_COLD</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="FpDevice.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="FpDevice-removed"></a><h3>The <code class="literal">“removed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> *device,
+               <span class="type">gpointer</span>  user_data)</pre>
+<p>This signal is emitted after the device has been removed and no operation
+is pending anymore.</p>
+<p>The API user is still required to close a removed device. The above
+guarantee means that the call to close the device can be made immediately
+from the signal handler.</p>
+<p>The close operation will return FP_DEVICE_ERROR_REMOVED, but the device
+will still be considered closed afterwards.</p>
+<p>The device will only be removed from the <a class="link" href="FpContext.html" title="FpContext"><span class="type">FpContext</span></a> after it has been
+closed by the API user.</p>
+<div class="refsect3">
+<a name="FpDevice-removed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>the <a class="link" href="FpDevice.html" title="FpDevice"><span class="type">FpDevice</span></a> instance that emitted the signal</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Run Last</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.34.0</div>
+</body>
+</html>

@@ -1,0 +1,458 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
+[
+  <!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+]>
+<refentry id="libfprint-2-Internal-FpImageDevice">
+<refmeta>
+<refentrytitle role="top_of_page" id="libfprint-2-Internal-FpImageDevice.top_of_page">Internal FpImageDevice</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBFPRINT-2 Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>Internal FpImageDevice</refname>
+<refpurpose>Internal image device functions</refpurpose>
+</refnamediv>
+
+<refsect1 id="libfprint-2-Internal-FpImageDevice.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_proto_type" colwidth="150px"/>
+<colspec colname="functions_proto_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-image-device-session-error">fpi_image_device_session_error</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-image-device-open-complete">fpi_image_device_open_complete</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-image-device-close-complete">fpi_image_device_close_complete</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-image-device-activate-complete">fpi_image_device_activate_complete</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-image-device-deactivate-complete">fpi_image_device_deactivate_complete</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-image-device-report-finger-status">fpi_image_device_report_finger_status</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-image-device-image-captured">fpi_image_device_image_captured</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-image-device-retry-scan">fpi_image_device_retry_scan</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="fpi-image-device-set-bz3-threshold">fpi_image_device_set_bz3_threshold</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="libfprint-2-Internal-FpImageDevice.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="other_proto_type" colwidth="150px"/>
+<colspec colname="other_proto_name"/>
+<tbody>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="FpiImageDeviceState">FpiImageDeviceState</link></entry></row>
+<row><entry role="datatype_keyword"></entry><entry role="function_name"><link linkend="FpImageDeviceClass">FpImageDeviceClass</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+
+<refsect1 id="libfprint-2-Internal-FpImageDevice.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Internal image device functions. See <link linkend="FpImageDevice"><type>FpImageDevice</type></link> for public routines.</para>
+
+</refsect1>
+<refsect1 id="libfprint-2-Internal-FpImageDevice.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="fpi-image-device-session-error" role="function">
+<title>fpi_image_device_session_error&#160;()</title>
+<indexterm zone="fpi-image-device-session-error"><primary>fpi_image_device_session_error</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_image_device_session_error (<parameter><link linkend="FpImageDevice"><type>FpImageDevice</type></link> *self</parameter>,
+                                <parameter><link linkend="GError"><type>GError</type></link> *error</parameter>);</programlisting>
+<para>Report an error while interacting with the device. This effectively
+aborts the current ongoing action. Note that doing so will result in
+the deactivation handler to be called and this function must not be
+used to report an error during deactivation.</para>
+<refsect3 id="fpi-image-device-session-error.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>self</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpImageDevice"><type>FpImageDevice</type></link> imaging fingerprint device</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GError"><type>GError</type></link> to report. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-image-device-open-complete" role="function">
+<title>fpi_image_device_open_complete&#160;()</title>
+<indexterm zone="fpi-image-device-open-complete"><primary>fpi_image_device_open_complete</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_image_device_open_complete (<parameter><link linkend="FpImageDevice"><type>FpImageDevice</type></link> *self</parameter>,
+                                <parameter><link linkend="GError"><type>GError</type></link> *error</parameter>);</programlisting>
+<para>Reports completion of open operation.</para>
+<refsect3 id="fpi-image-device-open-complete.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>self</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpImageDevice"><type>FpImageDevice</type></link> imaging fingerprint device</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GError"><type>GError</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link> on success. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-image-device-close-complete" role="function">
+<title>fpi_image_device_close_complete&#160;()</title>
+<indexterm zone="fpi-image-device-close-complete"><primary>fpi_image_device_close_complete</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_image_device_close_complete (<parameter><link linkend="FpImageDevice"><type>FpImageDevice</type></link> *self</parameter>,
+                                 <parameter><link linkend="GError"><type>GError</type></link> *error</parameter>);</programlisting>
+<para>Reports completion of close operation.</para>
+<refsect3 id="fpi-image-device-close-complete.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>self</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpImageDevice"><type>FpImageDevice</type></link> imaging fingerprint device</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GError"><type>GError</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link> on success. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-image-device-activate-complete" role="function">
+<title>fpi_image_device_activate_complete&#160;()</title>
+<indexterm zone="fpi-image-device-activate-complete"><primary>fpi_image_device_activate_complete</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_image_device_activate_complete (<parameter><link linkend="FpImageDevice"><type>FpImageDevice</type></link> *self</parameter>,
+                                    <parameter><link linkend="GError"><type>GError</type></link> *error</parameter>);</programlisting>
+<para>Reports completion of device activation.</para>
+<refsect3 id="fpi-image-device-activate-complete.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>self</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpImageDevice"><type>FpImageDevice</type></link> imaging fingerprint device</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GError"><type>GError</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link> on success. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-image-device-deactivate-complete" role="function">
+<title>fpi_image_device_deactivate_complete&#160;()</title>
+<indexterm zone="fpi-image-device-deactivate-complete"><primary>fpi_image_device_deactivate_complete</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_image_device_deactivate_complete (<parameter><link linkend="FpImageDevice"><type>FpImageDevice</type></link> *self</parameter>,
+                                      <parameter><link linkend="GError"><type>GError</type></link> *error</parameter>);</programlisting>
+<para>Reports completion of device deactivation.</para>
+<refsect3 id="fpi-image-device-deactivate-complete.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>self</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpImageDevice"><type>FpImageDevice</type></link> imaging fingerprint device</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GError"><type>GError</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link> on success. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>][<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-image-device-report-finger-status" role="function">
+<title>fpi_image_device_report_finger_status&#160;()</title>
+<indexterm zone="fpi-image-device-report-finger-status"><primary>fpi_image_device_report_finger_status</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_image_device_report_finger_status (<parameter><link linkend="FpImageDevice"><type>FpImageDevice</type></link> *self</parameter>,
+                                       <parameter><link linkend="gboolean"><type>gboolean</type></link> present</parameter>);</programlisting>
+<para>Reports from the driver whether the user's finger is on
+the sensor.</para>
+<refsect3 id="fpi-image-device-report-finger-status.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>self</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpImageDevice"><type>FpImageDevice</type></link> imaging fingerprint device</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>present</para></entry>
+<entry role="parameter_description"><para>whether the finger is present on the sensor</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-image-device-image-captured" role="function">
+<title>fpi_image_device_image_captured&#160;()</title>
+<indexterm zone="fpi-image-device-image-captured"><primary>fpi_image_device_image_captured</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_image_device_image_captured (<parameter><link linkend="FpImageDevice"><type>FpImageDevice</type></link> *self</parameter>,
+                                 <parameter><link linkend="FpImage"><type>FpImage</type></link> *image</parameter>);</programlisting>
+<para>Reports an image capture. Only use this function if the image was
+captured successfully. If there was an issue where the user should
+retry, use <link linkend="fpi-image-device-retry-scan"><function>fpi_image_device_retry_scan()</function></link> to report the retry condition.</para>
+<para>In the event of a fatal error for the operation use
+<link linkend="fpi-image-device-session-error"><function>fpi_image_device_session_error()</function></link>. This will abort the entire operation
+including e.g. an enroll operation which captures multiple images during
+one session.</para>
+<refsect3 id="fpi-image-device-image-captured.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>self</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpImageDevice"><type>FpImageDevice</type></link> imaging fingerprint device</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>image</para></entry>
+<entry role="parameter_description"><para>whether the finger is present on the sensor</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-image-device-retry-scan" role="function">
+<title>fpi_image_device_retry_scan&#160;()</title>
+<indexterm zone="fpi-image-device-retry-scan"><primary>fpi_image_device_retry_scan</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_image_device_retry_scan (<parameter><link linkend="FpImageDevice"><type>FpImageDevice</type></link> *self</parameter>,
+                             <parameter><link linkend="FpDeviceRetry"><type>FpDeviceRetry</type></link> retry</parameter>);</programlisting>
+<para>Reports a scan failure to the user. This may or may not abort the
+current session. It is the equivalent of <link linkend="fpi-image-device-image-captured"><function>fpi_image_device_image_captured()</function></link>
+in the case of a retryable error condition (e.g. short swipe).</para>
+<refsect3 id="fpi-image-device-retry-scan.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>self</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpImageDevice"><type>FpImageDevice</type></link> imaging fingerprint device</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>retry</para></entry>
+<entry role="parameter_description"><para>The <link linkend="FpDeviceRetry"><type>FpDeviceRetry</type></link> error code to report</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="fpi-image-device-set-bz3-threshold" role="function">
+<title>fpi_image_device_set_bz3_threshold&#160;()</title>
+<indexterm zone="fpi-image-device-set-bz3-threshold"><primary>fpi_image_device_set_bz3_threshold</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+fpi_image_device_set_bz3_threshold (<parameter><link linkend="FpImageDevice"><type>FpImageDevice</type></link> *self</parameter>,
+                                    <parameter><link linkend="gint"><type>gint</type></link> bz3_threshold</parameter>);</programlisting>
+<para>Dynamically adjust the bz3 threshold. This is only needed for drivers
+that support devices with different properties. It should generally be
+called from the probe callback, but is acceptable to call from the open
+callback.</para>
+<refsect3 id="fpi-image-device-set-bz3-threshold.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>self</para></entry>
+<entry role="parameter_description"><para>a <link linkend="FpImageDevice"><type>FpImageDevice</type></link> imaging fingerprint device</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>bz3_threshold</para></entry>
+<entry role="parameter_description"><para>BZ3 threshold to use</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="libfprint-2-Internal-FpImageDevice.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="FpiImageDeviceState" role="enum">
+<title>enum FpiImageDeviceState</title>
+<indexterm zone="FpiImageDeviceState"><primary>FpiImageDeviceState</primary></indexterm>
+<para>The state of an imaging device while doing a capture. The state is
+passed through to the driver using the ::<link linkend="activate"><function>activate()</function></link> or ::<link linkend="change-state"><function>change_state()</function></link> vfuncs.</para>
+<para>The driver needs to call <link linkend="fpi-image-device-report-finger-status"><function>fpi_image_device_report_finger_status()</function></link> to move
+between the different states. Note that the capture state might be entered
+unconditionally if the device supports raw capturing.</para>
+<para>A usual run would look like:</para>
+<itemizedlist>
+<listitem><para>inactive -> activating: activate vfunc is called</para></listitem>
+<listitem><para>activating -> idle: <link linkend="fpi-image-device-activate-complete"><function>fpi_image_device_activate_complete()</function></link></para></listitem>
+<listitem><para>idle -> await-finger-on</para></listitem>
+<listitem><para>await-finger-on -> capture: <link linkend="fpi-image-device-report-finger-status"><function>fpi_image_device_report_finger_status()</function></link></para></listitem>
+<listitem><para>capture -> await-finger-off: <link linkend="fpi-image-device-image-captured"><function>fpi_image_device_image_captured()</function></link></para></listitem>
+<listitem><para>await-finger-off -> idle: <link linkend="fpi-image-device-report-finger-status"><function>fpi_image_device_report_finger_status()</function></link></para></listitem>
+<listitem><para>idle -> deactivating: deactivate vfunc is called</para></listitem>
+<listitem>
+<para>deactivating -> inactive: <link linkend="fpi-image-device-deactivate-complete"><function>fpi_image_device_deactivate_complete()</function></link></para>
+</listitem>
+</itemizedlist>
+<para>Raw mode is currently not supported (not waiting for finger), but in that
+case the following transitions are valid:</para>
+<itemizedlist>
+<listitem><para>idle -> capture</para></listitem>
+<listitem>
+<para>capture -> idle</para>
+</listitem>
+</itemizedlist>
+<para>Also valid are these transitions in case of errors or cancellations:</para>
+<itemizedlist>
+<listitem><para>activating -> inactive: <link linkend="fpi-image-device-activate-complete"><function>fpi_image_device_activate_complete()</function></link></para></listitem>
+<listitem><para>await-finger-on -> deactivating: deactivate vfunc is called</para></listitem>
+<listitem><para>capture -> deactivating: deactivate vfunc is called</para></listitem>
+<listitem><para>await-finger-off -> deactivating: deactivate vfunc is called</para></listitem>
+</itemizedlist>
+<refsect3 id="FpiImageDeviceState.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="FPI-IMAGE-DEVICE-STATE-INACTIVE:CAPS">FPI_IMAGE_DEVICE_STATE_INACTIVE</para></entry>
+<entry role="enum_member_description"><para>inactive</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FPI-IMAGE-DEVICE-STATE-ACTIVATING:CAPS">FPI_IMAGE_DEVICE_STATE_ACTIVATING</para></entry>
+<entry role="enum_member_description"><para>State during activate callback</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FPI-IMAGE-DEVICE-STATE-DEACTIVATING:CAPS">FPI_IMAGE_DEVICE_STATE_DEACTIVATING</para></entry>
+<entry role="enum_member_description"><para>State during deactivate callback</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FPI-IMAGE-DEVICE-STATE-IDLE:CAPS">FPI_IMAGE_DEVICE_STATE_IDLE</para></entry>
+<entry role="enum_member_description"><para>Activated but idle</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FPI-IMAGE-DEVICE-STATE-AWAIT-FINGER-ON:CAPS">FPI_IMAGE_DEVICE_STATE_AWAIT_FINGER_ON</para></entry>
+<entry role="enum_member_description"><para>waiting for the finger to be pressed or swiped</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FPI-IMAGE-DEVICE-STATE-CAPTURE:CAPS">FPI_IMAGE_DEVICE_STATE_CAPTURE</para></entry>
+<entry role="enum_member_description"><para>capturing an image</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="FPI-IMAGE-DEVICE-STATE-AWAIT-FINGER-OFF:CAPS">FPI_IMAGE_DEVICE_STATE_AWAIT_FINGER_OFF</para></entry>
+<entry role="enum_member_description"><para>waiting for the finger to be removed</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="FpImageDeviceClass" role="struct">
+<title>FpImageDeviceClass</title>
+<indexterm zone="FpImageDeviceClass"><primary>FpImageDeviceClass</primary></indexterm>
+<programlisting language="C">typedef struct {
+  FpDeviceClass parent_class;
+
+  gint          bz3_threshold;
+  gint          img_width;
+  gint          img_height;
+
+  void          (*img_open)     (FpImageDevice *dev);
+  void          (*img_close)    (FpImageDevice *dev);
+  void          (*activate)     (FpImageDevice *dev);
+  void          (*change_state) (FpImageDevice      *dev,
+                                 FpiImageDeviceState state);
+  void          (*deactivate)   (FpImageDevice *dev);
+} FpImageDeviceClass;
+</programlisting>
+<para>These are the main entry points for drivers to implement. Drivers may not
+implement all of these entry points if they do not support the operation
+(or a default implementation is sufficient).</para>
+<para>Drivers *must* eventually call the corresponding function to finish the
+operation. It is also acceptable to call the generic
+<link linkend="fpi-device-action-error"><function>fpi_device_action_error()</function></link> function but doing so is not recommended in most
+usecases.</para>
+<para>Image drivers must expect a <parameter>deactivate</parameter>
+ call to happen at any point during
+image capture.</para>
+<para>This API is solely intended for drivers. It is purely internal and neither
+API nor ABI stable.</para>
+<refsect3 id="FpImageDeviceClass.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gint"><type>gint</type></link>&#160;<structfield id="FpImageDeviceClass.bz3-threshold">bz3_threshold</structfield>;</para></entry>
+<entry role="struct_member_description"><para>Threshold to consider bozorth3 score a match, default: 40</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gint"><type>gint</type></link>&#160;<structfield id="FpImageDeviceClass.img-width">img_width</structfield>;</para></entry>
+<entry role="struct_member_description"><para>Width of the image, only provide if constant</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="gint"><type>gint</type></link>&#160;<structfield id="FpImageDeviceClass.img-height">img_height</structfield>;</para></entry>
+<entry role="struct_member_description"><para>Height of the image, only provide if constant</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="FpImageDeviceClass.img-open">img_open</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Open the device and do basic initialization
+(use this instead of the <link linkend="FpDeviceClass"><type>FpDeviceClass</type></link> open vfunc)</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="FpImageDeviceClass.img-close">img_close</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Close the device
+(use this instead of the <link linkend="FpDeviceClass"><type>FpDeviceClass</type></link> close vfunc)</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="FpImageDeviceClass.activate">activate</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Start image capture and finger detection</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="FpImageDeviceClass.change-state">change_state</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Notification about the current device state (i.e. waiting for
+finger or image capture). Implementing this is optional, it can e.g. be
+used to flash an LED when waiting for a finger.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="FpImageDeviceClass.deactivate">deactivate</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Stop image capture and finger detection</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+
+</refsect1>
+
+</refentry>

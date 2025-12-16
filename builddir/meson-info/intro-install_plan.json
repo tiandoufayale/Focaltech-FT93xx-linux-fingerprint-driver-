@@ -1,0 +1,445 @@
+{
+  "targets": {
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint/fp-enums.h": {
+      "destination": "{includedir}/libfprint-2/fp-enums.h",
+      "tag": "devel",
+      "subproject": null,
+      "install_rpath": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint/libfprint-2.so.2.0.0": {
+      "destination": "{libdir_shared}/libfprint-2.so.2.0.0",
+      "tag": "runtime",
+      "subproject": null,
+      "install_rpath": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint/org.freedesktop.libfprint.metainfo.xml": {
+      "destination": "{prefix}/share/metainfo/org.freedesktop.libfprint.metainfo.xml",
+      "tag": null,
+      "subproject": null,
+      "install_rpath": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint/70-libfprint-2.rules": {
+      "destination": "/usr/lib/udev/rules.d/70-libfprint-2.rules",
+      "tag": null,
+      "subproject": null,
+      "install_rpath": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint/FPrint-2.0.gir": {
+      "destination": "{prefix}/share/gir-1.0/FPrint-2.0.gir",
+      "tag": "devel",
+      "subproject": null,
+      "install_rpath": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/libfprint/FPrint-2.0.typelib": {
+      "destination": "{prefix}/lib/x86_64-linux-gnu/girepository-1.0/FPrint-2.0.typelib",
+      "tag": "typelib",
+      "subproject": null,
+      "install_rpath": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests/test-fpi-device": {
+      "destination": "{prefix}/libexec/installed-tests/libfprint-2/test-fpi-device",
+      "tag": "runtime",
+      "subproject": null,
+      "install_rpath": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests/test-fpi-ssm": {
+      "destination": "{prefix}/libexec/installed-tests/libfprint-2/test-fpi-ssm",
+      "tag": "runtime",
+      "subproject": null,
+      "install_rpath": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests/test-fpi-assembling": {
+      "destination": "{prefix}/libexec/installed-tests/libfprint-2/test-fpi-assembling",
+      "tag": "runtime",
+      "subproject": null,
+      "install_rpath": null
+    }
+  },
+  "configure": {
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests/driver-aes2501.test": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/driver-aes2501.test",
+      "tag": "tests",
+      "subproject": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests/driver-aes3500.test": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/driver-aes3500.test",
+      "tag": "tests",
+      "subproject": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests/driver-elan.test": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/driver-elan.test",
+      "tag": "tests",
+      "subproject": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests/driver-elan-cobo.test": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/driver-elan-cobo.test",
+      "tag": "tests",
+      "subproject": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests/driver-elanmoc.test": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/driver-elanmoc.test",
+      "tag": "tests",
+      "subproject": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests/driver-elanspi.test": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/driver-elanspi.test",
+      "tag": "tests",
+      "subproject": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests/driver-synaptics.test": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/driver-synaptics.test",
+      "tag": "tests",
+      "subproject": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests/driver-upektc_img.test": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/driver-upektc_img.test",
+      "tag": "tests",
+      "subproject": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests/driver-upektc_img-tcs1s.test": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/driver-upektc_img-tcs1s.test",
+      "tag": "tests",
+      "subproject": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests/driver-uru4000-msv2.test": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/driver-uru4000-msv2.test",
+      "tag": "tests",
+      "subproject": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests/driver-uru4000-4500.test": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/driver-uru4000-4500.test",
+      "tag": "tests",
+      "subproject": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests/driver-vfs0050.test": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/driver-vfs0050.test",
+      "tag": "tests",
+      "subproject": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests/driver-vfs301.test": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/driver-vfs301.test",
+      "tag": "tests",
+      "subproject": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests/driver-vfs5011.test": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/driver-vfs5011.test",
+      "tag": "tests",
+      "subproject": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests/driver-vfs7552.test": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/driver-vfs7552.test",
+      "tag": "tests",
+      "subproject": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests/driver-goodixmoc.test": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/driver-goodixmoc.test",
+      "tag": "tests",
+      "subproject": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests/driver-nb1010.test": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/driver-nb1010.test",
+      "tag": "tests",
+      "subproject": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests/driver-egis0570.test": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/driver-egis0570.test",
+      "tag": "tests",
+      "subproject": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests/driver-egismoc.test": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/driver-egismoc.test",
+      "tag": "tests",
+      "subproject": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests/driver-egismoc-05a1.test": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/driver-egismoc-05a1.test",
+      "tag": "tests",
+      "subproject": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests/driver-egismoc-0586.test": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/driver-egismoc-0586.test",
+      "tag": "tests",
+      "subproject": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests/driver-egismoc-0587.test": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/driver-egismoc-0587.test",
+      "tag": "tests",
+      "subproject": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests/driver-fpcmoc.test": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/driver-fpcmoc.test",
+      "tag": "tests",
+      "subproject": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests/driver-realtek.test": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/driver-realtek.test",
+      "tag": "tests",
+      "subproject": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests/driver-realtek-5816.test": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/driver-realtek-5816.test",
+      "tag": "tests",
+      "subproject": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests/driver-focaltech_moc.test": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/driver-focaltech_moc.test",
+      "tag": "tests",
+      "subproject": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests/fpi-device.test": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/fpi-device.test",
+      "tag": "tests",
+      "subproject": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests/fpi-ssm.test": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/fpi-ssm.test",
+      "tag": "tests",
+      "subproject": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/tests/fpi-assembling.test": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/fpi-assembling.test",
+      "tag": "tests",
+      "subproject": null
+    }
+  },
+  "data": {
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/umockdev-test.py": {
+      "destination": "{prefix}/libexec/installed-tests/libfprint-2/umockdev-test.py",
+      "tag": "tests",
+      "subproject": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/capture.py": {
+      "destination": "{prefix}/libexec/installed-tests/libfprint-2/capture.py",
+      "tag": "tests",
+      "subproject": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/builddir/meson-private/libfprint-2.pc": {
+      "destination": "{libdir}/pkgconfig/libfprint-2.pc",
+      "tag": "devel",
+      "subproject": null
+    }
+  },
+  "headers": {
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/libfprint/fprint.h": {
+      "destination": "{includedir}/libfprint-2/fprint.h",
+      "tag": "devel",
+      "subproject": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/libfprint/fp-context.h": {
+      "destination": "{includedir}/libfprint-2/fp-context.h",
+      "tag": "devel",
+      "subproject": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/libfprint/fp-device.h": {
+      "destination": "{includedir}/libfprint-2/fp-device.h",
+      "tag": "devel",
+      "subproject": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/libfprint/fp-image-device.h": {
+      "destination": "{includedir}/libfprint-2/fp-image-device.h",
+      "tag": "devel",
+      "subproject": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/libfprint/fp-image.h": {
+      "destination": "{includedir}/libfprint-2/fp-image.h",
+      "tag": "devel",
+      "subproject": null
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/libfprint/fp-print.h": {
+      "destination": "{includedir}/libfprint-2/fp-print.h",
+      "tag": "devel",
+      "subproject": null
+    }
+  },
+  "install_subdirs": {
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/aes2501": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/aes2501",
+      "tag": "tests",
+      "subproject": null,
+      "exclude_dirs": [],
+      "exclude_files": []
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/aes3500": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/aes3500",
+      "tag": "tests",
+      "subproject": null,
+      "exclude_dirs": [],
+      "exclude_files": []
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/elan": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/elan",
+      "tag": "tests",
+      "subproject": null,
+      "exclude_dirs": [],
+      "exclude_files": []
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/elan-cobo": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/elan-cobo",
+      "tag": "tests",
+      "subproject": null,
+      "exclude_dirs": [],
+      "exclude_files": []
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/elanmoc": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/elanmoc",
+      "tag": "tests",
+      "subproject": null,
+      "exclude_dirs": [],
+      "exclude_files": []
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/elanspi": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/elanspi",
+      "tag": "tests",
+      "subproject": null,
+      "exclude_dirs": [],
+      "exclude_files": []
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/synaptics": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/synaptics",
+      "tag": "tests",
+      "subproject": null,
+      "exclude_dirs": [],
+      "exclude_files": []
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/upektc_img": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/upektc_img",
+      "tag": "tests",
+      "subproject": null,
+      "exclude_dirs": [],
+      "exclude_files": []
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/upektc_img-tcs1s": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/upektc_img-tcs1s",
+      "tag": "tests",
+      "subproject": null,
+      "exclude_dirs": [],
+      "exclude_files": []
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/uru4000-msv2": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/uru4000-msv2",
+      "tag": "tests",
+      "subproject": null,
+      "exclude_dirs": [],
+      "exclude_files": []
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/uru4000-4500": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/uru4000-4500",
+      "tag": "tests",
+      "subproject": null,
+      "exclude_dirs": [],
+      "exclude_files": []
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/vfs0050": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/vfs0050",
+      "tag": "tests",
+      "subproject": null,
+      "exclude_dirs": [],
+      "exclude_files": []
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/vfs301": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/vfs301",
+      "tag": "tests",
+      "subproject": null,
+      "exclude_dirs": [],
+      "exclude_files": []
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/vfs5011": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/vfs5011",
+      "tag": "tests",
+      "subproject": null,
+      "exclude_dirs": [],
+      "exclude_files": []
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/vfs7552": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/vfs7552",
+      "tag": "tests",
+      "subproject": null,
+      "exclude_dirs": [],
+      "exclude_files": []
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/goodixmoc": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/goodixmoc",
+      "tag": "tests",
+      "subproject": null,
+      "exclude_dirs": [],
+      "exclude_files": []
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/nb1010": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/nb1010",
+      "tag": "tests",
+      "subproject": null,
+      "exclude_dirs": [],
+      "exclude_files": []
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/egis0570": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/egis0570",
+      "tag": "tests",
+      "subproject": null,
+      "exclude_dirs": [],
+      "exclude_files": []
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/egismoc": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/egismoc",
+      "tag": "tests",
+      "subproject": null,
+      "exclude_dirs": [],
+      "exclude_files": []
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/egismoc-05a1": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/egismoc-05a1",
+      "tag": "tests",
+      "subproject": null,
+      "exclude_dirs": [],
+      "exclude_files": []
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/egismoc-0586": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/egismoc-0586",
+      "tag": "tests",
+      "subproject": null,
+      "exclude_dirs": [],
+      "exclude_files": []
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/egismoc-0587": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/egismoc-0587",
+      "tag": "tests",
+      "subproject": null,
+      "exclude_dirs": [],
+      "exclude_files": []
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/fpcmoc": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/fpcmoc",
+      "tag": "tests",
+      "subproject": null,
+      "exclude_dirs": [],
+      "exclude_files": []
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/realtek": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/realtek",
+      "tag": "tests",
+      "subproject": null,
+      "exclude_dirs": [],
+      "exclude_files": []
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/realtek-5816": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/realtek-5816",
+      "tag": "tests",
+      "subproject": null,
+      "exclude_dirs": [],
+      "exclude_files": []
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/tests/focaltech_moc": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/focaltech_moc",
+      "tag": "tests",
+      "subproject": null,
+      "exclude_dirs": [],
+      "exclude_files": []
+    },
+    "/home/tiandou/\u4e0b\u8f7d/libfprint/examples/prints": {
+      "destination": "{prefix}/share/installed-tests/libfprint-2/prints",
+      "tag": "tests",
+      "subproject": null,
+      "exclude_dirs": [],
+      "exclude_files": []
+    }
+  }
+}

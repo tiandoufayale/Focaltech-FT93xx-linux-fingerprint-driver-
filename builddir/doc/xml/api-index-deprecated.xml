@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
+[
+  <!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+]>
+<indexdiv id="api-index-deprecated">
+<indexdiv><title>D</title>
+<indexentry><primaryie linkends="fp-device-has-storage"><link linkend="fp-device-has-storage">fp_device_has_storage</link>, function in <link linkend="FpDevice">FpDevice</link></primaryie></indexentry>
+<indexentry><primaryie linkends="fp-device-supports-capture"><link linkend="fp-device-supports-capture">fp_device_supports_capture</link>, function in <link linkend="FpDevice">FpDevice</link></primaryie></indexentry>
+<indexentry><primaryie linkends="fp-device-supports-identify"><link linkend="fp-device-supports-identify">fp_device_supports_identify</link>, function in <link linkend="FpDevice">FpDevice</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

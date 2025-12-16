@@ -1,0 +1,578 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>FpImage: libfprint Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="libfprint Reference Manual">
+<link rel="up" href="pt02.html" title="Part II. Library API Documentation">
+<link rel="prev" href="FpPrint.html" title="FpPrint">
+<link rel="next" href="pt03.html" title="Part III. Writing Drivers">
+<meta name="generator" content="GTK-Doc V1.34.0 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#FpImage.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#FpImage.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#FpImage.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="pt02.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="FpPrint.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="pt03.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="FpImage"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="FpImage.top_of_page"></a>FpImage</span></h2>
+<p>FpImage — Internal Image handling routines</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="FpImage.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="FpImage.html" title="FpImage"><span class="returnvalue">FpImage</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="FpImage.html#fp-image-new" title="fp_image_new ()">fp_image_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpImage.html#fp-image-get-width" title="fp_image_get_width ()">fp_image_get_width</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpImage.html#fp-image-get-height" title="fp_image_get_height ()">fp_image_get_height</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gdouble</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpImage.html#fp-image-get-ppmm" title="fp_image_get_ppmm ()">fp_image_get_ppmm</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GPtrArray</span> *
+</td>
+<td class="function_name">
+<a class="link" href="FpImage.html#fp-image-get-minutiae" title="fp_image_get_minutiae ()">fp_image_get_minutiae</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpImage.html#fp-image-detect-minutiae" title="fp_image_detect_minutiae ()">fp_image_detect_minutiae</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpImage.html#fp-image-detect-minutiae-finish" title="fp_image_detect_minutiae_finish ()">fp_image_detect_minutiae_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">guchar</span> *
+</td>
+<td class="function_name">
+<a class="link" href="FpImage.html#fp-image-get-data" title="fp_image_get_data ()">fp_image_get_data</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">guchar</span> *
+</td>
+<td class="function_name">
+<a class="link" href="FpImage.html#fp-image-get-binarized" title="fp_image_get_binarized ()">fp_image_get_binarized</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="FpImage.html#fp-minutia-get-coords" title="fp_minutia_get_coords ()">fp_minutia_get_coords</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="FpImage.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="FpImage.html#FpImage--height" title="The “height” property">height</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="FpImage.html#FpImage--width" title="The “width” property">width</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="FpImage.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="FpImage.html#FP-TYPE-IMAGE:CAPS" title="FP_TYPE_IMAGE">FP_TYPE_IMAGE</a></td>
+</tr>
+<tr>
+<td class="typedef_keyword">typedef</td>
+<td class="function_name"><a class="link" href="FpImage.html#FpMinutia" title="FpMinutia">FpMinutia</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="FpImage.html#FpImage-struct" title="FpImage">FpImage</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="FpImage.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> FpImage
+</pre>
+</div>
+<div class="refsect1">
+<a name="FpImage.description"></a><h2>Description</h2>
+<p>Some devices will provide the image data corresponding to a print
+this object allows accessing this data.</p>
+</div>
+<div class="refsect1">
+<a name="FpImage.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="fp-image-new"></a><h3>fp_image_new ()</h3>
+<pre class="programlisting"><a class="link" href="FpImage.html" title="FpImage"><span class="returnvalue">FpImage</span></a> *
+fp_image_new (<em class="parameter"><code><span class="type">gint</span> width</code></em>,
+              <em class="parameter"><code><span class="type">gint</span> height</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-image-get-width"></a><h3>fp_image_get_width ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint</span>
+fp_image_get_width (<em class="parameter"><code><a class="link" href="FpImage.html" title="FpImage"><span class="type">FpImage</span></a> *self</code></em>);</pre>
+<p>Gets the pixel width of an image.</p>
+<div class="refsect3">
+<a name="fp-image-get-width.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpImage.html" title="FpImage"><span class="type">FpImage</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-image-get-width.returns"></a><h4>Returns</h4>
+<p> the width of the image</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-image-get-height"></a><h3>fp_image_get_height ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint</span>
+fp_image_get_height (<em class="parameter"><code><a class="link" href="FpImage.html" title="FpImage"><span class="type">FpImage</span></a> *self</code></em>);</pre>
+<p>Gets the pixel height of an image.</p>
+<div class="refsect3">
+<a name="fp-image-get-height.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpImage.html" title="FpImage"><span class="type">FpImage</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-image-get-height.returns"></a><h4>Returns</h4>
+<p> the height of the image</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-image-get-ppmm"></a><h3>fp_image_get_ppmm ()</h3>
+<pre class="programlisting"><span class="returnvalue">gdouble</span>
+fp_image_get_ppmm (<em class="parameter"><code><a class="link" href="FpImage.html" title="FpImage"><span class="type">FpImage</span></a> *self</code></em>);</pre>
+<p>Gets the resolution of the image. Note that this is assumed to
+be fixed to 500 points per inch (~19.685 p/mm) for most drivers.</p>
+<div class="refsect3">
+<a name="fp-image-get-ppmm.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpImage.html" title="FpImage"><span class="type">FpImage</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-image-get-ppmm.returns"></a><h4>Returns</h4>
+<p> the resolution of the image in points per millimeter</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-image-get-minutiae"></a><h3>fp_image_get_minutiae ()</h3>
+<pre class="programlisting"><span class="returnvalue">GPtrArray</span> *
+fp_image_get_minutiae (<em class="parameter"><code><a class="link" href="FpImage.html" title="FpImage"><span class="type">FpImage</span></a> *self</code></em>);</pre>
+<p>Gets the minutiae for an image. This data must not be modified or
+freed. You need to first detect the minutiae using
+<a class="link" href="FpImage.html#fp-image-detect-minutiae" title="fp_image_detect_minutiae ()"><code class="function">fp_image_detect_minutiae()</code></a>.</p>
+<div class="refsect3">
+<a name="fp-image-get-minutiae.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpImage.html" title="FpImage"><span class="type">FpImage</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-image-get-minutiae.returns"></a><h4>Returns</h4>
+<p>The detected minutiae. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>][<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> FpMinutia]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-image-detect-minutiae"></a><h3>fp_image_detect_minutiae ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fp_image_detect_minutiae (<em class="parameter"><code><a class="link" href="FpImage.html" title="FpImage"><span class="type">FpImage</span></a> *self</code></em>,
+                          <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                          <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
+                          <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Detects the minutiae found in an image.</p>
+<div class="refsect3">
+<a name="fp-image-detect-minutiae.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpImage.html" title="FpImage"><span class="type">FpImage</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <span class="type">GCancellable</span>, or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>the function to call on completion</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>the data to pass to <em class="parameter"><code>callback</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-image-detect-minutiae-finish"></a><h3>fp_image_detect_minutiae_finish ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+fp_image_detect_minutiae_finish (<em class="parameter"><code><a class="link" href="FpImage.html" title="FpImage"><span class="type">FpImage</span></a> *self</code></em>,
+                                 <em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
+                                 <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Finish minutiae detection in an image</p>
+<div class="refsect3">
+<a name="fp-image-detect-minutiae-finish.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpImage.html" title="FpImage"><span class="type">FpImage</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>result</p></td>
+<td class="parameter_description"><p>A <span class="type">GAsyncResult</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for errors, or <code class="literal">NULL</code> to ignore</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-image-detect-minutiae-finish.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> on success</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-image-get-data"></a><h3>fp_image_get_data ()</h3>
+<pre class="programlisting">const <span class="returnvalue">guchar</span> *
+fp_image_get_data (<em class="parameter"><code><a class="link" href="FpImage.html" title="FpImage"><span class="type">FpImage</span></a> *self</code></em>,
+                   <em class="parameter"><code><span class="type">gsize</span> *len</code></em>);</pre>
+<p>Gets the greyscale data for an image. This data must not be modified or
+freed.</p>
+<div class="refsect3">
+<a name="fp-image-get-data.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpImage.html" title="FpImage"><span class="type">FpImage</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>len</p></td>
+<td class="parameter_description"><p>Return location for length or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>][<a href="http://foldoc.org/optional"><span class="acronym">optional</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-image-get-data.returns"></a><h4>Returns</h4>
+<p>The image data. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>][<a href="http://foldoc.org/array"><span class="acronym">array</span></a> length=len]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-image-get-binarized"></a><h3>fp_image_get_binarized ()</h3>
+<pre class="programlisting">const <span class="returnvalue">guchar</span> *
+fp_image_get_binarized (<em class="parameter"><code><a class="link" href="FpImage.html" title="FpImage"><span class="type">FpImage</span></a> *self</code></em>,
+                        <em class="parameter"><code><span class="type">gsize</span> *len</code></em>);</pre>
+<p>Gets the binarized data for an image. This data must not be modified or
+freed. You need to first detect the minutiae using
+<a class="link" href="FpImage.html#fp-image-detect-minutiae" title="fp_image_detect_minutiae ()"><code class="function">fp_image_detect_minutiae()</code></a>.</p>
+<div class="refsect3">
+<a name="fp-image-get-binarized.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpImage.html" title="FpImage"><span class="type">FpImage</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>len</p></td>
+<td class="parameter_description"><p>Return location for length or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>][<a href="http://foldoc.org/optional"><span class="acronym">optional</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="fp-image-get-binarized.returns"></a><h4>Returns</h4>
+<p>The binarized image data. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>][<a href="http://foldoc.org/array"><span class="acronym">array</span></a> length=len]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="fp-minutia-get-coords"></a><h3>fp_minutia_get_coords ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+fp_minutia_get_coords (<em class="parameter"><code><a class="link" href="FpImage.html#FpMinutia" title="FpMinutia"><span class="type">FpMinutia</span></a> *min</code></em>,
+                       <em class="parameter"><code><span class="type">gint</span> *x</code></em>,
+                       <em class="parameter"><code><span class="type">gint</span> *y</code></em>);</pre>
+<p>Returns the coordinates of the found minutia. This is only useful for
+debugging purposes and the API is not considered stable for production.</p>
+<div class="refsect3">
+<a name="fp-minutia-get-coords.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>min</p></td>
+<td class="parameter_description"><p>A <a class="link" href="FpImage.html#FpMinutia" title="FpMinutia"><span class="type">FpMinutia</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>x</p></td>
+<td class="parameter_description"><p>x position in image. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>y</p></td>
+<td class="parameter_description"><p>y position in image. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="FpImage.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="FP-TYPE-IMAGE:CAPS"></a><h3>FP_TYPE_IMAGE</h3>
+<pre class="programlisting">#define FP_TYPE_IMAGE (fp_image_get_type ())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpMinutia"></a><h3>FpMinutia</h3>
+<pre class="programlisting">typedef struct fp_minutia FpMinutia;
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpImage-struct"></a><h3>FpImage</h3>
+<pre class="programlisting">typedef struct {
+  guint         width;
+  guint         height;
+
+  gdouble       ppmm;
+
+  FpiImageFlags flags;
+} FpImage;
+</pre>
+<p>Structure holding an image. The public fields are only public for internal
+use by the drivers.</p>
+<div class="refsect3">
+<a name="FpImage.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><span class="type">guint</span> <em class="structfield"><code><a name="FpImage-struct.width"></a>width</code></em>;</p></td>
+<td class="struct_member_description"><p>Width of the image</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">guint</span> <em class="structfield"><code><a name="FpImage-struct.height"></a>height</code></em>;</p></td>
+<td class="struct_member_description"><p>Height of the image</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">gdouble</span> <em class="structfield"><code><a name="FpImage-struct.ppmm"></a>ppmm</code></em>;</p></td>
+<td class="struct_member_description"><p>Pixels per millimeter</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="libfprint-2-Internal-FpImage.html#FpiImageFlags" title="enum FpiImageFlags"><span class="type">FpiImageFlags</span></a> <em class="structfield"><code><a name="FpImage-struct.flags"></a>flags</code></em>;</p></td>
+<td class="struct_member_description"><p><a class="link" href="libfprint-2-Internal-FpImage.html#FpiImageFlags" title="enum FpiImageFlags"><span class="type">FpiImageFlags</span></a> for required normalization</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="FpImage.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="FpImage--height"></a><h3>The <code class="literal">“height”</code> property</h3>
+<pre class="programlisting">  “height”                   <span class="type">guint</span></pre>
+<p>The height of the image.</p>
+<p>Owner: FpImage</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Allowed values: &lt;= 65535</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="FpImage--width"></a><h3>The <code class="literal">“width”</code> property</h3>
+<pre class="programlisting">  “width”                    <span class="type">guint</span></pre>
+<p>The width of the image.</p>
+<p>Owner: FpImage</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Allowed values: &lt;= 65535</p>
+<p>Default value: 0</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.34.0</div>
+</body>
+</html>

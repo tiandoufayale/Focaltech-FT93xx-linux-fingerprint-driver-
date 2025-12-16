@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
+[
+  <!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+]>
+<refentry id="libfprint-2-Logging">
+<refmeta>
+<refentrytitle role="top_of_page" id="libfprint-2-Logging.top_of_page">Logging</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBFPRINT-2 Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>Logging</refname>
+<refpurpose>Logging functions</refpurpose>
+</refnamediv>
+
+<refsect1 id="libfprint-2-Logging.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_proto_type" colwidth="150px"/>
+<colspec colname="functions_proto_name"/>
+<tbody>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="BUG-ON:CAPS">BUG_ON</link><phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="BUG:CAPS">BUG</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="libfprint-2-Logging.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="other_proto_type" colwidth="150px"/>
+<colspec colname="other_proto_name"/>
+<tbody>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="fp-dbg">fp_dbg</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="fp-info">fp_info</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="fp-warn">fp_warn</link></entry></row>
+<row><entry role="define_keyword">#define</entry><entry role="function_name"><link linkend="fp-err">fp_err</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+
+<refsect1 id="libfprint-2-Logging.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Logging in libfprint is handled through GLib's logging system, and behave the same
+way as in the GLib <ulink url="https://developer.gnome.org/glib/stable/glib-Message-Logging.html">Message Output and Debugging Functions</ulink>
+documentation.</para>
+<para>You should include <literal>fpi-log.h</literal> as early as possible in your sources, just after
+setting the <literal>FP_COMPONENT</literal> define to a string unique to your sources. This will
+set the suffix of the <literal>G_LOG_DOMAIN</literal> used for printing.</para>
+
+</refsect1>
+<refsect1 id="libfprint-2-Logging.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="BUG-ON:CAPS" role="macro">
+<title>BUG_ON()</title>
+<indexterm zone="BUG-ON:CAPS"><primary>BUG_ON</primary></indexterm>
+<programlisting language="C">#define             BUG_ON(condition)</programlisting>
+<para>Uses <link linkend="fp-err"><function>fp_err()</function></link> to print an error if the <parameter>condition</parameter>
+ is true.</para>
+<refsect3 id="BUG-ON.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>condition</para></entry>
+<entry role="parameter_description"><para>the condition to check</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="BUG:CAPS" role="macro">
+<title>BUG</title>
+<indexterm zone="BUG:CAPS"><primary>BUG</primary></indexterm>
+<programlisting language="C">#define BUG() BUG_ON (1)
+</programlisting>
+<para>Same as <link linkend="BUG-ON:CAPS"><function>BUG_ON()</function></link> but is always true.</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="libfprint-2-Logging.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="fp-dbg" role="macro">
+<title>fp_dbg</title>
+<indexterm zone="fp-dbg"><primary>fp_dbg</primary></indexterm>
+<programlisting language="C">#define fp_dbg g_debug
+</programlisting>
+<para>Same as <link linkend="g-debug"><function>g_debug()</function></link>.</para>
+</refsect2>
+<refsect2 id="fp-info" role="macro">
+<title>fp_info</title>
+<indexterm zone="fp-info"><primary>fp_info</primary></indexterm>
+<programlisting language="C">#define fp_info g_debug
+</programlisting>
+<para>Same as <link linkend="g-debug"><function>g_debug()</function></link>.</para>
+</refsect2>
+<refsect2 id="fp-warn" role="macro">
+<title>fp_warn</title>
+<indexterm zone="fp-warn"><primary>fp_warn</primary></indexterm>
+<programlisting language="C">#define fp_warn g_warning
+</programlisting>
+<para>Same as <link linkend="g-warning"><function>g_warning()</function></link>.</para>
+</refsect2>
+<refsect2 id="fp-err" role="macro">
+<title>fp_err</title>
+<indexterm zone="fp-err"><primary>fp_err</primary></indexterm>
+<programlisting language="C">#define fp_err g_critical
+</programlisting>
+<para>Same as <link linkend="g-critical"><function>g_critical()</function></link>. In the future, this might be changed to a
+<link linkend="g-assert"><function>g_assert()</function></link> instead, so bear this in mind when adding those calls
+to your driver.</para>
+</refsect2>
+
+</refsect1>
+
+</refentry>
